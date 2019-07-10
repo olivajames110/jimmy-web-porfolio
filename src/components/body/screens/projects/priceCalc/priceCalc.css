@@ -1,0 +1,360 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ background: #f0efef;
+}
+
+.bottom-rounded-corners {
+ /* border-bottom-left-radius: 10px; */
+ /* border-bottom-right-radius: 10px; */
+}
+
+.range-slider-wrapper,
+.competitor-wrapper {
+ box-sizing: border-box;
+ /* border-radius: 10px; */
+ /* border: 1px solid #ffffff40; */
+ background-color: #0c4e7e;
+ box-shadow: 0px 0px 2px 1px #00000030;
+}
+
+.competitor-commission-amt span {
+ font-weight: bold;
+ background-color: #f2f4f5;
+ color: #0c4e7e;
+ padding: 6px 10px;
+ /* border-radius: 30px; */
+ margin: 0 3px;
+ display: inline-block;
+ min-width: 51px;
+ line-height: 1.5em;
+ border: 1px inset #bdbdbd45;
+}
+
+.range-widget-container {
+ height: initial;
+ max-width: 1000px;
+ color: white;
+ font-family: 'Roboto', sans-serif;
+ padding: 20px;
+ box-sizing: border-box;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+ margin: 0 auto;
+}
+
+.range-container {
+ display: flex;
+ flex-wrap: wrap;
+ width: 100%;
+ justify-content: space-between;
+}
+
+.range-slider-wrapper {
+ width: 48%;
+ margin-bottom: 35px;
+ box-sizing: border-box;
+ /* border-radius: 10px; */
+ /* border: 1px solid #ffffff40; */
+}
+
+.box-minmax {
+ font-size: 20px;
+ color: #0c4e7e;
+ background-color: #ffffff;
+ padding: 85px 15px 30px 15px;
+ /* margin-top: -50px; */
+ position: relative;
+}
+
+.box-minmax-key {
+ display: flex;
+ justify-content: space-between;
+ font-size: 20px;
+ padding-top: 15px;
+}
+
+.box-minmax span {
+ font-weight: bold;
+}
+
+.range-title {
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+ padding: 20px 16px;
+ height: initial;
+}
+
+.range-title-step {
+ font-size: 24px;
+ font-weight: bold;
+}
+
+.range-title-desc {
+ font-size: 16px;
+ padding-top: 4px;
+}
+
+.range-slider {
+ width: 100%;
+ padding: 0px 10px;
+ box-sizing: border-box;
+}
+
+.range-slider__range {
+ -webkit-appearance: none;
+ width: 100%;
+ height: 10px;
+ border-radius: 5px;
+ background: #d7dcdf;
+ outline: none;
+ padding: 0;
+ margin: 0;
+}
+
+#rs-bullet--amt,
+#rs-bullet--price {
+ /* position: relative; */
+ z-index: 1000;
+}
+
+#rs-bullet--amt:before {
+ content: 'Weekly Orders';
+ position: absolute;
+ left: 50%;
+ font-size: 11px;
+ bottom: 13px;
+ transform: translateX(-48%);
+ text-align: center;
+ width: 80px;
+}
+
+#rs-bullet--price:before {
+ content: 'Per Order';
+ position: absolute;
+ left: 50%;
+ font-size: 11px;
+ bottom: 13px;
+ transform: translateX(-48%);
+ text-align: center;
+ width: inherit;
+}
+
+.range-slider__range::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ appearance: none;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ background: #ffffff;
+ cursor: pointer;
+ transition: background .15s ease-in-out;
+ border: 3px solid #6eab1f;
+ box-shadow: 0 0 0 3px #fff, 0 0 0 6px #6eab1f;
+}
+
+.range-slider__range::-webkit-slider-thumb:hover {
+ background: #6eab1f;
+}
+
+.range-slider__range:active::-webkit-slider-thumb {
+ background: #6eab1f;
+}
+
+.range-slider__range::-moz-range-thumb {
+ width: 20px;
+ height: 20px;
+ border: 0;
+ /* border-radius: 50%; */
+ background: #2c3e50;
+ cursor: pointer;
+ transition: background .15s ease-in-out;
+ box-shadow: 0 0 0 3px #fff, 0 0 0 6px #6eab1f;
+}
+
+.range-slider__range::-moz-range-thumb:hover {
+ background: #6eab1f;
+ background: #6eab1f;
+}
+
+.range-slider__range:active::-moz-range-thumb {
+ background: #6eab1f;
+}
+
+.range-slider__range:focus::-webkit-slider-thumb {
+ box-shadow: 0 0 0 3px #fff, 0 0 0 6px #6eab1f;
+}
+
+.range-slider__value {
+ display: inline-block;
+ position: relative;
+ width: 60px;
+ color: #fff;
+ line-height: 20px;
+ text-align: center;
+ /* border-radius: 3px; */
+ background: #2c3e50;
+ padding: 5px 10px;
+ margin-left: 8px;
+}
+
+.range-slider__value:after {
+ position: absolute;
+ top: 8px;
+ left: -7px;
+ width: 0;
+ height: 0;
+ border-top: 7px solid transparent;
+ border-right: 7px solid #2c3e50;
+ border-bottom: 7px solid transparent;
+ content: '';
+}
+
+::-moz-range-track {
+ background: #d7dcdf;
+ border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+ border: 0;
+}
+
+.rs-label {
+ position: absolute;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform: translateX(-22%);
+ transform-origin: center center;
+ padding-bottom: 25px;
+ margin-top: 30px;
+ /* height: 68px; */
+ width: 85px;
+ color: #0c4e7e;
+ /* background: #0c4e7e; */
+ /* border: 2px solid #fff; */
+ border-radius: 50%;
+ /* box-sizing: border-box; */
+ font-size: 20px;
+ font-weight: bold;
+ line-height: 30px;
+ line-height: normal;
+ /* top: 70px; */
+ left: 0;
+}
+
+div#avg-price,
+div#avg-amt {
+ position: relative;
+}
+
+.rs-label::after {
+ position: absolute;
+ width: 0px;
+ height: 0px;
+ bottom: -18px;
+ border: 10px solid transparent;
+ border-top: 13px solid #0c4e7e;
+ left: 50%;
+ transform: translateX(-50%);
+}
+
+.competitor-wrapper {
+ width: 100%;
+}
+
+.competitor-container:last-child {
+ border-bottom: none;
+}
+
+.list-of-competitors {
+ padding: 0px 10px;
+ background-color: white;
+ color: #0c4e7e;
+}
+
+.competitor-container {
+ display: flex;
+ text-align: center;
+ font-size: 16px;
+ justify-content: space-between;
+ align-items: center;
+ padding: 18px 0px;
+ border-bottom: 2px dotted #0c4e7e;
+}
+
+.competitor-company-commission-wrapper {
+ width: 530px;
+ display: flex;
+ align-items: center;
+ width: 100%;
+}
+
+.competitor-price-amt,
+.competitor-company {
+ font-size: 18px;
+ font-weight: bold;
+ background: white;
+}
+
+.competitor-price-amt {
+ padding: 5px;
+ width: 125px;
+ font-size: 16px;
+}
+
+.competitor-company {
+ padding: 5px;
+ min-width: 85px;
+ /* margin: 0 40px 0 0; */
+ text-align: right;
+}
+
+.competitor-red {
+ color: #b10500;
+}
+
+.competitor-green {
+ color: #639b17;
+}
+
+@media only screen and (max-width: 900px) {
+ .competitor-container {
+  flex-direction: column;
+  padding: 20px 0px;
+ }
+
+ .competitor-company-commission-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ .competitor-company {
+  padding: 5px;
+  min-width: 125px;
+  margin: 0;
+ }
+
+ .range-container {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .range-slider-wrapper {
+  width: 100%;
+ }
+
+ .competitor-commission-amt {
+  padding: 10px 0;
+  text-align: center;
+  line-height: 2.5em;
+ }
+}
