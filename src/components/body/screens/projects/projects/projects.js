@@ -8,11 +8,13 @@ import {
 	faMoneyBill,
 	faMobileAlt,
 	faTabletAlt,
-	faDesktop
+	faDesktop,
+	faFrown
 } from '@fortawesome/free-solid-svg-icons';
 import Form from '../form/form';
 import PriceCalc from '../priceCalc/priceCalc';
 import Home from '../../home/home';
+import Project from './project/project';
 import './projects.css';
 
 class Projects extends Component {
@@ -43,15 +45,17 @@ class Projects extends Component {
 		});
 	};
 
-	handleChange() {
+	handleProjectChange() {
 		return <div className="project-screen-cont fade-in">{this.state.currentProject}</div>;
 	}
 
-	handleCheckActive(area, state) {
-		if (area == 'project') {
-			return this.state.currentProjectName == state ? 'project-is-active' : '';
-		} else if (area == 'device') return this.state.deviceType == state ? 'navigation-option--active' : '';
-	}
+	handleCheckActive = (area, stateName) => {
+		if (area === 'project') {
+			console.log(stateName);
+			console.log(this.state.currentProjectName);
+			return this.state.currentProjectName == stateName ? 'project-is-active' : '';
+		} else if (area == 'device') return this.state.deviceType == stateName ? 'navigation-option--active' : '';
+	};
 
 	handleDeviceChange = (e) => {
 		console.log(e.currentTarget.getAttribute('value'));
@@ -62,6 +66,15 @@ class Projects extends Component {
 	};
 
 	render() {
+		const emptyPlaceholder = (
+			<div className="placeholder">
+				<span className="placeholder-icon flex-center-vert-hor">
+					<FontAwesomeIcon icon={faFrown} />
+				</span>
+				<span className="placeholder-text">No project selected </span>
+			</div>
+		);
+
 		return (
 			<Fragment>
 				<div className="interior-body">
@@ -73,42 +86,45 @@ class Projects extends Component {
 							and experiment with them. Enjoy!
 						</p>
 						<div className="project-btn-container">
-							<div onClick={this.handleWeatherChange} className="project-btn">
-								<div className="project-btn-icon">
-									<FontAwesomeIcon icon={faPencilAlt} />
-								</div>
-								<div className="project-btn-text">Drawing Board</div>
-							</div>
-							<div
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleDrawingBoardChange}
+								projectName={'Drawing Board'}
+								icon={faMoneyBill}
 								state={this.state.currentProject}
-								onClick={this.handleFormChange}
-								className={`project-btn ${this.handleCheckActive('project', 'Form')}`}
-							>
-								<div className="project-btn-icon" />
-								<FontAwesomeIcon icon={faScroll} />
-								<div className="project-btn-text">Form</div>
-							</div>
-							<div className="project-btn">
-								<div className="project-btn-icon" />
-								<FontAwesomeIcon icon={faChartBar} />
-								<div className="project-btn-text">Dashboard</div>
-							</div>
-							<div className="project-btn">
-								<div className="project-btn-icon" />
-								<FontAwesomeIcon icon={faCloudSunRain} />
-								<div className="project-btn-text">Weather App</div>
-							</div>
-							<div
-								onClick={this.handlePriceCalcChange}
-								className={`project-btn ${this.handleCheckActive('project', 'Price Calculator')}`}
-							>
-								<div className="project-btn-icon" />
-								<FontAwesomeIcon icon={faMoneyBill} />
-								<div className="project-btn-text">Price Calc</div>
-							</div>
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleFormChange}
+								projectName={'Form'}
+								icon={faScroll}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleDashboardChange}
+								projectName={'Dashboard'}
+								icon={faChartBar}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleWeatherAppChange}
+								projectName={'Weather App'}
+								icon={faCloudSunRain}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handlePriceCalcChange}
+								projectName={'Price Calculator'}
+								icon={faMoneyBill}
+								state={this.state.currentProject}
+							/>
 						</div>
 					</div>
 				</div>
+
 				<div className="wrapper">
 					<div className="navigation">
 						<div className="device-orientation-container">
@@ -152,7 +168,8 @@ class Projects extends Component {
 					</div>
 					<div className="project-holder">
 						<div id="device-project-container" className="desktop-container">
-							{this.handleChange()}
+							{this.state.currentProject == '' ? emptyPlaceholder : ''}
+							{this.handleProjectChange()}
 						</div>
 					</div>
 				</div>
