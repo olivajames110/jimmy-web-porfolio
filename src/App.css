@@ -15,6 +15,16 @@
 	--secondaryColor: #476172;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 div#root {
 	height: 100vh;
 }
@@ -75,7 +85,7 @@ h3 {
 }
 
 .interior-body {
-	padding-top: 160px;
+	padding-top: 80px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -86,12 +96,10 @@ h3 {
 	/* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #243b55, #141e30);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+	position: relative;
+	transition: 950ms ease-in-out;
 	color: white;
 }
 
 @media only screen and (max-width: 1100px) {
-	.interior-body {
-		padding: 160px 8%;
-	}
 }

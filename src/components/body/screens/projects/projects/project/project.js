@@ -5,14 +5,15 @@ import './project.css';
 
 const Project = (props) => {
 	return (
-		<div
+		<a
+			href="#devices"
 			onClick={props.handlePriceCalcChange}
 			className={`project-btn ${props.handleCheckActive('project', props.projectName)}`}
 		>
 			<div className="project-btn-icon" />
 			<FontAwesomeIcon icon={props.icon} />
 			<div className="project-btn-text">{props.projectName}</div>
-		</div>
+		</a>
 	);
 };
 

@@ -1,21 +1,23 @@
 .screen-section-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 	text-align: center;
 	max-width: 1100px;
 	position: relative;
+	padding: 35px 18px;
+	scroll-behavior: smooth;
 }
 
 .project-btn-container {
 	width: 100%;
-	display: flex;
-	flex-direction: row;
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+
+	/* flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-top: 50px;
-	padding-bottom: 40px;
-	justify-content: space-around;
+	justify-content: space-between; */
 }
 
 .screen-section-container-title {
@@ -24,18 +26,17 @@
 
 .screen-section-container-desc {
 	line-height: 1.7em;
-	font-size: 18px;
+	font-size: 16px;
+	max-width: 800px;
 }
 
 .project-screen-cont {
 	background: #edf2f5;
 	position: relative;
-	/* padding: 45px 0; */
-}
-
-.interior-body {
-	position: relative;
-	transition: 950ms ease-in-out;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
+	margin-right: -15px;
 }
 
 .current-project {
@@ -48,7 +49,6 @@
 	bottom: 0;
 	box-shadow: 0 3px 4px 1px #54545459;
 }
-
 @media only screen and (max-width: 1100px) {
 	.project-screen-cont--tablet {
 		width: 100%;
@@ -70,15 +70,38 @@
 
 .project-holder {
 	display: flex;
+	position: relative;
 	justify-content: center;
 	background: #dedede;
 	height: 100%;
-	padding: 40px 0;
+	padding: 45px 0;
 	width: 100%;
+}
+
+.return-arrow {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 8px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-radius: 50%;
+	background: #ffffff7e;
+	box-shadow: 0 0 5px 1px rgba(15, 15, 15, 0.215);
+	cursor: pointer;
+	transition: 300ms;
+}
+.return-arrow:hover {
+	background: white;
 }
 
 .project-holder::-webkit-scrollbar {
 	width: 1px;
+	z-index: 10000000;
 }
 
 .navigation {
@@ -116,6 +139,9 @@
 	flex-direction: column;
 	color: #aeaeae;
 	padding: 20px;
+	box-shadow: 0px 1px 3px 1px #00000024;
+	z-index: 1000;
+	position: relative;
 }
 
 .navigation-title {
@@ -130,24 +156,67 @@
 }
 
 .navigation-option {
-	margin: 15px 20px 0 20px;
+	position: relative;
+	margin: 15px 20px 0;
 	cursor: pointer;
 	font-size: 26px;
 	padding: 6px 8px;
 	border-radius: 5px;
 }
 
-.navigation-option:hover,
-.navigation-option--active {
+#mobile-tooltip {
+	display: none;
+	/* display: initial; */
+}
+#mobile-tooltip--active {
+	display: initial;
+}
+
+.mobile-tooltip {
+	position: absolute;
+	bottom: 70px;
+	left: 70%;
+	transform: translateX(-50%);
+	background: white;
+	box-shadow: 0 0 4px 1px rgba(15, 15, 15, 0.315);
+	width: 100px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	border-radius: 8px;
+	text-align: center;
+	opacity: 1 !important;
+	/* animation: tootip;
+	animation-duration: 1s;
+	animation-fill-mode: forwards; */
+	transition: 1s;
+}
+
+.mobile-tooltip:after {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	bottom: -27px;
+	box-shadow: 0 0 4px 1px rgba(15, 15, 15, 0.315);
+	left: 50%;
+	transform: translateX(-50%);
+	clip-path: polygon(50% 60%, 0 0, 100% 0);
+}
+
+.navigation-option--active,
+.navigation-option:hover {
 	background: #0000000d;
 }
 
 #device-project-container {
 	transition: 1190ms;
 	box-sizing: border-box;
-	box-shadow: 0px 1px 10px 2px #00000040;
-
-	overflow-y: auto;
+	box-shadow: 0 1px 10px 2px #00000040;
+	overflow: hidden;
 	z-index: 1999999999;
 }
 
@@ -226,6 +295,7 @@
 	border-bottom-left-radius: 19px;
 	border-bottom-right-radius: 19px;
 	background: #000000;
+	z-index: 1000;
 }
 
 .ipad-container::after {
@@ -239,6 +309,7 @@
 	border: none;
 	border-radius: 25px;
 	background: #00000018;
+	z-index: 1000;
 }
 
 .fade-in {
@@ -252,7 +323,6 @@
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
 }
-
 @keyframes fadeIn {
 	from {
 		/* transform: translateY(-750px); */
@@ -264,7 +334,6 @@
 		opacity: 1;
 	}
 }
-
 @keyframes fadeOut {
 	from {
 		transform: translateY(0px);

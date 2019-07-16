@@ -9,7 +9,11 @@ import {
 	faMobileAlt,
 	faTabletAlt,
 	faDesktop,
-	faFrown
+	faFrown,
+	faArrowCircleUp,
+	faArrowUp,
+	faHamburger,
+	faGamepad
 } from '@fortawesome/free-solid-svg-icons';
 import Form from '../form/form';
 import PriceCalc from '../priceCalc/priceCalc';
@@ -21,7 +25,16 @@ class Projects extends Component {
 	state = {
 		currentProject: '',
 		currentProjectName: 'Choose a project above!',
-		deviceType: 'desktop-container'
+		deviceType: 'iphone-container'
+	};
+
+	checkIfMobile = () => {
+		if (window.innerWidth < 500) {
+			this.setState({ deviceType: 'iphone-container' });
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	handleFormChange = () => {
@@ -51,17 +64,22 @@ class Projects extends Component {
 
 	handleCheckActive = (area, stateName) => {
 		if (area === 'project') {
-			console.log(stateName);
-			console.log(this.state.currentProjectName);
 			return this.state.currentProjectName == stateName ? 'project-is-active' : '';
 		} else if (area == 'device') return this.state.deviceType == stateName ? 'navigation-option--active' : '';
 	};
 
 	handleDeviceChange = (e) => {
-		console.log(e.currentTarget.getAttribute('value'));
 		let device = e.currentTarget.getAttribute('value');
-		console.log(device);
 		this.setState({ deviceType: device });
+		if (device === 'desktop-container' || device === 'ipad-container') {
+			let check = this.checkIfMobile();
+			console.log(check);
+			// document.getElementById('mobile-tooltip').className = 'mobile-tooltip';
+			document.getElementById('mobile-tooltip').style.display = 'initial';
+			setTimeout(function() {
+				document.getElementById('mobile-tooltip').style.display = 'none';
+			}, 3000);
+		}
 		document.getElementById('device-project-container').className = device;
 	};
 
@@ -78,7 +96,7 @@ class Projects extends Component {
 		return (
 			<Fragment>
 				<div className="interior-body">
-					<div id="projects" className="screen-section-container">
+					<div name="projects" id="projects" className="screen-section-container">
 						<h1 className="screen-section-container-title">Projects</h1>
 						<p className="screen-section-container-desc">
 							Here are a few examples of some small projects that I have been working on for fun. Please
@@ -90,7 +108,7 @@ class Projects extends Component {
 								handleCheckActive={this.handleCheckActive}
 								handlePriceCalcChange={this.handleDrawingBoardChange}
 								projectName={'Drawing Board'}
-								icon={faMoneyBill}
+								icon={faPencilAlt}
 								state={this.state.currentProject}
 							/>
 							<Project
@@ -116,6 +134,27 @@ class Projects extends Component {
 							/>
 							<Project
 								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleWebsiteChange}
+								projectName={'Website'}
+								icon={faDesktop}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleGameChange}
+								projectName={'Game'}
+								icon={faGamepad}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
+								handlePriceCalcChange={this.handleMenuChange}
+								projectName={'Menu'}
+								icon={faHamburger}
+								state={this.state.currentProject}
+							/>
+							<Project
+								handleCheckActive={this.handleCheckActive}
 								handlePriceCalcChange={this.handlePriceCalcChange}
 								projectName={'Price Calculator'}
 								icon={faMoneyBill}
@@ -124,12 +163,14 @@ class Projects extends Component {
 						</div>
 					</div>
 				</div>
-
-				<div className="wrapper">
+				<div id="devices" className="wrapper">
 					<div className="navigation">
 						<div className="device-orientation-container">
 							<div className="navigation-title"> {this.state.currentProjectName}</div>
 							<div className="device-orientation-btns-container">
+								<div id="mobile-tooltip" className="mobile-tooltip">
+									Only for desktop use
+								</div>
 								<div
 									onClick={(e) => this.handleDeviceChange(e)}
 									id="iphone-device-button"
@@ -145,7 +186,7 @@ class Projects extends Component {
 									onClick={(e) => this.handleDeviceChange(e)}
 									id="ipad-device-button"
 									value="ipad-container"
-									className={`navigation-option  ${this.handleCheckActive(
+									className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
 										'device',
 										'ipad-container'
 									)}`}
@@ -156,7 +197,7 @@ class Projects extends Component {
 									onClick={(e) => this.handleDeviceChange(e)}
 									id="desktop-device-button"
 									value="desktop-container"
-									className={`navigation-option  ${this.handleCheckActive(
+									className={`navigation-option desktop-only-icon ${this.handleCheckActive(
 										'device',
 										'desktop-container'
 									)}`}
@@ -167,10 +208,13 @@ class Projects extends Component {
 						</div>
 					</div>
 					<div className="project-holder">
-						<div id="device-project-container" className="desktop-container">
+						<div id="device-project-container" className={this.state.deviceType}>
 							{this.state.currentProject == '' ? emptyPlaceholder : ''}
 							{this.handleProjectChange()}
 						</div>
+						<a href="#projects" className="return-arrow">
+							<FontAwesomeIcon icon={faArrowUp} />
+						</a>
 					</div>
 				</div>
 			</Fragment>

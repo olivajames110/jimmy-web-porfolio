@@ -2,6 +2,13 @@
 	text-align: center;
 	transition: transform 250ms;
 	cursor: pointer;
+	margin-bottom: 45px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+	/* justify-content: center; */
 }
 
 .project-btn:hover,
@@ -13,6 +20,7 @@
 .project-btn-text {
 	margin-top: 15px;
 	width: 160px;
+	font-style: 14px;
 }
 
 .project-btn svg {
@@ -26,6 +34,26 @@
 
 @media only screen and (max-width: 1100px) {
 	.project-btn {
-		margin-top: 75px;
+		margin-top: 15px;
 	}
+
+	.desktop-only-icon {
+		opacity: .6;
+		cursor: unset;
+	}
+
+	.desktop-only-icon:after {
+		content: '';
+		width: 4px;
+		height: 41px;
+		position: absolute;
+		background-color: #a5a4a4c2;
+		transform: rotate(45deg);
+		transform-origin: top;
+		border-radius: 4px;
+	}
+
+	/* .project-btn-container {
+		margin-top: 75px;
+	} */
 }
