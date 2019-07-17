@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './home.css';
+import Particles from './particles/particles';
 // import Drawing from './drawingBoard/drawingBoard';
 // import { Marker } from '../../../../assets/svgs/svgs';
 
@@ -19,13 +20,15 @@ class Home extends Component {
 			<Fragment>
 				<div className="home-img">
 					<div id="welcome" className="section">
-						Home test
+						<Particles />
 					</div>
 				</div>
 			</Fragment>
 		);
 	}
 }
+
+export default Home;
 
 // const drawingExample = () => {
 // 	return (
@@ -62,5 +65,3 @@ class Home extends Component {
 // 		</div>
 // 	);
 // };
-
-export default Home;

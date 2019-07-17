@@ -18,6 +18,7 @@ import Form from './projects/form/form';
 import PriceCalc from './projects/priceCalc/priceCalc';
 import DrawingBoard from './projects/drawingBoard/drawingBoard';
 import Project from './projects/project/project';
+import Menu from './projects/menu/menu';
 import './projects.css';
 
 class Projects extends Component {
@@ -85,6 +86,13 @@ class Projects extends Component {
 		});
 	};
 
+	handleMenuChange = () => {
+		this.setState({
+			currentProject: <Menu />,
+			currentProjectName: 'Menu'
+		});
+	};
+
 	handleProjectChange() {
 		return <div className="project-screen-cont fade-in">{this.state.currentProject}</div>;
 	}
@@ -96,17 +104,17 @@ class Projects extends Component {
 	};
 
 	handleDeviceChange = (e) => {
-		if (this.state.isMobile === false) {
-			let device = e.currentTarget.getAttribute('value');
-			this.setState({ deviceType: device });
+		let device = e.currentTarget.getAttribute('value');
+		if (this.state.isMobile === true) {
 			if (device === 'desktop-container' || device === 'ipad-container') {
 				document.getElementById('mobile-tooltip').style.display = 'initial';
 				setTimeout(function() {
 					document.getElementById('mobile-tooltip').style.display = 'none';
 				}, 3000);
 			}
-			console.log(this.state.isMobile);
-
+		}
+		if (this.state.isMobile === false) {
+			this.setState({ deviceType: device });
 			document.getElementById('device-project-container').className = device;
 		}
 	};
@@ -127,9 +135,8 @@ class Projects extends Component {
 					<div name="projects" id="projects" className="screen-section-container">
 						<h1 className="screen-section-container-title">Projects</h1>
 						<p className="screen-section-container-desc">
-							Here are a few examples of some small projects that I have been working on for fun. Please
-							don't judge, none of them are fully complete, this is more of a playground where I can work
-							and experiment with them. Enjoy!
+							Here's a few small projects I've been working on recently. None of them are fully complete,
+							consider this more of a playground where I can work on various projects.
 						</p>
 						<div className="project-btn-container">
 							<Project

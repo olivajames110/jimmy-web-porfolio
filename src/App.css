@@ -17,6 +17,7 @@
 
 html {
 	scroll-behavior: smooth;
+	height: 100vh;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -37,7 +38,7 @@ body {
 h1 {
 	font-family: var(--h1-font);
 	font-weight: 400;
-	margin-bottom: 30px;
+	margin-bottom: 13px;
 }
 
 h2 {
