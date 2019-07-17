@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './drawingBoard.css';
+import './drawing.css';
 import { Stage, Layer, Image } from 'react-konva';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHighlighter, faPencilAlt } from '@fortawesome/free-solid-svg-icons';

@@ -31,6 +31,7 @@ div#root {
 
 body {
 	font-family: var(--body-font);
+	height: 100vh;
 }
 
 h1 {
@@ -99,6 +100,24 @@ h3 {
 	position: relative;
 	transition: 950ms ease-in-out;
 	color: white;
+}
+#github-icon {
+	font-size: 24px;
+	color: #3a3535;
+	cursor: pointer;
+	transition: 300ms;
+}
+#github-icon:hover {
+	font-size: 24px;
+	color: #f12711;
+}
+
+@media only screen and (max-width: 600px) {
+	#github-icon {
+		font-size: 48px;
+		color: #3a3535;
+		margin-top: 15px;
+	}
 }
 
 @media only screen and (max-width: 1100px) {

@@ -1,0 +1,72 @@
+canvas {
+	z-index: 1000;
+}
+
+.canvas-cursor--pencil {
+	cursor: auto;
+	cursor: url('/src/assets/drawingBoard/images/marker.png'), crosshair;
+}
+
+.palette {
+	position: absolute;
+	right: 40px;
+	top: 15%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 170px;
+	flex-direction: column;
+	right: -160px;
+	animation: fadeInLeft 650ms ease;
+}
+
+.palette-sub-container {
+	padding: 15px 20px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.534);
+	text-align: center;
+	margin: 10px;
+}
+
+.palette-sub-container-item {
+	display: flex;
+	padding: 10px 0;
+	width: 50px;
+	height: 50px;
+	margin: 25px 0;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#black {
+	background-color: rgb(24, 22, 22);
+	box-shadow: 0 0px 6px 4px #0000008f, inset 0 0px 6px 4px #4a3f3f8f;
+}
+
+#white {
+	background-color: #c5c0c0;
+	box-shadow: 0 0px 6px 4px #c5c0c093, inset 0 0px 6px 4px rgba(197, 192, 192, 0.678);
+}
+
+#red {
+	background-color: red;
+	box-shadow: 0 0px 6px 4px #ff000070, inset 0 0px 6px 4px #ff000070;
+}
+
+#blue {
+	background-color: #0011ff;
+	box-shadow: 0 0px 6px 4px #0011ff83, inset 0 0px 6px 4px #0011ff83;
+}
+
+@keyframes fadeInLeft {
+	from {
+		transform: translateX(300px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}

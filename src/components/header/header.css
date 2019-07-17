@@ -17,20 +17,9 @@
 	padding: 0 100px;
 }
 
-.app-link {
-	font-size: 16px;
-	padding: 28px 25px;
-	cursor: pointer;
-	text-decoration: none;
-	color: #1a1919;
-	font-weight: 600;
-	font-family: 'Work Sans', sans-serif;
-	transition: 280ms;
-}
-
-.app-link:hover {
-	color: #f12711;
-	border-bottom: 3px solid #f12711;
+.navigation-links-cont {
+	display: flex;
+	align-items: center;
 }
 
 .navigation-logo-container svg {
@@ -91,6 +80,30 @@ button:focus {
 	background-color: #012e4b;
 }
 
+#github-icon {
+	font-size: 24px;
+	color: #3a3535;
+	cursor: pointer;
+	transition: 300ms;
+}
+#github-icon:hover {
+	font-size: 24px;
+	color: #f12711;
+}
+
+/* juryrig to fix icon size on routes*/
+.github-icon svg {
+	width: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+	#github-icon {
+		font-size: 48px;
+		color: #3a3535;
+		margin-top: 15px;
+	}
+}
+
 @media only screen and (max-width: 1100px) {
 	.app-header {
 		display: block;
@@ -141,44 +154,8 @@ button:focus {
 		display: initial !important;
 	}
 
-	.app-link {
-		opacity: 0;
-	}
-
-	.app-link:nth-child(1) {
-		animation: slideDown 750ms ease-in-out forwards;
-		animation-delay: 550ms;
-	}
-
-	.app-link:nth-child(2) {
-		animation: slideDown 750ms ease-in-out forwards;
-		animation-delay: 400ms;
-	}
-
-	.app-link:nth-child(3) {
-		animation: slideDown 750ms ease-in-out forwards;
-		animation-delay: 250ms;
-	}
-
-	.app-link:nth-child(4) {
-		animation: slideDown 750ms ease-in-out forwards;
-		animation-delay: 100ms;
-	}
-
 	.navigation-logo-container path {
 		/* fill: white; */
-	}
-}
-
-@keyframes slideDown {
-	from {
-		transform: translateY(-40px);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateY(0px);
-		opacity: 1;
 	}
 }
 

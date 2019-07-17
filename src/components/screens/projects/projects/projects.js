@@ -10,14 +10,13 @@ import {
 	faTabletAlt,
 	faDesktop,
 	faFrown,
-	faArrowCircleUp,
 	faArrowUp,
 	faHamburger,
 	faGamepad
 } from '@fortawesome/free-solid-svg-icons';
-import Form from '../form/form';
-import PriceCalc from '../priceCalc/priceCalc';
-import Home from '../../home/home';
+import Form from './form/form';
+import PriceCalc from './priceCalc/priceCalc';
+import DrawingBoard from './drawingBoard/drawingBoard';
 import Project from './project/project';
 import './projects.css';
 
@@ -46,7 +45,7 @@ class Projects extends Component {
 
 	handleWeatherChange = () => {
 		this.setState({
-			currentProject: <Home />,
+			currentProject: <DrawingBoard />,
 			currentProjectName: 'Drawing Board'
 		});
 	};
@@ -64,8 +63,8 @@ class Projects extends Component {
 
 	handleCheckActive = (area, stateName) => {
 		if (area === 'project') {
-			return this.state.currentProjectName == stateName ? 'project-is-active' : '';
-		} else if (area == 'device') return this.state.deviceType == stateName ? 'navigation-option--active' : '';
+			return this.state.currentProjectName === stateName ? 'project-is-active' : '';
+		} else if (area === 'device') return this.state.deviceType === stateName ? 'navigation-option--active' : '';
 	};
 
 	handleDeviceChange = (e) => {
@@ -209,7 +208,7 @@ class Projects extends Component {
 					</div>
 					<div className="project-holder">
 						<div id="device-project-container" className={this.state.deviceType}>
-							{this.state.currentProject == '' ? emptyPlaceholder : ''}
+							{this.state.currentProject === '' ? emptyPlaceholder : ''}
 							{this.handleProjectChange()}
 						</div>
 						<a href="#projects" className="return-arrow">
