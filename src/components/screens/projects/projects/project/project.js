@@ -5,7 +5,6 @@ import './project.css';
 const Project = (props) => {
 	return (
 		<a
-			href="#devices"
 			onClick={props.handlePriceCalcChange}
 			className={`project-btn ${props.handleCheckActive('project', props.projectName)}`}
 		>

@@ -4,12 +4,24 @@
 	cursor: pointer;
 	margin-top: 45px;
 	display: flex;
+	font-size: 14px;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+	color: #243b55d1;
+	font-weight: 600;
+}
+/* .project-btn {
+	text-align: center;
+	transition: transform 250ms;
+	cursor: pointer;
+	margin-top: 45px;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-decoration: none;
 	color: inherit;
-	/* justify-content: center; */
-}
+} */
 
 .project-btn:hover,
 .project-btn-active {
@@ -18,13 +30,14 @@
 }
 
 .project-btn-text {
-	margin-top: 10px;
-	width: 160px;
-	font-style: 14px;
+	margin-left: 10px;
+	/* width: 160px; */
+	width: 100%;
+	text-align: left;
 }
 
 .project-btn svg {
-	font-size: 36px;
+	font-size: 16px;
 }
 
 .project-is-active {

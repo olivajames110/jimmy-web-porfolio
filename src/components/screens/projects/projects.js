@@ -23,16 +23,16 @@ import './projects.css';
 
 class Projects extends Component {
 	state = {
-		isMobile: null,
-		currentProject: '',
-		currentProjectName: 'Choose a project above!',
-		deviceType: 'iphone-container'
+		isMobile           : null,
+		currentProject     : '',
+		currentProjectName : 'Choose a project above!',
+		deviceType         : 'desktop-container'
 	};
 
 	checkIfMobile = (a) => {
 		if (window.innerWidth < 500) {
 			this.setState({
-				isMobile: true
+				isMobile : true
 			});
 			// console.log(this.state.isMobile);
 			// return true;
@@ -67,29 +67,29 @@ class Projects extends Component {
 
 	handleFormChange = () => {
 		this.setState({
-			currentProject: <Form />,
-			currentProjectName: 'Form'
+			currentProject     : <Form />,
+			currentProjectName : 'Form'
 		});
 	};
 
 	handleWeatherChange = () => {
 		this.setState({
-			currentProject: <DrawingBoard />,
-			currentProjectName: 'Drawing Board'
+			currentProject     : <DrawingBoard />,
+			currentProjectName : 'Drawing Board'
 		});
 	};
 
 	handlePriceCalcChange = () => {
 		this.setState({
-			currentProject: <PriceCalc />,
-			currentProjectName: 'Price Calculator'
+			currentProject     : <PriceCalc />,
+			currentProjectName : 'Price Calculator'
 		});
 	};
 
 	handleMenuChange = () => {
 		this.setState({
-			currentProject: <Menu />,
-			currentProjectName: 'Menu'
+			currentProject     : <Menu />,
+			currentProjectName : 'Menu'
 		});
 	};
 
@@ -126,82 +126,19 @@ class Projects extends Component {
 					<FontAwesomeIcon icon={faFrown} />
 				</span>
 				<span className="placeholder-text">No project selected </span>
+				<span className="placeholder-text-desc">
+					Here's a few small projects I've been working on recently. None of them are fully complete, consider
+					this more of a playground where I can work on various projects.
+				</span>
 			</div>
 		);
 
 		return (
 			<Fragment>
-				<div className="interior-body">
-					<div name="projects" id="projects" className="screen-section-container">
-						<h1 className="screen-section-container-title">Projects</h1>
-						<p className="screen-section-container-desc">
-							Here's a few small projects I've been working on recently. None of them are fully complete,
-							consider this more of a playground where I can work on various projects.
-						</p>
-						<div className="project-btn-container">
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleDrawingBoardChange}
-								projectName={'Whiteboard'}
-								icon={faPencilAlt}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleFormChange}
-								projectName={'Form'}
-								icon={faScroll}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleDashboardChange}
-								projectName={'Dashboard'}
-								icon={faChartBar}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleWeatherAppChange}
-								projectName={'Weather'}
-								icon={faCloudSunRain}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleWebsiteChange}
-								projectName={'Website'}
-								icon={faDesktop}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleGameChange}
-								projectName={'Game'}
-								icon={faGamepad}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handleMenuChange}
-								projectName={'Menu'}
-								icon={faHamburger}
-								state={this.state.currentProject}
-							/>
-							<Project
-								handleCheckActive={this.handleCheckActive}
-								handlePriceCalcChange={this.handlePriceCalcChange}
-								projectName={'Price Calculator'}
-								icon={faMoneyBill}
-								state={this.state.currentProject}
-							/>
-						</div>
-					</div>
-				</div>
+				<div className="interior-body" />
 				<div id="devices" className="wrapper">
 					<div className="navigation">
 						<div className="device-orientation-container">
-							<div className="navigation-title"> {this.state.currentProjectName}</div>
 							<div className="device-orientation-btns-container">
 								<div id="mobile-tooltip" className="mobile-tooltip">
 									Only for desktop use
@@ -239,6 +176,64 @@ class Projects extends Component {
 								>
 									<FontAwesomeIcon icon={faDesktop} />
 								</div>
+							</div>
+							<div className="nav-project-holder">
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleDrawingBoardChange}
+									projectName={'Whiteboard'}
+									icon={faPencilAlt}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleFormChange}
+									projectName={'Form'}
+									icon={faScroll}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleDashboardChange}
+									projectName={'Dashboard'}
+									icon={faChartBar}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleWeatherAppChange}
+									projectName={'Weather'}
+									icon={faCloudSunRain}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleWebsiteChange}
+									projectName={'Website'}
+									icon={faDesktop}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleGameChange}
+									projectName={'Game'}
+									icon={faGamepad}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handleMenuChange}
+									projectName={'Menu'}
+									icon={faHamburger}
+									state={this.state.currentProject}
+								/>
+								<Project
+									handleCheckActive={this.handleCheckActive}
+									handlePriceCalcChange={this.handlePriceCalcChange}
+									projectName={'Price Calculator'}
+									icon={faMoneyBill}
+									state={this.state.currentProject}
+								/>
 							</div>
 						</div>
 					</div>
