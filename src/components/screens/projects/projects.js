@@ -10,7 +10,7 @@ import {
 	faTabletAlt,
 	faDesktop,
 	faFrown,
-	faArrowUp,
+	faArrowLeft,
 	faHamburger,
 	faGamepad
 } from '@fortawesome/free-solid-svg-icons';
@@ -26,11 +26,12 @@ class Projects extends Component {
 		isMobile           : null,
 		currentProject     : '',
 		currentProjectName : 'Choose a project above!',
-		deviceType         : 'desktop-container'
+		deviceType         : 'desktop-container',
+		projectNavIsOpen   : false
 	};
 
 	checkIfMobile = (a) => {
-		if (window.innerWidth < 500) {
+		if (window.innerWidth < 1100) {
 			this.setState({
 				isMobile : true
 			});
@@ -56,14 +57,11 @@ class Projects extends Component {
 		window.removeEventListener('resize', this.checkIfMobile);
 	}
 
-	// checkIfMobile = () => {
-	// 	if (window.innerWidth < 500) {
-	// 		this.setState({ deviceType: 'iphone-container' });
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// };
+	handleProjectNav = () => {
+		this.setState({
+			projectNavIsOpen : !this.state.projectNavIsOpen
+		});
+	};
 
 	handleFormChange = () => {
 		this.setState({
@@ -134,47 +132,60 @@ class Projects extends Component {
 			</div>
 		);
 
+		const deviceSwitcher = (
+			<div className="device-orientation-btns-container">
+				<div
+					onClick={(e) => this.handleDeviceChange(e)}
+					id="iphone-device-button"
+					value="iphone-container"
+					className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
+				>
+					<FontAwesomeIcon icon={faMobileAlt} />
+				</div>
+				<div
+					onClick={(e) => this.handleDeviceChange(e)}
+					id="ipad-device-button"
+					value="ipad-container"
+					className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
+						'device',
+						'ipad-container'
+					)}`}
+				>
+					<FontAwesomeIcon icon={faTabletAlt} />
+				</div>
+				<div
+					onClick={(e) => this.handleDeviceChange(e)}
+					id="desktop-device-button"
+					value="desktop-container"
+					className={`navigation-option desktop-only-icon ${this.handleCheckActive(
+						'device',
+						'desktop-container'
+					)}`}
+				>
+					<FontAwesomeIcon icon={faDesktop} />
+				</div>
+			</div>
+		);
+
+		const navProjectHolderToggle = (
+			<div onClick={this.handleProjectNav} className="nav-project-toggle-container">
+				<FontAwesomeIcon icon={faArrowLeft} />
+				<span>Return To Project</span>
+			</div>
+		);
+
 		return (
 			<Fragment>
 				<div className="interior-body" />
 				<div id="devices" className="wrapper">
 					<div className="navigation">
-						<div className="device-orientation-container">
-							<div className="device-orientation-btns-container">
-								<div
-									onClick={(e) => this.handleDeviceChange(e)}
-									id="iphone-device-button"
-									value="iphone-container"
-									className={`navigation-option  ${this.handleCheckActive(
-										'device',
-										'iphone-container'
-									)}`}
-								>
-									<FontAwesomeIcon icon={faMobileAlt} />
-								</div>
-								<div
-									onClick={(e) => this.handleDeviceChange(e)}
-									id="ipad-device-button"
-									value="ipad-container"
-									className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
-										'device',
-										'ipad-container'
-									)}`}
-								>
-									<FontAwesomeIcon icon={faTabletAlt} />
-								</div>
-								<div
-									onClick={(e) => this.handleDeviceChange(e)}
-									id="desktop-device-button"
-									value="desktop-container"
-									className={`navigation-option desktop-only-icon ${this.handleCheckActive(
-										'device',
-										'desktop-container'
-									)}`}
-								>
-									<FontAwesomeIcon icon={faDesktop} />
-								</div>
-							</div>
+						<div
+							className={`device-orientation-container ${!this.state.projectNavIsOpen &&
+							this.state.isMobile
+								? 'project-nav--closed'
+								: ''}`}
+						>
+							{this.state.isMobile ? navProjectHolderToggle : deviceSwitcher}
 							<div className="nav-project-holder">
 								<Project
 									handleCheckActive={this.handleCheckActive}
@@ -237,6 +248,7 @@ class Projects extends Component {
 					</div>
 					<div className="project-holder">
 						<div id="device-project-container" className={this.state.deviceType}>
+							{navProjectHolderToggle}
 							{this.state.currentProject === '' ? emptyPlaceholder : ''}
 							{this.handleProjectChange()}
 						</div>

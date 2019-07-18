@@ -24,6 +24,8 @@
 	box-shadow: 0px 1px 3px 1px #00000024;
 	z-index: 1000;
 	background-color: #efeeee;
+	padding-top: 45px;
+	transition: 800ms;
 }
 
 .device-orientation-btns-container {
@@ -41,7 +43,6 @@
 
 .navigation-option {
 	position: relative;
-	margin-top: 45px;
 	cursor: pointer;
 	font-size: 26px;
 	padding: 6px 8px;
@@ -184,6 +185,19 @@
 	line-height: 1.5em;
 }
 
+.nav-project-toggle-container {
+	border-bottom: 2px solid #dedede;
+	padding-bottom: 30px;
+}
+
+.nav-project-toggle-container span {
+	margin-left: 10px;
+}
+
+.project-nav--closed {
+	transform: translateX(-205px);
+}
+
 /* ------DEVICE CONTAINERS___End------ */
 /* .................................................... */
 /* .................................................... */
@@ -212,8 +226,8 @@
 		grid-template-columns: 0 1fr;
 	}
 
-	.navigation {
-		/* transform: translateX(-150px); */
+	.project-btn {
+		margin-top: 35px;
 	}
 }
 
