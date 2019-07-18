@@ -85,6 +85,7 @@ class Projects extends Component {
 			currentProjectName : 'Price Calculator'
 		});
 	};
+	placeholder;
 
 	handleMenuChange = () => {
 		this.setState({
@@ -140,9 +141,6 @@ class Projects extends Component {
 					<div className="navigation">
 						<div className="device-orientation-container">
 							<div className="device-orientation-btns-container">
-								<div id="mobile-tooltip" className="mobile-tooltip">
-									Only for desktop use
-								</div>
 								<div
 									onClick={(e) => this.handleDeviceChange(e)}
 									id="iphone-device-button"
@@ -242,9 +240,6 @@ class Projects extends Component {
 							{this.state.currentProject === '' ? emptyPlaceholder : ''}
 							{this.handleProjectChange()}
 						</div>
-						<a href="#projects" className="return-arrow">
-							<FontAwesomeIcon icon={faArrowUp} />
-						</a>
 					</div>
 				</div>
 			</Fragment>
