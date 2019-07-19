@@ -252,23 +252,24 @@ class Projects extends Component {
 		return (
 			<Fragment>
 				{this.state.projectNavIsOpen && this.state.isMobile ? <Backdrop /> : ''}
-				<div className="interior-body" />
-				<div id="devices" className="wrapper">
-					<div className="navigation">
-						<div
-							className={`device-orientation-container ${!this.state.projectNavIsOpen &&
-							this.state.isMobile
-								? 'project-nav--closed'
-								: ''}`}
-						>
-							{this.state.isMobile ? projectNavCloseBtn : deviceSwitcher}
-							<div className="nav-project-holder">{projectList}</div>
+				<div className="interior-body">
+					<div id="devices" className="wrapper">
+						{this.state.isMobile ? projectNavOpenBtn : ''}
+						<div className="navigation">
+							<div
+								className={`device-orientation-container ${!this.state.projectNavIsOpen &&
+								this.state.isMobile
+									? 'project-nav--closed'
+									: ''}`}
+							>
+								{this.state.isMobile ? projectNavCloseBtn : deviceSwitcher}
+								<div className="nav-project-holder">{projectList}</div>
+							</div>
 						</div>
-					</div>
-					<div className="project-holder">
-						<div id="device-project-container" className={this.state.deviceType}>
-							{this.state.isMobile ? projectNavOpenBtn : ''}
-							{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
+						<div className="project-holder">
+							<div id="device-project-container" className={this.state.deviceType}>
+								{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
+							</div>
 						</div>
 					</div>
 				</div>

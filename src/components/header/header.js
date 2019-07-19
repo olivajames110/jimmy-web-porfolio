@@ -8,8 +8,8 @@ import classNames from 'classnames';
 
 class Header extends Component {
 	state = {
-		mobileNavIsOpen: false,
-		currentPage: 'projects'
+		mobileNavIsOpen : false,
+		currentPage     : 'projects'
 	};
 	//for function use lo dash -> debounce method
 	componentDidMount() {
@@ -51,8 +51,8 @@ class Header extends Component {
 		const { mobileNavIsOpen } = this.state;
 
 		const appHeaderClasses = classNames('app-header', {
-			'mobile-menu--open': mobileNavIsOpen,
-			'mobile-menu--closed': !mobileNavIsOpen
+			'mobile-menu--open'   : mobileNavIsOpen,
+			'mobile-menu--closed' : !mobileNavIsOpen
 		});
 		const Links = () => (
 			<Fragment>
@@ -114,7 +114,7 @@ class Header extends Component {
 						className={`navigation-logo-container ${mobileNavIsOpen &&
 							'menunav-header-blue'}  mobilenav-btn-color--${mobileNavIsOpen ? 'open' : 'close'}`}
 					>
-						<a href="/home">
+						<a class="logo" href="/home">
 							<Logo state={this.state.mobileNavIsOpen} />
 						</a>
 						{this.renderNavButton()}

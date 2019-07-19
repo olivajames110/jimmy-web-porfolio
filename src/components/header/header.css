@@ -38,7 +38,7 @@
 
 .mobilenav-btn--close {
 	background: rgba(0, 0, 0, 0);
-	padding: 10px 10px 8px 10px;
+	padding: 8px;
 	border: none;
 	fill: rgb(24, 23, 24);
 }
@@ -47,7 +47,7 @@
 	background: #f12711;
 	background: -webkit-linear-gradient(to right, #f5af19, #f12711);
 	background: linear-gradient(to right, #f5af19, #f12711);
-	padding: 10px 10px 8px 10px;
+	padding: 8px;
 	border: none;
 	fill: rgb(245, 245, 245);
 }
@@ -130,6 +130,15 @@ button:focus {
 		height: 0%;
 		visibility: hidden;
 		fill: red;
+	}
+
+	.navigation-logo-container svg {
+		padding: 10px;
+		height: 25px;
+		box-sizing: content-box;
+	}
+	.navigation-logo-container a svg {
+		height: 40px;
 	}
 
 	.navigation-links-cont--open {

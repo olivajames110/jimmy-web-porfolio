@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-	height: initial;
+	min-height: 100vh;
 }
 
 .navigation {
@@ -18,6 +18,7 @@
 	width: 205px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	color: #aeaeae;
 	height: 100%;
@@ -55,7 +56,7 @@
 	position: relative;
 	justify-content: center;
 	background: #dedede;
-	height: 89vh;
+	height: 100%;
 	align-items: center;
 	min-height: 100%;
 	border-left: 1px solid #dadada;
@@ -194,14 +195,14 @@
 }
 
 #open.nav-project-toggle-container {
-	position: absolute;
-	bottom: 50px;
-	right: 40px;
+	position: fixed;
+	bottom: 40px;
+	right: 30px;
 	flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 22px;
+	padding: 16px;
 	font-size: 20px;
 	border-radius: 50%;
 	color: #243b55;
