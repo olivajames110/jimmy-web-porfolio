@@ -55,9 +55,9 @@
 	position: relative;
 	justify-content: center;
 	background: #dedede;
-	height: 100%;
+	height: 89vh;
 	align-items: center;
-	min-height: 100vh;
+	min-height: 100%;
 	border-left: 1px solid #dadada;
 }
 
@@ -74,7 +74,6 @@
 	height: 100%;
 	width: 100%;
 	background: #ffffff;
-	position: relative;
 	background: #ffffff;
 	border-width: 0;
 	border-radius: 0;
@@ -194,8 +193,36 @@
 	margin-left: 10px;
 }
 
+#open.nav-project-toggle-container {
+	position: absolute;
+	bottom: 50px;
+	right: 40px;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 22px;
+	font-size: 20px;
+	border-radius: 50%;
+	color: #243b55;
+	background-color: white;
+	box-shadow: 0 1px 3px 2px #35353540;
+	transition: 800ms;
+	cursor: pointer;
+	z-index: 2000000;
+}
+
+#open.nav-project-toggle-container:hover {
+	color: white;
+	background-color: #243b55;
+}
+
 .project-nav--closed {
 	transform: translateX(-205px);
+}
+
+.open-nav--closed {
+	transform: translateX(105px);
 }
 
 /* ------DEVICE CONTAINERS___End------ */

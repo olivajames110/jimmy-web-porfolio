@@ -14,6 +14,7 @@ import {
 	faHamburger,
 	faGamepad
 } from '@fortawesome/free-solid-svg-icons';
+import Backdrop from 'components/assets/backdrop/backdrop';
 import Form from './projects/form/form';
 import PriceCalc from './projects/priceCalc/priceCalc';
 import DrawingBoard from './projects/drawingBoard/drawingBoard';
@@ -64,6 +65,7 @@ class Projects extends Component {
 	};
 
 	handleFormChange = () => {
+		this.handleProjectNav();
 		this.setState({
 			currentProject     : <Form />,
 			currentProjectName : 'Form'
@@ -78,6 +80,7 @@ class Projects extends Component {
 	};
 
 	handlePriceCalcChange = () => {
+		this.handleProjectNav();
 		this.setState({
 			currentProject     : <PriceCalc />,
 			currentProjectName : 'Price Calculator'
@@ -86,6 +89,7 @@ class Projects extends Component {
 	placeholder;
 
 	handleMenuChange = () => {
+		this.handleProjectNav();
 		this.setState({
 			currentProject     : <Menu />,
 			currentProjectName : 'Menu'
@@ -167,15 +171,87 @@ class Projects extends Component {
 			</div>
 		);
 
-		const navProjectHolderToggle = (
-			<div onClick={this.handleProjectNav} className="nav-project-toggle-container">
+		const projectNavOpenBtn = (
+			<div
+				onClick={this.handleProjectNav}
+				id="open"
+				className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
+			>
+				<FontAwesomeIcon icon={faPencilAlt} />
+			</div>
+		);
+
+		const projectNavCloseBtn = (
+			<div onClick={this.handleProjectNav} id="close" className="nav-project-toggle-container">
 				<FontAwesomeIcon icon={faArrowLeft} />
 				<span>Return To Project</span>
 			</div>
 		);
 
+		const projectList = (
+			<div className="nav-project-holder">
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleDrawingBoardChange}
+					projectName={'Whiteboard'}
+					icon={faPencilAlt}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleFormChange}
+					projectName={'Form'}
+					icon={faScroll}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleDashboardChange}
+					projectName={'Dashboard'}
+					icon={faChartBar}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleWeatherAppChange}
+					projectName={'Weather'}
+					icon={faCloudSunRain}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleWebsiteChange}
+					projectName={'Website'}
+					icon={faDesktop}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleGameChange}
+					projectName={'Game'}
+					icon={faGamepad}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleMenuChange}
+					projectName={'Menu'}
+					icon={faHamburger}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handlePriceCalcChange}
+					projectName={'Price Calculator'}
+					icon={faMoneyBill}
+					state={this.state.currentProject}
+				/>
+			</div>
+		);
+
 		return (
 			<Fragment>
+				{this.state.projectNavIsOpen && this.state.isMobile ? <Backdrop /> : ''}
 				<div className="interior-body" />
 				<div id="devices" className="wrapper">
 					<div className="navigation">
@@ -185,72 +261,14 @@ class Projects extends Component {
 								? 'project-nav--closed'
 								: ''}`}
 						>
-							{this.state.isMobile ? navProjectHolderToggle : deviceSwitcher}
-							<div className="nav-project-holder">
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleDrawingBoardChange}
-									projectName={'Whiteboard'}
-									icon={faPencilAlt}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleFormChange}
-									projectName={'Form'}
-									icon={faScroll}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleDashboardChange}
-									projectName={'Dashboard'}
-									icon={faChartBar}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleWeatherAppChange}
-									projectName={'Weather'}
-									icon={faCloudSunRain}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleWebsiteChange}
-									projectName={'Website'}
-									icon={faDesktop}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleGameChange}
-									projectName={'Game'}
-									icon={faGamepad}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handleMenuChange}
-									projectName={'Menu'}
-									icon={faHamburger}
-									state={this.state.currentProject}
-								/>
-								<Project
-									handleCheckActive={this.handleCheckActive}
-									handlePriceCalcChange={this.handlePriceCalcChange}
-									projectName={'Price Calculator'}
-									icon={faMoneyBill}
-									state={this.state.currentProject}
-								/>
-							</div>
+							{this.state.isMobile ? projectNavCloseBtn : deviceSwitcher}
+							<div className="nav-project-holder">{projectList}</div>
 						</div>
 					</div>
 					<div className="project-holder">
 						<div id="device-project-container" className={this.state.deviceType}>
-							{navProjectHolderToggle}
-							{this.state.currentProject === '' ? emptyPlaceholder : ''}
-							{this.handleProjectChange()}
+							{this.state.isMobile ? projectNavOpenBtn : ''}
+							{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
 						</div>
 					</div>
 				</div>
