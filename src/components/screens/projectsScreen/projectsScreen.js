@@ -270,7 +270,7 @@ class Projects extends Component {
 								<div className="nav-project-holder">{projectList}</div>
 							</div>
 						</div>
-						<div className="project-holder">
+						<div data-device={this.state.deviceType} className="project-holder">
 							<div id="device-project-container" className={this.state.deviceType}>
 								{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
 							</div>
