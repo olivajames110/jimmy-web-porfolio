@@ -236,5 +236,5 @@ button:focus {
 }
 
 .header-container .darkmode-container-toggle label:active:after {
-	width: 130px;
+	width: 20px;
 }
