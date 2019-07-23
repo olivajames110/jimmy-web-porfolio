@@ -1,10 +1,17 @@
 .project-btn {
 	text-align: center;
+	-webkit-transition: -webkit-transform 250ms;
+	transition: -webkit-transform 250ms;
 	transition: transform 250ms;
+	transition: transform 250ms, -webkit-transform 250ms;
 	cursor: pointer;
 	margin-top: 35px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	font-size: 12px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	text-decoration: none;
 	color: inherit;
@@ -17,6 +24,7 @@
 
 .project-btn:hover,
 .project-btn-active {
+	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 	color: orange;
 }
@@ -33,6 +41,7 @@
 }
 
 .project-is-active {
+	-webkit-transform: scale(1.1) !important;
 	transform: scale(1.1) !important;
 	color: #f5a434;
 }
@@ -53,7 +62,9 @@
 		height: 41px;
 		position: absolute;
 		background-color: #a5a4a4c2;
+		-webkit-transform: rotate(45deg);
 		transform: rotate(45deg);
+		-webkit-transform-origin: top;
 		transform-origin: top;
 		border-radius: 4px;
 	}
