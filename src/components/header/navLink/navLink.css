@@ -32,27 +32,27 @@
 	}
 
 	.app-link:nth-child(1) {
-		animation: slideDown 750ms ease-in-out forwards;
+		animation: slideDown 1000ms ease-in-out forwards;
 		animation-delay: 550ms;
 	}
 
 	.app-link:nth-child(2) {
-		animation: slideDown 750ms ease-in-out forwards;
+		animation: slideDown 1000ms ease-in-out forwards;
 		animation-delay: 400ms;
 	}
 
 	.app-link:nth-child(3) {
-		animation: slideDown 750ms ease-in-out forwards;
+		animation: slideDown 1000ms ease-in-out forwards;
 		animation-delay: 250ms;
 	}
 
 	.app-link:nth-child(4) {
-		animation: slideDown 750ms ease-in-out forwards;
+		animation: slideDown 1000ms ease-in-out forwards;
 		animation-delay: 100ms;
 	}
 
 	.app-link:nth-child(5) {
-		animation: slideDown 750ms ease-in-out forwards;
+		animation: slideDown 1000ms ease-in-out forwards;
 		animation-delay: 60ms;
 	}
 }
