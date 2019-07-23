@@ -12,15 +12,18 @@ import {
 	faFrown,
 	faArrowLeft,
 	faHamburger,
-	faGamepad
+	faGamepad,
+	faCrosshairs,
+	faCross,
+	faTimes
 } from '@fortawesome/free-solid-svg-icons';
-import Backdrop from 'components/assets/backdrop/backdrop';
+import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
 import PriceCalc from './projects/priceCalc/priceCalc';
 import DrawingBoard from './projects/drawingBoard/drawingBoard';
 import Project from './projects/project/project';
 import Menu from './projects/menu/menu';
-import './projects.css';
+import './projectsScreen.css';
 
 class Projects extends Component {
 	state = {
@@ -177,14 +180,14 @@ class Projects extends Component {
 				id="open"
 				className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
 			>
-				<FontAwesomeIcon icon={faPencilAlt} />
+				<FontAwesomeIcon icon={faArrowLeft} />
+				<span>{this.state.currentProject === '' ? 'Select A Project' : this.state.currentProjectName}</span>
 			</div>
 		);
 
 		const projectNavCloseBtn = (
 			<div onClick={this.handleProjectNav} id="close" className="nav-project-toggle-container">
-				<FontAwesomeIcon icon={faArrowLeft} />
-				<span>Return To Project</span>
+				<FontAwesomeIcon icon={faTimes} />
 			</div>
 		);
 

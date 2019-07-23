@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import './home.css';
+import './homeScreen.css';
 // import Drawing from '../../../../assets/drawingBoard/drawingBoard';
 // import { Marker } from '../../../../assets/svgs/svgs';
 
 class Home extends Component {
 	state = {
-		isInDrawingMode: false
+		isInDrawingMode : false
 	};
 
 	handleDrawingMode = () => {
 		this.setState({
-			isInDrawingMode: !this.state.isInDrawingMode
+			isInDrawingMode : !this.state.isInDrawingMode
 		});
 	};
 

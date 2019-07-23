@@ -223,7 +223,7 @@ button:focus {
 	height: 20px;
 	background: #fff;
 	border-radius: 90px;
-	transition: 0.3s;
+	transition: 650ms;
 }
 
 .header-container .darkmode-container-toggle input:checked + label {

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './header.css';
 import NavLink from './navLink/navLink';
-import BackDrop from '../assets/backdrop/backdrop';
+import BackDrop from '../../assets/backdrop/backdrop';
 import { HamburgerIcon, Logo, HamburgerIconAnimation } from '../assets/svgs/svgs';
 import classNames from 'classnames';
 
