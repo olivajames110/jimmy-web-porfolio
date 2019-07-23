@@ -17,7 +17,26 @@
 
 html {
 	scroll-behavior: smooth;
-	height: 100vh;
+	height: 100%;
+	--bg: #fcfcfc;
+	--bg-panel: #ebebeb;
+	--bg-mobile-nav: #012e4b;
+	--color-headings: #0077ff;
+	--color-text: #333333;
+	--color-text-light: #aeaeae;
+	--color-icon: #0077ff;
+}
+
+/* color: var(--bg);
+color: var(--bg-panel);
+color: var(--color-text); */
+
+html[data-theme='dark'] {
+	--bg: #201f1f;
+	--bg-panel: #2c2b2b;
+	--color-headings: #3694ff;
+	--color-text: #f3f3f3;
+	--bg-mobile-nav: #121212;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

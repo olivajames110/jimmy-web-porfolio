@@ -3,7 +3,7 @@
 	padding: 28px 25px;
 	cursor: pointer;
 	text-decoration: none;
-	color: #1a1919;
+	color: var(--color-text);
 	font-weight: 600;
 	font-family: 'Work Sans', sans-serif;
 	transition: 300ms;

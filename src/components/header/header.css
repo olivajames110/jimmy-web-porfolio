@@ -10,9 +10,9 @@
 	color: #1a1919;
 	box-sizing: border-box;
 	z-index: 10000;
-	background-color: white;
+	background-color: var(--bg);
 	box-shadow: 0px 0px 6px 1px #00000047;
-	border-bottom: 1px solid #dad7d7;
+	border-bottom: 1px solid #dad7d72b;
 	transition: 500ms;
 	padding: 0 100px;
 }
@@ -26,6 +26,7 @@
 	padding: 10px;
 	height: 55px;
 	box-sizing: content-box;
+	/* fill: var(--color-text); */
 }
 
 .mobile-menu--open {
@@ -33,14 +34,14 @@
 	height: 100%;
 	z-index: 100;
 	justify-content: initial;
-	fill: rgba(255, 255, 255, 0.808);
+	fill: white !important;
 }
 
 .mobilenav-btn--close {
 	background: rgba(0, 0, 0, 0);
 	padding: 8px;
 	border: none;
-	fill: rgb(24, 23, 24);
+	fill: var(--color-text);
 }
 
 .mobilenav-btn--open {
@@ -49,11 +50,14 @@
 	background: linear-gradient(to right, #f5af19, #f12711);
 	padding: 8px;
 	border: none;
-	fill: rgb(245, 245, 245);
+	fill: rgb(245, 245, 245) !important;
 }
 
-.mobilenav-btn-color--open {
-	/* fill: rgb(255, 255, 255) !important; */
+.mobilenav-logo--open {
+	fill: rgb(255, 255, 255) !important;
+}
+.mobilenav-logo--close {
+	fill: var(--color-text);
 }
 
 .hamburger-icon {
@@ -64,11 +68,6 @@
 	height: 25px;
 }
 
-.hamburger-icon-animation {
-	/* animation: swing ease-in-out 1s infinite alternate; */
-	/* animation-delay: 00ms; */
-}
-
 button:active,
 button:focus {
 	outline: 0;
@@ -77,12 +76,12 @@ button:focus {
 }
 
 .navigation-logo-container.menunav-header-blue {
-	background-color: #012e4b;
+	background-color: var(--bg-mobile-nav);
 }
 
 #github-icon {
 	font-size: 24px;
-	color: #3a3535;
+	color: var(--color-text);
 	cursor: pointer;
 	transition: 300ms;
 }
@@ -96,10 +95,12 @@ button:focus {
 	width: 1em;
 }
 
+.fill--white {
+}
+
 @media only screen and (max-width: 600px) {
 	#github-icon {
 		font-size: 48px;
-		color: #3a3535;
 		margin-top: 15px;
 	}
 }
@@ -116,10 +117,8 @@ button:focus {
 		flex-direction: row;
 		width: 100%;
 		justify-content: space-between;
-		background-color: white;
+		background-color: var(--bg);
 		box-shadow: 0 0px 10px 0px #00000073;
-		/* fill: #012E4B; */
-		/* transition-delay: 1s;  */
 	}
 
 	.navigation-links-cont {
@@ -129,7 +128,6 @@ button:focus {
 		justify-content: center;
 		height: 0%;
 		visibility: hidden;
-		fill: red;
 	}
 
 	.navigation-logo-container svg {
@@ -186,4 +184,57 @@ button:focus {
 	100% {
 		transform: rotate(-9deg);
 	}
+}
+
+.darkmode-toggle {
+	transition: none;
+	z-index: 10000000;
+}
+
+.darkmode-container-toggle {
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	z-index: 1;
+}
+.header-container .darkmode-container-toggle input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.header-container .darkmode-container-toggle label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 60px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+.header-container .darkmode-container-toggle label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+.header-container .darkmode-container-toggle input:checked + label {
+	background: #1e82d4;
+}
+
+.header-container .darkmode-container-toggle input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.header-container .darkmode-container-toggle label:active:after {
+	width: 130px;
 }

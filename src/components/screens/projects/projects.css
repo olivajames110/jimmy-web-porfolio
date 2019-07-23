@@ -9,7 +9,7 @@
 
 .navigation {
 	width: 100%;
-	background: #efeeee;
+	background: var(--bg-panel);
 }
 
 .device-orientation-container {
@@ -24,7 +24,7 @@
 	height: 100%;
 	box-shadow: 0px 1px 3px 1px #00000024;
 	z-index: 1000;
-	background-color: #efeeee;
+	background-color: var(--bg-panel);
 	padding-top: 45px;
 	transition: 800ms;
 }
@@ -196,8 +196,8 @@
 
 #open.nav-project-toggle-container {
 	position: fixed;
-	bottom: 40px;
-	right: 30px;
+	bottom: 20px;
+	left: 20px;
 	flex-direction: column;
 	display: flex;
 	justify-content: center;

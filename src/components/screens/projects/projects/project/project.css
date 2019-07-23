@@ -2,26 +2,18 @@
 	text-align: center;
 	transition: transform 250ms;
 	cursor: pointer;
-	margin-top: 45px;
+	margin-top: 35px;
 	display: flex;
-	font-size: 14px;
+	font-size: 12px;
 	align-items: center;
 	text-decoration: none;
 	color: inherit;
-	color: #243b55d1;
-	font-weight: 600;
+	/* font-weight: 600; */
 }
-/* .project-btn {
-	text-align: center;
-	transition: transform 250ms;
-	cursor: pointer;
-	margin-top: 45px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-decoration: none;
-	color: inherit;
-} */
+.project-btn svg {
+	/* color: #243b55d1; */
+	color: var(--color-icon);
+}
 
 .project-btn:hover,
 .project-btn-active {
@@ -31,9 +23,9 @@
 
 .project-btn-text {
 	margin-left: 10px;
-	/* width: 160px; */
 	width: 100%;
 	text-align: left;
+	color: var(--color-text);
 }
 
 .project-btn svg {

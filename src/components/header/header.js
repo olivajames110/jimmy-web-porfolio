@@ -4,12 +4,14 @@ import NavLink from './navLink/navLink';
 import BackDrop from '../assets/backdrop/backdrop';
 import { HamburgerIcon, Logo, HamburgerIconAnimation } from '../assets/svgs/svgs';
 import classNames from 'classnames';
+
 // import { withRouter } from 'react-router';
 
 class Header extends Component {
 	state = {
 		mobileNavIsOpen : false,
-		currentPage     : 'projects'
+		currentPage     : 'projects',
+		isDarkMode      : false
 	};
 	//for function use lo dash -> debounce method
 	componentDidMount() {
@@ -45,15 +47,30 @@ class Header extends Component {
 		);
 	};
 
-	handleCurrentPage = () => {};
+	toggleDarkmode = () => {
+		console.log('Darkmode');
+		const html = document.documentElement;
+		this.setState({
+			isDarkMode : !this.state.isDarkMode
+		});
+		console.log(this.state.isDarkMode);
+		if (!this.state.isDarkMode) {
+			console.log('darkmode ON');
+			html.setAttribute('data-theme', 'dark');
+		} else {
+			console.log('darkmode off');
+			// document.querySelector('html').removeAttribute('data-theme');
+			html.setAttribute('data-theme', 'light');
+		}
+	};
 
 	render() {
 		const { mobileNavIsOpen } = this.state;
-
 		const appHeaderClasses = classNames('app-header', {
 			'mobile-menu--open'   : mobileNavIsOpen,
 			'mobile-menu--closed' : !mobileNavIsOpen
 		});
+
 		const Links = () => (
 			<Fragment>
 				<NavLink
@@ -107,14 +124,18 @@ class Header extends Component {
 		);
 
 		return (
-			<div>
+			<div className="header-container">
 				{mobileNavIsOpen ? <BackDrop /> : ''}
+				<div className="darkmode-container-toggle">
+					<input onClick={this.toggleDarkmode} className="darkmode-btn" type="checkbox" id="switch" />
+					<label for="switch">Toggle</label>
+				</div>
 				<div style={{ height: mobileNavIsOpen ? '90% ' : '' }} className={appHeaderClasses}>
 					<div
 						className={`navigation-logo-container ${mobileNavIsOpen &&
 							'menunav-header-blue'}  mobilenav-btn-color--${mobileNavIsOpen ? 'open' : 'close'}`}
 					>
-						<a class="logo" href="/home">
+						<a className={`mobilenav-logo--${mobileNavIsOpen ? 'open' : 'close'} `} href="/home">
 							<Logo state={this.state.mobileNavIsOpen} />
 						</a>
 						{this.renderNavButton()}

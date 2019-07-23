@@ -65,11 +65,6 @@ export const Logo = (o) => (
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 736.91 529.54"
 	>
-		<defs>
-			<linearGradient id="linear" x1="40%" y1="0%" x2="60%" y2="0%" spreadMethod="pad">
-				<stop offset="100%" stopColor="#ff5910" />
-			</linearGradient>
-		</defs>
 		<title>logo</title>
 		<path
 			// fill="url(#linear)"
