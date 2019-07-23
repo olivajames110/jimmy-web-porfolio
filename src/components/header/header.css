@@ -195,7 +195,7 @@ button:focus {
 	position: fixed;
 	bottom: 30px;
 	right: 20px;
-	z-index: 1;
+	z-index: 10000000000000000;
 }
 .header-container .darkmode-container-toggle input[type=checkbox] {
 	height: 0;

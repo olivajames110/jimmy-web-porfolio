@@ -15,7 +15,8 @@ import {
 	faGamepad,
 	faCrosshairs,
 	faCross,
-	faTimes
+	faTimes,
+	faHammer
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
@@ -180,8 +181,8 @@ class Projects extends Component {
 				id="open"
 				className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
 			>
-				<FontAwesomeIcon icon={faArrowLeft} />
-				<span>{this.state.currentProject === '' ? 'Select A Project' : this.state.currentProjectName}</span>
+				<FontAwesomeIcon icon={faHammer} />
+				<span>Projects</span>
 			</div>
 		);
 

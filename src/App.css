@@ -20,11 +20,13 @@ html {
 	height: 100%;
 	--bg: #fcfcfc;
 	--bg-panel: #ebebeb;
+	--bg-panel-lite: #aeaeaeb4;
 	--bg-mobile-nav: #012e4b;
 	--color-headings: #0077ff;
 	--color-text: #333333;
 	--color-text-light: #aeaeae;
 	--color-icon: #0077ff;
+	--color-gray-lite: #aeaeaeb4;
 }
 
 /* color: var(--bg);
