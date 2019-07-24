@@ -33,10 +33,10 @@
 	background: url('https://www.tiny.cloud/static/bg-gradient-mesh-bbb002e33e5bff434618c6d20550f303.svg');
 }
 .home-img h1 {
-	font-size: 3.5em;
+	font-size: 3em;
 	font-weight: 800;
 	font-family: var(--h2);
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 }
 
 .home-img .sub-heading {
