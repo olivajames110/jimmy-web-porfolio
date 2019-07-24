@@ -19,7 +19,9 @@ class Home extends Component {
 			<Fragment>
 				<div className="home-img">
 					<h1>My Name Is Jimmy Oliva</h1>
-					<span>Welcome to my website. I hope to one day be a front-end developer.</span>
+					<span className="sub-heading">
+						Welcome to my website. I hope to one day be a front-end developer.
+					</span>
 
 					<a href="projects">
 						<span>
