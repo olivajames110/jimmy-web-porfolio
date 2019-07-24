@@ -129,8 +129,9 @@ button:focus {
 		-ms-flex-pack: justify;
 		justify-content: space-between;
 		background-color: var(--bg);
-		-webkit-box-shadow: 0 0px 10px 0px #00000073;
-		box-shadow: 0 0px 10px 0px #00000073;
+		border-bottom: var(--nav-bottom-border);
+		/* -webkit-box-shadow: 0 0px 10px 0px #00000073;
+		box-shadow: 0 0px 10px 0px #00000073; */
 	}
 
 	.navigation-links-cont {
@@ -274,7 +275,7 @@ button:focus {
 	display: block;
 	border-radius: 100px;
 	position: relative;
-	border: 1px solid #ffffff29;
+	border: 1px solid #ffffff91;
 }
 
 /* controls the slider */
