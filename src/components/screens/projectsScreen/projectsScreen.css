@@ -227,6 +227,17 @@
 	padding: 0 14px;
 	opacity: .65;
 }
+
+.ipad-container .placeholder-text,
+.iphone-container .placeholder-text {
+	color: #333333 !important;
+}
+
+.ipad-container .placeholder-text-desc,
+.iphone-container .placeholder-text-desc {
+	color: #333333 !important;
+}
+
 #close.nav-project-toggle-container {
 	position: absolute;
 	right: 0px;

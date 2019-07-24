@@ -11,25 +11,22 @@ class Header extends Component {
 	state = {
 		mobileNavIsOpen     : false,
 		currentPage         : 'projects',
-		isDarkMode          : null,
+		isDarkMode          : false,
 		isSetToLocalStorage : false
 	};
 
-	componentWillMount() {
+	componentWillMount() {}
+	//for function use lo dash -> debounce method
+	componentDidMount() {
+		window.addEventListener('resize', this.handleResize);
+		console.log(localStorage.isDarkMode);
 		if (localStorage.isDarkMode) {
 			this.setState({
 				isDarkMode : true
 			});
-			// this.toggleDarkmode();
-		} else {
-			this.setState({
-				isDarkMode : false
-			});
+			this.toggleDarkmode();
+			document.querySelector('.darkmode-btn').checked = true;
 		}
-	}
-	//for function use lo dash -> debounce method
-	componentDidMount() {
-		window.addEventListener('resize', this.handleResize);
 	}
 
 	componentWillUnmount() {
@@ -62,23 +59,20 @@ class Header extends Component {
 	};
 
 	toggleDarkmode = () => {
-		console.log('Darkmode');
+		console.log(this.state.isDarkMode);
 		const html = document.documentElement;
 
-		if (this.state.isDarkMode) {
-			this.setState({
-				isDarkMode          : !this.state.isDarkMode,
-				isSetToLocalStorage : true
-			});
+		this.setState({
+			isDarkMode          : !this.state.isDarkMode,
+			isSetToLocalStorage : true
+		});
+
+		if (!this.state.isDarkMode) {
 			html.setAttribute('data-theme', 'dark');
 			localStorage.setItem('isDarkMode', true);
 		} else {
-			this.setState({
-				isDarkMode          : !this.state.isDarkMode,
-				isSetToLocalStorage : false
-			});
 			html.setAttribute('data-theme', 'light');
-			localStorage.setItem('isDarkMode', false);
+			localStorage.removeItem('isDarkMode');
 		}
 	};
 

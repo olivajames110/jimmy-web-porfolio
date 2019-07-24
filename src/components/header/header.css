@@ -294,6 +294,7 @@ button:focus {
 	position: relative;
 }
 
+/* controls the slider */
 .header-container .darkmode-container-toggle label:after {
 	content: '';
 	position: absolute;
