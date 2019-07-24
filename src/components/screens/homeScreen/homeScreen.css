@@ -16,21 +16,23 @@
 }
 
 .home-img h1 {
-	font-size: 3.2em;
+	font-size: 3.4em;
+	font-family: 'Archivo Narrow', sans-serif;
 }
 
 .home-img span {
 	font-size: 1.3em;
 	line-height: 1.5em;
-	padding: 10px;
+	padding: 10px 25px;
 }
 
 .home-img button {
 	font-size: 1.2em;
 	padding: 20px 26px;
-	background: linear-gradient(to right, #f5af19, #f11911);
+	background: linear-gradient(to right, #f5af1900, #f119110000);
 	background-size: 200% 100%;
-	background-position: left bottom;
+	background-position: right bottom;
+	transition: all .5s ease-out;
 	border: 1px solid white;
 	border-radius: 2px;
 	color: white;
@@ -42,7 +44,7 @@
 .home-img button:hover {
 	/* background: linear-gradient(to right, #f5af19 34%, #f11911 65%); */
 	/* background-size: 300% 100%; */
-	background-position: right bottom;
+	background-position: left bottom;
 }
 
 .home-img button svg {

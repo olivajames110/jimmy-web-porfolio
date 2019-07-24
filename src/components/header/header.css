@@ -26,7 +26,7 @@
 	border-bottom: 1px solid #dad7d72b;
 	-webkit-transition: 500ms;
 	transition: 500ms;
-	padding: 0 100px;
+	padding: 0 40px;
 }
 
 .navigation-links-cont {
@@ -43,6 +43,7 @@
 	height: 55px;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
+	margin-bottom: -5px;
 	/* fill: var(--color-text); */
 }
 
@@ -169,7 +170,7 @@ button:focus {
 
 	.navigation-logo-container svg {
 		padding: 10px;
-		height: 25px;
+		height: 18px;
 		-webkit-box-sizing: content-box;
 		box-sizing: content-box;
 	}

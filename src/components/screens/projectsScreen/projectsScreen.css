@@ -45,6 +45,7 @@
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
 	width: 100%;
+	padding-top: 20px;
 }
 
 .navigation-title {
@@ -263,8 +264,8 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	color: var(--color-text);
-	background: var(--sideNavButton);
+	color: var(--bg);
+	background: var(--color-icon);
 	-webkit-transition: 1200ms;
 	transition: 1300ms ease-in-out;
 	cursor: pointer;
@@ -289,12 +290,11 @@
 }
 
 .open-nav--closed {
-	-webkit-transform: translateX(-400px);
-	transform: translateX(-400px);
 	width: 300px !important;
 	height: 100% !important;
 	/* color: var(--color-orange) !important; */
 	/* background-color: var(--bg-panel) !important; */
+	right: 100% !important;
 }
 
 /* ------DEVICE CONTAINERS___End------ */

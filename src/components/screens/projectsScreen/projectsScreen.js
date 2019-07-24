@@ -10,11 +10,8 @@ import {
 	faTabletAlt,
 	faDesktop,
 	faFrown,
-	faArrowLeft,
 	faHamburger,
 	faGamepad,
-	faCrosshairs,
-	faCross,
 	faTimes,
 	faHammer
 } from '@fortawesome/free-solid-svg-icons';

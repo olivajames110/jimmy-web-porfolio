@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Muli&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -9,7 +11,7 @@
 }
 
 :root {
-	--body-font: 'Work Sans', sans-serif;
+	--body-font: 'Muli', sans-serif;
 	--h1-font: 'Lustria', serif;
 	--h2-font: 'Montserrat', sans-serif;
 	--primaryColor: #012e4b;
