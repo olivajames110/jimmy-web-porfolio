@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './homeScreen.css';
-// import Drawing from '../../../../assets/drawingBoard/drawingBoard';
-// import { Marker } from '../../../../assets/svgs/svgs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
 	state = {
@@ -17,7 +17,13 @@ class Home extends Component {
 	render() {
 		return (
 			<Fragment>
-				<div className="home-img" />
+				<div className="home-img">
+					<h1>My Name Is Jimmy Oliva</h1>
+					<span>Welcome to my website. I hope to one day be a front-end developer.</span>
+					<button>
+						SEE MY PROJECTS <FontAwesomeIcon icon={faArrowRight} />
+					</button>
+				</div>
 			</Fragment>
 		);
 	}
