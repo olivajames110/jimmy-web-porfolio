@@ -209,7 +209,8 @@
 
 .placeholder-icon {
 	font-size: 48px;
-	color: var(--bg-panel-lite);
+	color: var(--color-text);
+	opacity: .35;
 }
 
 .placeholder-text {

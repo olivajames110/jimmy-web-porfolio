@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Muli:400,600,700,800|Open+Sans:400,700&display=swap');
 
 * {
 	margin: 0;
@@ -11,9 +11,9 @@
 }
 
 :root {
-	--body-font: 'Muli', sans-serif;
-	--h1-font: 'Lustria', serif;
-	--h2-font: 'Montserrat', sans-serif;
+	--body: 'Muli', sans-serif;
+	--h1: 'Open Sans', sans-serif;
+	--h2: 'Lato', sans-serif;
 	--primaryColor: #012e4b;
 	--secondaryColor: #476172;
 }
@@ -29,6 +29,7 @@ html {
 	--color-text: #333333;
 	--color-text-light: #aeaeae;
 	--color-icon: #046ab4;
+	--color-icon--opp: #f48328;
 	/* --color-icon: #012e4b; */
 	--color-gray-lite: #aeaeaeb4;
 	--sideNavButton: #ebebeb;
@@ -45,6 +46,7 @@ html[data-theme='dark'] {
 	--color-text: #f3f3f3;
 	--bg-mobile-nav: #121212;
 	--color-icon: #f48328;
+	--color-icon--opp: #046ab4;
 	--sideNavButton: linear-gradient(to right, #f5af19, #f11911);
 }
 
@@ -59,23 +61,23 @@ div#root {
 }
 
 body {
-	font-family: var(--body-font);
+	font-family: var(--body);
 	height: 100vh;
 }
 
 h1 {
-	font-family: var(--h1-font);
+	font-family: var(--h1);
 	font-weight: 400;
-	margin-bottom: 13px;
+	margin-bottom: 20px;
 }
 
 h2 {
-	font-family: var(--h2-font);
+	font-family: var(--h2);
 	font-weight: 400;
 }
 
 h3 {
-	font-family: var(--h1-font);
+	font-family: var(--h1);
 }
 
 .flex-col {

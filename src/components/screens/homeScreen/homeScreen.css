@@ -15,42 +15,6 @@
 	overflow: hidden;
 }
 
-.home-img h1 {
-	font-size: 3.4em;
-	font-family: 'Archivo Narrow', sans-serif;
-}
-
-.home-img span {
-	font-size: 1.3em;
-	line-height: 1.5em;
-	padding: 10px 25px;
-}
-
-.home-img button {
-	font-size: 1.2em;
-	padding: 20px 26px;
-	background: linear-gradient(to right, #f5af1900, #f119110000);
-	background-size: 200% 100%;
-	background-position: right bottom;
-	transition: all .5s ease-out;
-	border: 1px solid white;
-	border-radius: 2px;
-	color: white;
-	margin-top: 40px;
-	cursor: pointer;
-	transition: 1s;
-}
-
-.home-img button:hover {
-	/* background: linear-gradient(to right, #f5af19 34%, #f11911 65%); */
-	/* background-size: 300% 100%; */
-	background-position: left bottom;
-}
-
-.home-img button svg {
-	margin-left: 8px;
-}
-
 .home-img {
 	position: relative;
 	width: 100%;
@@ -66,6 +30,76 @@
 	-moz-animation: bgFlow 20s ease infinite;
 	animation: bgFlow 20s ease infinite;
 	text-align: center;
+}
+.home-img h1 {
+	font-size: 3.4em;
+	font-weight: 700;
+	font-family: var(--h1);
+}
+
+.home-img span {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	padding: 0 18px;
+}
+
+.home-img a {
+	font-size: 1em;
+	padding: 1.1em 1.1em;
+	/* background: linear-gradient(to right, #f5af1900, #f119110000); */
+	/* background: none; */
+	background: var(--color-icon);
+	/* background: rgba(0, 0, 0, 0); */
+	background-size: 200% 100%;
+	background-position: right bottom;
+	transition: all .5s ease-out;
+	border: 2px solid white;
+	border-radius: 2px;
+	color: white;
+	margin-top: 40px;
+	cursor: pointer;
+	transition: 1s;
+	position: relative;
+	overflow: hidden;
+	display: block;
+}
+/* 
+.home-img a:hover {
+	background: linear-gradient(to right, #f48328 34%, #f11911 65%);
+	background-size: 300% 100%;
+	background-position: left bottom;
+} */
+
+.home-img a svg {
+	margin-left: 8px;
+}
+
+.home-img a span {
+	position: relative;
+	z-index: 1;
+}
+
+.home-img a {
+	text-decoration: none;
+}
+
+.home-img a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 490%;
+	width: 140%;
+	background: var(--color-icon--opp);
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	-webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+	transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.home-img a:hover:after {
+	-webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+	transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
 @-webkit-keyframes bgFlow {

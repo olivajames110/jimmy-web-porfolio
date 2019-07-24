@@ -11,8 +11,24 @@
 }
 
 .app-link:hover {
-	color: #f12711;
-	/* border-bottom: 3px solid #f12711; */
+	color: var(--color-icon);
+}
+
+#github-icon {
+	font-size: 24px;
+	color: var(--color-text);
+	cursor: pointer;
+	-webkit-transition: 300ms;
+	transition: 300ms;
+}
+#github-icon:hover {
+	font-size: 24px;
+	color: var(--color-icon);
+}
+
+/* juryrig to fix icon size on routes*/
+.github-icon svg {
+	width: 1em;
 }
 
 @-webkit-keyframes slideDown {

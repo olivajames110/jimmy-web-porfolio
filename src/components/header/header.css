@@ -102,23 +102,6 @@ button:focus {
 	background-color: var(--bg-mobile-nav);
 }
 
-#github-icon {
-	font-size: 24px;
-	color: var(--color-text);
-	cursor: pointer;
-	-webkit-transition: 300ms;
-	transition: 300ms;
-}
-#github-icon:hover {
-	font-size: 24px;
-	color: #f12711;
-}
-
-/* juryrig to fix icon size on routes*/
-.github-icon svg {
-	width: 1em;
-}
-
 @media only screen and (max-width: 600px) {
 	#github-icon {
 		font-size: 48px;
@@ -194,7 +177,6 @@ button:focus {
 		justify-content: center;
 		height: 0%;
 		visibility: hidden;
-		fill: red;
 	}
 
 	.navigation-links-cont--open {
@@ -292,6 +274,7 @@ button:focus {
 	display: block;
 	border-radius: 100px;
 	position: relative;
+	border: 1px solid #ffffff29;
 }
 
 /* controls the slider */

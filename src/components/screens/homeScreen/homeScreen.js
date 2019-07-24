@@ -20,9 +20,12 @@ class Home extends Component {
 				<div className="home-img">
 					<h1>My Name Is Jimmy Oliva</h1>
 					<span>Welcome to my website. I hope to one day be a front-end developer.</span>
-					<button>
-						SEE MY PROJECTS <FontAwesomeIcon icon={faArrowRight} />
-					</button>
+
+					<a href="projects">
+						<span>
+							See My Projects <FontAwesomeIcon icon={faArrowRight} />
+						</span>
+					</a>
 				</div>
 			</Fragment>
 		);

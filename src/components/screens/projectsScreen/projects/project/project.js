@@ -5,8 +5,9 @@ import './project.css';
 const Project = (props) => {
 	return (
 		<span onClick={props.handlePriceCalcChange} className={`project-btn `}>
-			<div className="project-btn-icon" />
-			<FontAwesomeIcon icon={props.icon} />
+			<div className="project-btn-icon">
+				<FontAwesomeIcon icon={props.icon} />
+			</div>
 			<div className={`project-btn-text ${props.handleCheckActive('project', props.projectName)}`}>
 				{props.projectName}
 			</div>

@@ -21,6 +21,7 @@
 	/* color: #243b55d1; */
 	color: var(--color-icon);
 	animation: Gradient 2s ease infinite;
+	font-size: 16px;
 }
 
 .project-btn:hover,
@@ -30,15 +31,14 @@
 	color: orange;
 }
 
+.project-btn-icon {
+	width: 55px;
+}
+
 .project-btn-text {
-	margin-left: 10px;
 	width: 100%;
 	text-align: left;
 	color: var(--color-text);
-}
-
-.project-btn svg {
-	font-size: 16px;
 }
 
 .project-is-active {
