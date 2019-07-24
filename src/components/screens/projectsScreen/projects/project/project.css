@@ -20,6 +20,7 @@
 .project-btn svg {
 	/* color: #243b55d1; */
 	color: var(--color-icon);
+	animation: Gradient 2s ease infinite;
 }
 
 .project-btn:hover,
@@ -72,4 +73,16 @@
 	/* .project-btn-container {
 		margin-top: 75px;
 	} */
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
