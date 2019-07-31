@@ -42,7 +42,7 @@ body {
 .competitor-wrapper {
 	box-sizing: border-box;
 	background-color: #ffffff;
-	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	padding: 20px;
 }
 
@@ -238,7 +238,7 @@ body {
 	border-radius: 50%;
 	background: #ffffff;
 	cursor: pointer;
-	transition: background .15s ease-in-out;
+	transition: background 0.15s ease-in-out;
 	/* border: 3px solid #6eab1f; */
 	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.157);
 }
@@ -258,7 +258,7 @@ body {
 	/* border-radius: 50%; */
 	background: #2c3e50;
 	cursor: pointer;
-	transition: background .15s ease-in-out;
+	transition: background 0.15s ease-in-out;
 	box-shadow: 0 0 0 3px #fff, 0 0 0 6px #6eab1f;
 }
 
@@ -308,6 +308,15 @@ body {
 input::-moz-focus-inner,
 input::-moz-focus-outer {
 	border: 0;
+}
+
+input#rs-range-line--price:before {
+	content: 'dasd';
+	position: absolute;
+	background-color: cadetblue;
+	min-height: 10px;
+	top: 10px;
+	border-radius: 20px;
 }
 
 .rs-label {

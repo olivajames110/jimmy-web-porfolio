@@ -5,12 +5,12 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
 	state = {
-		isInDrawingMode : false
+		isInDrawingMode: false
 	};
 
 	handleDrawingMode = () => {
 		this.setState({
-			isInDrawingMode : !this.state.isInDrawingMode
+			isInDrawingMode: !this.state.isInDrawingMode
 		});
 	};
 
@@ -18,10 +18,12 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div className="home-img">
-					<h1>My Name Is Jimmy Oliva</h1>
-					<span className="sub-heading">
-						Welcome to my website. I hope to one day be a front-end developer.
-					</span>
+					<div className="content">
+						<h1>My Name Is Jimmy Oliva</h1>
+						<span className="sub-heading">
+							Welcome to my website. I hope to one day be a front-end developer.
+						</span>
+					</div>
 
 					<a href="projects">
 						<span>

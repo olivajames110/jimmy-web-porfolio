@@ -35,7 +35,7 @@
 	background-color: var(--bg-panel);
 	padding-top: 100px;
 	-webkit-transition: 800ms;
-	transition: 800ms;
+	transition: 800ms ease-in-out;
 }
 
 .device-orientation-btns-container {
@@ -210,7 +210,7 @@
 .placeholder-icon {
 	font-size: 48px;
 	color: var(--color-text);
-	opacity: .35;
+	opacity: 0.35;
 }
 
 .placeholder-text {
@@ -226,7 +226,7 @@
 	max-width: 600px;
 	line-height: 1.5em;
 	padding: 0 14px;
-	opacity: .65;
+	opacity: 0.65;
 }
 
 .ipad-container .placeholder-text,
@@ -241,11 +241,10 @@
 
 #close.nav-project-toggle-container {
 	position: absolute;
-	right: 0px;
-	top: 65px;
+	left: 0px;
+	top: 52px;
 	font-size: 25px;
 	padding: 11px;
-	transition: 1200ms;
 }
 
 .nav-project-toggle-container span {
@@ -278,8 +277,8 @@
 	align-items: center;
 	color: var(--bg);
 	background: var(--color-icon);
-	-webkit-transition: 1200ms;
-	transition: 1300ms ease-in-out;
+	-webkit-transition: 700ms;
+	transition: 700ms ease-in-out;
 	cursor: pointer;
 	z-index: 200;
 	border-radius: 50%;
@@ -302,11 +301,7 @@
 }
 
 .open-nav--closed {
-	width: 300px !important;
-	height: 100% !important;
-	/* color: var(--color-orange) !important; */
-	/* background-color: var(--bg-panel) !important; */
-	right: 100% !important;
+	right: -150px !important;
 }
 
 /* ------DEVICE CONTAINERS___End------ */
@@ -345,6 +340,13 @@
 	.project-holder {
 		padding-top: 50px;
 	}
+
+	/* .device-orientation-container {
+		left: 200px !important;
+	} */
+}
+
+@media only screen and (max-width: 800px) {
 }
 
 /* ------MEDIA QUERIES___End------ */

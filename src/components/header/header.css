@@ -260,7 +260,7 @@ button:focus {
 	right: 20px;
 	z-index: 10000000000000000;
 }
-.header-container .darkmode-container-toggle input[type=checkbox] {
+.header-container .darkmode-container-toggle input[type='checkbox'] {
 	height: 0;
 	width: 0;
 	visibility: hidden;
@@ -282,7 +282,7 @@ button:focus {
 .header-container .darkmode-container-toggle label:after {
 	content: '';
 	position: absolute;
-	top: 5px;
+	top: 4.5px;
 	left: 5px;
 	width: 20px;
 	height: 20px;
