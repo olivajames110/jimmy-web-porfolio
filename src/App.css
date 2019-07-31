@@ -32,6 +32,7 @@ html {
 	--color-icon--opp: #f48328;
 	/* --color-icon: #012e4b; */
 	--color-gray-lite: #aeaeaeb4;
+	--color-darker-gray: #e1e0e0;
 	--sideNavButton: #ebebeb;
 	--nav-bottom-border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -50,6 +51,7 @@ html[data-theme='dark'] {
 	--color-icon--opp: #046ab4;
 	--sideNavButton: linear-gradient(to right, #f5af19, #f11911);
 	--nav-bottom-border: 1px solid rgba(255, 255, 255, 0.2);
+	--color-darker-gray: #3b3b3b;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

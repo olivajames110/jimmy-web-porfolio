@@ -15,6 +15,7 @@
 .device-orientation-container {
 	position: fixed;
 	left: 0px;
+	right: unset;
 	top: 0px;
 	width: 205px;
 	display: -webkit-box;
@@ -45,7 +46,7 @@
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
 	width: 100%;
-	padding-top: 20px;
+	padding: 20px 0;
 }
 
 .navigation-title {
@@ -296,8 +297,8 @@
 }
 
 .project-nav--closed {
-	-webkit-transform: translateX(-205px);
-	transform: translateX(-205px);
+	-webkit-transform: translateX(205px);
+	transform: translateX(205px);
 }
 
 .open-nav--closed {
@@ -334,16 +335,17 @@
 	}
 
 	.project-btn {
-		margin-top: 35px;
+		/* margin-top: 35px; */
 	}
 
 	.project-holder {
 		padding-top: 50px;
 	}
 
-	/* .device-orientation-container {
-		left: 200px !important;
-	} */
+	.device-orientation-container {
+		left: unset;
+		right: 0px;
+	}
 }
 
 @media only screen and (max-width: 800px) {
