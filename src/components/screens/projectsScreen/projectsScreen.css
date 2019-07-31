@@ -72,7 +72,7 @@
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	background: #dedede;
+	background: var(--bg);
 	height: 100vh;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -112,18 +112,18 @@
 	position: relative;
 	width: 800px;
 	height: 530px;
-	border: 20px solid black;
+	border: 20px solid #2c2b2b;
 	border-radius: 35px;
-	background: #ffffff;
+	/* background: #ffffff; */
 }
 
 .iphone-container {
 	position: relative;
 	width: 320px;
-	height: 630px;
-	border: 10px solid black;
+	height: 600px;
+	border: 10px solid #2c2b2b;
 	border-radius: 35px;
-	background: #ffffff;
+	/* background: #ffffff; */
 	overflow: hidden;
 }
 
@@ -229,7 +229,7 @@
 	opacity: 0.65;
 }
 
-.ipad-container .placeholder-text,
+/* .ipad-container .placeholder-text,
 .iphone-container .placeholder-text {
 	color: #333333 !important;
 }
@@ -237,7 +237,7 @@
 .ipad-container .placeholder-text-desc,
 .iphone-container .placeholder-text-desc {
 	color: #333333 !important;
-}
+} */
 
 #close.nav-project-toggle-container {
 	position: absolute;
