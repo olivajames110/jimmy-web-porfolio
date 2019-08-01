@@ -1,41 +1,96 @@
 import React, { Component, Fragment } from 'react';
+import Slider from './components/slider/slider';
+import Competitors from './components/competitors/competitors';
 import './priceCalc.css';
 
 class PriceCalc extends Component {
 	state = {
 		pricePerOrder: 100,
+		ordersPerWeek: 50,
 		pricePerOrderAmount: 100,
-		ordersPerWeek: 24,
-		companyCommission: {
-			grubHub: 51,
-			eatStreet: null,
-			chowNow: null,
-			menufy: null,
-			uberEats: null,
-			doorDash: null,
-			ordereze: null
-		}
+		companies: [
+			{ name: 'GrubHub', commissionPercent: 51, annualCost: 0 },
+			{ name: 'Eat Street', commissionPercent: 15, annualCost: 0 },
+			{ name: 'Chow Now', commissionPercent: 119, annualCost: 0 },
+			{ name: 'Menufy', commissionPercent: 1.5, annualCost: 0 },
+			{ name: 'Uber Eats', commissionPercent: 30, annualCost: 0 },
+			{ name: 'Door Dash', commissionPercent: 20, annualCost: 0 },
+			{ name: 'Ordereze', commissionPercent: 5, annualCost: 0 }
+		]
 	};
+
+	componentDidMount() {
+		this.handleAnnualCost();
+	}
 
 	updatePricePerOrder = e => {
 		this.setState({
 			pricePerOrder: e.target.value
 		});
-		console.log('Update price per order', e.target.value);
+
+		this.handleAnnualCost();
 	};
 
 	updateOrdersPerWeek = e => {
 		this.setState({
 			ordersPerWeek: e.target.value
 		});
-		console.log('Update price per order', e.target.value);
+
+		this.handleAnnualCost();
+	};
+
+	handleAnnualCost = () => {
+		let weeks = 52;
+		this.setState({
+			companies: [
+				{
+					name: 'GrubHub',
+					commissionPercent: 51,
+					annualCost: Math.round(
+						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
+					).toLocaleString()
+				},
+				{
+					name: 'Eat Street',
+					commissionPercent: 15,
+					annualCost: Math.round(
+						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.12
+					).toLocaleString()
+				},
+				{
+					name: 'Chow Now',
+					commissionPercent: 119,
+					annualCost: (this.state.pricePerOrder * 12).toLocaleString()
+				},
+				{
+					name: 'Menufy',
+					commissionPercent: 1.5,
+					annualCost: Math.round(this.state.ordersPerWeek * 1.5 * weeks).toLocaleString()
+				},
+				{
+					name: 'Uber Eats',
+					commissionPercent: 30,
+					annualCost: Math.round(
+						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.3
+					).toLocaleString()
+				},
+				{
+					name: 'Door Dash',
+					commissionPercent: 20,
+					annualCost: Math.round(
+						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
+					).toLocaleString()
+				},
+				{
+					name: 'Ordereze',
+					commissionPercent: 5,
+					annualCost: 0
+				}
+			]
+		});
 	};
 
 	render() {
-		const priceAmountStyles = {
-			width: this.state.pricePerOrderAmount
-		};
-
 		return (
 			<Fragment>
 				<div class="range-widget-container fade-in">
@@ -50,199 +105,26 @@ class PriceCalc extends Component {
 							</span>
 						</div>
 						<div className="range-container">
-							<div className="range-slider-wrapper">
-								<div id="avg-price">
-									<div className="range-title">
-										<span className="range-title-step">
-											Average price of an online order placed at your restaurant.
-										</span>
-										<span className="range-title-step-value">
-											<div className="number-value">
-												<span id="rs-bullet--price">{this.state.pricePerOrder}</span>{' '}
-												<span className="number-value-desc">per order</span>
-											</div>
-										</span>
-									</div>
-									{/* <span id="rs-bullet--price" class="rs-label" style="left: 43.61%;">$98</span> */}
-								</div>
-								<div className="box-minmax bottom-rounded-corners">
-									<div className="range-slider-input">
-										<input
-											onChange={this.updatePricePerOrder}
-											id="rs-range-line--price"
-											className="range-slider__range"
-											type="range"
-											defaultValue={100}
-											min={0}
-											max={200}
-											style={priceAmountStyles}
-										/>
-									</div>
-									<div className="box-minmax-key">
-										<span>$0</span>
-										<span>$200</span>
-									</div>
-								</div>
-							</div>
-							<div className="range-slider-wrapper">
-								<div id="avg-amt">
-									<div className="range-title">
-										<span className="range-title-step">
-											Average amount of online orders received in one week.
-										</span>
-										<span className="range-title-step-value">
-											<div className="number-value">
-												<span id="rs-bullet--amt">{this.state.ordersPerWeek}</span>{' '}
-												<span className="number-value-desc">orders per week</span>
-											</div>
-										</span>
-									</div>
-									{/* <span id="rs-bullet--amt" class="odometer rs-label" style="left: 84.6%;">470</span> */}
-								</div>
-								<div className="box-minmax bottom-rounded-corners">
-									<div className="range-slider-input">
-										<input
-											onChange={this.updateOrdersPerWeek}
-											id="rs-range-line--amt"
-											className="range-slider__range"
-											type="range"
-											defaultValue={200}
-											min={0}
-											max={500}
-											style={{
-												background:
-													'linear-gradient(90deg, rgb(12, 78, 126) 94%, rgb(215, 220, 223) 94.1%)'
-											}}
-										/>
-									</div>
-									<div className="box-minmax-key">
-										<span>0</span>
-										<span>500</span>
-									</div>
-								</div>
-							</div>
+							<Slider
+								title={'Each online order is about '}
+								minAmt={'0'}
+								maxAmt={'200'}
+								defaultValue={this.state.pricePerOrder}
+								numberValueDesc={'per order.'}
+								dynamicNumber={this.state.pricePerOrder}
+								handleNumberUpdate={this.updatePricePerOrder}
+							/>
+							<Slider
+								title={'I receive about '}
+								minAmt={'0'}
+								maxAmt={'500'}
+								defaultValue={this.state.ordersPerWeek}
+								numberValueDesc={'online orders in one week.'}
+								dynamicNumber={this.state.ordersPerWeek}
+								handleNumberUpdate={this.updateOrdersPerWeek}
+							/>
 						</div>
-						<div className="competitor-wrapper">
-							<div className="range-title">
-								<span className="range-title-step">
-									Compare companies and see how much money you could be save by using Ordereze.
-								</span>
-							</div>
-							<div className="companies">
-								<div className="companies-table-title">
-									<h3 id="company">Company</h3>
-									<h3 id="commission">Commission %</h3>
-									<h3 id="pay">Annual Cost </h3>
-									<h3 id="ordereze">Annual Ordereze Cost </h3>
-								</div>
-								<div className="list-of-competitors bottom-rounded-corners">
-									<div id="grubhub" className="competitor-container">
-										<span className="competitor-company ">Grubhub</span>
-										<span className="competitor-commission-amt">
-											{this.state.companyCommission.grubHub}
-										</span>
-										<span id="grubhub-competitor" className="competitor-price-amt competitor-red">
-											$479,024
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="eatstreet" className="competitor-container">
-										<span className="competitor-company ">Eatstreet</span>
-										<span className="competitor-commission-amt">
-											{this.state.companyCommission.eatStreet}
-										</span>
-										<span id="eatstreet-competitor" className="competitor-price-amt competitor-red">
-											$287,414
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="chownow" className="competitor-container">
-										<span className="competitor-company ">Chownow</span>
-										<span className="competitor-commission-amt"> $119</span>
-										<span id="chownow-competitor" className="competitor-price-amt competitor-red">
-											$1,428
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="menufy" className="competitor-container">
-										<span className="competitor-company ">Menufy</span>
-										<span className="competitor-commission-amt">$1.50</span>
-										<span id="menufy-competitor" className="competitor-price-amt competitor-red">
-											$36,660
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="uber-eats" className="competitor-container">
-										<span className="competitor-company ">Uber Eats</span>
-										<span className="competitor-commission-amt">30%</span>
-										<span id="uber-eats-competitor" className="competitor-price-amt competitor-red">
-											$718,536
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="door-dash" className="competitor-container">
-										<span className="competitor-company ">Door Dash</span>
-										<span className="competitor-commission-amt">20%</span>
-										<span id="door-dash-competitor" className="competitor-price-amt competitor-red">
-											$479,024
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-									<div id="ordereze" className="competitor-container">
-										<span className="competitor-company competitor-green">Ordereze</span>
-										<span className="competitor-commission-amt">5%</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-										<span
-											id="ordereze-competitor"
-											className="competitor-price-amt competitor-green"
-										>
-											$2,388
-										</span>
-									</div>
-								</div>
-							</div>
-							<div
-								className="chart-container"
-								style={{ position: 'relative', height: '40vh', width: '80vw' }}
-							>
-								<canvas id="myChart" width={400} height={400} />
-							</div>
-						</div>
+						<Competitors companies={this.state.companies} />
 					</div>
 				</div>
 			</Fragment>

@@ -25,17 +25,17 @@ import './projectsScreen.css';
 
 class Projects extends Component {
 	state = {
-		isMobile           : null,
-		currentProject     : '',
-		currentProjectName : 'Choose a project above!',
-		deviceType         : 'desktop-container',
-		projectNavIsOpen   : false
+		isMobile: null,
+		currentProject: '',
+		currentProjectName: 'Choose a project above!',
+		deviceType: 'desktop-container',
+		projectNavIsOpen: false
 	};
 
-	checkIfMobile = (a) => {
-		if (window.innerWidth < 1100) {
+	checkIfMobile = a => {
+		if (window.innerWidth < 600) {
 			this.setState({
-				isMobile : true
+				isMobile: true
 			});
 			// console.log(this.state.isMobile);
 			// return true;
@@ -61,30 +61,30 @@ class Projects extends Component {
 
 	handleProjectNav = () => {
 		this.setState({
-			projectNavIsOpen : !this.state.projectNavIsOpen
+			projectNavIsOpen: !this.state.projectNavIsOpen
 		});
 	};
 
 	handleFormChange = () => {
 		this.handleProjectNav();
 		this.setState({
-			currentProject     : <Form />,
-			currentProjectName : 'Form'
+			currentProject: <Form />,
+			currentProjectName: 'Form'
 		});
 	};
 
 	handleWeatherChange = () => {
 		this.setState({
-			currentProject     : <DrawingBoard />,
-			currentProjectName : 'Drawing Board'
+			currentProject: <DrawingBoard />,
+			currentProjectName: 'Drawing Board'
 		});
 	};
 
 	handlePriceCalcChange = () => {
 		this.handleProjectNav();
 		this.setState({
-			currentProject     : <PriceCalc />,
-			currentProjectName : 'Price Calculator'
+			currentProject: <PriceCalc />,
+			currentProjectName: 'Price Calculator'
 		});
 	};
 	placeholder;
@@ -92,8 +92,8 @@ class Projects extends Component {
 	handleMenuChange = () => {
 		this.handleProjectNav();
 		this.setState({
-			currentProject     : <Menu />,
-			currentProjectName : 'Menu'
+			currentProject: <Menu />,
+			currentProjectName: 'Menu'
 		});
 	};
 
@@ -107,7 +107,7 @@ class Projects extends Component {
 		} else if (area === 'device') return this.state.deviceType === stateName ? 'navigation-option--active' : '';
 	};
 
-	handleDeviceChange = (e) => {
+	handleDeviceChange = e => {
 		let device = e.currentTarget.getAttribute('value');
 		if (this.state.isMobile === true) {
 			if (device === 'desktop-container' || device === 'ipad-container') {
@@ -140,7 +140,7 @@ class Projects extends Component {
 		const deviceSwitcher = (
 			<div className="device-orientation-btns-container">
 				<div
-					onClick={(e) => this.handleDeviceChange(e)}
+					onClick={e => this.handleDeviceChange(e)}
 					id="iphone-device-button"
 					value="iphone-container"
 					className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
@@ -148,7 +148,7 @@ class Projects extends Component {
 					<FontAwesomeIcon icon={faMobileAlt} />
 				</div>
 				<div
-					onClick={(e) => this.handleDeviceChange(e)}
+					onClick={e => this.handleDeviceChange(e)}
 					id="ipad-device-button"
 					value="ipad-container"
 					className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
@@ -159,7 +159,7 @@ class Projects extends Component {
 					<FontAwesomeIcon icon={faTabletAlt} />
 				</div>
 				<div
-					onClick={(e) => this.handleDeviceChange(e)}
+					onClick={e => this.handleDeviceChange(e)}
 					id="desktop-device-button"
 					value="desktop-container"
 					className={`navigation-option desktop-only-icon ${this.handleCheckActive(
