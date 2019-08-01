@@ -9,13 +9,13 @@ class PriceCalc extends Component {
 		ordersPerWeek: 50,
 		pricePerOrderAmount: 100,
 		companies: [
-			{ name: 'GrubHub', fee: null, annualCost: 0 },
-			{ name: 'Eat Street', fee: null, annualCost: 0 },
-			{ name: 'Chow Now', fee: null, annualCost: 0 },
-			{ name: 'Menufy', fee: null, annualCost: 0 },
-			{ name: 'Uber Eats', fee: null, annualCost: 0 },
-			{ name: 'Door Dash', fee: null, annualCost: 0 },
-			{ name: 'Ordereze', fee: null, annualCost: 0 }
+			{ name: 'GrubHub', fee: null, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Eat Street', fee: null, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Chow Now', fee: 119, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Menufy', fee: null, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Uber Eats', fee: null, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Door Dash', fee: null, specialInformation: null, isPercent: null, annualCost: 0 },
+			{ name: 'Ordereze', fee: null, specialInformation: null, isPercent: null, annualCost: 0 }
 		]
 	};
 
@@ -64,7 +64,7 @@ class PriceCalc extends Component {
 				{
 					name: 'Chow Now',
 					fee: 119,
-					specialInformation: 'per/mo with annual contract',
+					specialInformation: 'monthly (annual contract)',
 					isPercent: false,
 					annualCost: (this.state.companies[2].fee * 12).toLocaleString()
 				},
@@ -96,7 +96,7 @@ class PriceCalc extends Component {
 				{
 					name: 'Ordereze',
 					fee: 0.05,
-					specialInformation: 'capping monthly at $199',
+					specialInformation: 'caps monthly at $199',
 					isPercent: true,
 					annualCost: 0
 				}
@@ -111,9 +111,7 @@ class PriceCalc extends Component {
 					<div className="bg" />
 					<div className="range-widget-container">
 						<div className="intro-header">
-							<h1>
-								Online Ordering Cost <span> Commission Calculator</span>
-							</h1>
+							<h1>Online Ordering Cost Commission Calculator</h1>
 							<span className="description">
 								How much money are you giving away to various third-party online ordering companies?
 							</span>

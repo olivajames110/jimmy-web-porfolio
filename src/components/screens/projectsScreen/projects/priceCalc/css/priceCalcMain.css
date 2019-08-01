@@ -32,7 +32,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: var(--h1);
 }
 
@@ -132,10 +132,10 @@
 .special-information {
   font-size: 10px !important;
   position: absolute !important;
-  bottom: -12px;
+  bottom: -14px;
   font-weight: 400 !important;
   opacity: 0.7;
-  left: 0px;
+  left: -3px;
   width: 190px !important;
 }
 
@@ -197,6 +197,7 @@
 #device-project-container[data-theme='iphone-container'] .competitor-container {
   -ms-grid-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
       grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+  padding: 15px 0;
 }
 
 #device-project-container[data-theme='iphone-container'] .competitor-container span {
@@ -221,7 +222,7 @@
 }
 
 #device-project-container[data-theme='iphone-container'] .companies-table-title h3 {
-  padding-right: 10px;
+  padding-right: 20px;
   font-size: 0.7em;
 }
 
@@ -247,6 +248,7 @@
   .competitor-container {
     -ms-grid-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
         grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+    padding: 15px 0;
   }
   .competitor-container span {
     font-size: 0.8em;
@@ -267,7 +269,7 @@
     width: 100%;
   }
   .companies-table-title h3 {
-    padding-right: 10px;
+    padding-right: 20px;
     font-size: 0.7em;
   }
   .range-title {
