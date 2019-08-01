@@ -19,7 +19,7 @@ import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
 import PriceCalc from './projects/priceCalc/priceCalc';
 import DrawingBoard from './projects/drawingBoard/drawingBoard';
-import Project from './projects/project/project';
+import Project from './project/project';
 import Menu from './projects/menu/menu';
 import './projectsScreen.css';
 
@@ -33,7 +33,7 @@ class Projects extends Component {
 	};
 
 	checkIfMobile = a => {
-		if (window.innerWidth < 600) {
+		if (window.innerWidth < 800) {
 			this.setState({
 				isMobile: true
 			});
@@ -108,7 +108,10 @@ class Projects extends Component {
 	};
 
 	handleDeviceChange = e => {
+		let deviceEl = document.getElementById('device-project-container');
 		let device = e.currentTarget.getAttribute('value');
+		deviceEl.setAttribute('data-theme', device);
+		console.log(deviceEl);
 		if (this.state.isMobile === true) {
 			if (device === 'desktop-container' || device === 'ipad-container') {
 				document.getElementById('mobile-tooltip').style.display = 'initial';
@@ -120,6 +123,24 @@ class Projects extends Component {
 		if (this.state.isMobile === false) {
 			this.setState({ deviceType: device });
 			document.getElementById('device-project-container').className = device;
+		}
+	};
+
+	toggleDarkmode = () => {
+		console.log(this.state.isDarkMode);
+		const html = document.documentElement;
+
+		this.setState({
+			isDarkMode: !this.state.isDarkMode,
+			isSetToLocalStorage: true
+		});
+
+		if (!this.state.isDarkMode) {
+			html.setAttribute('data-theme', 'dark');
+			localStorage.setItem('isDarkMode', true);
+		} else {
+			html.setAttribute('data-theme', 'light');
+			localStorage.removeItem('isDarkMode');
 		}
 	};
 
@@ -264,7 +285,7 @@ class Projects extends Component {
 									: ''}`}
 							>
 								{this.state.isMobile ? projectNavCloseBtn : deviceSwitcher}
-								<div className="nav-project-holder">{projectList}</div>
+								{projectList}
 							</div>
 						</div>
 						<div data-device={this.state.deviceType} className="project-holder">

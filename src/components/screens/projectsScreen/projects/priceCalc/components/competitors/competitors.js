@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import './competitors';
 
 export default class Competitors extends Component {
+	convertFeeNumber = (num, isPercent) => {
+		console.log(num, isPercent);
+		if (isPercent) {
+			return `${num * 100}%`;
+		} else {
+			return `$${num}`;
+		}
+	};
+
 	render() {
 		const { companies } = this.props;
 		const companiesList = companies.map(company => {
 			return (
 				<div className="competitor-container">
 					<span className="competitor-company ">{company.name}</span>
-					<span className="competitor-commission-amt">{company.commissionPercent}</span>
+					<span className="competitor-commission-amt">
+						{this.convertFeeNumber(company.fee, company.isPercent)}
+					</span>
 					<span id="grubhub-competitor" className="competitor-price-amt competitor-red">
 						${company.annualCost}
 					</span>
@@ -21,16 +32,11 @@ export default class Competitors extends Component {
 
 		return (
 			<div className="competitor-wrapper">
-				<div className="range-title">
-					<span className="range-title-step">
-						Compare companies and see how much money you could be save by using Ordereze.
-					</span>
-				</div>
 				<div className="companies">
 					<div className="companies-table-title">
 						<h3 id="company">Company</h3>
-						<h3 id="commission">Commission %</h3>
-						<h3 id="pay">Annual Cost </h3>
+						<h3 id="commission">Fee</h3>
+						<h3 id="pay">Annual Cost</h3>
 						<h3 id="ordereze">Annual Ordereze Cost </h3>
 					</div>
 

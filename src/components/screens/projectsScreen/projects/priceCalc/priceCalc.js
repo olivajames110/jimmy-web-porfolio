@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Slider from './components/slider/slider';
 import Competitors from './components/competitors/competitors';
-import './priceCalc.css';
+import './css/priceCalcMain.css';
 
 class PriceCalc extends Component {
 	state = {
@@ -9,13 +9,13 @@ class PriceCalc extends Component {
 		ordersPerWeek: 50,
 		pricePerOrderAmount: 100,
 		companies: [
-			{ name: 'GrubHub', commissionPercent: 51, annualCost: 0 },
-			{ name: 'Eat Street', commissionPercent: 15, annualCost: 0 },
-			{ name: 'Chow Now', commissionPercent: 119, annualCost: 0 },
-			{ name: 'Menufy', commissionPercent: 1.5, annualCost: 0 },
-			{ name: 'Uber Eats', commissionPercent: 30, annualCost: 0 },
-			{ name: 'Door Dash', commissionPercent: 20, annualCost: 0 },
-			{ name: 'Ordereze', commissionPercent: 5, annualCost: 0 }
+			{ name: 'GrubHub', fee: null, annualCost: 0 },
+			{ name: 'Eat Street', fee: null, annualCost: 0 },
+			{ name: 'Chow Now', fee: null, annualCost: 0 },
+			{ name: 'Menufy', fee: null, annualCost: 0 },
+			{ name: 'Uber Eats', fee: null, annualCost: 0 },
+			{ name: 'Door Dash', fee: null, annualCost: 0 },
+			{ name: 'Ordereze', fee: null, annualCost: 0 }
 		]
 	};
 
@@ -45,45 +45,52 @@ class PriceCalc extends Component {
 			companies: [
 				{
 					name: 'GrubHub',
-					commissionPercent: 51,
+					fee: 0.2,
+					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
 					).toLocaleString()
 				},
 				{
 					name: 'Eat Street',
-					commissionPercent: 15,
+					fee: 0.12,
+					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.12
 					).toLocaleString()
 				},
 				{
 					name: 'Chow Now',
-					commissionPercent: 119,
-					annualCost: (this.state.pricePerOrder * 12).toLocaleString()
+					fee: 119,
+					isPercent: false,
+					annualCost: (this.state.companies[2].fee * 12).toLocaleString()
 				},
 				{
 					name: 'Menufy',
-					commissionPercent: 1.5,
+					fee: 1.5,
+					isPercent: false,
 					annualCost: Math.round(this.state.ordersPerWeek * 1.5 * weeks).toLocaleString()
 				},
 				{
 					name: 'Uber Eats',
-					commissionPercent: 30,
+					fee: 0.3,
+					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.3
 					).toLocaleString()
 				},
 				{
 					name: 'Door Dash',
-					commissionPercent: 20,
+					fee: 0.2,
+					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
 					).toLocaleString()
 				},
 				{
 					name: 'Ordereze',
-					commissionPercent: 5,
+					fee: 0.05,
+					isPercent: true,
 					annualCost: 0
 				}
 			]
@@ -96,32 +103,34 @@ class PriceCalc extends Component {
 				<div class="range-widget-container fade-in">
 					<div className="bg" />
 					<div className="range-widget-container">
-						<div className="intro-headers">
+						<div className="intro-header">
 							<h1>
 								Online Ordering Cost <span> Commission Calculator</span>
 							</h1>
-							<span className="intro-desc">
+							<span className="description">
 								How much money are you giving away to various third-party online ordering companies?
 							</span>
 						</div>
 						<div className="range-container">
 							<Slider
-								title={'Each online order is about '}
+								title={'The average price of an order placed online is about'}
 								minAmt={'0'}
 								maxAmt={'200'}
 								defaultValue={this.state.pricePerOrder}
 								numberValueDesc={'per order.'}
 								dynamicNumber={this.state.pricePerOrder}
 								handleNumberUpdate={this.updatePricePerOrder}
+								isPercent={true}
 							/>
 							<Slider
-								title={'I receive about '}
+								title={'In a span of one week, I receive an average of about'}
 								minAmt={'0'}
 								maxAmt={'500'}
 								defaultValue={this.state.ordersPerWeek}
-								numberValueDesc={'online orders in one week.'}
+								numberValueDesc={'online orders.'}
 								dynamicNumber={this.state.ordersPerWeek}
 								handleNumberUpdate={this.updateOrdersPerWeek}
+								isPercent={false}
 							/>
 						</div>
 						<Competitors companies={this.state.companies} />

@@ -1,8 +1,6 @@
 .range-title {
 	font-size: 1.2em;
-	line-height: 1.4em;
-	display: flex;
-	flex-direction: row;
+	line-height: 1.5em;
 }
 
 .upper-portion {
@@ -36,9 +34,7 @@
 	background: #ffffff;
 	cursor: pointer;
 	transition: background 0.15s ease-in-out;
-	/* border: 3px solid #6eab1f; */
-	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.157);
-	z-index: 5;
+	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.09);
 }
 
 .range-slider__range::-webkit-slider-thumb:hover {
@@ -48,5 +44,5 @@
 .box-minmax-key {
 	display: flex;
 	justify-content: space-between;
-	padding-top: 15px;
+	padding-top: 5px;
 }

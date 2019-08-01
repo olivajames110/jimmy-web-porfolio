@@ -63,6 +63,7 @@
 	padding: 6px 8px;
 	border-radius: 5px;
 	text-align: center;
+	width: 50px;
 }
 
 .project-holder {
@@ -92,7 +93,11 @@
 	transition: 1190ms;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	overflow: hidden;
+	overflow-y: scroll;
+}
+
+#device-project-container::-webkit-scrollbar {
+	display: none;
 }
 
 /* ------DEVICE CONTAINERS___Start------ */
@@ -125,6 +130,7 @@
 	border: 10px solid #2c2b2b;
 	border-radius: 35px;
 	/* background: #ffffff; */
+	font-size: 14px;
 	overflow: hidden;
 }
 
@@ -311,7 +317,7 @@
 /* .................................................... */
 /* ------MEDIA QUERIES___Start------ */
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 800px) {
 	.project-screen-cont--tablet {
 		width: 100%;
 		height: 660px;
@@ -334,8 +340,8 @@
 		grid-template-columns: 0 1fr;
 	}
 
-	.project-btn {
-		/* margin-top: 35px; */
+	.desktop-container {
+		font-size: 16px;
 	}
 
 	.project-holder {
@@ -347,15 +353,6 @@
 		right: 0px;
 	}
 }
-
-@media only screen and (max-width: 800px) {
-}
-
-/* ------MEDIA QUERIES___End------ */
-/* .................................................... */
-/* .................................................... */
-/* .................................................... */
-/* ------ANIMATIONS___Start------ */
 
 .fade-in {
 	-webkit-animation-name: fadeIn;

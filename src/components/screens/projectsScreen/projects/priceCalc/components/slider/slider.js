@@ -5,8 +5,7 @@ export default class Slider extends Component {
 	render() {
 		const fill = this.props.dynamicNumber / this.props.maxAmt * 100;
 		const { title, minAmt, maxAmt, defaultValue, numberValueDesc, dynamicNumber, handleNumberUpdate } = this.props;
-		// const ex = `'linear-gradient(90deg, rgb(12, 78, 126) 64%, rgb(215, 220, 223) 64.1%)'`;
-		const ex = `linear-gradient(90deg, rgb(12, 78, 126) ${fill}%, rgb(215, 220, 223) ${fill}%)`;
+		const ex = `linear-gradient(90deg, #078a7a ${fill}%, rgb(215, 220, 223) ${fill}%)`;
 
 		return (
 			<div className="range-slider-wrapper">
@@ -14,9 +13,12 @@ export default class Slider extends Component {
 					<div className="range-title">
 						<span>{title}</span>
 						<span onChange={this.updateFillAmt} className="dynamic-number-value">
-							${dynamicNumber}
-						</span>{' '}
-						<span className="dynamic-number-value-desc">{numberValueDesc}</span>
+							<span>
+								{this.props.isPercent ? '$' : null}
+								{dynamicNumber}
+							</span>
+						</span>
+						<span>{numberValueDesc}</span>
 					</div>
 					{/* <span id="rs-bullet--price" class="rs-label" style="left: 43.61%;">$98</span> */}
 				</div>
@@ -34,8 +36,14 @@ export default class Slider extends Component {
 					/>
 
 					<div className="box-minmax-key">
-						<span>${minAmt}</span>
-						<span>${maxAmt}</span>
+						<span>
+							{this.props.isPercent ? '$' : null}
+							{minAmt}
+						</span>
+						<span>
+							{this.props.isPercent ? '$' : null}
+							{maxAmt}
+						</span>
 					</div>
 				</div>
 			</div>
