@@ -112,7 +112,7 @@
 }
 
 .companies-table-title h3 {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: bold;
 }
 
@@ -120,8 +120,8 @@
 .competitor-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1.1fr 1.3fr 0.8fr;
-      grid-template-columns: 1fr 1.1fr 1.3fr 0.8fr;
+  -ms-grid-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+      grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
   padding: 10px 0;
 }
 
@@ -129,10 +129,21 @@
   width: 100%;
 }
 
+.special-information {
+  font-size: 10px !important;
+  position: absolute !important;
+  bottom: -12px;
+  font-weight: 400 !important;
+  opacity: 0.7;
+  left: 0px;
+  width: 190px !important;
+}
+
 .competitor-container span {
   padding: 5px 0;
   font-size: 1em;
   text-align: left;
+  position: relative;
 }
 
 .competitor-container:nth-of-type(odd) {
@@ -153,11 +164,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-}
-
-.competitor-company {
-  min-width: 85px;
-  text-align: right;
 }
 
 .competitor-red {
@@ -187,14 +193,14 @@
   position: relative;
 }
 
-#device-project-container[data-theme='iphone-container'] .competitor-container {
-  font-size: 13px;
-}
-
 #device-project-container[data-theme='iphone-container'] .companies-table-title,
 #device-project-container[data-theme='iphone-container'] .competitor-container {
-  -ms-grid-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
-      grid-template-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
+  -ms-grid-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+      grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+}
+
+#device-project-container[data-theme='iphone-container'] .competitor-container span {
+  font-size: 0.8em;
 }
 
 #device-project-container[data-theme='iphone-container'] .competitor-company-commission-wrapper {
@@ -215,11 +221,16 @@
 }
 
 #device-project-container[data-theme='iphone-container'] .companies-table-title h3 {
+  padding-right: 10px;
   font-size: 0.7em;
 }
 
 #device-project-container[data-theme='iphone-container'] .range-title {
   font-size: 1em;
+}
+
+#device-project-container[data-theme='iphone-container'] .competitor-wrapper {
+  font-size: 0.9em;
 }
 
 #device-project-container[data-theme='iphone-container'] .intro-header h1 {
@@ -232,13 +243,13 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .competitor-container {
-    font-size: 13px;
-  }
   .companies-table-title,
   .competitor-container {
-    -ms-grid-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
-        grid-template-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
+    -ms-grid-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+        grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+  }
+  .competitor-container span {
+    font-size: 0.8em;
   }
   .competitor-company-commission-wrapper {
     display: -webkit-box;
@@ -256,10 +267,14 @@
     width: 100%;
   }
   .companies-table-title h3 {
+    padding-right: 10px;
     font-size: 0.7em;
   }
   .range-title {
     font-size: 1em;
+  }
+  .competitor-wrapper {
+    font-size: 0.9em;
   }
   .intro-header h1 {
     font-size: 1.8em;

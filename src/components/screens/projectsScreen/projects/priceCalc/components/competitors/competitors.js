@@ -13,12 +13,16 @@ export default class Competitors extends Component {
 
 	render() {
 		const { companies } = this.props;
+
 		const companiesList = companies.map(company => {
 			return (
 				<div className="competitor-container">
-					<span className="competitor-company ">{company.name}</span>
+					<span>{company.name}</span>
 					<span className="competitor-commission-amt">
 						{this.convertFeeNumber(company.fee, company.isPercent)}
+						{company.specialInformation ? (
+							<span className="special-information">{company.specialInformation}</span>
+						) : null}
 					</span>
 					<span id="grubhub-competitor" className="competitor-price-amt competitor-red">
 						${company.annualCost}
@@ -34,9 +38,9 @@ export default class Competitors extends Component {
 			<div className="competitor-wrapper">
 				<div className="companies">
 					<div className="companies-table-title">
-						<h3 id="company">Company</h3>
-						<h3 id="commission">Fee</h3>
-						<h3 id="pay">Annual Cost</h3>
+						<h3 id="company">Online Ordering Company</h3>
+						<h3 id="commission">Per Order Fee</h3>
+						<h3 id="pay">Annual Cost From Fees</h3>
 						<h3 id="ordereze">Annual Ordereze Cost </h3>
 					</div>
 

@@ -46,6 +46,7 @@ class PriceCalc extends Component {
 				{
 					name: 'GrubHub',
 					fee: 0.2,
+					specialInformation: false,
 					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
@@ -54,6 +55,7 @@ class PriceCalc extends Component {
 				{
 					name: 'Eat Street',
 					fee: 0.12,
+					specialInformation: false,
 					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.12
@@ -62,18 +64,21 @@ class PriceCalc extends Component {
 				{
 					name: 'Chow Now',
 					fee: 119,
+					specialInformation: 'per/mo with annual contract',
 					isPercent: false,
 					annualCost: (this.state.companies[2].fee * 12).toLocaleString()
 				},
 				{
 					name: 'Menufy',
 					fee: 1.5,
+					specialInformation: false,
 					isPercent: false,
 					annualCost: Math.round(this.state.ordersPerWeek * 1.5 * weeks).toLocaleString()
 				},
 				{
 					name: 'Uber Eats',
 					fee: 0.3,
+					specialInformation: false,
 					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.3
@@ -82,6 +87,7 @@ class PriceCalc extends Component {
 				{
 					name: 'Door Dash',
 					fee: 0.2,
+					specialInformation: false,
 					isPercent: true,
 					annualCost: Math.round(
 						this.state.pricePerOrder * this.state.ordersPerWeek * weeks * 0.2
@@ -90,6 +96,7 @@ class PriceCalc extends Component {
 				{
 					name: 'Ordereze',
 					fee: 0.05,
+					specialInformation: 'capping monthly at $199',
 					isPercent: true,
 					annualCost: 0
 				}

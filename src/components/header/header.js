@@ -9,10 +9,10 @@ import classNames from 'classnames';
 
 class Header extends Component {
 	state = {
-		mobileNavIsOpen     : false,
-		currentPage         : 'projects',
-		isDarkMode          : false,
-		isSetToLocalStorage : false
+		mobileNavIsOpen: false,
+		currentPage: 'projects',
+		isDarkMode: false,
+		isSetToLocalStorage: false
 	};
 
 	componentWillMount() {}
@@ -22,7 +22,7 @@ class Header extends Component {
 		console.log(localStorage.isDarkMode);
 		if (localStorage.isDarkMode) {
 			this.setState({
-				isDarkMode : true
+				isDarkMode: true
 			});
 			this.toggleDarkmode();
 			document.querySelector('.darkmode-btn').checked = true;
@@ -33,13 +33,13 @@ class Header extends Component {
 		window.removeEventListener('resize', this.handleResize);
 	}
 
-	handleResize = (params) => {
+	handleResize = params => {
 		if (window.innerWidth > 1100) {
 			this.setState({ mobileNavIsOpen: false });
 		}
 	};
 
-	handleMobileNavToggle = (params) => {
+	handleMobileNavToggle = params => {
 		console.log('clicked');
 		this.setState({ mobileNavIsOpen: !this.state.mobileNavIsOpen });
 	};
@@ -63,8 +63,8 @@ class Header extends Component {
 		const html = document.documentElement;
 
 		this.setState({
-			isDarkMode          : !this.state.isDarkMode,
-			isSetToLocalStorage : true
+			isDarkMode: !this.state.isDarkMode,
+			isSetToLocalStorage: true
 		});
 
 		if (!this.state.isDarkMode) {
@@ -79,8 +79,8 @@ class Header extends Component {
 	render() {
 		const { mobileNavIsOpen } = this.state;
 		const appHeaderClasses = classNames('app-header', {
-			'mobile-menu--open'   : mobileNavIsOpen,
-			'mobile-menu--closed' : !mobileNavIsOpen
+			'mobile-menu--open': mobileNavIsOpen,
+			'mobile-menu--closed': !mobileNavIsOpen
 		});
 
 		const Links = () => (
@@ -140,7 +140,7 @@ class Header extends Component {
 				{mobileNavIsOpen ? <BackDrop /> : ''}
 				<div className="darkmode-container-toggle">
 					<input onClick={this.toggleDarkmode} className="darkmode-btn" type="checkbox" id="switch" />
-					<label for="switch">Toggle</label>
+					<label htmlFor="switch">Toggle</label>
 				</div>
 				<div style={{ height: mobileNavIsOpen ? '90% ' : '' }} className={appHeaderClasses}>
 					<div

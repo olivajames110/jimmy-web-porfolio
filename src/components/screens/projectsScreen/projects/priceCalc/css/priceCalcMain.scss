@@ -78,23 +78,33 @@
 	border-radius: 4px;
 }
 .companies-table-title h3 {
-	font-size: 0.8em;
+	font-size: 0.7em;
 	font-weight: bold;
 }
 .companies-table-title,
 .competitor-container {
 	display: grid;
-	grid-template-columns: 1fr 1.1fr 1.3fr 0.8fr;
+	grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
 	padding: 10px 0;
 }
 .competitor-wrapper {
 	width: 100%;
+}
+.special-information {
+	font-size: 10px !important;
+	position: absolute !important;
+	bottom: -12px;
+	font-weight: 400 !important;
+	opacity: 0.7;
+	left: 0px;
+	width: 190px !important;
 }
 .competitor-container {
 	span {
 		padding: 5px 0;
 		font-size: 1em;
 		text-align: left;
+		position: relative;
 	}
 	&:nth-of-type(odd) {
 		background: rgb(243, 243, 243);
@@ -109,10 +119,6 @@
 	display: flex;
 	align-items: center;
 	width: 100%;
-}
-.competitor-company {
-	min-width: 85px;
-	text-align: right;
 }
 .competitor-red {
 	color: #b10500;
@@ -132,12 +138,14 @@
 }
 // ----------------- device media query -------------------
 #device-project-container[data-theme='iphone-container'] {
-	.competitor-container {
-		font-size: 13px;
-	}
 	.companies-table-title,
 	.competitor-container {
-		grid-template-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
+		grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+	}
+	.competitor-container {
+		span {
+			font-size: 0.8em;
+		}
 	}
 	.competitor-company-commission-wrapper {
 		display: flex;
@@ -148,10 +156,14 @@
 		width: 100%;
 	}
 	.companies-table-title h3 {
+		padding-right: 10px;
 		font-size: 0.7em;
 	}
 	.range-title {
 		font-size: 1em;
+	}
+	.competitor-wrapper {
+		font-size: 0.9em;
 	}
 	.intro-header {
 		h1 {
@@ -164,12 +176,14 @@
 	}
 }
 @media only screen and (max-width: 900px) {
-	.competitor-container {
-		font-size: 13px;
-	}
 	.companies-table-title,
 	.competitor-container {
-		grid-template-columns: 1.2fr 0.9fr 1.1fr 0.8fr;
+		grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+	}
+	.competitor-container {
+		span {
+			font-size: 0.8em;
+		}
 	}
 	.competitor-company-commission-wrapper {
 		display: flex;
@@ -180,10 +194,14 @@
 		width: 100%;
 	}
 	.companies-table-title h3 {
+		padding-right: 10px;
 		font-size: 0.7em;
 	}
 	.range-title {
 		font-size: 1em;
+	}
+	.competitor-wrapper {
+		font-size: 0.9em;
 	}
 	.intro-header {
 		h1 {
