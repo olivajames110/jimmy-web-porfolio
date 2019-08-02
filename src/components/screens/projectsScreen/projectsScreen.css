@@ -238,7 +238,7 @@
 .project-screen-cont {
 	height: 100%;
 }
-.project-screen-cont div:nth-child(1) {
+.project-screen-cont > div:first-child {
 	animation-name: fadeIn;
 	animation-duration: 500ms;
 	animation-fill-mode: forwards;
