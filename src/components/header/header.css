@@ -20,7 +20,7 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	z-index: 10000;
-	background-color: var(--bg);
+	background-color: var(--whiteToBlack);
 	-webkit-box-shadow: 0px 0px 6px 1px #00000047;
 	box-shadow: 0px 0px 6px 1px #00000047;
 	border-bottom: 1px solid #dad7d72b;
@@ -99,7 +99,7 @@ button:focus {
 }
 
 .navigation-logo-container.menunav-header-blue {
-	background-color: var(--bg-mobile-nav);
+	background-color: var(--whiteToBlack-mobile-nav);
 }
 
 @media only screen and (max-width: 600px) {
@@ -128,7 +128,7 @@ button:focus {
 		-webkit-box-pack: justify;
 		-ms-flex-pack: justify;
 		justify-content: space-between;
-		background-color: var(--bg);
+		background-color: var(--whiteToBlack);
 		border-bottom: var(--nav-bottom-border);
 		/* -webkit-box-shadow: 0 0px 10px 0px #00000073;
 		box-shadow: 0 0px 10px 0px #00000073; */

@@ -5,7 +5,7 @@ export default class Slider extends Component {
 	render() {
 		const fill = this.props.dynamicNumber / this.props.maxAmt * 100;
 		const { title, minAmt, maxAmt, defaultValue, numberValueDesc, dynamicNumber, handleNumberUpdate } = this.props;
-		const ex = `linear-gradient(90deg, #078a7a ${fill}%, rgb(215, 220, 223) ${fill}%)`;
+		const ex = `linear-gradient(90deg, var(--priceCalcSliderGreen) ${fill}%, rgb(215, 220, 223) ${fill}%)`;
 
 		return (
 			<div className="range-slider-wrapper">

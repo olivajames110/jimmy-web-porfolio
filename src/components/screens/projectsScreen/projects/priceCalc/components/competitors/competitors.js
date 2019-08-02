@@ -24,12 +24,8 @@ export default class Competitors extends Component {
 							<span className="special-information">{company.specialInformation}</span>
 						) : null}
 					</span>
-					<span id="grubhub-competitor" className="competitor-price-amt competitor-red">
-						${company.annualCost}
-					</span>
-					<span id="ordereze-competitor" className="competitor-price-amt competitor-green">
-						$2,388
-					</span>
+					<span style={{ color: 'var(--priceCalcCompRed)' }}>${company.annualCost}</span>
+					<span style={{ color: 'var(--priceCalcCompGreen)' }}>${companies[6].annualCost}</span>
 				</div>
 			);
 		});
@@ -38,13 +34,12 @@ export default class Competitors extends Component {
 			<div className="competitor-wrapper">
 				<div className="companies">
 					<div className="companies-table-title">
-						<h3 id="company">Online Ordering Company</h3>
-						<h3 id="commission">Per Order Fee</h3>
-						<h3 id="pay">Annual Cost From Fees</h3>
-						<h3 id="ordereze">Annual Ordereze Cost </h3>
+						<h3>Online Ordering Company</h3>
+						<h3>Per Order Fee</h3>
+						<h3>Annual Cost From Fees</h3>
+						<h3>Annual Ordereze Cost </h3>
 					</div>
-
-					<div className="list-of-competitors bottom-rounded-corners">{companiesList}</div>
+					{companiesList}
 				</div>
 			</div>
 		);

@@ -9,7 +9,7 @@
 
 .navigation {
 	width: 100%;
-	background: var(--bg-panel);
+	background: var(--white1ToBlack1);
 }
 
 .device-orientation-container {
@@ -33,7 +33,7 @@
 	-webkit-box-shadow: 0px 1px 3px 1px #00000024;
 	box-shadow: 0px 1px 3px 1px #00000024;
 	z-index: 1000;
-	background-color: var(--bg-panel);
+	background-color: var(--white1ToBlack1);
 	padding-top: 100px;
 	-webkit-transition: 800ms;
 	transition: 800ms ease-in-out;
@@ -74,7 +74,7 @@
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	background: var(--bg);
+	background: var(--whiteToBlack);
 	height: 100vh;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -106,12 +106,12 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
-	background: var(--bg);
+	background: var(--whiteToBlack);
 	border-width: 0;
 	border-radius: 0;
 	border-color: black;
 	border-style: solid;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 }
 
 .ipad-container {
@@ -186,7 +186,7 @@
 /* ---Logic--- */
 .navigation-option--active {
 	background: var(--color-icon);
-	color: var(--bg-panel);
+	color: var(--white1ToBlack1);
 }
 
 .project-holder::-webkit-scrollbar {
@@ -235,16 +235,14 @@
 	padding: 0 14px;
 	opacity: 0.65;
 }
-
-/* .ipad-container .placeholder-text,
-.iphone-container .placeholder-text {
-	color: #333333 !important;
+.project-screen-cont {
+	height: 100%;
 }
-
-.ipad-container .placeholder-text-desc,
-.iphone-container .placeholder-text-desc {
-	color: #333333 !important;
-} */
+.project-screen-cont div:nth-child(1) {
+	animation-name: fadeIn;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
 
 #close.nav-project-toggle-container {
 	position: absolute;
@@ -282,7 +280,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	color: var(--bg);
+	color: var(--whiteToBlack);
 	background: var(--color-icon);
 	-webkit-transition: 700ms;
 	transition: 700ms ease-in-out;

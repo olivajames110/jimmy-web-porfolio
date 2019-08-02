@@ -98,20 +98,30 @@ class PriceCalc extends Component {
 					fee: 0.05,
 					specialInformation: 'caps monthly at $199',
 					isPercent: true,
-					annualCost: 0
+					annualCost: Math.round(
+						ozMonthlyPricing(this.state.pricePerOrder, this.state.ordersPerWeek) * 12
+					).toLocaleString()
 				}
 			]
 		});
+		function ozMonthlyPricing(avgPrice, orderQty) {
+			let totalPrice = avgPrice * orderQty * 0.05 * 4.3;
+			if (totalPrice <= 199) {
+				return totalPrice;
+			} else {
+				return 199;
+			}
+		}
 	};
 
 	render() {
 		return (
 			<Fragment>
-				<div class="range-widget-container fade-in">
+				<div class="range-widget-container">
 					<div className="bg" />
 					<div className="range-widget-container">
 						<div className="intro-header">
-							<h1>Online Ordering Cost Commission Calculator</h1>
+							<h1>Online Ordering Commission Calculator</h1>
 							<span className="description">
 								How much money are you giving away to various third-party online ordering companies?
 							</span>

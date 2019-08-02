@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+:root {
+  --websiteH1: 'Montserrat', sans-serif;
+}
+
+html {
+  --websiteBlueToWhite: #0c4e7e;
+}
+
+html[data-theme='dark'] {
+  --websiteBlueToWhite: white;
+}
+
+.website-project-container {
+  position: relative;
+  height: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.website-project-container h1 {
+  font-family: var(--websiteH1);
+  line-height: 1.4;
+}
+
+.website-project-container h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #0c4e7e;
+  font-family: var(--websiteH1);
+  line-height: 1.4;
+}
+
+.website-project-container span {
+  line-height: 1.4;
+}
+
+.website-project-container button,
+.website-project-container .link {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.website-project-container button {
+  background-color: #6eab1f;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+}
+
+.website-project-container button:hover {
+  background-color: #6eab1fd7;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 18px;
+  height: 100px;
+}
+
+nav .nav-link-container {
+  padding-top: 15px;
+}
+
+nav .link {
+  margin-left: 40px;
+}
+
+nav .link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+nav img {
+  height: 100%;
+}
+
+nav .mobile-nav-icon {
+  color: white;
+  display: none;
+}
+
+#section1 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("https://digitalmarketing.blob.core.windows.net/8981/images/items/image565981.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+#section1 h1 {
+  font-size: 68px;
+}
+
+#section1 .sub-heading {
+  color: white;
+  font-family: var(--h2);
+  font-size: 28px;
+}
+
+#section1 button {
+  margin-top: 30px;
+  padding: 20px 30px;
+}
+
+#section1 svg {
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  fill: white;
+  -webkit-filter: drop-shadow(0px -9px 5px rgba(0, 20, 4, 0.25));
+          filter: drop-shadow(0px -9px 5px rgba(0, 20, 4, 0.25));
+  width: 102%;
+}
+
+#section2 {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 70px 0;
+  text-align: center;
+  position: relative;
+}
+
+#section2 img {
+  width: 60%;
+  margin-top: 30px;
+}
+
+#section2 .text-content-area {
+  max-width: 900px;
+}
+
+@media only screen and (max-width: 900px) {
+  nav .nav-link-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateY(-120px);
+            transform: translateY(-120px);
+    background-color: white;
+    color: #333;
+    /* height: 100vh; */
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+  nav img {
+    height: 45%;
+  }
+  nav .mobile-nav-icon {
+    display: block;
+  }
+}
+/*# sourceMappingURL=websiteMain.css.map */

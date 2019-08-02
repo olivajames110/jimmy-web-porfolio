@@ -21,6 +21,7 @@ import PriceCalc from './projects/priceCalc/priceCalc';
 import DrawingBoard from './projects/drawingBoard/drawingBoard';
 import Project from './project/project';
 import Menu from './projects/menu/menu';
+import Website from './projects/website/website';
 import './projectsScreen.css';
 
 class Projects extends Component {
@@ -87,7 +88,14 @@ class Projects extends Component {
 			currentProjectName: 'Price Calculator'
 		});
 	};
-	placeholder;
+
+	handleWebsiteChange = () => {
+		this.handleProjectNav();
+		this.setState({
+			currentProject: <Website />,
+			currentProjectName: 'Website'
+		});
+	};
 
 	handleMenuChange = () => {
 		this.handleProjectNav();
@@ -98,7 +106,7 @@ class Projects extends Component {
 	};
 
 	handleProjectChange() {
-		return <div className="project-screen-cont fade-in">{this.state.currentProject}</div>;
+		return <div className="project-screen-cont">{this.state.currentProject}</div>;
 	}
 
 	handleCheckActive = (area, stateName) => {

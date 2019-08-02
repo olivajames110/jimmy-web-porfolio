@@ -1,3 +1,11 @@
+html {
+	--priceCalcSliderGreen: #078a7a;
+}
+
+html[data-theme='dark'] {
+	--priceCalcSliderGreen: #66cdc1;
+}
+
 .range-title {
 	font-size: 1.2em;
 	line-height: 1.5em;
@@ -8,9 +16,9 @@
 }
 
 .dynamic-number-value {
-	color: #078a7a;
+	color: var(--priceCalcSliderGreen);
 	margin: 0px 6px;
-	border-bottom: 1px solid #078a7a91;
+	border-bottom: 1px solid var(--priceCalcSliderGreen);
 	padding: 0px 6px 2px 6px;
 }
 

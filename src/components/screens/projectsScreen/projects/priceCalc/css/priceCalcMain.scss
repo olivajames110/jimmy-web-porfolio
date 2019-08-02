@@ -1,45 +1,53 @@
-* {
-	margin: 0;
-	padding: 0;
+html {
+	--priceCalcBG1: #403a9c;
+	--priceCalcBG2: #4349a4;
+	--priceCalcCompBar: rgb(243, 243, 243);
+	--priceCalcCompRed: #b10500;
+	--priceCalcCompGreen: #639b17;
+	--priceCalcSliderGreen: #078a7a;
+}
+
+html[data-theme='dark'] {
+	--priceCalcBG1: #1a443a;
+	--priceCalcBG2: #264d48;
+	--priceCalcCompBar: rgb(47, 47, 47);
+	--priceCalcCompRed: #ff7044;
+	--priceCalcCompGreen: #4ec46e;
+	--priceCalcSliderGreen: #66cdc1;
 }
 
 .bg {
 	position: absolute;
 	width: 100%;
 	height: 80vh;
-	background: #e0eafc; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #cfdef3, #e0eafc); /* Chrome 10-25, Safari 5.1-6 */
+	background: var(--priceCalcBG2); /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		var(--priceCalcBG1),
+		var(--priceCalcBG2)
+	); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(
 		to right,
-		#cfdef3,
-		#e0eafc
+		var(--priceCalcBG1),
+		var(--priceCalcBG2)
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	clip-path: polygon(0 0, 100% 0, 100% 61%, 0 98%);
 	top: 0;
 	z-index: -1;
 }
-.intro-header {
-	padding: 35px 0 45px 0;
-	text-align: center;
-	h1 {
-		display: flex;
-		flex-direction: column;
-		font-size: 2.5em;
-		font-family: var(--h1);
-	}
-	.description {
-		font-size: 1.2em;
-		line-height: 1.5em;
-		margin-top: 10px;
-	}
-}
 .range-slider-wrapper,
 .competitor-wrapper,
 .card-container {
 	box-sizing: border-box;
-	background-color: #ffffff;
+	background-color: var(--whiteToBlack1);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	padding: 16px;
+}
+.companies-table-title,
+.competitor-container {
+	display: grid;
+	grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
+	padding: 10px 0;
 }
 .competitor-commission-amt span {
 	font-weight: bold; /* color: #0c4e7e; */
@@ -61,31 +69,40 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 0 auto;
-}
-.range-container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-between;
-}
-.range-title {
-	font-size: 1.2em;
+	color: var(--color-text);
+	.intro-header {
+		padding: 35px 0 45px 0;
+		text-align: center;
+		color: white;
+		h1 {
+			display: flex;
+			flex-direction: column;
+			font-size: 2.5em;
+			font-family: var(--h1);
+			font-weight: bold;
+		}
+		.description {
+			font-size: 1.1em;
+			line-height: 1.5em;
+			margin-top: 10px;
+			font-family: var(--body);
+		}
+	}
+	.range-container {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: space-between;
+	}
 }
 .range-slider-wrapper {
 	width: 48%;
 	margin-bottom: 35px;
 	box-sizing: border-box;
-	border-radius: 4px;
 }
 .companies-table-title h3 {
 	font-size: 0.7em;
 	font-weight: bold;
-}
-.companies-table-title,
-.competitor-container {
-	display: grid;
-	grid-template-columns: 0.9fr 0.9fr 1.1fr 0.8fr;
-	padding: 10px 0;
 }
 .competitor-wrapper {
 	width: 100%;
@@ -93,48 +110,39 @@
 .special-information {
 	font-size: 10px !important;
 	position: absolute !important;
-	bottom: -14px;
+	bottom: -13px;
 	font-weight: 400 !important;
 	opacity: 0.7;
 	left: -3px;
 	width: 190px !important;
 }
-.competitor-container {
-	span {
-		padding: 5px 0;
-		font-size: 1em;
-		text-align: left;
-		position: relative;
-	}
-	&:nth-of-type(odd) {
-		background: rgb(243, 243, 243);
-	}
-}
-.list-of-competitors {
-	background-color: white;
+.competitor-wrapper {
 	width: 100%;
+	/* display: flex; */
+	position: relative;
+	.companies {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+	}
+	.competitor-container {
+		span {
+			padding: 5px 0;
+			font-size: 1em;
+			text-align: left;
+			position: relative;
+		}
+		&:nth-of-type(odd) {
+			background: var(--priceCalcCompBar);
+		}
+	}
 }
 .competitor-company-commission-wrapper {
 	width: 530px;
 	display: flex;
 	align-items: center;
 	width: 100%;
-}
-.competitor-red {
-	color: #b10500;
-}
-.competitor-green {
-	color: #639b17;
-}
-.companies {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	box-sizing: border-box;
-}
-.competitor-wrapper {
-	width: 100%; /* display: flex; */
-	position: relative;
 }
 // ----------------- device media query -------------------
 #device-project-container[data-theme='iphone-container'] {

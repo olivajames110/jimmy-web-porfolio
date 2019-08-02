@@ -3,9 +3,9 @@ import React from 'react';
 // import {faCloudSunRain, faScroll} from '@fortawesome/free-solid-svg-icons';
 import './form.css';
 
-const Form = (props) => {
+const Form = props => {
 	return (
-		<div className="form-wrapper fade-in">
+		<div className="form-wrapper">
 			<div className="form-modal">
 				<div className="form-modal-title">
 					<h1>Form Title</h1>
