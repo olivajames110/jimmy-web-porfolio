@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import './css/websiteMain.css';
 
 class Website extends Component {
@@ -15,7 +17,7 @@ class Website extends Component {
 	render() {
 		// const mobileNavState = '';
 		const { websiteMobileNavIsOpen } = this.state;
-		let mobileNavState = websiteMobileNavIsOpen ? 'website-mobile-nav--open' : 'website-mobile-nav--closed';
+		let mobileNavState = !websiteMobileNavIsOpen ? 'website-mobile-nav--closed' : null;
 		const ozLogoWhite = 'https://digitalmarketing.blob.core.windows.net/8981/images/items/image566182.png';
 		const ozLogoColor =
 			'https://digitalmarketing.blob.core.windows.net/7395/skins/OrderezeTrainingSite4/images/logo.png';
@@ -29,9 +31,9 @@ class Website extends Component {
 							<div
 								onClick={this.handleMobileNavToggle}
 								style={{ color: websiteMobileNavIsOpen ? 'black' : 'white' }}
-								className="mobile-nav-icon"
+								className="mobile-nav-icon-btn"
 							>
-								o o o
+								<FontAwesomeIcon icon={faEllipsisV} />
 							</div>
 							<div className={`nav-link-container ${mobileNavState}`}>
 								<span className="link">Menu Of Services</span>

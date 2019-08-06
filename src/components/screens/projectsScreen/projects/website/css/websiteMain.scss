@@ -88,7 +88,7 @@ nav {
 	img {
 		height: 50px;
 	}
-	.mobile-nav-icon {
+	.mobile-nav-icon-btn {
 		color: white;
 		display: none;
 	}
@@ -171,18 +171,22 @@ nav {
 			left: 0;
 			padding: 120px 0px;
 			z-index: -1;
+			position: absolute;
+			top: 0;
+			transform: translateY(-100%) !important;
 		}
 
 		img {
-			height: 45%;
+			height: 45px;
 		}
 
 		.link {
 			margin: 60px 0 0 0;
 		}
 
-		.mobile-nav-icon {
-			display: block;
+		.mobile-nav-icon-btn {
+			font-size: 28px;
+			display: block !important;
 		}
 	}
 	#section1 {
@@ -204,9 +208,10 @@ nav {
 }
 
 .website-mobile-nav--closed {
-	transform: translateY(-400px) !important;
+	transform: translateY(-100%) !important;
 }
 
 .website-mobile-nav--open {
-	transform: translateY(290px) !important;
+	// transform: translateY(290px) !important;
+	// transform: translateY(290px) !important;
 }

@@ -102,7 +102,7 @@ nav img {
   height: 50px;
 }
 
-nav .mobile-nav-icon {
+nav .mobile-nav-icon-btn {
   color: white;
   display: none;
 }
@@ -221,15 +221,20 @@ nav .mobile-nav-icon {
     left: 0;
     padding: 120px 0px;
     z-index: -1;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateY(-100%) !important;
+            transform: translateY(-100%) !important;
   }
   nav img {
-    height: 45%;
+    height: 45px;
   }
   nav .link {
     margin: 60px 0 0 0;
   }
-  nav .mobile-nav-icon {
-    display: block;
+  nav .mobile-nav-icon-btn {
+    font-size: 28px;
+    display: block !important;
   }
   #section1 .text-content-area {
     display: -webkit-box;
@@ -254,12 +259,7 @@ nav .mobile-nav-icon {
 }
 
 .website-mobile-nav--closed {
-  -webkit-transform: translateY(-400px) !important;
-          transform: translateY(-400px) !important;
-}
-
-.website-mobile-nav--open {
-  -webkit-transform: translateY(290px) !important;
-          transform: translateY(290px) !important;
+  -webkit-transform: translateY(-100%) !important;
+          transform: translateY(-100%) !important;
 }
 /*# sourceMappingURL=websiteMain.css.map */
