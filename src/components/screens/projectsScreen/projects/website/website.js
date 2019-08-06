@@ -68,7 +68,7 @@ class Website extends Component {
 							<span>
 								Trusted By <span>Sysco</span> For Over 10 Years
 							</span>
-							<div>Dedicated to Helping Your Business Grow</div>
+							<h2>Dedicated to Helping Your Business Grow</h2>
 							<p>
 								At Ordereze, our mission is simple: we provide big solutions for small businesses.
 								Whether you offer a fine dining experience or operate a food truck, we’re here to
