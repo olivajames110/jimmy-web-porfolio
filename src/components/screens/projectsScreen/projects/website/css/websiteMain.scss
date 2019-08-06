@@ -17,6 +17,10 @@ html[data-theme='dark'] {
 	height: 100%;
 	font-size: 16px;
 	line-height: 24px;
+	p {
+		font-size: 18px;
+		line-height: 1.6em;
+	}
 	h1 {
 		font-family: var(--websiteH1);
 		line-height: 1.4;
@@ -28,6 +32,7 @@ html[data-theme='dark'] {
 		color: #0c4e7e;
 		font-family: var(--websiteH1);
 		line-height: 1.4;
+		margin-bottom: 15px;
 	}
 	span {
 		line-height: 1.4;
@@ -49,6 +54,10 @@ html[data-theme='dark'] {
 		&:hover {
 			background-color: #6eab1fd7;
 		}
+	}
+
+	section {
+		padding: 70px 20px;
 	}
 }
 // END ROOT -->
@@ -144,16 +153,23 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 70px 0;
 	text-align: center;
 	position: relative;
 
+	h2 {
+		margin-top: 10px;
+	}
 	img {
-		width: 60%;
+		width: 100%;
 		margin-top: 30px;
 	}
 	.text-content-area {
 		max-width: 900px;
+		span {
+			line-height: 1.4;
+			color: gray;
+			font-size: 18px;
+		}
 	}
 }
 
@@ -173,7 +189,7 @@ nav {
 			z-index: -1;
 			position: absolute;
 			top: 0;
-			transform: translateY(-100%) !important;
+			transform: translateY(-100%);
 		}
 
 		img {
@@ -208,7 +224,7 @@ nav {
 }
 
 .website-mobile-nav--closed {
-	transform: translateY(-100%) !important;
+	transform: translateY(0%) !important;
 }
 
 .website-mobile-nav--open {

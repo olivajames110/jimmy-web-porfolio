@@ -17,7 +17,7 @@ class Website extends Component {
 	render() {
 		// const mobileNavState = '';
 		const { websiteMobileNavIsOpen } = this.state;
-		let mobileNavState = !websiteMobileNavIsOpen ? 'website-mobile-nav--closed' : null;
+		let mobileNavState = websiteMobileNavIsOpen ? 'website-mobile-nav--closed' : null;
 		const ozLogoWhite = 'https://digitalmarketing.blob.core.windows.net/8981/images/items/image566182.png';
 		const ozLogoColor =
 			'https://digitalmarketing.blob.core.windows.net/7395/skins/OrderezeTrainingSite4/images/logo.png';
@@ -65,11 +65,14 @@ class Website extends Component {
 					</section>
 					<section id="section2">
 						<div className="text-content-area">
-							<h2>Sample header</h2>
-							<div>Sub header sample text line</div>
+							<span>
+								Trusted By <span>Sysco</span> For Over 10 Years
+							</span>
+							<div>Dedicated to Helping Your Business Grow</div>
 							<p>
-								Lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum lorem
-								ipsum ipsum lorem ipsum lorem ipsum lorem ipsum
+								At Ordereze, our mission is simple: we provide big solutions for small businesses.
+								Whether you offer a fine dining experience or operate a food truck, we’re here to
+								provide you with the best technology, resources, and support available in the industry.
 							</p>
 							<img
 								src="https://digitalmarketing.blob.core.windows.net/8981/images/items/image566101.png"
