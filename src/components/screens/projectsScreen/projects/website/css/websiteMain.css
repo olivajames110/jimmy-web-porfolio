@@ -5,10 +5,16 @@
 
 html {
   --websiteBlueToWhite: #0c4e7e;
+  --websiteLightGrayToBlack: #fcfcfc;
+  --websiteWhiteToBlack: white;
+  --websiteBlackToWhite: #222222;
 }
 
 html[data-theme='dark'] {
-  --websiteBlueToWhite: white;
+  --websiteBlueToWhite: #4e7ea1;
+  --websiteLightGrayToBlack: #0f0e0e;
+  --websiteWhiteToBlack: rgb(20, 20, 20);
+  --websiteBlackToWhite: white;
 }
 
 .website-project-container {
@@ -16,6 +22,7 @@ html[data-theme='dark'] {
   height: 100%;
   font-size: 16px;
   line-height: 24px;
+  color: var(--websiteBlackToWhite);
 }
 
 .website-project-container p {
@@ -31,10 +38,15 @@ html[data-theme='dark'] {
 .website-project-container h2 {
   font-weight: bold;
   font-size: 28px;
-  color: #0c4e7e;
+  color: var(--websiteBlueToWhite);
   font-family: var(--websiteH1);
   line-height: 1.4;
   margin-bottom: 15px;
+}
+
+.website-project-container section,
+.website-project-container footer {
+  padding: 70px 5%;
 }
 
 .website-project-container span {
@@ -55,14 +67,14 @@ html[data-theme='dark'] {
   border-radius: 2px;
   color: white;
   font-size: 16px;
+  padding: 20px 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .website-project-container button:hover {
   background-color: #6eab1fd7;
-}
-
-.website-project-container section {
-  padding: 70px 20px;
 }
 
 nav {
@@ -166,23 +178,20 @@ nav .mobile-nav-icon-btn {
 
 #section1 .text-content-area button {
   margin-top: 30px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 20px 30px;
 }
 
 #section1 svg {
   position: absolute;
   bottom: -1px;
-  fill: white;
+  fill: var(--websiteLightGrayToBlack);
   -webkit-filter: drop-shadow(0px -9px 5px rgba(0, 20, 4, 0.25));
           filter: drop-shadow(0px -9px 5px rgba(0, 20, 4, 0.25));
   width: 100%;
+  -webkit-transition: 1190ms !important;
+  transition: 1190ms !important;
 }
 
 #section2 {
-  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,7 +228,183 @@ nav .mobile-nav-icon-btn {
   font-size: 18px;
 }
 
+#section3 {
+  background: url("../images/chefCuttingFood.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 150px 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+#section3 h2 {
+  color: white !important;
+}
+
+#section3 .icon-container-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 45px;
+}
+
+#section3 .icon-container-wrapper .icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section3 .icon-container-wrapper .icon-container svg {
+  font-size: 36px;
+}
+
+#section3 .icon-container-wrapper .icon-container .text {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+#section4,
+#section6 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#section4 img,
+#section6 img {
+  width: 100%;
+  height: initial;
+  background-size: cover;
+}
+
+#section4 .verbiage,
+#section6 .verbiage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+#section4 .verbiage .list-container,
+#section6 .verbiage .list-container {
+  margin-top: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#section4 .verbiage .list-container .list-item,
+#section6 .verbiage .list-container .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+
+#section4 .verbiage .list-container .list-item .icon,
+#section6 .verbiage .list-container .list-item .icon {
+  width: 15px;
+  margin-right: 13px;
+  text-align: center;
+}
+
+#section5 {
+  background: url("../images/texturedGeometricBackgroundjpg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  min-height: 750px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+          clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+#section5 .quote {
+  font-size: 24px;
+  line-height: 1.5em;
+}
+
+#section5 button {
+  margin-top: 30px;
+}
+
+#section7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--websiteWhiteToBlack);
+  text-align: center;
+}
+
+#section7 button {
+  margin-top: 30px;
+}
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 5px;
+  background-color: #033857;
+  color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 @media only screen and (max-width: 900px) {
+  section .list-item {
+    font-size: 13px;
+    text-align: center;
+  }
   nav .nav-link-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -274,6 +459,31 @@ nav .mobile-nav-icon-btn {
     color: white;
     font-family: var(--h2);
     font-size: 20px;
+  }
+  #section3 .text {
+    font-size: 13px !important;
+  }
+  #section4 {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #section4 .verbiage {
+    margin-top: 30px;
+  }
+  #section5 .quote {
+    font-size: 19px;
+    line-height: 2em;
+  }
+  #section6 {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #section6 .verbiage {
+    margin-bottom: 30px;
+  }
+  #section6 .verbiage .list-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 

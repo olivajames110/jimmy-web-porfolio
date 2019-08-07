@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import './header.css';
+import './css/headerMain.css';
 import NavLink from './navLink/navLink';
 import BackDrop from '../../assets/backdrop/backdrop';
 import { HamburgerIcon, Logo, HamburgerIconAnimation } from '../assets/svgs/svgs';
@@ -155,7 +155,7 @@ class Header extends Component {
 					<div className={`${mobileNavIsOpen ? ' navigation-links-cont--open' : 'navigation-links-cont '}`}>
 						<Links />
 					</div>
-				</div>{' '}
+				</div>
 			</div>
 		);
 	}

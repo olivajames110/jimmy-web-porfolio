@@ -6,10 +6,16 @@
 
 html {
 	--websiteBlueToWhite: #0c4e7e;
+	--websiteLightGrayToBlack: #fcfcfc;
+	--websiteWhiteToBlack: white;
+	--websiteBlackToWhite: #222222;
 }
 
 html[data-theme='dark'] {
-	--websiteBlueToWhite: white;
+	--websiteBlueToWhite: #4e7ea1;
+	--websiteLightGrayToBlack: #0f0e0e;
+	--websiteWhiteToBlack: rgb(20, 20, 20);
+	--websiteBlackToWhite: white;
 }
 // <--ROOT
 .website-project-container {
@@ -17,6 +23,7 @@ html[data-theme='dark'] {
 	height: 100%;
 	font-size: 16px;
 	line-height: 24px;
+	color: var(--websiteBlackToWhite);
 	p {
 		font-size: 18px;
 		line-height: 1.6em;
@@ -29,10 +36,14 @@ html[data-theme='dark'] {
 	h2 {
 		font-weight: bold;
 		font-size: 28px;
-		color: #0c4e7e;
+		color: var(--websiteBlueToWhite);
 		font-family: var(--websiteH1);
 		line-height: 1.4;
 		margin-bottom: 15px;
+	}
+	section,
+	footer {
+		padding: 70px 5%;
 	}
 	span {
 		line-height: 1.4;
@@ -51,13 +62,11 @@ html[data-theme='dark'] {
 		border-radius: 2px;
 		color: white;
 		font-size: 16px;
+		padding: 20px 30px;
+		width: fit-content;
 		&:hover {
 			background-color: #6eab1fd7;
 		}
-	}
-
-	section {
-		padding: 70px 20px;
 	}
 }
 // END ROOT -->
@@ -133,22 +142,19 @@ nav {
 
 		button {
 			margin-top: 30px;
-			width: fit-content;
-			padding: 20px 30px;
 		}
 	}
 	svg {
 		position: absolute;
 		bottom: -1px;
-
-		fill: white;
+		fill: var(--websiteLightGrayToBlack);
 		filter: drop-shadow(0px -9px 5px rgba(0, 20, 4, 0.25));
 		width: 100%;
+		transition: 1190ms !important;
 	}
 }
 
 #section2 {
-	background: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -173,7 +179,127 @@ nav {
 	}
 }
 
+#section3 {
+	background: url('../images/chefCuttingFood.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	padding: 150px 0;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+	h2 {
+		color: white !important;
+	}
+	.icon-container-wrapper {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 45px;
+		.icon-container {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items: center;
+			svg {
+				font-size: 36px;
+			}
+
+			.text {
+				margin-top: 15px;
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+#section4,
+#section6 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	img {
+		width: 100%;
+		height: initial;
+		background-size: cover;
+	}
+
+	.verbiage {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 530px;
+		margin: 0 auto;
+		.list-container {
+			margin-top: 30px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			.list-item {
+				display: flex;
+				margin-top: 15px;
+
+				.icon {
+					width: 15px;
+					margin-right: 13px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+#section5 {
+	background: url('../images/texturedGeometricBackgroundjpg.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	min-height: 750px;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+
+	.quote {
+		font-size: 24px;
+		line-height: 1.5em;
+	}
+	button {
+		margin-top: 30px;
+	}
+}
+
+#section7 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--websiteWhiteToBlack);
+	text-align: center;
+	button {
+		margin-top: 30px;
+	}
+}
+
+footer {
+	padding-top: 50px;
+	padding-bottom: 5px;
+	background-color: #033857;
+	color: #ffffff;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 @media only screen and (max-width: 900px) {
+	section {
+		.list-item {
+			font-size: 13px;
+			text-align: center;
+		}
+	}
+
 	nav {
 		.nav-link-container {
 			display: flex;
@@ -205,6 +331,7 @@ nav {
 			display: block !important;
 		}
 	}
+
 	#section1 {
 		.text-content-area {
 			display: flex;
@@ -218,6 +345,35 @@ nav {
 				color: white;
 				font-family: var(--h2);
 				font-size: 20px;
+			}
+		}
+	}
+
+	#section3 {
+		.text {
+			font-size: 13px !important;
+		}
+	}
+
+	#section4 {
+		grid-template-columns: 1fr;
+		.verbiage {
+			margin-top: 30px;
+		}
+	}
+
+	#section5 {
+		.quote {
+			font-size: 19px;
+			line-height: 2em;
+		}
+	}
+	#section6 {
+		grid-template-columns: 1fr;
+		.verbiage {
+			margin-bottom: 30px;
+			.list-container {
+				grid-template-columns: 1fr;
 			}
 		}
 	}

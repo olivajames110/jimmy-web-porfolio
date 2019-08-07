@@ -64,6 +64,7 @@
 	border-radius: 5px;
 	text-align: center;
 	width: 50px;
+	color: var(--color-text);
 }
 
 .project-holder {
@@ -250,6 +251,7 @@
 	top: 52px;
 	font-size: 25px;
 	padding: 11px;
+	color: var(--color-text);
 }
 
 .nav-project-toggle-container span {

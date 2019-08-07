@@ -13,7 +13,8 @@ import {
 	faHamburger,
 	faGamepad,
 	faTimes,
-	faHammer
+	faHammer,
+	faImage
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
@@ -223,9 +224,10 @@ class Projects extends Component {
 				<Project
 					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleDrawingBoardChange}
-					projectName={'Whiteboard'}
-					icon={faPencilAlt}
+					projectName={'Photo Gallery'}
+					icon={faImage}
 					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
@@ -233,20 +235,7 @@ class Projects extends Component {
 					projectName={'Form'}
 					icon={faScroll}
 					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleDashboardChange}
-					projectName={'Dashboard'}
-					icon={faChartBar}
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleWeatherAppChange}
-					projectName={'Weather'}
-					icon={faCloudSunRain}
-					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
@@ -257,10 +246,19 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleGameChange}
-					projectName={'Game'}
-					icon={faGamepad}
+					handlePriceCalcChange={this.handleDashboardChange}
+					projectName={'Dashboard'}
+					icon={faChartBar}
 					state={this.state.currentProject}
+					comingSoon={true}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleWeatherAppChange}
+					projectName={'Weather'}
+					icon={faCloudSunRain}
+					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
@@ -268,6 +266,14 @@ class Projects extends Component {
 					projectName={'Menu'}
 					icon={faHamburger}
 					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleGameChange}
+					projectName={'Game'}
+					icon={faGamepad}
+					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}

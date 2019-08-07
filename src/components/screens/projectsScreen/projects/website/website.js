@@ -1,6 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import {
+	faEllipsisV,
+	faSmileBeam,
+	faUtensils,
+	faHeadphonesAlt,
+	faWifi,
+	faBell,
+	faShoppingCart,
+	faMobile,
+	faEnvelope,
+	faCommentSlash,
+	faUsers
+} from '@fortawesome/free-solid-svg-icons';
 import './css/websiteMain.css';
 
 class Website extends Component {
@@ -80,6 +92,145 @@ class Website extends Component {
 							/>
 						</div>
 					</section>
+					<section id="section3">
+						<h2>Over 10+ Years Of Restaurant Marketing Experience</h2>
+						<div className="icon-container-wrapper">
+							<div className="icon-container">
+								<FontAwesomeIcon icon={faSmileBeam} />
+								<span className="text">3,000+ Happy Customers</span>
+							</div>
+							<div className="icon-container">
+								<FontAwesomeIcon icon={faUtensils} />
+								<span className="text">Restaurant Specific</span>
+							</div>
+							<div className="icon-container">
+								<FontAwesomeIcon icon={faHeadphonesAlt} />
+								<span className="text">Caring Customer Support</span>
+							</div>
+						</div>
+					</section>
+					<section id="section4">
+						<img
+							src="https://digitalmarketing.blob.core.windows.net/9553/images/items/image499697.png"
+							alt="computer"
+						/>
+						<div className="verbiage">
+							<h2>Customizable Solutions For All Business Types</h2>
+							<span>
+								We know that every business is unique, which is why we offer a variety of user-friendly
+								products and services to fit your needs.
+							</span>
+							<div className="list-container">
+								<div className="column">
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faHeadphonesAlt} />
+										</div>
+										<span className="list-item-text">Customer Support</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faBell} />
+										</div>
+										<span className="list-item-text">Review Response</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faShoppingCart} />
+										</div>
+										<span className="list-item-text">Online Ordering</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faWifi} />
+										</div>
+										<span className="list-item-text">Wifi Marketing</span>
+									</div>
+								</div>
+								<div className="column">
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faMobile} />
+										</div>
+										<span className="list-item-text">Mobile Websites</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faEnvelope} />
+										</div>
+										<span className="list-item-text">Email Marketing</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faCommentSlash} />
+										</div>
+										<span className="list-item-text">Social Hub</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faUsers} />
+										</div>
+										<span className="list-item-text">Do It For Me Services</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section id="section5">
+						<div className="quote">
+							"Since we have begun working with Ordereze, our website is beautiful and reflects who we are
+							as a business. Everything that we needed was all in one place. There was more to offer than
+							any local company could. Having a true statement of what the business is and what we have to
+							offer our customers.” — The Blarney Stone
+						</div>
+						<button>View Success Stories</button>
+					</section>
+					<section id="section6">
+						<div className="verbiage">
+							<h2>Customizable Solutions For All Business Types</h2>
+							<span>
+								We know that every business is unique, which is why we offer a variety of user-friendly
+								products and services to fit your needs.
+							</span>
+							<div className="list-container">
+								<div className="column">
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faHeadphonesAlt} />
+										</div>
+										<span className="list-item-text">Monitor All Website Traffic</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faBell} />
+										</div>
+										<span className="list-item-text">Analyze Effective Time Ranges</span>
+									</div>
+									<div className="list-item">
+										<div className="icon">
+											<FontAwesomeIcon icon={faShoppingCart} />
+										</div>
+										<span className="list-item-text">Track Data & Take Action</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<img
+							src="https://digitalmarketing.blob.core.windows.net/9553/images/items/image501481.png"
+							alt="computer"
+						/>
+					</section>
+					<section id="section7">
+						<h2>Ready to Grow?</h2>
+						<span>Learn more about how Ordereze can help grow your business!</span>
+						<button>Request a Demo</button>
+					</section>
+					<footer>
+						<div className="column">Coliumn</div>
+						<div className="column">Coliumn</div>
+						<div className="column">Coliumn</div>
+						<div className="column">Coliumn</div>
+					</footer>
 				</div>
 			</Fragment>
 		);
