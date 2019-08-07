@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Backdrop from '../../../../../assets/backdrop/backdrop';
 import {
 	faEllipsisV,
 	faSmileBeam,
@@ -37,6 +38,7 @@ class Website extends Component {
 		return (
 			<Fragment>
 				<div className="website-project-container">
+					{websiteMobileNavIsOpen ? <Backdrop /> : null}
 					<nav>
 						<div className="nav-wrapper">
 							<img src={websiteMobileNavIsOpen ? ozLogoColor : ozLogoWhite} alt="ordereze" />
@@ -225,12 +227,73 @@ class Website extends Component {
 						<span>Learn more about how Ordereze can help grow your business!</span>
 						<button>Request a Demo</button>
 					</section>
-					<footer>
-						<div className="column">Coliumn</div>
-						<div className="column">Coliumn</div>
-						<div className="column">Coliumn</div>
-						<div className="column">Coliumn</div>
-					</footer>
+					<div id="footer">
+						<div className="column">
+							<h3>Products</h3>
+							<ul>
+								<li>Pricing</li>
+								<li>Responsive Websites</li>
+								<li>Mobile Websites</li>
+								<li>Online Ordering PRO</li>
+								<li>Menu Sync</li>
+								<li>Social Hub</li>
+								<li>Facebook Integration</li>
+								<li>Wifi Connect</li>
+								<li>Do It For Me Services</li>
+							</ul>
+						</div>
+						<div className="column">
+							<h3>Company</h3>
+							<ul>
+								<li>Our Story</li>
+								<li>Values</li>
+								<li>Careers - USA</li>
+								<li>Careers - Europe</li>
+								<li>Blog</li>
+								<li>Our Work</li>
+								<li>Partners</li>
+								<li>Newsletter</li>
+								<li>Refer A Friend</li>
+							</ul>
+						</div>
+						<div className="column">
+							<h3>Support</h3>
+							<ul>
+								<li>File Upload System</li>
+								<li>Submit A Ticket</li>
+								<li>Employee Login</li>
+							</ul>
+							<h3>Free Services</h3>
+							<d>
+								<li>Online Presence Grader </li>
+								<li> Website Concept Request</li>
+								<li>Free Trial Portal</li>
+							</d>
+						</div>
+						<div className="column">
+							<h3>Contact</h3>
+							<ul>
+								<li>140 Wilbur Place, Suite 1</li>
+								<li>Bohemia, NY 11716</li>
+								<li>Phone: 631-271-3470</li>
+								<li>Info@ordereze.com</li>
+							</ul>
+							<div className="social-media-icon-container">
+								<span id="facebook" className="social-media-icon">
+									<FontAwesomeIcon icon={faShoppingCart} />
+								</span>
+								<span id="twitter" className="social-media-icon">
+									<FontAwesomeIcon icon={faShoppingCart} />
+								</span>
+								<span id="instagram" className="social-media-icon">
+									<FontAwesomeIcon icon={faShoppingCart} />
+								</span>
+								<span id="linkedIn" className="social-media-icon">
+									<FontAwesomeIcon icon={faShoppingCart} />
+								</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</Fragment>
 		);

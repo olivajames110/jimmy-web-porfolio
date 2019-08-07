@@ -14,7 +14,8 @@ import {
 	faGamepad,
 	faTimes,
 	faHammer,
-	faImage
+	faImage,
+	faComments
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
@@ -270,8 +271,8 @@ class Projects extends Component {
 				<Project
 					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleGameChange}
-					projectName={'Game'}
-					icon={faGamepad}
+					projectName={'Chat WebSocket'}
+					icon={faComments}
 					state={this.state.currentProject}
 					comingSoon={true}
 				/>
