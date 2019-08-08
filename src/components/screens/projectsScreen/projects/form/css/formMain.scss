@@ -1,0 +1,236 @@
+html {
+	--websiteBlueToWhite: #0c4e7e;
+	--websiteLightGrayToBlack: #fcfcfc;
+	--websiteWhiteToBlack: rgb(233, 233, 233);
+	--websiteBlackToWhite: #222222;
+	--baseballCardBarColor: green;
+}
+
+html[data-theme='dark'] {
+	--websiteBlueToWhite: #4e7ea1;
+	--websiteLightGrayToBlack: #0f0e0e;
+	--websiteWhiteToBlack: rgb(41, 41, 41);
+	--websiteBlackToWhite: white;
+}
+
+.form-project-wrapper {
+	height: initial;
+	// padding: 40px 10px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 0.8fr 2fr;
+	transition: 1s;
+	.form-container {
+		// border-radius: 20px;
+		padding: 30px;
+		background: rgb(255, 255, 255);
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		width: 100%;
+		max-width: 900px;
+		height: calc(100vh - var(--headerHeight));
+		// height: 100%;
+		.title-wrapper {
+			padding-bottom: 30px;
+			h1 {
+				font-size: 36px;
+				font-weight: bold;
+			}
+		}
+
+		.inputs-wrapper {
+			.form-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 15px;
+			}
+			.input-container {
+				padding: 10px 0;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				label {
+					font-size: 14px;
+				}
+				input,
+				select {
+					padding: 8px;
+					border-radius: 2px;
+					border: 1px solid rgb(218, 218, 218);
+					background: white;
+					margin-top: 3px;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.baseball-card-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		overflow-y: scroll;
+		height: calc(100vh - var(--headerHeight));
+		padding: 20px;
+	}
+	.baseball-card-wrapper {
+		box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+		border: 10px solid white;
+		position: relative;
+		height: 330px;
+		width: 250px;
+		background: black;
+		margin: 0 auto;
+		margin-top: 15px;
+		overflow: hidden;
+		background-position: center;
+		transition: 500ms;
+		animation: cardSlide 500ms;
+		cursor: pointer;
+		&:after {
+			content: '';
+			height: 88%;
+			position: absolute;
+			top: -8px;
+			right: 9px;
+			border: 4px double white;
+		}
+		img.player {
+			background-size: cover;
+			height: 100%;
+		}
+		.team {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			bottom: 6px;
+			z-index: 15;
+			right: 2px;
+			img {
+				width: 90%;
+			}
+		}
+		.player-name {
+			width: 95%;
+			height: 34px;
+			padding: 0 4px;
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			bottom: 10px;
+			font-size: 14px;
+			color: #000;
+			background-color: white;
+			border-bottom-right-radius: 20px;
+			border-right: 4px solid white;
+			z-index: 10;
+			text-transform: uppercase;
+
+			&:before {
+				content: '';
+				width: 91%;
+				position: absolute;
+				left: -1px;
+				top: -1px;
+				box-shadow: 6px -1px 3px 9px white;
+			}
+			&:after {
+				content: '';
+				background-color: var(--baseballCardBarColor);
+				width: 91%;
+				height: 9.6px;
+				position: absolute;
+				left: -1px;
+				top: 15px;
+			}
+			.last-name {
+				font-weight: bold;
+				font-size: 18px;
+				color: #b3b3b1;
+				margin-top: -10px;
+				z-index: 10;
+				font-family: var(--h1);
+				margin-left: -2px;
+			}
+			.first-name {
+				font-weight: bold;
+				font-size: 11.8px;
+				font-family: var(--h2);
+				color: white;
+				letter-spacing: 2px;
+				z-index: 10;
+				margin-top: -2.1px;
+			}
+		}
+
+		.name-and-position {
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			color: #000;
+			display: flex;
+			font-size: 8px;
+			font-weight: bold;
+			.position {
+				margin-right: 7px;
+			}
+			.team-name {
+				padding-left: 7px;
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					border-left: 1px solid black;
+					left: 0;
+					height: 4px;
+					top: 53%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+}
+
+input.submit {
+	padding: 12px 28px;
+	border-radius: 2px;
+	border: none;
+	margin-top: 20px;
+}
+
+input.submit:hover {
+	background: #000;
+}
+
+@media only screen and (max-width: 900px) {
+	.form-project-wrapper {
+		grid-template-columns: 1fr;
+		.form-container {
+			height: initial;
+		}
+		.baseball-card-container {
+			overflow: unset;
+		}
+	}
+}
+
+@keyframes cardSlide {
+	0% {
+		transform: scale(1.1);
+	}
+
+	55% {
+		transform: scale(1.2);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

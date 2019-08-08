@@ -32,7 +32,8 @@ class Projects extends Component {
 		currentProject: '',
 		currentProjectName: 'Choose a project above!',
 		deviceType: 'desktop-container',
-		projectNavIsOpen: false
+		projectNavIsOpen: false,
+		headerHeight: null
 	};
 
 	checkIfMobile = a => {
@@ -49,8 +50,15 @@ class Projects extends Component {
 		}
 	};
 
+	getHeaderHeight = () => {
+		this.setState({
+			headerHeight: document.querySelector('.app-header').offsetHeight
+		});
+	};
+
 	componentDidMount() {
 		this.checkIfMobile();
+		this.getHeaderHeight();
 		window.addEventListener('resize', this.checkIfMobile);
 	}
 
@@ -72,7 +80,7 @@ class Projects extends Component {
 		this.handleProjectNav();
 		this.setState({
 			currentProject: <Form />,
-			currentProjectName: 'Form'
+			currentProjectName: 'Baseball Cards'
 		});
 	};
 
@@ -233,10 +241,9 @@ class Projects extends Component {
 				<Project
 					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleFormChange}
-					projectName={'Form'}
+					projectName={'Baseball Cards'}
 					icon={faScroll}
 					state={this.state.currentProject}
-					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}

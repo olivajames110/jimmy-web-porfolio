@@ -14,8 +14,9 @@
 	--body: 'Muli', sans-serif;
 	--h1: 'Open Sans', sans-serif;
 	--h2: 'Lato', sans-serif;
-	--primaryColor: #012e4b;
+	--primaryColor: #192833;
 	--secondaryColor: #476172;
+	--headerHeight: 0px;
 }
 
 html {

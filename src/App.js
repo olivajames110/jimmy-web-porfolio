@@ -6,6 +6,16 @@ import Home from './components/screens/homeScreen/homeScreen';
 import Projects from './components/screens/projectsScreen/projectsScreen';
 
 class App extends Component {
+	getHeaderHeight = () => {
+		let root = document.documentElement;
+		root.style.setProperty('--headerHeight', document.querySelector('.app-header').offsetHeight + 'px');
+	};
+
+	componentDidMount() {
+		this.getHeaderHeight();
+		window.addEventListener('resize', this.checkIfMobile);
+	}
+
 	render() {
 		return (
 			<div>
