@@ -22,7 +22,7 @@ const BaseballCards = props => {
 		);
 	});
 
-	return <div className="baseball-card-container">{playerList}</div>;
+	return <div className="baseball-card-container">{props.cards.length ? playerList : null}</div>;
 };
 
 export default BaseballCards;

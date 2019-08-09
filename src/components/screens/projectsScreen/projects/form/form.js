@@ -8,17 +8,18 @@ import './css/formMain.css';
 class Form extends Component {
 	state = {
 		cards: [
-			{
-				id: 1,
-				firstName: 'Jose',
-				lastName: 'Reyes',
-				position: 'Short Stop',
-				team: 'New York Mets',
-				teamImg:
-					'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-				playerImg: 'http://www.metstoday.com/wp-content/uploads/2010/05/reyes-swing.jpg',
-				color: 'red'
-			}
+			// cards: [
+			// 	{
+			// 		id: 1,
+			// 		firstName: 'Jose',
+			// 		lastName: 'Reyes',
+			// 		position: 'Short Stop',
+			// 		team: 'New York Mets',
+			// 		teamImg:
+			// 			'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+			// 		playerImg: 'http://www.metstoday.com/wp-content/uploads/2010/05/reyes-swing.jpg',
+			// 		color: 'red'
+			// 	}
 		]
 	};
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { TeamAssets, Players } from './assets/assets';
-
-// import './css/baseballCardMain';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faUpload, faRandom, faPlus } from '@fortawesome/free-solid-svg-icons';
+import Axios from 'axios';
 
 class AddCardForm extends Component {
 	state = {
@@ -26,6 +27,19 @@ class AddCardForm extends Component {
 		});
 	};
 
+	handleImageUpload = e => {
+		let reader = new FileReader();
+		let file = e.target.files[0];
+
+		reader.onloadend = () => {
+			this.setState({
+				playerImg: reader.result
+			});
+		};
+
+		reader.readAsDataURL(file);
+	};
+
 	handleFindTeamImg = () => {
 		const team = TeamAssets[Math.round(Math.random())];
 
@@ -39,11 +53,17 @@ class AddCardForm extends Component {
 	};
 
 	handleFindPlayerImg = () => {
-		const player = Players[Math.round(Math.random())];
+		const player = Players[Math.floor(Math.random() * Players.length)];
 		console.log(player);
 		this.setState({
 			playerImg: player
 		});
+	};
+
+	handleMakeLeagueBtnActive = e => {
+		console.log(e.target);
+		e.target.classList.toggle('league-is-active');
+		let previousLeague = e.target;
 	};
 
 	handleSubmit = e => {
@@ -55,27 +75,57 @@ class AddCardForm extends Component {
 		this.props.handleAddCard(this.state);
 	};
 	render() {
+		let previousLeague;
+		let previousDivision;
+
+		const nlEast = (
+			<select name="team" id="team">
+				<option defaultValue>- Choose a team -</option>
+				<option value="mets">New York Mets</option>
+				<option value="braves">Atlanta Braves</option>
+				<option value="marlins">Miami Marlins</option>
+				<option value="phillies">Philadelphia Phillies</option>
+				<option value="nationals">Washington Nationals</option>
+			</select>
+		);
+		const alEast = (
+			<select name="team" id="team">
+				<option defaultValue>- Choose a team -</option>
+				<option value="yankees">New York Yankees</option>
+				<option value="rays">Tampa Rays</option>
+				<option value="red-sox">Boston Red Sox</option>
+				<option value="blue-jays">Toronto Blue Jays</option>
+				<option value="orioles">Baltimore Orioles</option>
+				<option value="nationals">Washington Nationals</option>
+			</select>
+		);
+
 		return (
 			<div className="form-container">
 				<div className="title-wrapper">
-					<h1>Add Your Own Baseball Card</h1>
+					<h1>Build Your Own Custom Baseball Card</h1>
 					<p>Add a new baseball card to the list. Make your own or randomize your player.</p>
 				</div>
 				<div className="inputs-wrapper">
-					<form onSubmit={this.handleSubmit}>
+					<form>
 						<div className="form-row">
 							<div className="input-container">
-								<label htmlFor="first-name">First Name</label>
+								<label className="label-title" htmlFor="first-name">
+									First Name
+								</label>
 								<input name="firstName" onChange={this.handleInputChange} type="text" id="first-name" />
 							</div>
 							<div className="input-container">
-								<label htmlFor="last-name">Last Name</label>
+								<label className="label-title" htmlFor="last-name">
+									Last Name
+								</label>
 								<input name="lastName" onChange={this.handleInputChange} type="text" id="last-name" />
 							</div>
 						</div>
-
 						<div className="input-container">
-							<label htmlFor="field-position">Field Position</label>
+							<label className="label-title" htmlFor="field-position">
+								Field Position
+							</label>
 							<select name="position" onChange={this.handleInputChange} id="field-position">
 								<option defaultValue>- Choose a position -</option>
 								<option value="pitcher">Pitcher</option>
@@ -89,18 +139,62 @@ class AddCardForm extends Component {
 							</select>
 						</div>
 						<div className="input-container">
-							<label htmlFor="team">Team</label>
-							<select name="team" onChange={this.handleInputChange} id="team">
-								<option defaultValue>- Choose a team -</option>
-								<option value="mets">New York Mets</option>
-								<option value="braves">Atlanta Braves</option>
-								<option value="marlins">Miami Marlins</option>
-								<option value="phillies">Philadelphia Phillies</option>
-								<option value="nationals">Washington Nationals</option>
-								<option value="cubs">Chicago Cubs</option>
-							</select>
+							<span className="label-title">Card Image</span>
+							<div className="player-image-container">
+								<label className="upload form-button" htmlFor="player-image">
+									<FontAwesomeIcon icon={faUpload} />
+									<span>Upload</span>
+								</label>
+								<input
+									name="playerImage"
+									onChange={this.handleImageUpload}
+									type="file"
+									id="player-image"
+								/>
+								<div onClick={this.handleFindPlayerImg} className="btn-randomize form-button">
+									<FontAwesomeIcon icon={faRandom} />
+									<span>Randomize</span>
+								</div>
+								<div className="image-placeholder">
+									<img className="image-placeholder" src={this.state.playerImg} />
+								</div>
+							</div>
 						</div>
-						<input className="submit" type="submit" />
+						<div id="team-input-container" className="input-container">
+							<label className="label-title" htmlFor="team">
+								Team
+							</label>
+							<div className="team-league-container">
+								<div className="leagues-wrapper">
+									<div className="leagues">
+										<span onClick={this.handleMakeLeagueBtnActive} className="al">
+											AL
+										</span>
+										<span onClick={this.handleMakeLeagueBtnActive} className="nl league-is-active">
+											NL
+										</span>
+									</div>
+								</div>
+								<div className="divisions-wrapper">
+									<div className="divisions">
+										<span onClick={this.handleMakeLeagueBtnActive} className="central">
+											West
+										</span>
+										<span onClick={this.handleMakeLeagueBtnActive} className="west">
+											Central
+										</span>
+										<span onClick={this.handleMakeLeagueBtnActive} className="east">
+											East
+										</span>
+									</div>
+									<div className="chosen-team">{nlEast}</div>
+								</div>
+							</div>
+						</div>
+						<div onClick={this.handleSubmit} className="submit-container">
+							<span className="submit">Add Baseball Card</span>
+							<FontAwesomeIcon icon={faPlus} />
+						</div>
 					</form>
 				</div>
 			</div>
