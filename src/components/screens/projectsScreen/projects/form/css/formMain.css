@@ -199,8 +199,7 @@ html[data-theme='dark'] {
   display: flex;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .team-league-container .leagues .al,
-.form-project-wrapper .form-container .inputs-wrapper .input-container .team-league-container .leagues .nl {
+.form-project-wrapper .form-container .inputs-wrapper .input-container .team-league-container .leagues .leagues-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

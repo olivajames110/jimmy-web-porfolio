@@ -22,17 +22,158 @@ const Players = [
 	'https://hips.hearstapps.com/hbz.h-cdn.co/assets/cm/15/04/54bd3d512cfd2_-_hbz-mlb-david-wright-487011951.jpg'
 ];
 
-const TeamAssets = [
-	{
-		team: 'mets',
+const TeamAssets = {
+	mets: {
+		name: 'New York Mets',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue'
+		color: '#004784',
+		logo: './images/mets'
 	},
-	{
-		team: 'braves',
+	marlins: {
+		url: 'https://securea.mlb.com/mlb/images/players/head_shot/643446.jpg',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	phillies: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	braves: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	nationals: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	orioles: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	'red-sox': {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	yankees: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	rays: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	'blue-jays': {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	'white-sox': {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	indians: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	tigers: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	royals: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	twins: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	cubs: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	reds: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	brewers: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	pirates: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	cardinals: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	diamondbacks: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	rockies: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	dodgers: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	padres: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	giants: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	astros: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	angels: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	athletics: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	mariners: {
+		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
+		color: 'blue',
+		logo: './images/mets'
+	},
+	rangers: {
 		url: 'https://i.pinimg.com/originals/ce/fd/a9/cefda9cbe28f7600a2b80ccbc962a725.png',
-		color: 'red'
+		color: 'red',
+		logo: './images/mets'
 	}
-];
+};
 
 export { TeamAssets, Players };

@@ -5,6 +5,17 @@ import AddCardForm from './addCardForm/addCardForm';
 // import {faCloudSunRain, faScroll} from '@fortawesome/free-solid-svg-icons';
 import './css/formMain.css';
 
+////--------CHECKLIST
+//Randomize functionality
+//Reverse sort order of cards
+//Change League teams from list to images
+//Make teams selecting work with handleFindTeamImg(team)
+//Add Error validation for if fields are missing
+//Reset inputs on submit
+
+////Finish styleing
+//image size on card
+
 class Form extends Component {
 	state = {
 		cards: [
