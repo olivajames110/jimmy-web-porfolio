@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import assets, { TeamAssets } from './assets/assets';
 
 class Leagues extends Component {
 	state = {
 		league: 'nl',
-		division: 'east'
+		division: 'east',
+		teamValue: null
 	};
 
 	handleMakeLeagueBtnActive = e => {
@@ -11,88 +13,130 @@ class Leagues extends Component {
 			league: e.target.id
 		});
 		this.chooseInput(this.state.league, this.state.division);
-		const btns = document.querySelectorAll('.leagues-btn');
-		btns.forEach(btn => btn.classList.remove('league-is-active'));
-		e.target.classList.add('league-is-active');
+		this.handleMakeActive(e, '.leagues-btn');
 	};
 	handleMakeDivisionBtnActive = e => {
 		this.setState({
 			division: e.target.id
 		});
 		this.chooseInput(this.state.league, this.state.division);
-		const btns = document.querySelectorAll('.division-btn');
+		this.handleMakeActive(e, '.division-btn');
+	};
+
+	test = e => {
+		console.log('Testt');
+		console.log(e.target.id);
+		this.handleMakeActive(e, '.team-btn');
+		this.props.handleFindTeamImg(e.target.id);
+	};
+
+	handleMakeActive = (e, className) => {
+		const btns = document.querySelectorAll(className);
 		btns.forEach(btn => btn.classList.remove('league-is-active'));
 		e.target.classList.add('league-is-active');
 	};
 
 	chooseInput = (league, division) => {
 		const nlEast = (
-			<select name="team" id="team">
-				<option defaultValue>- nleast -</option>
-				<option value="mets">New York Mets</option>
-				<option value="braves">Atlanta Braves</option>
-				<option value="marlins">Miami Marlins</option>
-				<option value="phillies">Philadelphia Phillies</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
+			<div class="team-container">
+				<img onClick={this.test} id="mets" className="team-btn" src={TeamAssets.mets.logo} alt="mets" />
+				<img onClick={this.test} id="marlins" className="team-btn" src={TeamAssets.marlins.logo} alt="mets" />
+				<img onClick={this.test} id="phillies" className="team-btn" src={TeamAssets.phillies.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="nationals"
+					className="team-btn"
+					src={TeamAssets.nationals.logo}
+					alt="mets"
+				/>
+				<img onClick={this.test} id="braves" className="team-btn" src={TeamAssets.braves.logo} alt="mets" />
+			</div>
 		);
 		const nlCentral = (
-			<select name="team" id="team">
-				<option defaultValue>- nl centrals -</option>
-				<option value="yankees">New York Yankees</option>
-				<option value="rays">Tampa Rays</option>
-				<option value="red-sox">Boston Red Sox</option>
-				<option value="blue-jays">Toronto Blue Jays</option>
-				<option value="orioles">Baltimore Orioles</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
+			<div class="team-container">
+				<img onClick={this.test} id="cubs" className="team-btn" src={TeamAssets.cubs.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="cardinals"
+					className="team-btn"
+					src={TeamAssets.cardinals.logo}
+					alt="mets"
+				/>
+
+				<img onClick={this.test} id="brewers" className="team-btn" src={TeamAssets.brewers.logo} alt="mets" />
+				<img onClick={this.test} id="reds" className="team-btn" src={TeamAssets.reds.logo} alt="mets" />
+				<img onClick={this.test} id="pirates" className="team-btn" src={TeamAssets.pirates.logo} alt="mets" />
+			</div>
 		);
 		const nlWest = (
-			<select name="team" id="team">
-				<option defaultValue>- nl west -</option>
-				<option value="yankees">New York Yankees</option>
-				<option value="rays">Tampa Rays</option>
-				<option value="red-sox">Boston Red Sox</option>
-				<option value="blue-jays">Toronto Blue Jays</option>
-				<option value="orioles">Baltimore Orioles</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
-		);
-		const alEast = (
-			<select name="team" id="team">
-				<option defaultValue>- al East -</option>
-				<option value="yankees">New York Yankees</option>
-				<option value="rays">Tampa Rays</option>
-				<option value="red-sox">Boston Red Sox</option>
-				<option value="blue-jays">Toronto Blue Jays</option>
-				<option value="orioles">Baltimore Orioles</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
+			<div class="team-container">
+				<img onClick={this.test} id="dodgers" className="team-btn" src={TeamAssets.dodgers.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="diamondbacks"
+					className="team-btn"
+					src={TeamAssets.diamondbacks.logo}
+					alt="mets"
+				/>
+				<img onClick={this.test} id="giants" className="team-btn" src={TeamAssets.giants.logo} alt="mets" />
+				<img onClick={this.test} id="rockies" className="team-btn" src={TeamAssets.rockies.logo} alt="mets" />
+
+				<img onClick={this.test} id="padres" className="team-btn" src={TeamAssets.padres.logo} alt="mets" />
+			</div>
 		);
 		const alCentral = (
-			<select name="team" id="team">
-				<option defaultValue>- Choose AL Central Team -</option>
-				<option defaultValue value="yankees">
-					New York Yankees
-				</option>
-				<option value="rays">Tampa Rays</option>
-				<option value="red-sox">Boston Red Sox</option>
-				<option value="blue-jays">Toronto Blue Jays</option>
-				<option value="orioles">Baltimore Orioles</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
+			<div class="team-container">
+				<img onClick={this.test} id="indians" className="team-btn" src={TeamAssets.indians.logo} alt="mets" />
+				<img onClick={this.test} id="twins" className="team-btn" src={TeamAssets.twins.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="white-sox"
+					className="team-btn"
+					src={TeamAssets['white-sox'].logo}
+					alt="mets"
+				/>
+				<img onClick={this.test} id="royals" className="team-btn" src={TeamAssets.royals.logo} alt="mets" />
+				<img onClick={this.test} id="tigers" className="team-btn" src={TeamAssets.tigers.logo} alt="mets" />
+			</div>
+		);
+		const alEast = (
+			<div class="team-container">
+				<img onClick={this.test} id="yankees" className="team-btn" src={TeamAssets.yankees.logo} alt="mets" />
+				<img onClick={this.test} id="rays" className="team-btn" src={TeamAssets.rays.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="red-sox"
+					className="team-btn"
+					src={TeamAssets['red-sox'].logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.test}
+					id="blue-jays"
+					className="team-btn"
+					src={TeamAssets['blue-jays'].logo}
+					alt="mets"
+				/>
+				<img onClick={this.test} id="orioles" className="team-btn" src={TeamAssets.orioles.logo} alt="mets" />
+			</div>
 		);
 		const alWest = (
-			<select name="team" id="team">
-				<option defaultValue>- AL West -</option>
-				<option value="yankees">New York Yankees</option>
-				<option value="rays">Tampa Rays</option>
-				<option value="red-sox">Boston Red Sox</option>
-				<option value="blue-jays">Toronto Blue Jays</option>
-				<option value="orioles">Baltimore Orioles</option>
-				<option value="nationals">Washington Nationals</option>
-			</select>
+			<div class="team-container">
+				<img onClick={this.test} id="astros" className="team-btn" src={TeamAssets.astros.logo} alt="mets" />
+				<img
+					onClick={this.test}
+					id="athletics"
+					className="team-btn"
+					src={TeamAssets.athletics.logo}
+					alt="mets"
+				/>
+
+				<img onClick={this.test} id="rangers" className="team-btn" src={TeamAssets.rangers.logo} alt="mets" />
+				<img onClick={this.test} id="angels" className="team-btn" src={TeamAssets.angels.logo} alt="mets" />
+				<img onClick={this.test} id="mariners" className="team-btn" src={TeamAssets.mariners.logo} alt="mets" />
+			</div>
 		);
+
 		if (league === 'al' && division === 'east') {
 			return alEast;
 		}

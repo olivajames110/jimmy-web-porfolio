@@ -1,38 +1,83 @@
+$color_1: white;
+$color_2: #979595;
+$color_3: #000;
+$color_4: #b3b3b1;
+$font_family_1: var(--h1);
+$font_family_2: var(--h2);
+$background_color_1: white;
+$background_color_2: var(--baseballCardBarColor);
+$background_color_3: var(--color-icon);
+$background_color_4: unset;
+
+@-webkit-keyframes 'cardSlide' {
+	0% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	75% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes 'cardSlide' {
+	0% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	75% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+/*# sourceMappingURL=formMain.css.map */
 html {
-	--websiteBlueToWhite: #0c4e7e;
-	--websiteLightGrayToBlack: #fcfcfc;
-	--websiteWhiteToBlack: rgb(233, 233, 233);
-	--websiteBlackToWhite: #222222;
-	--baseballCardBarColor: green;
+	--websitebluetowhite: #0c4e7e;
+	--websitelightgraytoblack: #fcfcfc;
+	--websitewhitetoblack: rgb(233, 233, 233);
+	--websiteblacktowhite: #222222;
+	--baseballcardbarcolor: green;
 }
-
 html[data-theme='dark'] {
-	--websiteBlueToWhite: #4e7ea1;
-	--websiteLightGrayToBlack: #0f0e0e;
-	--websiteWhiteToBlack: rgb(41, 41, 41);
-	--websiteBlackToWhite: white;
+	--websitebluetowhite: #4e7ea1;
+	--websitelightgraytoblack: #0f0e0e;
+	--websitewhitetoblack: rgb(41, 41, 41);
+	--websiteblacktowhite: white;
 }
-
 .form-project-wrapper {
 	height: initial;
-	// padding: 40px 10px;
 	width: 100%;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 0.8fr 2fr;
 	grid-template-columns: 0.8fr 2fr;
+	-webkit-transition: 1s;
 	transition: 1s;
 	.form-container {
-		// border-radius: 20px;
 		padding: 30px;
-		background: rgb(255, 255, 255);
+		background: white;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
+		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		width: 100%;
 		max-width: 900px;
 		height: calc(100vh - var(--headerHeight));
+		-webkit-box-pack: space-evenly;
+		-ms-flex-pack: space-evenly;
 		justify-content: space-evenly;
-		// overflow-y: scroll
-
 		.title-wrapper {
 			padding-bottom: 10px;
 			h1 {
@@ -41,298 +86,398 @@ html[data-theme='dark'] {
 				margin-bottom: 10px;
 			}
 		}
-
 		.inputs-wrapper {
 			.form-row {
+				display: -ms-grid;
 				display: grid;
+				-ms-grid-columns: 1fr 1fr;
 				grid-template-columns: 1fr 1fr;
 				grid-gap: 15px;
 			}
+			.form-button {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				padding: 6px 0;
+				font-size: 14px;
+				cursor: pointer;
+				svg {
+					margin-right: 5px;
+				}
+				.btn-randomize {
+					margin: 0 auto;
+				}
+			}
 			.input-container {
 				padding: 10px 0;
+				display: -webkit-box;
+				display: -ms-flexbox;
 				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
 				flex-direction: column;
+				-webkit-box-align: start;
+				-ms-flex-align: start;
 				align-items: flex-start;
 				position: relative;
-
 				.player-image-container {
+					display: -webkit-box;
+					display: -ms-flexbox;
 					display: flex;
 					margin-top: 3px;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
 					align-items: center;
-					label,
-					.form-button {
-						padding: 12px 18px;
-						border: 1px solid gray;
-						font-size: 14px;
-						text-align: center;
-						border-radius: 3px;
-						display: flex;
-						justify-content: center;
-						align-items: center;
+					width: 100%;
+					flex-direction: column;
+				}
+				input[type='file'] {
+					display: none;
+				}
+
+				.image-placeholder-wrapper {
+					height: 140px;
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+					label {
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						background: rgba(51, 51, 51, 0.442);
+						color: $color_1;
+						-webkit-transition: 250ms;
 						transition: 250ms;
-						background: #333;
-						color: white;
-						cursor: pointer;
 						&:hover {
-							background: rgb(30, 30, 30);
-							color: white;
+							background: rgba(51, 51, 51, 0.639);
 						}
 					}
-
-					input[type='file'] {
-						display: none;
-					}
-
-					.form-button {
-						display: flex;
-						height: 42px;
-
-						span {
-							margin-left: 5px;
-						}
-					}
-					.btn-randomize {
-						margin: 0 10px;
-					}
-
-					.image-placeholder {
-						background-size: cover;
-						background-position: center;
-						height: 50px;
-						width: 50px;
-						// border: 1px solid gray;
-						border-radius: 12px;
-					}
 				}
-
-				.label-title {
-					font-size: 14px;
+				.image-placeholder {
+					background-size: cover;
+					background-position: center;
+					max-width: 100%;
+					margin: 0 auto;
+					-o-object-fit: cover;
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
 				}
-				input[type='text'],
+			}
+			.label-title {
+				font-size: 14px;
+			}
+			input[type='text'] {
+				padding: 8px;
+				border-radius: 2px;
+				border: 1px solid #dadada;
+				background: white;
+				margin-top: 3px;
+				width: 100%;
+				height: 35px;
+			}
+			select {
+				padding: 8px;
+				border-radius: 2px;
+				border: 1px solid #dadada;
+				background: white;
+				margin-top: 3px;
+				width: 100%;
+				height: 35px;
+			}
+			.team-league-container {
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-columns: 0.7fr 1fr;
+				grid-template-columns: 0.7fr 1fr;
+				width: 100%;
+				margin-top: 10px;
+				.leagues-wrapper {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					align-items: center;
+				}
 				select {
-					padding: 8px;
-					border-radius: 2px;
-					border: 1px solid rgb(218, 218, 218);
-					background: white;
-					margin-top: 3px;
-					width: 100%;
-					height: 35px;
+					margin-top: 8px;
 				}
-
-				.team-league-container {
-					display: grid;
-					grid-template-columns: 0.7fr 1fr;
-					width: 100%;
-					margin-top: 10px;
-					.leagues-wrapper {
+				.leagues {
+					span {
+						font-weight: bold;
+						color: $color_2;
+						font-size: 14px;
+						-webkit-transition: 150ms;
+						transition: 150ms;
+						cursor: pointer;
+					}
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					.leagues-btn {
+						display: -webkit-box;
+						display: -ms-flexbox;
 						display: flex;
-						justify-content: center;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
 						align-items: center;
-					}
-					select {
-						margin-top: 8px;
-					}
-					.leagues,
-					.divisions {
-						span {
-							// margin-top: 10px;
-							font-weight: bold;
-							color: rgb(151, 149, 149);
-							font-size: 14px;
-
-							transition: 150ms;
-							cursor: pointer;
-						}
-					}
-
-					.leagues {
-						display: flex;
-
-						.leagues-btn {
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							font-size: 22px;
-							padding: 15px;
-							transition: 250ms;
-							// margin: 0 10px;
-						}
+						-webkit-box-pack: center;
+						-ms-flex-pack: center;
+						justify-content: center;
+						font-size: 22px;
+						padding: 15px;
+						-webkit-transition: 250ms;
+						transition: 250ms;
 					}
 				}
 				.divisions {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
 					span {
-						padding: 4px 8px;
+						font-weight: bold;
+						color: $color_2;
+						font-size: 14px;
+						-webkit-transition: 150ms;
+						transition: 150ms;
+						cursor: pointer;
+					}
+				}
+				.team-container {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-ms-flex-pack: distribute;
+					justify-content: space-around;
+					cursor: pointer;
+					padding: 5px;
+					img {
+						width: 30px;
+						-webkit-transition: 250ms;
+						transition: 250ms;
 					}
 				}
 			}
-			#team-input-container {
-				margin-bottom: 20px;
+			.divisions {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: row;
+				flex-direction: row;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+				span {
+					padding: 4px 8px;
+				}
 			}
 		}
+		#team-input-container {
+			margin-bottom: 20px;
+		}
 	}
-
-	.baseball-card-container {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-		overflow-y: scroll;
-		height: calc(100vh - var(--headerHeight));
-		padding: 20px;
+}
+.baseball-card-container {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: (minmax(260px, 1fr))[auto-fill];
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	overflow-y: scroll;
+	height: calc(100vh - var(--headerHeight));
+	padding: 20px;
+}
+.baseball-card-wrapper {
+	-webkit-box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+	box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+	border: 10px solid white;
+	position: relative;
+	height: 330px;
+	width: 250px;
+	background: black;
+	margin: 0 auto;
+	margin-top: 15px;
+	overflow: hidden;
+	background-position: center;
+	-webkit-transition: 500ms;
+	transition: 500ms;
+	-webkit-animation: cardSlide 500ms;
+	animation: cardSlide 500ms;
+	cursor: pointer;
+	&:after {
+		content: '';
+		height: 88%;
+		position: absolute;
+		top: -8px;
+		right: 9px;
+		border: 4px double white;
 	}
-	.baseball-card-wrapper {
-		box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
-		border: 10px solid white;
-		position: relative;
-		height: 330px;
-		width: 250px;
-		background: black;
-		margin: 0 auto;
-		margin-top: 15px;
-		overflow: hidden;
-		background-position: center;
-		transition: 500ms;
-		animation: cardSlide 500ms;
-		cursor: pointer;
+	img.player {
+		width: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		height: 100%;
+	}
+	.team {
+		position: absolute;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: $background_color_1;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		bottom: 6px;
+		z-index: 15;
+		right: 2px;
+		img {
+			width: 90%;
+		}
+	}
+	.player-name {
+		width: 100%;
+		height: 34px;
+		padding: 0 4px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		position: absolute;
+		bottom: 10px;
+		font-size: 14px;
+		color: $color_3;
+		background-color: $background_color_1;
+		border-bottom-right-radius: 20px;
+		border-right: 4px solid white;
+		z-index: 10;
+		text-transform: uppercase;
+		&:before {
+			content: '';
+			width: 91%;
+			position: absolute;
+			left: -1px;
+			top: -1px;
+			-webkit-box-shadow: 6px -1px 3px 9px white;
+			box-shadow: 6px -1px 3px 9px white;
+		}
 		&:after {
 			content: '';
-			height: 88%;
+			background-color: $background_color_2;
+			width: 91%;
+			height: 9.6px;
 			position: absolute;
-			top: -8px;
-			right: 9px;
-			border: 4px double white;
+			left: -1px;
+			top: 15px;
 		}
-		img.player {
-			background-size: cover;
-			width: 100%;
-		}
-		.team {
-			position: absolute;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: white;
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			bottom: 6px;
-			z-index: 15;
-			right: 2px;
-			img {
-				width: 90%;
-			}
-		}
-		.player-name {
-			width: 95%;
-			height: 34px;
-			padding: 0 4px;
-			display: flex;
-			flex-direction: column;
-			position: absolute;
-			bottom: 10px;
-			font-size: 14px;
-			color: #000;
-			background-color: white;
-			border-bottom-right-radius: 20px;
-			border-right: 4px solid white;
+		.last-name {
+			font-weight: bold;
+			font-size: 18px;
+			color: $color_4;
+			margin-top: -10px;
 			z-index: 10;
-			text-transform: uppercase;
-
-			&:before {
-				content: '';
-				width: 91%;
-				position: absolute;
-				left: -1px;
-				top: -1px;
-				box-shadow: 6px -1px 3px 9px white;
-			}
+			font-family: $font_family_1;
+			margin-left: -2px;
+		}
+		.first-name {
+			font-weight: bold;
+			font-size: 11.8px;
+			font-family: $font_family_2;
+			color: $color_1;
+			letter-spacing: 2px;
+			z-index: 10;
+			margin-top: -2.1px;
+		}
+	}
+	.name-and-position {
+		position: absolute;
+		right: 30px;
+		bottom: 0;
+		color: $color_3;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		font-size: 8px;
+		font-weight: bold;
+		.position {
+			margin-right: 7px;
+		}
+		.team-name {
+			padding-left: 7px;
+			position: relative;
 			&:after {
 				content: '';
-				background-color: var(--baseballCardBarColor);
-				width: 91%;
-				height: 9.6px;
 				position: absolute;
-				left: -1px;
-				top: 15px;
-			}
-			.last-name {
-				font-weight: bold;
-				font-size: 18px;
-				color: #b3b3b1;
-				margin-top: -10px;
-				z-index: 10;
-				font-family: var(--h1);
-				margin-left: -2px;
-			}
-			.first-name {
-				font-weight: bold;
-				font-size: 11.8px;
-				font-family: var(--h2);
-				color: white;
-				letter-spacing: 2px;
-				z-index: 10;
-				margin-top: -2.1px;
-			}
-		}
-
-		.name-and-position {
-			position: absolute;
-			right: 30px;
-			bottom: 0;
-			color: #000;
-			display: flex;
-			font-size: 8px;
-			font-weight: bold;
-			.position {
-				margin-right: 7px;
-			}
-			.team-name {
-				padding-left: 7px;
-				position: relative;
-				&:after {
-					content: '';
-					position: absolute;
-					border-left: 1px solid black;
-					left: 0;
-					height: 4px;
-					top: 53%;
-					transform: translateY(-50%);
-				}
+				border-left: 1px solid black;
+				left: 0;
+				height: 4px;
+				top: 53%;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
 			}
 		}
 	}
 }
-
 .submit-container {
-	background-color: var(--color-icon);
+	background-color: $background_color_3;
 	padding: 20px 28px;
 	border-radius: 2px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	cursor: pointer;
 	.submit {
 		border: none;
-		color: white;
+		color: $color_1;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
-		background-color: unset;
+		background-color: $background_color_4;
 		margin-right: 8px;
 	}
-
 	svg {
 		font-size: 14px;
-		color: white;
+		color: $color_1;
 	}
 }
-
-input.submit:hover {
-	background: #000;
+input.submit {
+	&:hover {
+		background: #000;
+	}
 }
-
+.league-is-active {
+	background: #e8e8e8;
+	border-radius: 3px;
+}
 @media only screen and (max-width: 900px) {
 	.form-project-wrapper {
+		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
 		.form-container {
 			height: initial;
@@ -342,21 +487,43 @@ input.submit:hover {
 		}
 	}
 }
-
-@keyframes cardSlide {
-	0% {
-		transform: scale(1.1);
+.baseball-field {
+	width: 100%;
+	height: 160px;
+	.sand {
+		fill: #d8b676;
 	}
 
-	75% {
-		transform: scale(1.2);
+	.dark-grass {
+		fill: #47842b;
 	}
-	100% {
-		transform: scale(1);
-	}
-}
 
-.league-is-active {
-	background: #e8e8e8;
-	border-radius: 3px;
+	.light-grass {
+		fill: #558e3a;
+	}
+
+	.white {
+		fill: #f1f2f2;
+	}
+
+	.base-label {
+		font-size: 9px;
+		fill: #000;
+		font-family: SegoeUI-Bold, Segoe UI;
+		font-weight: 700;
+	}
+
+	.hit {
+		stroke: #000;
+		stroke-miterlimit: 10;
+		stroke-width: 0.25px;
+	}
+
+	.red {
+		fill: #dd283e;
+	}
+
+	.blue {
+		fill: #274fe0;
+	}
 }
