@@ -56,20 +56,10 @@ html[data-theme='dark'] {
 .form-project-wrapper .form-container {
   padding: 30px;
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 550px;
+  width: 430px;
   height: calc(100vh - var(--headerHeight));
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
 }
 
 .form-project-wrapper .form-container .title-wrapper {
@@ -91,8 +81,9 @@ html[data-theme='dark'] {
 .form-project-wrapper .form-container #names-and-picture {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 180px;
-      grid-template-columns: 1fr 180px;
+  -ms-grid-columns: 1fr 110px;
+      grid-template-columns: 1fr 110px;
+  grid-gap: 15px;
 }
 
 .form-project-wrapper .form-container .form-button {
@@ -104,6 +95,10 @@ html[data-theme='dark'] {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   align-items: center;
   padding: 6px 0;
   font-size: 14px;
@@ -111,7 +106,8 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .form-button svg {
-  margin-right: 5px;
+  font-size: 28px;
+  margin-top: 5px;
 }
 
 .form-project-wrapper .form-container .form-button .btn-randomize {
@@ -137,11 +133,10 @@ html[data-theme='dark'] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 3px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: flex-end;
-  width: 100%;
+  width: 110px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -153,8 +148,8 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-  height: 150px;
-  width: 150px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
@@ -162,16 +157,27 @@ html[data-theme='dark'] {
 
 .form-project-wrapper .form-container .input-container .image-placeholder-wrapper label {
   position: absolute;
-  bottom: 0;
   width: 100%;
-  background: rgba(51, 51, 51, 0.442);
+  height: 100%;
   color: white;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper label:hover {
-  background: rgba(51, 51, 51, 0.639);
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .upload {
+  background-color: #cdcdcd;
+}
+
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .upload:hover {
+  background-color: #bbbbbb;
+}
+
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .edit {
+  background-color: rgba(7, 7, 7, 0.169);
+}
+
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .edit:hover {
+  background-color: rgba(7, 7, 7, 0.326);
 }
 
 .form-project-wrapper .form-container .input-container .image-placeholder {
@@ -186,7 +192,18 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .label-title {
+  color: #7f7f7f;
   font-size: 14px;
+  position: absolute;
+  top: 50%;
+  padding: 0 4px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.19s;
+  transition: 0.19s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  margin-left: 11px;
 }
 
 .form-project-wrapper .form-container input[type='text'] {
@@ -199,11 +216,19 @@ html[data-theme='dark'] {
   background: white;
   margin-top: 3px;
   width: 100%;
-  min-width: 200px;
-  height: 35px;
+  height: 40px;
 }
 
-.form-project-wrapper .form-container select {
+.form-project-wrapper .form-container input[type='text']:focus ~ label,
+.form-project-wrapper .form-container input[type='text']:valid ~ label {
+  color: #1276bb;
+  -webkit-transform: translate(-5px, -178%);
+          transform: translate(-5px, -178%);
+  background-color: white;
+  font-size: 12px;
+}
+
+.form-project-wrapper select {
   padding: 8px;
   border-radius: 2px;
   border: 1px solid #dadada;
@@ -213,7 +238,7 @@ html[data-theme='dark'] {
   height: 35px;
 }
 
-.form-project-wrapper .form-container .team-league-container {
+.form-project-wrapper .team-league-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 0.7fr 1fr;
@@ -222,7 +247,7 @@ html[data-theme='dark'] {
   margin-top: 10px;
 }
 
-.form-project-wrapper .form-container .team-league-container .leagues-wrapper {
+.form-project-wrapper .team-league-container .leagues-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,17 +259,17 @@ html[data-theme='dark'] {
   align-items: center;
 }
 
-.form-project-wrapper .form-container .team-league-container select {
+.form-project-wrapper .team-league-container select {
   margin-top: 8px;
 }
 
-.form-project-wrapper .form-container .team-league-container .leagues {
+.form-project-wrapper .team-league-container .leagues {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.form-project-wrapper .form-container .team-league-container .leagues span {
+.form-project-wrapper .team-league-container .leagues span {
   font-weight: bold;
   color: #979595;
   font-size: 14px;
@@ -253,7 +278,7 @@ html[data-theme='dark'] {
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .team-league-container .leagues .leagues-btn {
+.form-project-wrapper .team-league-container .leagues .leagues-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,7 +294,7 @@ html[data-theme='dark'] {
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .team-league-container .divisions span {
+.form-project-wrapper .team-league-container .divisions span {
   font-weight: bold;
   color: #979595;
   font-size: 14px;
@@ -278,7 +303,7 @@ html[data-theme='dark'] {
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .team-league-container .team-container {
+.form-project-wrapper .team-league-container .team-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,13 +313,13 @@ html[data-theme='dark'] {
   padding: 5px;
 }
 
-.form-project-wrapper .form-container .team-league-container .team-container img {
+.form-project-wrapper .team-league-container .team-container img {
   width: 30px;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .divisions {
+.form-project-wrapper .divisions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,11 +332,11 @@ html[data-theme='dark'] {
   justify-content: space-between;
 }
 
-.form-project-wrapper .form-container .divisions span {
+.form-project-wrapper .divisions span {
   padding: 4px 8px;
 }
 
-.form-project-wrapper .form-container #team-input-container {
+.form-project-wrapper #team-input-container {
   margin-bottom: 20px;
 }
 
@@ -540,19 +565,9 @@ input.submit:hover {
         -ms-flex-align: center !important;
             align-items: center !important;
   }
-  input[type='text'] {
-    width: auto !important;
-    min-width: unset !important;
-  }
-  .form-project-wrapper .form-container #names-and-picture {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 130px;
-        grid-template-columns: 1fr 130px;
-  }
   .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-    height: 140px;
-    width: 140px;
+    height: 110px;
+    width: 110px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -566,18 +581,35 @@ input.submit:hover {
 
 .baseball-field-container span {
   position: absolute;
-  height: 11px;
-  width: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 24px;
+  width: 24px;
+  font-size: 11px;
   border-radius: 50%;
-  background-color: #274fe0;
+  color: white;
+  border: 1px solid white;
   cursor: pointer;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.baseball-field-container span:hover {
+  background-color: #274fe0;
 }
 
 .baseball-field-container #catcher {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 25px;
+  bottom: 30px;
 }
 
 .baseball-field-container #pitcher {
@@ -588,81 +620,81 @@ input.submit:hover {
 }
 
 .baseball-field-container #first-base {
-  right: 63px;
-  bottom: 62px;
+  right: 48px;
+  bottom: 58px;
 }
 
 .baseball-field-container #second-base {
-  right: 70px;
-  bottom: 90px;
+  right: 60px;
+  bottom: 97px;
 }
 
 .baseball-field-container #short-stop {
-  left: 70px;
-  bottom: 90px;
+  left: 60px;
+  bottom: 97px;
 }
 
 .baseball-field-container #third-base {
-  left: 62px;
-  bottom: 62px;
+  left: 48px;
+  bottom: 58px;
 }
 
 .baseball-field-container #left-field {
-  left: 45px;
-  top: 61px;
+  left: 28px;
+  top: 52px;
 }
 
 .baseball-field-container #center-field {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 40px;
+  top: 30px;
 }
 
 .baseball-field-container #right-field {
-  right: 45px;
-  top: 61px;
+  right: 28px;
+  top: 52px;
 }
 
-.baseball-field-container .baseball-field {
+.baseball-field {
   width: 200px;
   height: 200px;
 }
 
-.baseball-field-container .baseball-field .sand {
+.baseball-field .sand {
   fill: #d8b676;
 }
 
-.baseball-field-container .baseball-field .dark-grass {
+.baseball-field .dark-grass {
   fill: #47842b;
 }
 
-.baseball-field-container .baseball-field .light-grass {
+.baseball-field .light-grass {
   fill: #558e3a;
 }
 
-.baseball-field-container .baseball-field .white {
-  fill: #f1f2f2;
+.baseball-field .white {
+  fill: #f1f2f270;
 }
 
-.baseball-field-container .baseball-field .base-label {
+.baseball-field .base-label {
   font-size: 9px;
   fill: #000;
   font-family: SegoeUI-Bold, Segoe UI;
   font-weight: 700;
 }
 
-.baseball-field-container .baseball-field .hit {
+.baseball-field .hit {
   stroke: #000;
   stroke-miterlimit: 10;
   stroke-width: 0.25px;
 }
 
-.baseball-field-container .baseball-field .red {
+.baseball-field .red {
   fill: #dd283e;
 }
 
-.baseball-field-container .baseball-field .blue {
+.baseball-field .blue {
   fill: #274fe0;
 }
 /*# sourceMappingURL=formMain.css.map */

@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { TeamAssets, Players } from './assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faUpload, faRandom, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+	faDownload,
+	faUpload,
+	faRandom,
+	faPlus,
+	faImage,
+	faCameraRetro,
+	faCamera,
+	faPencilAlt
+} from '@fortawesome/free-solid-svg-icons';
 import Leagues from './leagues';
 import Axios from 'axios';
 
@@ -58,6 +67,12 @@ class AddCardForm extends Component {
 		reader.readAsDataURL(file);
 	};
 
+	handleMakeActive = (e, classNameTarget, classNameToggle) => {
+		const btns = document.querySelectorAll(classNameTarget);
+		btns.forEach(btn => btn.classList.remove('league-is-active'));
+		e.target.classList.add('league-is-active');
+	};
+
 	handleFindTeamImg = team => {
 		console.log('Want Working: ' + team);
 
@@ -79,6 +94,12 @@ class AddCardForm extends Component {
 	};
 
 	handleFindPlayerImg = () => {
+		this.setState({
+			playerImg: null
+		});
+	};
+
+	randomizeCard = () => {
 		const player = Players[Math.floor(Math.random() * Players.length)];
 		console.log(player);
 		this.setState({
@@ -93,6 +114,26 @@ class AddCardForm extends Component {
 		this.props.handleAddCard(this.state);
 	};
 	render() {
+		const emptyImagePlaceholder = (
+			<div className="empty-image-placeholder">
+				<FontAwesomeIcon icon={faImage} />
+				<span>Upload Image</span>
+			</div>
+		);
+		const playerImage = <img className="image-placeholder" src={this.state.playerImg} />;
+
+		const editIcon = (
+			<label className="edit form-button" htmlFor="player-image">
+				<FontAwesomeIcon icon={faPencilAlt} />
+				<span>Edit</span>
+			</label>
+		);
+		const uploadIcon = (
+			<label className="upload form-button" htmlFor="player-image">
+				<FontAwesomeIcon icon={faCamera} />
+				<span>Upload</span>
+			</label>
+		);
 		return (
 			<div className="form-container">
 				<div className="title-wrapper">
@@ -104,36 +145,35 @@ class AddCardForm extends Component {
 						<div id="names-and-picture" className="">
 							<div className="names-wrapper">
 								<div className="input-container">
-									<label className="label-title" htmlFor="first-name">
-										First Name
-									</label>
 									<input
 										name="firstName"
 										onChange={this.handleInputChange}
 										type="text"
 										id="first-name"
+										required
 									/>
+									<label className="label-title" htmlFor="first-name">
+										First Name
+									</label>
 								</div>
 								<div className="input-container">
-									<label className="label-title" htmlFor="last-name">
-										Last Name
-									</label>
 									<input
 										name="lastName"
 										onChange={this.handleInputChange}
 										type="text"
 										id="last-name"
+										required
 									/>
+									<label className="label-title" htmlFor="last-name">
+										Last Name
+									</label>
 								</div>
 							</div>
 							<div className="input-container">
 								<div className="player-image-container">
 									<div className="image-placeholder-wrapper">
-										<label className="upload form-button" htmlFor="player-image">
-											<FontAwesomeIcon icon={faUpload} />
-											<span>Upload</span>
-										</label>
-										<img className="image-placeholder" src={this.state.playerImg} />
+										{this.state.playerImg ? editIcon : uploadIcon}
+										{this.state.playerImg ? playerImage : emptyImagePlaceholder}
 									</div>
 									<div className="btn-wrapper">
 										<input
@@ -285,43 +325,49 @@ class AddCardForm extends Component {
 											/>
 										</g>
 									</svg>
-									<span onClick={this.handlePositionChange} data-position="Pitcher" id="pitcher" />
-									<span onClick={this.handlePositionChange} data-position="Catcher" id="catcher" />
-									<span
-										onClick={this.handlePositionChange}
-										data-position="1st Base"
-										id="first-base"
-									/>
-									<span
-										onClick={this.handlePositionChange}
-										data-position="2nd Base"
-										id="second-base"
-									/>
-									<span
-										onClick={this.handlePositionChange}
-										data-position="3rd Base"
-										id="third-base"
-									/>
+									<span onClick={this.handlePositionChange} data-position="Pitcher" id="pitcher">
+										P
+									</span>
+									<span onClick={this.handlePositionChange} data-position="Catcher" id="catcher">
+										C
+									</span>
+									<span onClick={this.handlePositionChange} data-position="1st Base" id="first-base">
+										1B
+									</span>
+									<span onClick={this.handlePositionChange} data-position="2nd Base" id="second-base">
+										2B
+									</span>
+									<span onClick={this.handlePositionChange} data-position="3rd Base" id="third-base">
+										3B
+									</span>
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Short Stop"
 										id="short-stop"
-									/>
+									>
+										SS
+									</span>
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Left Field"
 										id="left-field"
-									/>
+									>
+										LF
+									</span>
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Center Field"
 										id="center-field"
-									/>
+									>
+										CF
+									</span>
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Right Field"
 										id="right-field"
-									/>
+									>
+										RF
+									</span>
 								</div>
 							</div>
 						</div>
@@ -330,7 +376,7 @@ class AddCardForm extends Component {
 							<span className="submit">Add Baseball Card</span>
 							<FontAwesomeIcon icon={faPlus} />
 						</div>
-						<div onClick={this.handleFindPlayerImg} className="btn-randomize form-button">
+						<div onClick={this.randomizeCard} className="btn-randomize form-button">
 							<FontAwesomeIcon icon={faRandom} />
 							<span>Randomize</span>
 						</div>
