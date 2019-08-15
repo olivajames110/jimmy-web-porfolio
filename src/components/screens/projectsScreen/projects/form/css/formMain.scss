@@ -72,8 +72,8 @@ html[data-theme='dark'] {
 		flex-direction: column;
 		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-		width: 100%;
-		max-width: 900px;
+
+		width: 550px;
 		height: calc(100vh - var(--headerHeight));
 		-webkit-box-pack: space-evenly;
 		-ms-flex-pack: space-evenly;
@@ -86,15 +86,130 @@ html[data-theme='dark'] {
 				margin-bottom: 10px;
 			}
 		}
-		.inputs-wrapper {
-			.form-row {
-				display: -ms-grid;
-				display: grid;
-				-ms-grid-columns: 1fr 1fr;
-				grid-template-columns: 1fr 1fr;
-				grid-gap: 15px;
+
+		.form-row {
+			display: -ms-grid;
+			display: grid;
+
+			grid-gap: 15px;
+		}
+
+		#names-and-picture {
+			display: grid;
+			grid-template-columns: 1fr 180px;
+		}
+
+		#picture-and-position {
+			// grid-template-columns: 150px 1fr;
+		}
+		.form-button {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			padding: 6px 0;
+			font-size: 14px;
+			cursor: pointer;
+			svg {
+				margin-right: 5px;
 			}
-			.form-button {
+			.btn-randomize {
+				margin: 0 auto;
+			}
+		}
+		.input-container {
+			padding: 10px 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+			position: relative;
+			.player-image-container {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				margin-top: 3px;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: flex-end;
+				width: 100%;
+				flex-direction: column;
+			}
+			input[type='file'] {
+				display: none;
+			}
+
+			.image-placeholder-wrapper {
+				height: 150px;
+				width: 150px;
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				label {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					background: rgba(51, 51, 51, 0.442);
+					color: $color_1;
+					-webkit-transition: 250ms;
+					transition: 250ms;
+					&:hover {
+						background: rgba(51, 51, 51, 0.639);
+					}
+				}
+			}
+			.image-placeholder {
+				background-size: cover;
+				background-position: center;
+				max-width: 100%;
+				margin: 0 auto;
+				-o-object-fit: cover;
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.label-title {
+			font-size: 14px;
+		}
+		input[type='text'] {
+			padding: 8px;
+			border-radius: 2px;
+			border: 1px solid #dadada;
+			background: white;
+			margin-top: 3px;
+			width: 100%;
+			min-width: 200px;
+			height: 35px;
+		}
+		select {
+			padding: 8px;
+			border-radius: 2px;
+			border: 1px solid #dadada;
+			background: white;
+			margin-top: 3px;
+			width: 100%;
+			height: 35px;
+		}
+		.team-league-container {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 0.7fr 1fr;
+			grid-template-columns: 0.7fr 1fr;
+			width: 100%;
+			margin-top: 10px;
+			.leagues-wrapper {
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: flex;
@@ -104,184 +219,79 @@ html[data-theme='dark'] {
 				-webkit-box-align: center;
 				-ms-flex-align: center;
 				align-items: center;
-				padding: 6px 0;
-				font-size: 14px;
-				cursor: pointer;
-				svg {
-					margin-right: 5px;
-				}
-				.btn-randomize {
-					margin: 0 auto;
-				}
 			}
-			.input-container {
-				padding: 10px 0;
+			select {
+				margin-top: 8px;
+			}
+			.leagues {
+				span {
+					font-weight: bold;
+					color: $color_2;
+					font-size: 14px;
+					-webkit-transition: 150ms;
+					transition: 150ms;
+					cursor: pointer;
+				}
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: flex;
-				-webkit-box-orient: vertical;
-				-webkit-box-direction: normal;
-				-ms-flex-direction: column;
-				flex-direction: column;
-				-webkit-box-align: start;
-				-ms-flex-align: start;
-				align-items: flex-start;
-				position: relative;
-				.player-image-container {
+				.leagues-btn {
 					display: -webkit-box;
 					display: -ms-flexbox;
 					display: flex;
-					margin-top: 3px;
 					-webkit-box-align: center;
 					-ms-flex-align: center;
 					align-items: center;
-					width: 100%;
-					flex-direction: column;
-				}
-				input[type='file'] {
-					display: none;
-				}
-
-				.image-placeholder-wrapper {
-					height: 140px;
-					width: 100%;
-					position: relative;
-					overflow: hidden;
-					label {
-						position: absolute;
-						bottom: 0;
-						width: 100%;
-						background: rgba(51, 51, 51, 0.442);
-						color: $color_1;
-						-webkit-transition: 250ms;
-						transition: 250ms;
-						&:hover {
-							background: rgba(51, 51, 51, 0.639);
-						}
-					}
-				}
-				.image-placeholder {
-					background-size: cover;
-					background-position: center;
-					max-width: 100%;
-					margin: 0 auto;
-					-o-object-fit: cover;
-					object-fit: cover;
-					height: 100%;
-					width: 100%;
-				}
-			}
-			.label-title {
-				font-size: 14px;
-			}
-			input[type='text'] {
-				padding: 8px;
-				border-radius: 2px;
-				border: 1px solid #dadada;
-				background: white;
-				margin-top: 3px;
-				width: 100%;
-				height: 35px;
-			}
-			select {
-				padding: 8px;
-				border-radius: 2px;
-				border: 1px solid #dadada;
-				background: white;
-				margin-top: 3px;
-				width: 100%;
-				height: 35px;
-			}
-			.team-league-container {
-				display: -ms-grid;
-				display: grid;
-				-ms-grid-columns: 0.7fr 1fr;
-				grid-template-columns: 0.7fr 1fr;
-				width: 100%;
-				margin-top: 10px;
-				.leagues-wrapper {
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
 					-webkit-box-pack: center;
 					-ms-flex-pack: center;
 					justify-content: center;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
-					align-items: center;
-				}
-				select {
-					margin-top: 8px;
-				}
-				.leagues {
-					span {
-						font-weight: bold;
-						color: $color_2;
-						font-size: 14px;
-						-webkit-transition: 150ms;
-						transition: 150ms;
-						cursor: pointer;
-					}
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					.leagues-btn {
-						display: -webkit-box;
-						display: -ms-flexbox;
-						display: flex;
-						-webkit-box-align: center;
-						-ms-flex-align: center;
-						align-items: center;
-						-webkit-box-pack: center;
-						-ms-flex-pack: center;
-						justify-content: center;
-						font-size: 22px;
-						padding: 15px;
-						-webkit-transition: 250ms;
-						transition: 250ms;
-					}
-				}
-				.divisions {
-					span {
-						font-weight: bold;
-						color: $color_2;
-						font-size: 14px;
-						-webkit-transition: 150ms;
-						transition: 150ms;
-						cursor: pointer;
-					}
-				}
-				.team-container {
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					-ms-flex-pack: distribute;
-					justify-content: space-around;
-					cursor: pointer;
-					padding: 5px;
-					img {
-						width: 30px;
-						-webkit-transition: 250ms;
-						transition: 250ms;
-					}
+					font-size: 22px;
+					padding: 15px;
+					-webkit-transition: 250ms;
+					transition: 250ms;
 				}
 			}
 			.divisions {
+				span {
+					font-weight: bold;
+					color: $color_2;
+					font-size: 14px;
+					-webkit-transition: 150ms;
+					transition: 150ms;
+					cursor: pointer;
+				}
+			}
+			.team-container {
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: flex;
-				-webkit-box-orient: horizontal;
-				-webkit-box-direction: normal;
-				-ms-flex-direction: row;
-				flex-direction: row;
-				-webkit-box-pack: justify;
-				-ms-flex-pack: justify;
-				justify-content: space-between;
-				span {
-					padding: 4px 8px;
+				-ms-flex-pack: distribute;
+				justify-content: space-around;
+				cursor: pointer;
+				padding: 5px;
+				img {
+					width: 30px;
+					-webkit-transition: 250ms;
+					transition: 250ms;
 				}
 			}
 		}
+		.divisions {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			span {
+				padding: 4px 8px;
+			}
+		}
+
 		#team-input-container {
 			margin-bottom: 20px;
 		}
@@ -290,6 +300,7 @@ html[data-theme='dark'] {
 .baseball-card-container {
 	display: -ms-grid;
 	display: grid;
+	width: 100%;
 	-ms-grid-columns: (minmax(260px, 1fr))[auto-fill];
 	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 	overflow-y: scroll;
@@ -481,49 +492,124 @@ input.submit {
 		grid-template-columns: 1fr;
 		.form-container {
 			height: initial;
+			width: 100%;
+			padding: 20px;
 		}
 		.baseball-card-container {
 			overflow: unset;
 		}
 	}
+
+	.player-image-container {
+		align-items: center !important;
+	}
+
+	input[type='text'] {
+		width: auto !important;
+		min-width: unset !important;
+	}
+	.form-project-wrapper .form-container #names-and-picture {
+		display: grid;
+		grid-template-columns: 1fr 130px;
+	}
+	.form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
+		height: 140px;
+		width: 140px;
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+	}
 }
-.baseball-field {
-	width: 100%;
-	height: 160px;
-	.sand {
-		fill: #d8b676;
-	}
 
-	.dark-grass {
-		fill: #47842b;
+.baseball-field-container {
+	position: relative;
+	margin: 0 auto;
+	span {
+		position: absolute;
+		height: 11px;
+		width: 11px;
+		border-radius: 50%;
+		background-color: #274fe0;
+		cursor: pointer;
 	}
-
-	.light-grass {
-		fill: #558e3a;
+	#catcher {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 25px;
 	}
-
-	.white {
-		fill: #f1f2f2;
+	#pitcher {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 64px;
 	}
-
-	.base-label {
-		font-size: 9px;
-		fill: #000;
-		font-family: SegoeUI-Bold, Segoe UI;
-		font-weight: 700;
+	#first-base {
+		right: 63px;
+		bottom: 62px;
 	}
-
-	.hit {
-		stroke: #000;
-		stroke-miterlimit: 10;
-		stroke-width: 0.25px;
+	#second-base {
+		right: 70px;
+		bottom: 90px;
 	}
-
-	.red {
-		fill: #dd283e;
+	#short-stop {
+		left: 70px;
+		bottom: 90px;
 	}
+	#third-base {
+		left: 62px;
+		bottom: 62px;
+	}
+	#left-field {
+		left: 45px;
+		top: 61px;
+	}
+	#center-field {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 40px;
+	}
+	#right-field {
+		right: 45px;
+		top: 61px;
+	}
+	.baseball-field {
+		width: 200px;
+		height: 200px;
 
-	.blue {
-		fill: #274fe0;
+		.sand {
+			fill: #d8b676;
+		}
+
+		.dark-grass {
+			fill: #47842b;
+		}
+
+		.light-grass {
+			fill: #558e3a;
+		}
+
+		.white {
+			fill: #f1f2f2;
+		}
+
+		.base-label {
+			font-size: 9px;
+			fill: #000;
+			font-family: SegoeUI-Bold, Segoe UI;
+			font-weight: 700;
+		}
+
+		.hit {
+			stroke: #000;
+			stroke-miterlimit: 10;
+			stroke-width: 0.25px;
+		}
+
+		.red {
+			fill: #dd283e;
+		}
+
+		.blue {
+			fill: #274fe0;
+		}
 	}
 }

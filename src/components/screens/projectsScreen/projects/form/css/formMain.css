@@ -65,8 +65,7 @@ html[data-theme='dark'] {
   flex-direction: column;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 900px;
+  width: 550px;
   height: calc(100vh - var(--headerHeight));
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
@@ -83,15 +82,20 @@ html[data-theme='dark'] {
   margin-bottom: 10px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .form-row {
+.form-project-wrapper .form-container .form-row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .form-button {
+.form-project-wrapper .form-container #names-and-picture {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 180px;
+      grid-template-columns: 1fr 180px;
+}
+
+.form-project-wrapper .form-container .form-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,15 +110,15 @@ html[data-theme='dark'] {
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .form-button svg {
+.form-project-wrapper .form-container .form-button svg {
   margin-right: 5px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .form-button .btn-randomize {
+.form-project-wrapper .form-container .form-button .btn-randomize {
   margin: 0 auto;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container {
+.form-project-wrapper .form-container .input-container {
   padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -129,14 +133,14 @@ html[data-theme='dark'] {
   position: relative;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .player-image-container {
+.form-project-wrapper .form-container .input-container .player-image-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 3px;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -144,18 +148,19 @@ html[data-theme='dark'] {
           flex-direction: column;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container input[type='file'] {
+.form-project-wrapper .form-container .input-container input[type='file'] {
   display: none;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .image-placeholder-wrapper {
-  height: 140px;
-  width: 100%;
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
   position: relative;
   overflow: hidden;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .image-placeholder-wrapper label {
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper label {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -165,11 +170,11 @@ html[data-theme='dark'] {
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .image-placeholder-wrapper label:hover {
+.form-project-wrapper .form-container .input-container .image-placeholder-wrapper label:hover {
   background: rgba(51, 51, 51, 0.639);
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .input-container .image-placeholder {
+.form-project-wrapper .form-container .input-container .image-placeholder {
   background-size: cover;
   background-position: center;
   max-width: 100%;
@@ -180,11 +185,22 @@ html[data-theme='dark'] {
   width: 100%;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .label-title {
+.form-project-wrapper .form-container .label-title {
   font-size: 14px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper input[type='text'] {
+.form-project-wrapper .form-container input[type='text'] {
+  padding: 8px;
+  border-radius: 2px;
+  border: 1px solid #dadada;
+  background: white;
+  margin-top: 3px;
+  width: 100%;
+  min-width: 200px;
+  height: 35px;
+}
+
+.form-project-wrapper .form-container select {
   padding: 8px;
   border-radius: 2px;
   border: 1px solid #dadada;
@@ -194,17 +210,7 @@ html[data-theme='dark'] {
   height: 35px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper select {
-  padding: 8px;
-  border-radius: 2px;
-  border: 1px solid #dadada;
-  background: white;
-  margin-top: 3px;
-  width: 100%;
-  height: 35px;
-}
-
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container {
+.form-project-wrapper .form-container .team-league-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 0.7fr 1fr;
@@ -213,7 +219,7 @@ html[data-theme='dark'] {
   margin-top: 10px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .leagues-wrapper {
+.form-project-wrapper .form-container .team-league-container .leagues-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,17 +231,17 @@ html[data-theme='dark'] {
   align-items: center;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container select {
+.form-project-wrapper .form-container .team-league-container select {
   margin-top: 8px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .leagues {
+.form-project-wrapper .form-container .team-league-container .leagues {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .leagues span {
+.form-project-wrapper .form-container .team-league-container .leagues span {
   font-weight: bold;
   color: #979595;
   font-size: 14px;
@@ -244,7 +250,7 @@ html[data-theme='dark'] {
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .leagues .leagues-btn {
+.form-project-wrapper .form-container .team-league-container .leagues .leagues-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,7 +266,7 @@ html[data-theme='dark'] {
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .divisions span {
+.form-project-wrapper .form-container .team-league-container .divisions span {
   font-weight: bold;
   color: #979595;
   font-size: 14px;
@@ -269,7 +275,7 @@ html[data-theme='dark'] {
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .team-container {
+.form-project-wrapper .form-container .team-league-container .team-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,13 +285,13 @@ html[data-theme='dark'] {
   padding: 5px;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .team-league-container .team-container img {
+.form-project-wrapper .form-container .team-league-container .team-container img {
   width: 30px;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .divisions {
+.form-project-wrapper .form-container .divisions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,7 +304,7 @@ html[data-theme='dark'] {
   justify-content: space-between;
 }
 
-.form-project-wrapper .form-container .inputs-wrapper .divisions span {
+.form-project-wrapper .form-container .divisions span {
   padding: 4px 8px;
 }
 
@@ -309,6 +315,7 @@ html[data-theme='dark'] {
 .baseball-card-container {
   display: -ms-grid;
   display: grid;
+  width: 100%;
   -ms-grid-columns: minmax(260px, 1fr) [auto-fill];
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   overflow-y: scroll;
@@ -519,51 +526,140 @@ input.submit:hover {
   }
   .form-project-wrapper .form-container {
     height: initial;
+    width: 100%;
+    padding: 20px;
   }
   .form-project-wrapper .baseball-card-container {
     overflow: unset;
   }
+  .player-image-container {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  input[type='text'] {
+    width: auto !important;
+    min-width: unset !important;
+  }
+  .form-project-wrapper .form-container #names-and-picture {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 130px;
+        grid-template-columns: 1fr 130px;
+  }
+  .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
-.baseball-field {
-  width: 100%;
-  height: 160px;
+.baseball-field-container {
+  position: relative;
+  margin: 0 auto;
 }
 
-.baseball-field .sand {
+.baseball-field-container span {
+  position: absolute;
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  background-color: #274fe0;
+  cursor: pointer;
+}
+
+.baseball-field-container #catcher {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 25px;
+}
+
+.baseball-field-container #pitcher {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 64px;
+}
+
+.baseball-field-container #first-base {
+  right: 63px;
+  bottom: 62px;
+}
+
+.baseball-field-container #second-base {
+  right: 70px;
+  bottom: 90px;
+}
+
+.baseball-field-container #short-stop {
+  left: 70px;
+  bottom: 90px;
+}
+
+.baseball-field-container #third-base {
+  left: 62px;
+  bottom: 62px;
+}
+
+.baseball-field-container #left-field {
+  left: 45px;
+  top: 61px;
+}
+
+.baseball-field-container #center-field {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 40px;
+}
+
+.baseball-field-container #right-field {
+  right: 45px;
+  top: 61px;
+}
+
+.baseball-field-container .baseball-field {
+  width: 200px;
+  height: 200px;
+}
+
+.baseball-field-container .baseball-field .sand {
   fill: #d8b676;
 }
 
-.baseball-field .dark-grass {
+.baseball-field-container .baseball-field .dark-grass {
   fill: #47842b;
 }
 
-.baseball-field .light-grass {
+.baseball-field-container .baseball-field .light-grass {
   fill: #558e3a;
 }
 
-.baseball-field .white {
+.baseball-field-container .baseball-field .white {
   fill: #f1f2f2;
 }
 
-.baseball-field .base-label {
+.baseball-field-container .baseball-field .base-label {
   font-size: 9px;
   fill: #000;
   font-family: SegoeUI-Bold, Segoe UI;
   font-weight: 700;
 }
 
-.baseball-field .hit {
+.baseball-field-container .baseball-field .hit {
   stroke: #000;
   stroke-miterlimit: 10;
   stroke-width: 0.25px;
 }
 
-.baseball-field .red {
+.baseball-field-container .baseball-field .red {
   fill: #dd283e;
 }
 
-.baseball-field .blue {
+.baseball-field-container .baseball-field .blue {
   fill: #274fe0;
 }
 /*# sourceMappingURL=formMain.css.map */
