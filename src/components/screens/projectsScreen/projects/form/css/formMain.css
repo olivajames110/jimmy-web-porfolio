@@ -190,6 +190,9 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container input[type='text'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 8px;
   border-radius: 2px;
   border: 1px solid #dadada;

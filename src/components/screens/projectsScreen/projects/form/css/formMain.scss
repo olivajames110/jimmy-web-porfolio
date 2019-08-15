@@ -184,6 +184,9 @@ html[data-theme='dark'] {
 			font-size: 14px;
 		}
 		input[type='text'] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
 			padding: 8px;
 			border-radius: 2px;
 			border: 1px solid #dadada;
