@@ -81,8 +81,8 @@ html[data-theme='dark'] {
 .form-project-wrapper .form-container #names-and-picture {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 110px;
-      grid-template-columns: 1fr 110px;
+  -ms-grid-columns: 1fr 85px;
+      grid-template-columns: 1fr 85px;
   grid-gap: 15px;
 }
 
@@ -106,8 +106,7 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .form-button svg {
-  font-size: 28px;
-  margin-top: 5px;
+  font-size: 16px;
 }
 
 .form-project-wrapper .form-container .form-button .btn-randomize {
@@ -135,12 +134,18 @@ html[data-theme='dark'] {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: flex-end;
-  width: 110px;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.form-project-wrapper .form-container .input-container .remove-player-image-btn {
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 4px;
+  text-decoration: underline;
 }
 
 .form-project-wrapper .form-container .input-container input[type='file'] {
@@ -148,8 +153,8 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-  height: 110px;
-  width: 110px;
+  height: 85px;
+  width: 85px;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
@@ -211,7 +216,7 @@ html[data-theme='dark'] {
   -moz-appearance: none;
   appearance: none;
   padding: 8px;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid #dadada;
   background: white;
   margin-top: 3px;
@@ -315,6 +320,7 @@ html[data-theme='dark'] {
 
 .form-project-wrapper .team-league-container .team-container img {
   width: 30px;
+  height: auto;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
@@ -337,6 +343,8 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper #team-input-container {
+  border-top: 1px solid #dbdbdb;
+  padding-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -566,17 +574,37 @@ input.submit:hover {
             align-items: center !important;
   }
   .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-    height: 110px;
-    width: 110px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+  }
+  .label-title {
+    top: 55% !important;
+    font-size: 16px !important;
+  }
+  input[type='text']:focus ~ label,
+  input[type='text']:valid ~ label {
+    color: #1276bb;
+    font-size: 14px !important;
+    -webkit-transform: translate(-5px, -170%);
+            transform: translate(-5px, -170%);
+    background-color: white;
+    font-size: 12px;
+  }
+  .label-title {
+    font-size: 16px !important;
   }
 }
 
 .baseball-field-container {
   position: relative;
   margin: 0 auto;
+}
+
+.baseball-field-container .position-btn--active {
+  background-color: #274fe0;
 }
 
 .baseball-field-container span {
@@ -599,6 +627,7 @@ input.submit:hover {
   cursor: pointer;
   -webkit-transition: 250ms;
   transition: 250ms;
+  background-color: #000;
 }
 
 .baseball-field-container span:hover {

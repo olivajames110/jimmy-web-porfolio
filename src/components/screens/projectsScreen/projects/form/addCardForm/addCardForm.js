@@ -48,6 +48,7 @@ class AddCardForm extends Component {
 		});
 	};
 	handlePositionChange = e => {
+		this.handleMakeActive(e, 'position-btn', 'position-btn--active');
 		console.log(e.target.getAttribute('data-position'));
 		this.setState({
 			position: e.target.getAttribute('data-position')
@@ -69,8 +70,8 @@ class AddCardForm extends Component {
 
 	handleMakeActive = (e, classNameTarget, classNameToggle) => {
 		const btns = document.querySelectorAll(classNameTarget);
-		btns.forEach(btn => btn.classList.remove('league-is-active'));
-		e.target.classList.add('league-is-active');
+		btns.forEach(btn => btn.classList.remove(classNameToggle));
+		e.target.classList.add(classNameToggle);
 	};
 
 	handleFindTeamImg = team => {
@@ -94,6 +95,12 @@ class AddCardForm extends Component {
 	};
 
 	handleFindPlayerImg = () => {
+		this.setState({
+			playerImg: null
+		});
+	};
+
+	handleRemovePlayerImage = () => {
 		this.setState({
 			playerImg: null
 		});
@@ -175,6 +182,9 @@ class AddCardForm extends Component {
 										{this.state.playerImg ? editIcon : uploadIcon}
 										{this.state.playerImg ? playerImage : emptyImagePlaceholder}
 									</div>
+									<span onClick={this.handleRemovePlayerImage} className="remove-player-image-btn">
+										Remove
+									</span>
 									<div className="btn-wrapper">
 										<input
 											name="playerImage"
@@ -188,9 +198,6 @@ class AddCardForm extends Component {
 						</div>
 						<div id="picture-and-position" className="form-row">
 							<div className="input-container">
-								<label className="label-title" htmlFor="field-position">
-									Field Position
-								</label>
 								<div className="baseball-field-container">
 									<svg
 										className="baseball-field"
@@ -325,24 +332,50 @@ class AddCardForm extends Component {
 											/>
 										</g>
 									</svg>
-									<span onClick={this.handlePositionChange} data-position="Pitcher" id="pitcher">
+									<span
+										onClick={this.handlePositionChange}
+										data-position="Pitcher"
+										className="position-btn"
+										id="pitcher"
+									>
 										P
 									</span>
-									<span onClick={this.handlePositionChange} data-position="Catcher" id="catcher">
+									<span
+										onClick={this.handlePositionChange}
+										data-position="Catcher"
+										className="position-btn"
+										id="catcher"
+									>
 										C
 									</span>
-									<span onClick={this.handlePositionChange} data-position="1st Base" id="first-base">
+									<span
+										onClick={this.handlePositionChange}
+										data-position="1st Base"
+										className="position-btn"
+										id="first-base"
+									>
 										1B
 									</span>
-									<span onClick={this.handlePositionChange} data-position="2nd Base" id="second-base">
+									<span
+										onClick={this.handlePositionChange}
+										data-position="2nd Base"
+										className="position-btn"
+										id="second-base"
+									>
 										2B
 									</span>
-									<span onClick={this.handlePositionChange} data-position="3rd Base" id="third-base">
+									<span
+										onClick={this.handlePositionChange}
+										data-position="3rd Base"
+										className="position-btn"
+										id="third-base"
+									>
 										3B
 									</span>
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Short Stop"
+										className="position-btn"
 										id="short-stop"
 									>
 										SS
@@ -350,6 +383,7 @@ class AddCardForm extends Component {
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Left Field"
+										className="position-btn"
 										id="left-field"
 									>
 										LF
@@ -357,6 +391,7 @@ class AddCardForm extends Component {
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Center Field"
+										className="position-btn"
 										id="center-field"
 									>
 										CF
@@ -364,6 +399,7 @@ class AddCardForm extends Component {
 									<span
 										onClick={this.handlePositionChange}
 										data-position="Right Field"
+										className="position-btn"
 										id="right-field"
 									>
 										RF

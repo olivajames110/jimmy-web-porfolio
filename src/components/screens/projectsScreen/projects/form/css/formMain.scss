@@ -85,7 +85,7 @@ html[data-theme='dark'] {
 
 		#names-and-picture {
 			display: grid;
-			grid-template-columns: 1fr 110px;
+			grid-template-columns: 1fr 85px;
 			grid-gap: 15px;
 		}
 
@@ -107,8 +107,7 @@ html[data-theme='dark'] {
 			font-size: 14px;
 			cursor: pointer;
 			svg {
-				font-size: 28px;
-				margin-top: 5px;
+				font-size: 16px;
 			}
 			.btn-randomize {
 				margin: 0 auto;
@@ -134,17 +133,23 @@ html[data-theme='dark'] {
 				// margin-top: 3px;
 				-webkit-box-align: center;
 				-ms-flex-align: center;
-				align-items: flex-end;
-				width: 110px;
+				align-items: center;
+
 				flex-direction: column;
+			}
+			.remove-player-image-btn {
+				font-size: 11px;
+				cursor: pointer;
+				margin-top: 4px;
+				text-decoration: underline;
 			}
 			input[type='file'] {
 				display: none;
 			}
 
 			.image-placeholder-wrapper {
-				height: 110px;
-				width: 110px;
+				height: 85px;
+				width: 85px;
 				border-radius: 50%;
 				position: relative;
 				overflow: hidden;
@@ -198,7 +203,7 @@ html[data-theme='dark'] {
 			-moz-appearance: none;
 			appearance: none;
 			padding: 8px;
-			border-radius: 2px;
+			border-radius: 4px;
 			border: 1px solid #dadada;
 			background: white;
 			margin-top: 3px;
@@ -292,6 +297,7 @@ html[data-theme='dark'] {
 			padding: 5px;
 			img {
 				width: 30px;
+				height: auto;
 				-webkit-transition: 250ms;
 				transition: 250ms;
 			}
@@ -314,6 +320,8 @@ html[data-theme='dark'] {
 	}
 
 	#team-input-container {
+		border-top: 1px solid rgb(219, 219, 219);
+		padding-top: 5px;
 		margin-bottom: 20px;
 	}
 }
@@ -529,22 +537,41 @@ input.submit {
 		// width: auto !important;
 		// min-width: unset !important;
 	}
-	.form-project-wrapper .form-container #names-and-picture {
-		// display: grid;
-		// grid-template-columns: 1fr 150px;
-	}
+
 	.form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-		height: 110px;
-		width: 110px;
+		height: 85px;
+		width: 85px;
 		border-radius: 50%;
 		position: relative;
 		overflow: hidden;
+	}
+
+	.label-title {
+		top: 55% !important;
+		font-size: 16px !important;
+	}
+	input[type='text'] {
+		&:focus ~ label,
+		&:valid ~ label {
+			color: #1276bb;
+			font-size: 14px !important;
+			transform: translate(-5px, -170%);
+			background-color: white;
+			font-size: 12px;
+		}
+	}
+
+	.label-title {
+		font-size: 16px !important;
 	}
 }
 
 .baseball-field-container {
 	position: relative;
 	margin: 0 auto;
+	.position-btn--active {
+		background-color: #274fe0;
+	}
 	span {
 		position: absolute;
 		display: flex;
@@ -558,6 +585,7 @@ input.submit {
 		border: 1px solid white;
 		cursor: pointer;
 		transition: 250ms;
+		background-color: #000;
 		&:hover {
 			background-color: #274fe0;
 		}

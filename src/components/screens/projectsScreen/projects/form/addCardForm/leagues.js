@@ -160,9 +160,6 @@ class Leagues extends Component {
 	render() {
 		return (
 			<div id="team-input-container" className="input-container">
-				<label className="label-title" htmlFor="team">
-					Team
-				</label>
 				<div className="team-league-container">
 					<div className="leagues-wrapper">
 						<div id="leagues" className="leagues">
