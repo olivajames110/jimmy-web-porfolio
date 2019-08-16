@@ -25,7 +25,7 @@ class Form extends Component {
 		card.id = Math.random();
 		let cardList = [...this.state.cards, card];
 		this.setState({
-			cards: cardList
+			cards: cardList.reverse()
 		});
 	};
 

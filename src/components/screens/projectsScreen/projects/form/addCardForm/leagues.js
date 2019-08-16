@@ -159,40 +159,38 @@ class Leagues extends Component {
 
 	render() {
 		return (
-			<div id="team-input-container" className="input-container">
-				<div className="team-league-container">
-					<div className="leagues-wrapper">
-						<div id="leagues" className="leagues">
-							<span id="al" onClick={this.handleMakeLeagueBtnActive} className="leagues-btn">
-								AL
-							</span>
-							<span
-								id="nl"
-								onClick={this.handleMakeLeagueBtnActive}
-								className="leagues-btn  league-is-active"
-							>
-								NL
-							</span>
-						</div>
+			<div className="team-league-container">
+				<div className="leagues-wrapper">
+					<div id="leagues" className="leagues">
+						<span id="al" onClick={this.handleMakeLeagueBtnActive} className="leagues-btn">
+							AL
+						</span>
+						<span
+							id="nl"
+							onClick={this.handleMakeLeagueBtnActive}
+							className="leagues-btn  league-is-active"
+						>
+							NL
+						</span>
 					</div>
-					<div className="divisions-wrapper">
-						<div className="divisions">
-							<span id="west" onClick={this.handleMakeDivisionBtnActive} className="division-btn">
-								West
-							</span>
-							<span id="central" onClick={this.handleMakeDivisionBtnActive} className="division-btn">
-								Central
-							</span>
-							<span
-								id="east"
-								onClick={this.handleMakeDivisionBtnActive}
-								className="division-btn  league-is-active"
-							>
-								East
-							</span>
-						</div>
-						<div className="chosen-team">{this.chooseInput(this.state.league, this.state.division)}</div>
+				</div>
+				<div className="divisions-wrapper">
+					<div className="divisions">
+						<span id="west" onClick={this.handleMakeDivisionBtnActive} className="division-btn">
+							West
+						</span>
+						<span id="central" onClick={this.handleMakeDivisionBtnActive} className="division-btn">
+							Central
+						</span>
+						<span
+							id="east"
+							onClick={this.handleMakeDivisionBtnActive}
+							className="division-btn  league-is-active"
+						>
+							East
+						</span>
 					</div>
+					<div className="chosen-team">{this.chooseInput(this.state.league, this.state.division)}</div>
 				</div>
 			</div>
 		);

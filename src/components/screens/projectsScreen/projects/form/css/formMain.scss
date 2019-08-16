@@ -70,7 +70,7 @@ html[data-theme='dark'] {
 		.title-wrapper {
 			padding-bottom: 10px;
 			h1 {
-				font-size: 24px;
+				font-size: 22px;
 				font-weight: bold;
 				margin-bottom: 10px;
 			}
@@ -90,7 +90,7 @@ html[data-theme='dark'] {
 		}
 
 		#picture-and-position {
-			// grid-template-columns: 150px 1fr;
+			margin: 15px 0;
 		}
 		.form-button {
 			display: -webkit-box;
@@ -107,7 +107,7 @@ html[data-theme='dark'] {
 			font-size: 14px;
 			cursor: pointer;
 			svg {
-				font-size: 16px;
+				font-size: 12px;
 			}
 			.btn-randomize {
 				margin: 0 auto;
@@ -146,6 +146,11 @@ html[data-theme='dark'] {
 			input[type='file'] {
 				display: none;
 			}
+			.image-controls-container {
+				display: flex;
+				justify-content: space-evenly;
+				width: 100%;
+			}
 
 			.image-placeholder-wrapper {
 				height: 85px;
@@ -153,6 +158,7 @@ html[data-theme='dark'] {
 				border-radius: 50%;
 				position: relative;
 				overflow: hidden;
+
 				label {
 					position: absolute;
 					width: 100%;
@@ -229,12 +235,8 @@ html[data-theme='dark'] {
 		height: 35px;
 	}
 	.team-league-container {
-		display: -ms-grid;
-		display: grid;
-		-ms-grid-columns: 0.7fr 1fr;
-		grid-template-columns: 0.7fr 1fr;
 		width: 100%;
-		margin-top: 10px;
+
 		.leagues-wrapper {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -272,7 +274,7 @@ html[data-theme='dark'] {
 				-ms-flex-pack: center;
 				justify-content: center;
 				font-size: 22px;
-				padding: 15px;
+				padding: 15px 35px;
 				-webkit-transition: 250ms;
 				transition: 250ms;
 			}
@@ -294,9 +296,10 @@ html[data-theme='dark'] {
 			-ms-flex-pack: distribute;
 			justify-content: space-around;
 			cursor: pointer;
-			padding: 5px;
+			padding: 10px 5px;
 			img {
 				width: 30px;
+				height: 30px;
 				height: auto;
 				-webkit-transition: 250ms;
 				transition: 250ms;
@@ -313,7 +316,8 @@ html[data-theme='dark'] {
 		flex-direction: row;
 		-webkit-box-pack: justify;
 		-ms-flex-pack: justify;
-		justify-content: space-between;
+		justify-content: space-around;
+		margin: 10px -10px;
 		span {
 			padding: 4px 8px;
 		}
@@ -569,6 +573,7 @@ input.submit {
 .baseball-field-container {
 	position: relative;
 	margin: 0 auto;
+
 	.position-btn--active {
 		background-color: #274fe0;
 	}
@@ -585,7 +590,7 @@ input.submit {
 		border: 1px solid white;
 		cursor: pointer;
 		transition: 250ms;
-		background-color: #000;
+		background-color: #00000029;
 		&:hover {
 			background-color: #274fe0;
 		}
