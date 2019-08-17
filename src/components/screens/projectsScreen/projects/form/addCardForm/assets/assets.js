@@ -57,8 +57,8 @@ const TeamAssets = {
 	},
 	phillies: {
 		name: 'Philidelphia Phillies',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'red',
+		url: 'http://content.sportslogos.net/logos/54/70/full/o4lmh7dq5e3uordl7hvk6i3ug.png',
+		color: '#1276bb',
 		logo: philliesLogo
 	},
 	braves: {
@@ -68,131 +68,157 @@ const TeamAssets = {
 		logo: bravesLogo
 	},
 	nationals: {
+		name: 'Washington Nationals',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: nationalsLogo
 	},
 	orioles: {
+		name: 'Balitimore Orioles',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: oriolesLogo
 	},
 	'red-sox': {
+		name: 'Boston Red Sox',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: redSoxLogo
 	},
 	yankees: {
+		name: 'New York Yankees',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: yankeesLogo
 	},
 	rays: {
+		name: 'Tampa Bay Rays',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: raysLogo
 	},
 	'blue-jays': {
+		name: 'Toronto Blue Jays',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: blueJaysLogo
 	},
 	'white-sox': {
+		name: 'Chicago White Sox',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: whiteSoxLogo
 	},
 	indians: {
+		name: 'Cleveland Indians',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: indiansLogo
 	},
 	tigers: {
+		name: 'Detroit Tigers',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: tigersLogo
 	},
 	royals: {
+		name: 'Kansas City Royals',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: royalsLogo
 	},
 	twins: {
+		name: 'Minnesota Twins',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: twinsLogo
 	},
 	cubs: {
+		name: 'Chicago Cubs',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: cubsLogo
 	},
 	reds: {
+		name: 'Cincinnati Reds',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: redsLogo
 	},
 	brewers: {
+		name: 'Milwaukee Brewers',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: brewersLogo
 	},
 	pirates: {
+		name: 'Pittsburgh Pirates',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: piratesLogo
 	},
 	cardinals: {
+		name: 'St. Louis Cardinals',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: cardinalsLogo
 	},
 	diamondbacks: {
+		name: 'Arizona Diamondbacks',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: diamondbacksLogo
 	},
 	rockies: {
+		name: 'Colorado Rockies',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: rockiesLogo
 	},
 	dodgers: {
+		name: 'Los Angeles Dodgers',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: dodgersLogo
 	},
 	padres: {
+		name: 'San Diego Padres',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: padresLogo
 	},
 	giants: {
+		name: 'San Francisco Giants',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: giantsLogo
 	},
 	astros: {
+		name: 'Houston Astros',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: astrosLogo
 	},
 	angels: {
+		name: 'Los Angeles Angels',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: angelsLogo
 	},
 	athletics: {
+		name: 'Oakland Athletics',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: athleticsLogo
 	},
 	mariners: {
+		name: 'Seattle Mariners',
 		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
 		color: 'blue',
 		logo: marinersLogo
 	},
 	rangers: {
+		name: 'Texas Rangers',
 		url: 'https://i.pinimg.com/originals/ce/fd/a9/cefda9cbe28f7600a2b80ccbc962a725.png',
 		color: 'red',
 		logo: rangersLogo

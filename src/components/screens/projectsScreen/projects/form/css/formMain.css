@@ -54,7 +54,7 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container {
-  padding: 30px;
+  padding: 20px;
   background: white;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -325,6 +325,7 @@ html[data-theme='dark'] {
   justify-content: space-around;
   cursor: pointer;
   padding: 10px 5px;
+  margin-bottom: 10px;
 }
 
 .form-project-wrapper .team-league-container .team-container img {
@@ -405,41 +406,15 @@ html[data-theme='dark'] {
   height: 100%;
 }
 
-.baseball-card-wrapper .team {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  bottom: 6px;
-  z-index: 15;
-  right: 2px;
-}
-
-.baseball-card-wrapper .team img {
-  width: 90%;
-}
-
-.baseball-card-wrapper .player-name {
-  width: 100%;
-  height: 34px;
+.baseball-card-wrapper .player-details-bar {
+  width: 96%;
   padding: 0 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   bottom: 10px;
   font-size: 14px;
@@ -451,50 +426,52 @@ html[data-theme='dark'] {
   text-transform: uppercase;
 }
 
-.baseball-card-wrapper .player-name:before {
-  content: '';
-  width: 91%;
-  position: absolute;
-  left: -1px;
-  top: -1px;
-  -webkit-box-shadow: 6px -1px 3px 9px white;
-  box-shadow: 6px -1px 3px 9px white;
+.baseball-card-wrapper .player-details-bar .player-details {
+  width: 100%;
 }
 
-.baseball-card-wrapper .player-name:after {
-  content: '';
-  background-color: var(--baseballCardBarColor);
-  width: 91%;
-  height: 9.6px;
-  position: absolute;
-  left: -1px;
-  top: 15px;
+.baseball-card-wrapper .player-details-bar .team-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 15;
+  margin: 3px -7px 2px -5px;
 }
 
-.baseball-card-wrapper .player-name .last-name {
+.baseball-card-wrapper .player-details-bar .team-img img {
+  width: 90%;
+}
+
+.baseball-card-wrapper .player-details-bar .last-name {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   color: #b3b3b1;
-  margin-top: -10px;
+  margin: -5px 0;
   z-index: 10;
   font-family: var(--h1);
-  margin-left: -2px;
 }
 
-.baseball-card-wrapper .player-name .first-name {
+.baseball-card-wrapper .player-details-bar .first-name {
   font-weight: bold;
   font-size: 11.8px;
   font-family: var(--h2);
   color: white;
   letter-spacing: 2px;
   z-index: 10;
-  margin-top: -2.1px;
+  background-color: red;
 }
 
-.baseball-card-wrapper .name-and-position {
-  position: absolute;
-  right: 30px;
-  bottom: 0;
+.baseball-card-wrapper .position-and-team-container {
   color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -503,16 +480,16 @@ html[data-theme='dark'] {
   font-weight: bold;
 }
 
-.baseball-card-wrapper .name-and-position .position {
+.baseball-card-wrapper .position-and-team-container .position {
   margin-right: 7px;
 }
 
-.baseball-card-wrapper .name-and-position .team-name {
+.baseball-card-wrapper .position-and-team-container .team-name {
   padding-left: 7px;
   position: relative;
 }
 
-.baseball-card-wrapper .name-and-position .team-name:after {
+.baseball-card-wrapper .position-and-team-container .team-name:after {
   content: '';
   position: absolute;
   border-left: 1px solid black;

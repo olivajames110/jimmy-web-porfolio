@@ -75,13 +75,16 @@ class AddCardForm extends Component {
 	};
 
 	handleFindTeamImg = team => {
+		if (!team) {
+			return;
+		}
 		console.log('Want Working: ' + team);
 
 		//Works
-		const teamName = TeamAssets.mets;
+		// const teamName = TeamAssets.phillies;
 
 		// Doesnt work
-		// const teamName = TeamAssets[team];
+		const teamName = TeamAssets[team];
 		// const teamName = TeamAssets['mets'].url;
 		console.log(teamName);
 		this.setState({

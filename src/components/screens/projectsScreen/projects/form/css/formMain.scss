@@ -61,7 +61,7 @@ html[data-theme='dark'] {
 	-webkit-transition: 1s;
 	transition: 1s;
 	.form-container {
-		padding: 30px;
+		padding: 20px;
 		background: white;
 		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -297,10 +297,11 @@ html[data-theme='dark'] {
 			justify-content: space-around;
 			cursor: pointer;
 			padding: 10px 5px;
+			margin-bottom: 10px;
 			img {
 				width: 30px;
 				height: 30px;
-				height: auto;
+				// height: auto;
 				-webkit-transition: 250ms;
 				transition: 250ms;
 			}
@@ -357,6 +358,7 @@ html[data-theme='dark'] {
 	-webkit-animation: cardSlide 500ms;
 	animation: cardSlide 500ms;
 	cursor: pointer;
+	//Vertical stripped bar on right side of card
 	&:after {
 		content: '';
 		height: 88%;
@@ -371,74 +373,51 @@ html[data-theme='dark'] {
 		object-fit: cover;
 		height: 100%;
 	}
-	.team {
-		position: absolute;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-		background-color: $background_color_1;
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		bottom: 6px;
-		z-index: 15;
-		right: 2px;
-		img {
-			width: 90%;
-		}
-	}
-	.player-name {
-		width: 100%;
-		height: 34px;
+
+	.player-details-bar {
+		width: 96%;
+		// height: 34px;
 		padding: 0 4px;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
+
+		justify-content: space-between;
 		position: absolute;
 		bottom: 10px;
 		font-size: 14px;
 		color: $color_3;
+		// background: white;
 		background-color: $background_color_1;
 		border-bottom-right-radius: 20px;
 		border-right: 4px solid white;
 		z-index: 10;
 		text-transform: uppercase;
-		&:before {
-			content: '';
-			width: 91%;
-			position: absolute;
-			left: -1px;
-			top: -1px;
-			-webkit-box-shadow: 6px -1px 3px 9px white;
-			box-shadow: 6px -1px 3px 9px white;
+		.player-details {
+			width: 100%;
 		}
-		&:after {
-			content: '';
-			background-color: $background_color_2;
-			width: 91%;
-			height: 9.6px;
-			position: absolute;
-			left: -1px;
-			top: 15px;
+
+		.team-img {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			z-index: 15;
+			margin: 3px -7px 2px -5px;
+			img {
+				width: 90%;
+			}
 		}
 		.last-name {
 			font-weight: bold;
-			font-size: 18px;
+			font-size: 22px;
 			color: $color_4;
-			margin-top: -10px;
+			margin: -5px 0;
 			z-index: 10;
 			font-family: $font_family_1;
-			margin-left: -2px;
 		}
 		.first-name {
 			font-weight: bold;
@@ -447,13 +426,14 @@ html[data-theme='dark'] {
 			color: $color_1;
 			letter-spacing: 2px;
 			z-index: 10;
-			margin-top: -2.1px;
+			// margin-top: -2.1px;
+			background-color: red;
 		}
 	}
-	.name-and-position {
-		position: absolute;
-		right: 30px;
-		bottom: 0;
+	.position-and-team-container {
+		// position: absolute;
+		// right: 30px;
+		// bottom: 0;
 		color: $color_3;
 		display: -webkit-box;
 		display: -ms-flexbox;
