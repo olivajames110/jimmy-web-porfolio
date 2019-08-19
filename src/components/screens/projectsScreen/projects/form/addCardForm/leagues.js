@@ -8,22 +8,45 @@ class Leagues extends Component {
 		teamValue: null
 	};
 
+	componentWillMount() {
+		this.setState({
+			league: this.props.randomLeague,
+			division: this.props.randomDivision
+		});
+	}
+
+	handleCheckUpdate = (league, division) => {
+		const leagueBtns = document.querySelectorAll('.leagues-btn');
+		const divisionBtns = document.querySelectorAll('.division-btn');
+		leagueBtns.forEach(btn => {
+			console.log('run');
+			return btn.contains('league-is-active') ? 'active' : 'not active';
+		});
+
+		console.log('Changed');
+
+		// this.setState({
+		// 	league: league,
+		// 	division: division
+		// });
+	};
+
 	handleMakeLeagueBtnActive = e => {
 		this.setState({
 			league: e.target.id
 		});
-		this.chooseInput(this.state.league, this.state.division);
+		this.handleSetTeam(this.state.league, this.state.division);
 		this.handleMakeActive(e, '.leagues-btn');
 	};
 	handleMakeDivisionBtnActive = e => {
 		this.setState({
 			division: e.target.id
 		});
-		this.chooseInput(this.state.league, this.state.division);
+		this.handleSetTeam(this.state.league, this.state.division);
 		this.handleMakeActive(e, '.division-btn');
 	};
 
-	test = e => {
+	handleMakeTeamBtnActive = e => {
 		console.log('Testt');
 		console.log(e.target.id);
 		this.handleMakeActive(e, '.team-btn');
@@ -36,104 +59,242 @@ class Leagues extends Component {
 		e.target.classList.add('league-is-active');
 	};
 
-	chooseInput = (league, division) => {
+	handleSetTeam = (league, division) => {
 		const nlEast = (
-			<div class="team-container">
-				<img onClick={this.test} id="mets" className="team-btn" src={TeamAssets.mets.logo} alt="mets" />
-				<img onClick={this.test} id="marlins" className="team-btn" src={TeamAssets.marlins.logo} alt="mets" />
-				<img onClick={this.test} id="phillies" className="team-btn" src={TeamAssets.phillies.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="mets"
+					className="team-btn "
+					src={TeamAssets.mets.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="marlins"
+					className="team-btn"
+					src={TeamAssets.marlins.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="phillies"
+					className="team-btn "
+					src={TeamAssets.phillies.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="nationals"
 					className="team-btn"
 					src={TeamAssets.nationals.logo}
 					alt="mets"
 				/>
-				<img onClick={this.test} id="braves" className="team-btn" src={TeamAssets.braves.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="braves"
+					className="team-btn"
+					src={TeamAssets.braves.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 		const nlCentral = (
-			<div class="team-container">
-				<img onClick={this.test} id="cubs" className="team-btn" src={TeamAssets.cubs.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="cubs"
+					className="team-btn"
+					src={TeamAssets.cubs.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="cardinals"
 					className="team-btn"
 					src={TeamAssets.cardinals.logo}
 					alt="mets"
 				/>
 
-				<img onClick={this.test} id="brewers" className="team-btn" src={TeamAssets.brewers.logo} alt="mets" />
-				<img onClick={this.test} id="reds" className="team-btn" src={TeamAssets.reds.logo} alt="mets" />
-				<img onClick={this.test} id="pirates" className="team-btn" src={TeamAssets.pirates.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="brewers"
+					className="team-btn"
+					src={TeamAssets.brewers.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="reds"
+					className="team-btn"
+					src={TeamAssets.reds.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="pirates"
+					className="team-btn"
+					src={TeamAssets.pirates.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 		const nlWest = (
-			<div class="team-container">
-				<img onClick={this.test} id="dodgers" className="team-btn" src={TeamAssets.dodgers.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="dodgers"
+					className="team-btn"
+					src={TeamAssets.dodgers.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="diamondbacks"
 					className="team-btn"
 					src={TeamAssets.diamondbacks.logo}
 					alt="mets"
 				/>
-				<img onClick={this.test} id="giants" className="team-btn" src={TeamAssets.giants.logo} alt="mets" />
-				<img onClick={this.test} id="rockies" className="team-btn" src={TeamAssets.rockies.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="giants"
+					className="team-btn"
+					src={TeamAssets.giants.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="rockies"
+					className="team-btn"
+					src={TeamAssets.rockies.logo}
+					alt="mets"
+				/>
 
-				<img onClick={this.test} id="padres" className="team-btn" src={TeamAssets.padres.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="padres"
+					className="team-btn"
+					src={TeamAssets.padres.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 		const alCentral = (
-			<div class="team-container">
-				<img onClick={this.test} id="indians" className="team-btn" src={TeamAssets.indians.logo} alt="mets" />
-				<img onClick={this.test} id="twins" className="team-btn" src={TeamAssets.twins.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="indians"
+					className="team-btn"
+					src={TeamAssets.indians.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="twins"
+					className="team-btn"
+					src={TeamAssets.twins.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="white-sox"
 					className="team-btn"
 					src={TeamAssets['white-sox'].logo}
 					alt="mets"
 				/>
-				<img onClick={this.test} id="royals" className="team-btn" src={TeamAssets.royals.logo} alt="mets" />
-				<img onClick={this.test} id="tigers" className="team-btn" src={TeamAssets.tigers.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="royals"
+					className="team-btn"
+					src={TeamAssets.royals.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="tigers"
+					className="team-btn"
+					src={TeamAssets.tigers.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 		const alEast = (
-			<div class="team-container">
-				<img onClick={this.test} id="yankees" className="team-btn" src={TeamAssets.yankees.logo} alt="mets" />
-				<img onClick={this.test} id="rays" className="team-btn" src={TeamAssets.rays.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="yankees"
+					className="team-btn"
+					src={TeamAssets.yankees.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="rays"
+					className="team-btn"
+					src={TeamAssets.rays.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="red-sox"
 					className="team-btn"
 					src={TeamAssets['red-sox'].logo}
 					alt="mets"
 				/>
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
 					id="blue-jays"
 					className="team-btn"
 					src={TeamAssets['blue-jays'].logo}
 					alt="mets"
 				/>
-				<img onClick={this.test} id="orioles" className="team-btn" src={TeamAssets.orioles.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="orioles"
+					className="team-btn"
+					src={TeamAssets.orioles.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 		const alWest = (
-			<div class="team-container">
-				<img onClick={this.test} id="astros" className="team-btn" src={TeamAssets.astros.logo} alt="mets" />
+			<div className="team-container">
 				<img
-					onClick={this.test}
+					onClick={this.handleMakeTeamBtnActive}
+					id="astros"
+					className="team-btn"
+					src={TeamAssets.astros.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
 					id="athletics"
 					className="team-btn"
 					src={TeamAssets.athletics.logo}
 					alt="mets"
 				/>
 
-				<img onClick={this.test} id="rangers" className="team-btn" src={TeamAssets.rangers.logo} alt="mets" />
-				<img onClick={this.test} id="angels" className="team-btn" src={TeamAssets.angels.logo} alt="mets" />
-				<img onClick={this.test} id="mariners" className="team-btn" src={TeamAssets.mariners.logo} alt="mets" />
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="rangers"
+					className="team-btn"
+					src={TeamAssets.rangers.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="angels"
+					className="team-btn"
+					src={TeamAssets.angels.logo}
+					alt="mets"
+				/>
+				<img
+					onClick={this.handleMakeTeamBtnActive}
+					id="mariners"
+					className="team-btn"
+					src={TeamAssets.mariners.logo}
+					alt="mets"
+				/>
 			</div>
 		);
 
@@ -162,7 +323,12 @@ class Leagues extends Component {
 			<div className="team-league-container">
 				<div className="leagues-wrapper">
 					<div id="leagues" className="leagues">
-						<span id="al" onClick={this.handleMakeLeagueBtnActive} className="leagues-btn">
+						<span
+							id="al"
+							onChange={this.handleCheckUpdate}
+							onClick={this.handleMakeLeagueBtnActive}
+							className="leagues-btn"
+						>
 							AL
 						</span>
 						<span
@@ -190,7 +356,7 @@ class Leagues extends Component {
 							East
 						</span>
 					</div>
-					<div className="chosen-team">{this.chooseInput(this.state.league, this.state.division)}</div>
+					<div className="chosen-team">{this.handleSetTeam(this.state.league, this.state.division)}</div>
 				</div>
 			</div>
 		);

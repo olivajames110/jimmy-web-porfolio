@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TeamAssets, Players } from './assets/assets';
+import { TeamAssets, Players, lastNames, firstNames } from './assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faDownload,
@@ -18,25 +18,16 @@ class AddCardForm extends Component {
 	state = {
 		id: null,
 		firstName: null,
-		lastName: 'asdasd',
+		lastName: null,
 		position: null,
 		team: null,
 		teamImg: null,
 		playerImg: null,
-		color: null
+		color: null,
+		league: 'nl',
+		division: 'east'
 	};
-	// 	<select name="position" onChange={this.handleInputChange} id="field-position">
-	// 	<option defaultValue>- Choose a position -</option>
-	// 	<option value="pitcher">Pitcher</option>
-	// 	<option value="catcher">Catcher</option>
-	// 	<option value="1st-base">1st Base</option>
-	// 	<option value="2nd-base">2nd Base</option>
-	// 	<option value="3rd-base">3rd Base</option>
-	// 	<option value="short-stop">Short Stop</option>
-	// 	<option value="left-field">Left Field</option>
-	// 	<option value="center-field">Center Field</option>
-	// 	<option value="right-field">Right Field</option>
-	// </select>
+
 	componentWillMount() {
 		this.handleFindTeamImg();
 		this.handleFindPlayerImg();
@@ -47,6 +38,7 @@ class AddCardForm extends Component {
 			[e.target.name]: e.target.value
 		});
 	};
+
 	handlePositionChange = e => {
 		this.handleMakeActive(e, '.position-btn', 'position-btn--active');
 		console.log(e.target.getAttribute('data-position'));
@@ -55,6 +47,17 @@ class AddCardForm extends Component {
 		});
 	};
 
+	handleMakeActive = (e, classNameTarget, classNameToggle, custom) => {
+		const btns = document.querySelectorAll(classNameTarget);
+		btns.forEach(btn => btn.classList.remove(classNameToggle));
+		if (custom) {
+			e.classList.add(classNameToggle);
+		} else {
+			e.target.classList.add(classNameToggle);
+		}
+	};
+
+	//Deails with adding and removing images
 	handleImageUpload = e => {
 		let reader = new FileReader();
 		let file = e.target.files[0];
@@ -68,31 +71,16 @@ class AddCardForm extends Component {
 		reader.readAsDataURL(file);
 	};
 
-	handleMakeActive = (e, classNameTarget, classNameToggle) => {
-		const btns = document.querySelectorAll(classNameTarget);
-		btns.forEach(btn => btn.classList.remove(classNameToggle));
-		e.target.classList.add(classNameToggle);
-	};
-
 	handleFindTeamImg = team => {
 		if (!team) {
 			return;
 		}
-		console.log('Want Working: ' + team);
-
-		//Works
-		// const teamName = TeamAssets.phillies;
-
-		// Doesnt work
 		const teamName = TeamAssets[team];
-		// const teamName = TeamAssets['mets'].url;
-		console.log(teamName);
 		this.setState({
 			teamImg: teamName.url,
 			color: teamName.color,
 			team: teamName.name
 		});
-
 		let root = document.documentElement;
 		root.style.setProperty('--baseballCardBarColor', this.state.color);
 	};
@@ -109,14 +97,43 @@ class AddCardForm extends Component {
 		});
 	};
 
+	//Randomize
 	randomizeCard = () => {
-		const player = Players[Math.floor(Math.random() * Players.length)];
-		console.log(player);
+		const player = randomize(Players);
+		const firstName = randomize(firstNames);
+		const lastName = randomize(lastNames);
+		const league = randomize(document.querySelectorAll('.leagues-btn'));
+		const division = randomize(document.querySelectorAll('.division-btn'));
+		const team = randomize(document.querySelectorAll('.team-btn'));
+		const position = randomize(document.querySelectorAll('.position-btn'));
+		console.log(league);
+
+		// const player = Players[Math.floor(Math.random() * Players.length)];
+		// this.handleMakeActive(team, '', 'position-btn--active', true);
+		this.handleMakeActive(league, '.leagues-btn', 'league-is-active', true);
+		this.handleMakeActive(division, '.division-btn', 'league-is-active', true);
+		this.handleMakeActive(team, '.team-btn', 'league-is-active', true);
+		this.handleMakeActive(position, '.position-btn', 'position-btn--active', true);
+		document.getElementById('first-name').value = firstName;
+		document.getElementById('last-name').value = lastName;
+
 		this.setState({
-			playerImg: player
+			playerImg: player,
+			firstName: firstName,
+			lastName: lastName,
+			position: position.getAttribute('data-position'),
+			league: league,
+			division: division
 		});
+
+		function randomize(array) {
+			return array[Math.floor(Math.random() * array.length)];
+		}
 	};
 
+	randomizeTeam = (league, division) => {};
+
+	//Submit
 	handleSubmit = e => {
 		e.preventDefault();
 		this.handleFindTeamImg();
@@ -144,11 +161,32 @@ class AddCardForm extends Component {
 				<span>Upload</span>
 			</label>
 		);
+
 		return (
 			<div className="form-container">
 				<div className="title-wrapper">
-					<h1>Build Your Own Baseball Card</h1>
-					<p>Add a new baseball card to the list. Make your own or randomize your player.</p>
+					<div>
+						<h1>Baseball Card Builder</h1>
+						<p>Add a new baseball card to the list. Make your own or randomize your player.</p>
+					</div>
+
+					<div className="player-image-container">
+						<div className="image-placeholder-wrapper">
+							{this.state.playerImg ? editIcon : uploadIcon}
+							{this.state.playerImg ? playerImage : emptyImagePlaceholder}
+						</div>
+						<div className="image-controls-container">
+							<span onClick={this.handleRemovePlayerImage} className="remove-player-image-btn">
+								Clear
+							</span>
+							<div onClick={this.randomizeCard} className="btn-randomize form-button">
+								<FontAwesomeIcon icon={faRandom} />
+							</div>
+						</div>
+						<div className="btn-wrapper">
+							<input name="playerImage" onChange={this.handleImageUpload} type="file" id="player-image" />
+						</div>
+					</div>
 				</div>
 				<div className="inputs-wrapper">
 					<form>
@@ -179,37 +217,15 @@ class AddCardForm extends Component {
 									</label>
 								</div>
 							</div>
-							<div className="input-container">
-								<div className="player-image-container">
-									<div className="image-placeholder-wrapper">
-										{this.state.playerImg ? editIcon : uploadIcon}
-										{this.state.playerImg ? playerImage : emptyImagePlaceholder}
-									</div>
-									<div className="image-controls-container">
-										<span
-											onClick={this.handleRemovePlayerImage}
-											className="remove-player-image-btn"
-										>
-											Clear
-										</span>
-										<div onClick={this.randomizeCard} className="btn-randomize form-button">
-											<FontAwesomeIcon icon={faRandom} />
-										</div>
-									</div>
-									<div className="btn-wrapper">
-										<input
-											name="playerImage"
-											onChange={this.handleImageUpload}
-											type="file"
-											id="player-image"
-										/>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div id="picture-and-position" className="form-row">
 							<div className="input-container">
-								<Leagues handleFindTeamImg={this.handleFindTeamImg} />
+								<Leagues
+									handleFindTeamImg={this.handleFindTeamImg}
+									handleMakeActive={this.handleMakeActive}
+									randomLeague={this.state.league}
+									randomDivision={this.state.division}
+								/>
 								<div className="baseball-field-container">
 									<svg
 										className="baseball-field"

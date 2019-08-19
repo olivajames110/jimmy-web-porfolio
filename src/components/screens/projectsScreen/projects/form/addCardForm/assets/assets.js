@@ -29,13 +29,108 @@ import tigersLogo from './images/central/tigers.png';
 import twinsLogo from './images/central/twins.png';
 import whiteSoxLogo from './images/central/white-sox.png';
 
+import metsCardLogo from './images/east/card/mets.png';
+import philliesCardLogo from './images/east/card/phillies.png';
+import nationalsCardLogo from './images/east/card/nationals.png';
+import bravesCardLogo from './images/east/card/braves.png';
+import marlinsCardLogo from './images/east/card/marlins.png';
+import blueJaysCardLogo from './images/east/card/blue-jays.png';
+import yankeesCardLogo from './images/east/card/yankees.png';
+import oriolesCardLogo from './images/east/card/orioles.png';
+import raysCardLogo from './images/east/card/rays.png';
+import redSoxCardLogo from './images/east/card/red-sox.png';
+import athleticsCardLogo from './images/west/card/athletics.png';
+import angelsCardLogo from './images/west/card/angels.png';
+import astrosCardLogo from './images/west/card/astros.png';
+import diamondbacksCardLogo from './images/west/card/diamondbacks.png';
+import dodgersCardLogo from './images/west/card/dodgers.png';
+import giantsCardLogo from './images/west/card/giants.png';
+import marinersCardLogo from './images/west/card/mariners.png';
+import padresCardLogo from './images/west/card/padres.png';
+import rangersCardLogo from './images/west/card/rangers.png';
+import rockiesCardLogo from './images/west/card/rockies.png';
+import brewersCardLogo from './images/central/card/brewers.png';
+import cardinalsCardLogo from './images/central/card/cardinals.png';
+import cubsCardLogo from './images/central/card/cubs.png';
+import indiansCardLogo from './images/central/card/indians.png';
+import piratesCardLogo from './images/central/card/pirates.png';
+import redsCardLogo from './images/central/card/reds.png';
+import royalsCardLogo from './images/central/card/royals.png';
+import tigersCardLogo from './images/central/card/tigers.png';
+import twinsCardLogo from './images/central/card/twins.png';
+import whiteSoxCardLogo from './images/central/card/white-sox.png';
+
+import ben from './images/people/ben.jpg';
+import ben_jensen from './images/people/ben_jensen.jpg';
+import ben_joeyen from './images/people/ben_joey.jpg';
+import ben_skating from './images/people/ben_skating.jpg';
+import dante_david from './images/people/dante_david.jpg';
+import dante from './images/people/dante.jpg';
+import dylan_aliyah from './images/people/dylan_aliyah.jpg';
+import dylan from './images/people/dylan.jpg';
+import friends from './images/people/friends.jpg';
+import joey from './images/people/joey.jpg';
+import joey2 from './images/people/joey2.jpg';
+import mike from './images/people/ben.jpg';
+import mike_david from './images/people/mike_david.jpg';
+import mike_sami from './images/people/mike_sami.jpg';
+import mikev from './images/people/ben.jpg';
+
+const firstNames = [
+	'Jimmy',
+	'John',
+	'Mike',
+	'David',
+	'Ben',
+	'Kevin',
+	'Rob',
+	'Steve',
+	'Dylan',
+	'Benjamin',
+	'Sean',
+	'Carl',
+	'Brian',
+	'Julie Gray',
+	'Joey',
+	'Michael',
+	'Dante'
+];
+const lastNames = [
+	'Oliva',
+	'Jenne',
+	"O'Conner",
+	'Lillienstein',
+	'Jensen',
+	'Kitzen',
+	'Correl',
+	'Tuozzo',
+	'Harkins',
+	'Castillo',
+	'Correcher',
+	'West',
+	'Valente'
+];
+
 const Players = [
-	'http://www.metstoday.com/wp-content/uploads/2010/05/reyes-swing.jpg',
-	'https://i.pinimg.com/originals/ce/fd/a9/cefda9cbe28f7600a2b80ccbc962a725.png',
+	ben,
+	ben_jensen,
+	ben_joeyen,
+	ben_skating,
+	dante_david,
+	dante,
+	dylan_aliyah,
+	dylan,
+	friends,
+	joey,
+	joey2,
+	mike,
+	mike_david,
+	mike_sami,
+	mikev,
+
 	'https://securea.mlb.com/mlb/images/players/head_shot/624413.jpg',
 	'https://cdn.mlbtraderumors.com/files/2019/03/deGrom.Jacob-vertical-259x300.jpg',
 	'https://securea.mlb.com/mlb/images/players/head_shot/643446.jpg',
-	'http://dailystache.net/wp-content/uploads/WX2LQBZXE2QZVLUYVYMS4M2EEM-1-660x400.jpg',
 	'https://securea.mlb.com/mlb/images/players/head_shot/429664.jpg',
 	'https://athlonsports.com/sites/athlonsports.com/files/styles/article_top_img/public/Mets-Jacob-deGrom86596_0.jpg?itok=-IxZbnVV',
 	'https://securea.mlb.com/mlb/images/players/head_shot/642708.jpg',
@@ -45,184 +140,185 @@ const Players = [
 const TeamAssets = {
 	mets: {
 		name: 'New York Mets',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: '#004784',
+		url: metsCardLogo,
+		color: '#002C77',
 		logo: metsLogo
 	},
 	marlins: {
 		name: 'Miamai Marlins',
-		url: 'https://securea.mlb.com/mlb/images/players/head_shot/643446.jpg',
-		color: 'green',
+		url: marlinsCardLogo,
+		color: '#009DD6',
 		logo: marlinsLogo
 	},
 	phillies: {
 		name: 'Philidelphia Phillies',
-		url: 'http://content.sportslogos.net/logos/54/70/full/o4lmh7dq5e3uordl7hvk6i3ug.png',
-		color: '#1276bb',
+		url: philliesCardLogo,
+		color: '#BA0C2F',
 		logo: philliesLogo
 	},
 	braves: {
 		name: 'Atlanta Braves',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'Red',
+		url: bravesCardLogo,
+		color: '#ce1141',
 		logo: bravesLogo
 	},
 	nationals: {
 		name: 'Washington Nationals',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: nationalsCardLogo,
+		color: '#BA122B',
 		logo: nationalsLogo
 	},
 	orioles: {
 		name: 'Balitimore Orioles',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: oriolesCardLogo,
+		color: '#ED4C09',
 		logo: oriolesLogo
 	},
 	'red-sox': {
 		name: 'Boston Red Sox',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: redSoxCardLogo,
+		color: '#C60C30',
 		logo: redSoxLogo
 	},
 	yankees: {
 		name: 'New York Yankees',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: yankeesCardLogo,
+
+		color: '#0C2340',
 		logo: yankeesLogo
 	},
 	rays: {
 		name: 'Tampa Bay Rays',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: raysCardLogo,
+		color: '#00285D',
 		logo: raysLogo
 	},
 	'blue-jays': {
 		name: 'Toronto Blue Jays',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: blueJaysCardLogo,
+		color: '#003DA5',
 		logo: blueJaysLogo
 	},
 	'white-sox': {
 		name: 'Chicago White Sox',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: whiteSoxCardLogo,
+		color: '#000000',
 		logo: whiteSoxLogo
 	},
 	indians: {
 		name: 'Cleveland Indians',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: indiansCardLogo,
+		color: '#CC0000',
 		logo: indiansLogo
 	},
 	tigers: {
 		name: 'Detroit Tigers',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: tigersCardLogo,
+		color: '#001742',
 		logo: tigersLogo
 	},
 	royals: {
 		name: 'Kansas City Royals',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: royalsCardLogo,
+		color: '#15317E',
 		logo: royalsLogo
 	},
 	twins: {
 		name: 'Minnesota Twins',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: twinsCardLogo,
+		color: '#072754',
 		logo: twinsLogo
 	},
 	cubs: {
 		name: 'Chicago Cubs',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: cubsCardLogo,
+		color: '#002F6C',
 		logo: cubsLogo
 	},
 	reds: {
 		name: 'Cincinnati Reds',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: redsCardLogo,
+		color: '#CC0000',
 		logo: redsLogo
 	},
 	brewers: {
 		name: 'Milwaukee Brewers',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: brewersCardLogo,
+		color: '#182B49',
 		logo: brewersLogo
 	},
 	pirates: {
 		name: 'Pittsburgh Pirates',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: piratesCardLogo,
+		color: '#000000',
 		logo: piratesLogo
 	},
 	cardinals: {
 		name: 'St. Louis Cardinals',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: cardinalsCardLogo,
+		color: '#CC0000',
 		logo: cardinalsLogo
 	},
 	diamondbacks: {
 		name: 'Arizona Diamondbacks',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: diamondbacksCardLogo,
+		color: '#C21F26',
 		logo: diamondbacksLogo
 	},
 	rockies: {
 		name: 'Colorado Rockies',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: rockiesCardLogo,
+		color: '#4A3C7D',
 		logo: rockiesLogo
 	},
 	dodgers: {
 		name: 'Los Angeles Dodgers',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: dodgersCardLogo,
+		color: '#083C6B',
 		logo: dodgersLogo
 	},
 	padres: {
 		name: 'San Diego Padres',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: padresCardLogo,
+		color: '#003366',
 		logo: padresLogo
 	},
 	giants: {
 		name: 'San Francisco Giants',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: giantsCardLogo,
+		color: '#F2552C',
 		logo: giantsLogo
 	},
 	astros: {
 		name: 'Houston Astros',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: astrosCardLogo,
+		color: '#072854',
 		logo: astrosLogo
 	},
 	angels: {
 		name: 'Los Angeles Angels',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: angelsCardLogo,
+		color: '#B71234',
 		logo: angelsLogo
 	},
 	athletics: {
 		name: 'Oakland Athletics',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: athleticsCardLogo,
+		color: '#003831',
 		logo: athleticsLogo
 	},
 	mariners: {
 		name: 'Seattle Mariners',
-		url: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1920px-New_York_Mets.svg.png',
-		color: 'blue',
+		url: marinersCardLogo,
+		color: '#0C2C56',
 		logo: marinersLogo
 	},
 	rangers: {
 		name: 'Texas Rangers',
-		url: 'https://i.pinimg.com/originals/ce/fd/a9/cefda9cbe28f7600a2b80ccbc962a725.png',
-		color: 'red',
+		url: rangersCardLogo,
+		color: '#003279',
 		logo: rangersLogo
 	}
 };
 
-export { TeamAssets, Players };
+export { TeamAssets, Players, firstNames, lastNames };

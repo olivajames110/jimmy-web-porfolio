@@ -63,10 +63,16 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container .title-wrapper {
-  padding-bottom: 10px;
+  padding: 10px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 85px;
+      grid-template-columns: 1fr 85px;
+  grid-gap: 15px;
 }
 
 .form-project-wrapper .form-container .title-wrapper h1 {
+  color: var(--color-icon);
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -75,14 +81,6 @@ html[data-theme='dark'] {
 .form-project-wrapper .form-container .form-row {
   display: -ms-grid;
   display: grid;
-  grid-gap: 15px;
-}
-
-.form-project-wrapper .form-container #names-and-picture {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 85px;
-      grid-template-columns: 1fr 85px;
   grid-gap: 15px;
 }
 
@@ -132,7 +130,7 @@ html[data-theme='dark'] {
   position: relative;
 }
 
-.form-project-wrapper .form-container .input-container .player-image-container {
+.form-project-wrapper .form-container .player-image-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,18 +143,18 @@ html[data-theme='dark'] {
           flex-direction: column;
 }
 
-.form-project-wrapper .form-container .input-container .remove-player-image-btn {
+.form-project-wrapper .form-container .remove-player-image-btn {
   font-size: 11px;
   cursor: pointer;
   margin-top: 4px;
   text-decoration: underline;
 }
 
-.form-project-wrapper .form-container .input-container input[type='file'] {
+.form-project-wrapper .form-container input[type='file'] {
   display: none;
 }
 
-.form-project-wrapper .form-container .input-container .image-controls-container {
+.form-project-wrapper .form-container .image-controls-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,7 +164,7 @@ html[data-theme='dark'] {
   width: 100%;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
+.form-project-wrapper .form-container .image-placeholder-wrapper {
   height: 85px;
   width: 85px;
   border-radius: 50%;
@@ -174,7 +172,7 @@ html[data-theme='dark'] {
   overflow: hidden;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper label {
+.form-project-wrapper .form-container .image-placeholder-wrapper label {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -183,23 +181,23 @@ html[data-theme='dark'] {
   transition: 250ms;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .upload {
+.form-project-wrapper .form-container .image-placeholder-wrapper .upload {
   background-color: #cdcdcd;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .upload:hover {
+.form-project-wrapper .form-container .image-placeholder-wrapper .upload:hover {
   background-color: #bbbbbb;
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .edit {
+.form-project-wrapper .form-container .image-placeholder-wrapper .edit {
   background-color: rgba(7, 7, 7, 0.169);
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder-wrapper .edit:hover {
+.form-project-wrapper .form-container .image-placeholder-wrapper .edit:hover {
   background-color: rgba(7, 7, 7, 0.326);
 }
 
-.form-project-wrapper .form-container .input-container .image-placeholder {
+.form-project-wrapper .form-container .image-placeholder {
   background-size: cover;
   background-position: center;
   max-width: 100%;
@@ -303,7 +301,7 @@ html[data-theme='dark'] {
   -ms-flex-pack: center;
   justify-content: center;
   font-size: 22px;
-  padding: 15px 35px;
+  padding: 5px 35px;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
@@ -331,7 +329,6 @@ html[data-theme='dark'] {
 .form-project-wrapper .team-league-container .team-container img {
   width: 30px;
   height: 30px;
-  height: auto;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
@@ -412,6 +409,7 @@ html[data-theme='dark'] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-top-right-radius: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -441,15 +439,16 @@ html[data-theme='dark'] {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   z-index: 15;
-  margin: 3px -7px 2px -5px;
+  margin: -6px -12px -10px -15px;
 }
 
 .baseball-card-wrapper .player-details-bar .team-img img {
-  width: 90%;
+  width: 35px;
+  height: 35px;
 }
 
 .baseball-card-wrapper .player-details-bar .last-name {
@@ -462,6 +461,7 @@ html[data-theme='dark'] {
 }
 
 .baseball-card-wrapper .player-details-bar .first-name {
+  padding-left: 5px;
   font-weight: bold;
   font-size: 11.8px;
   font-family: var(--h2);
@@ -478,6 +478,10 @@ html[data-theme='dark'] {
   display: flex;
   font-size: 8px;
   font-weight: bold;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 15px;
 }
 
 .baseball-card-wrapper .position-and-team-container .position {
@@ -592,7 +596,7 @@ input.submit:hover {
 }
 
 .baseball-field-container .position-btn--active {
-  background-color: #274fe0;
+  background-color: var(--color-icon);
 }
 
 .baseball-field-container span {
@@ -619,7 +623,7 @@ input.submit:hover {
 }
 
 .baseball-field-container span:hover {
-  background-color: #274fe0;
+  background-color: var(--color-icon);
 }
 
 .baseball-field-container #catcher {

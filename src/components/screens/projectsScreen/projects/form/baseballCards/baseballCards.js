@@ -10,13 +10,15 @@ const BaseballCards = props => {
 				<div className="player-details-bar">
 					<div className="player-details">
 						<div className="last-name">{card.lastName}</div>
-						<div className="first-name">{card.firstName}</div>
+						<div style={{ backgroundColor: card.color }} className="first-name">
+							{card.firstName}
+						</div>
 						<div className="position-and-team-container">
 							<div className="position"> {card.position}</div>
 							<div className="team-name">{card.team}</div>
 						</div>
 					</div>
-					<div className="team-img">
+					<div style={{ border: '1px solid' + card.color }} className="team-img">
 						<img src={card.teamImg} alt="player" />
 					</div>
 				</div>
