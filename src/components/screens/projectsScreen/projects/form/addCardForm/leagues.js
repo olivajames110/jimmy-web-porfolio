@@ -3,33 +3,38 @@ import assets, { TeamAssets } from './assets/assets';
 
 class Leagues extends Component {
 	state = {
-		league: 'nl',
-		division: 'east',
+		//I want entire componenet to re-render each time this is updated through props
+		league: this.props.league,
+		division: this.props.division,
 		teamValue: null
 	};
 
 	componentWillMount() {
 		this.setState({
-			league: this.props.randomLeague,
-			division: this.props.randomDivision
+			league: this.props.league,
+			division: this.props.division
 		});
 	}
 
-	handleCheckUpdate = (league, division) => {
-		const leagueBtns = document.querySelectorAll('.leagues-btn');
-		const divisionBtns = document.querySelectorAll('.division-btn');
-		leagueBtns.forEach(btn => {
-			console.log('run');
-			return btn.contains('league-is-active') ? 'active' : 'not active';
-		});
+	componentDidUpdate() {
+		this.handleSetTeam(this.state.league, this.state.division);
+	}
 
-		console.log('Changed');
+	// handleCheckUpdate = (league, division) => {
+	// 	const leagueBtns = document.querySelectorAll('.leagues-btn');
+	// 	const divisionBtns = document.querySelectorAll('.division-btn');
+	// 	leagueBtns.forEach(btn => {
+	// 		console.log('run');
+	// 		return btn.contains('league-is-active') ? 'active' : 'not active';
+	// 	});
 
-		// this.setState({
-		// 	league: league,
-		// 	division: division
-		// });
-	};
+	// 	console.log('Changed');
+
+	// 	// this.setState({
+	// 	// 	league: league,
+	// 	// 	division: division
+	// 	// });
+	// };
 
 	handleMakeLeagueBtnActive = e => {
 		this.setState({
@@ -319,6 +324,7 @@ class Leagues extends Component {
 	};
 
 	render() {
+		let chosenTeamName = this.handleSetTeam(this.state.league, this.state.division);
 		return (
 			<div className="team-league-container">
 				<div className="leagues-wrapper">
@@ -356,7 +362,7 @@ class Leagues extends Component {
 							East
 						</span>
 					</div>
-					<div className="chosen-team">{this.handleSetTeam(this.state.league, this.state.division)}</div>
+					<div className="chosen-team">{chosenTeamName}</div>
 				</div>
 			</div>
 		);

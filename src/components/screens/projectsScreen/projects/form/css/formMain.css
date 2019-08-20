@@ -42,6 +42,18 @@ html[data-theme='dark'] {
   --websiteblacktowhite: white;
 }
 
+p {
+  font-size: 14px;
+}
+
+.grid-1fr-1fr {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+}
+
 .form-project-wrapper {
   height: initial;
   width: 100%;
@@ -75,7 +87,7 @@ html[data-theme='dark'] {
   color: var(--color-icon);
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .form-project-wrapper .form-container .form-row {
@@ -85,7 +97,7 @@ html[data-theme='dark'] {
 }
 
 .form-project-wrapper .form-container #picture-and-position {
-  margin: 15px 0;
+  margin-top: 5px;
 }
 
 .form-project-wrapper .form-container .form-button {
@@ -103,20 +115,11 @@ html[data-theme='dark'] {
           flex-direction: column;
   align-items: center;
   padding: 6px 0;
-  font-size: 14px;
   cursor: pointer;
 }
 
-.form-project-wrapper .form-container .form-button svg {
-  font-size: 12px;
-}
-
-.form-project-wrapper .form-container .form-button .btn-randomize {
-  margin: 0 auto;
-}
-
 .form-project-wrapper .form-container .input-container {
-  padding: 10px 0;
+  margin-bottom: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,6 +329,31 @@ html[data-theme='dark'] {
   margin-bottom: 10px;
 }
 
+.form-project-wrapper .team-league-container .team-container img:nth-child(1) {
+  -webkit-transform: translate(21px, 60px);
+          transform: translate(21px, 60px);
+}
+
+.form-project-wrapper .team-league-container .team-container img:nth-child(2) {
+  -webkit-transform: translate(0px, 15px);
+          transform: translate(0px, 15px);
+}
+
+.form-project-wrapper .team-league-container .team-container img:nth-child(3) {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.form-project-wrapper .team-league-container .team-container img:nth-child(4) {
+  -webkit-transform: translate(0px, 15px);
+          transform: translate(0px, 15px);
+}
+
+.form-project-wrapper .team-league-container .team-container img:nth-child(5) {
+  -webkit-transform: translate(-21px, 60px);
+          transform: translate(-21px, 60px);
+}
+
 .form-project-wrapper .team-league-container .team-container img {
   width: 30px;
   height: 30px;
@@ -505,9 +533,15 @@ html[data-theme='dark'] {
 }
 
 .submit-container {
-  background-color: var(--color-icon);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.submit-container .submit-btn-wrapper {
   padding: 20px 28px;
   border-radius: 2px;
+  background-color: var(--color-icon);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,6 +552,12 @@ html[data-theme='dark'] {
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  width: 70%;
+}
+
+.submit-container .submit-btn-wrapper svg {
+  font-size: 14px;
+  color: white;
 }
 
 .submit-container .submit {
@@ -533,9 +573,11 @@ html[data-theme='dark'] {
   margin-right: 8px;
 }
 
-.submit-container svg {
-  font-size: 14px;
-  color: white;
+.submit-container .btn-randomize {
+  margin: 0 auto;
+  font-size: 28px;
+  color: var(--color-icon);
+  border-bottom: 2px solid var(--color-icon);
 }
 
 input.submit:hover {

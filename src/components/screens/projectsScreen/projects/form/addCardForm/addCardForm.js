@@ -140,6 +140,12 @@ class AddCardForm extends Component {
 		this.handleFindPlayerImg();
 		this.props.handleAddCard(this.state);
 	};
+
+	// 	<div className="image-controls-container">
+	// 	<span onClick={this.handleRemovePlayerImage} className="remove-player-image-btn">
+	// 		Clear
+	// 	</span>
+	// </div>
 	render() {
 		const emptyImagePlaceholder = (
 			<div className="empty-image-placeholder">
@@ -175,14 +181,7 @@ class AddCardForm extends Component {
 							{this.state.playerImg ? editIcon : uploadIcon}
 							{this.state.playerImg ? playerImage : emptyImagePlaceholder}
 						</div>
-						<div className="image-controls-container">
-							<span onClick={this.handleRemovePlayerImage} className="remove-player-image-btn">
-								Clear
-							</span>
-							<div onClick={this.randomizeCard} className="btn-randomize form-button">
-								<FontAwesomeIcon icon={faRandom} />
-							</div>
-						</div>
+
 						<div className="btn-wrapper">
 							<input name="playerImage" onChange={this.handleImageUpload} type="file" id="player-image" />
 						</div>
@@ -190,8 +189,8 @@ class AddCardForm extends Component {
 				</div>
 				<div className="inputs-wrapper">
 					<form>
-						<div id="names-and-picture" className="">
-							<div className="names-wrapper">
+						<div id="names-and-picture">
+							<div className="names-wrapper grid-1fr-1fr">
 								<div className="input-container">
 									<input
 										name="firstName"
@@ -223,8 +222,8 @@ class AddCardForm extends Component {
 								<Leagues
 									handleFindTeamImg={this.handleFindTeamImg}
 									handleMakeActive={this.handleMakeActive}
-									randomLeague={this.state.league}
-									randomDivision={this.state.division}
+									league={this.state.league}
+									division={this.state.division}
 								/>
 								<div className="baseball-field-container">
 									<svg
@@ -436,9 +435,14 @@ class AddCardForm extends Component {
 							</div>
 						</div>
 
-						<div onClick={this.handleSubmit} className="submit-container">
-							<span className="submit">Add Baseball Card</span>
-							<FontAwesomeIcon icon={faPlus} />
+						<div className="submit-container" >
+							<div onClick={this.randomizeCard} className="btn-randomize form-button">
+								<FontAwesomeIcon icon={faRandom} />
+							</div>
+							<div  className="submit-btn-wrapper" onClick={this.handleSubmit}>
+								<span className="submit">Add Baseball Card</span>
+								<FontAwesomeIcon icon={faPlus} />
+							</div>
 						</div>
 					</form>
 				</div>
