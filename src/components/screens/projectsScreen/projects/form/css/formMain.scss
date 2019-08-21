@@ -562,6 +562,10 @@ input.submit {
 	border-radius: 3px;
 }
 @media only screen and (max-width: 900px) {
+	.submit-container {
+		justify-content: space-around;
+		transform: translate(-60px, 10px);
+	}
 	.form-project-wrapper {
 		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;

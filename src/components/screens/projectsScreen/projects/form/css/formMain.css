@@ -616,6 +616,12 @@ input.submit:hover {
 }
 
 @media only screen and (max-width: 900px) {
+  .submit-container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-transform: translate(-60px, 10px);
+            transform: translate(-60px, 10px);
+  }
   .form-project-wrapper {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
