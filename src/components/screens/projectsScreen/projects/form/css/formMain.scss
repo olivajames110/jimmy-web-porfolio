@@ -8,6 +8,7 @@ $background_color_1: white;
 $background_color_2: var(--baseballCardBarColor);
 $background_color_3: var(--color-icon);
 $background_color_4: unset;
+$addCardFormNum: 80px;
 
 @-webkit-keyframes 'cardSlide' {
 	0% {
@@ -77,16 +78,22 @@ p {
 		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		width: 430px;
+		// height: 100vh;
 		height: calc(100vh - var(--headerHeight));
 		.title-wrapper {
 			padding: 10px 0;
 			display: grid;
-			grid-template-columns: 1fr 85px;
+			grid-template-columns: 1fr 100px;
 			grid-gap: 15px;
 
+			p {
+				color: #818181;
+			}
+
 			h1 {
+				padding-top: 12px;
 				color: var(--color-icon);
-				font-size: 22px;
+				font-size: 16px;
 				font-weight: bold;
 				margin-bottom: 5px;
 			}
@@ -101,7 +108,7 @@ p {
 
 		#names-and-picture {
 			// display: grid;
-			// grid-template-columns: 1fr 85px;
+			// grid-template-columns: 1fr $addCardFormNum;
 			// grid-gap: 15px;
 		}
 
@@ -167,8 +174,8 @@ p {
 		}
 
 		.image-placeholder-wrapper {
-			height: 85px;
-			width: 85px;
+			height: $addCardFormNum;
+			width: $addCardFormNum;
 			border-radius: 50%;
 			position: relative;
 			overflow: hidden;
@@ -229,6 +236,10 @@ p {
 			width: 100%;
 			height: 40px;
 
+			&:focus,
+			&:valid {
+				border: 1px solid #1276bb;
+			}
 			&:focus ~ label,
 			&:valid ~ label {
 				color: #1276bb;
@@ -249,7 +260,7 @@ p {
 	}
 	.team-league-container {
 		width: 100%;
-
+		padding-top: 30px;
 		.leagues-wrapper {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -359,7 +370,15 @@ p {
 	}
 }
 
+.no-card-placerholder-container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .baseball-card-container {
+	position: relative;
 	display: -ms-grid;
 	display: grid;
 	width: 100%;
@@ -495,21 +514,18 @@ p {
 }
 .submit-container {
 	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	transform: translateY(-50px);
 	.submit-btn-wrapper {
-		padding: 20px 28px;
+		padding: 13px;
 		border-radius: 2px;
-		background-color: $background_color_3;
-		display: -webkit-box;
-		display: -ms-flexbox;
+		background-color: var(--color-icon);
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
 		cursor: pointer;
-		width: 70%;
+		font-size: 14px;
 		svg {
 			font-size: 14px;
 			color: $color_1;
@@ -529,7 +545,7 @@ p {
 		margin-right: 8px;
 	}
 	.btn-randomize {
-		margin: 0 auto;
+		transform: translateX(45px);
 		font-size: 28px;
 		color: $background_color_3;
 		border-bottom: 2px solid $background_color_3;
@@ -569,8 +585,8 @@ input.submit {
 	}
 
 	.form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-		height: 85px;
-		width: 85px;
+		height: $addCardFormNum;
+		width: $addCardFormNum;
 		border-radius: 50%;
 		position: relative;
 		overflow: hidden;

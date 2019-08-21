@@ -78,14 +78,19 @@ p {
   padding: 10px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 85px;
-      grid-template-columns: 1fr 85px;
+  -ms-grid-columns: 1fr 100px;
+      grid-template-columns: 1fr 100px;
   grid-gap: 15px;
 }
 
+.form-project-wrapper .form-container .title-wrapper p {
+  color: #818181;
+}
+
 .form-project-wrapper .form-container .title-wrapper h1 {
+  padding-top: 12px;
   color: var(--color-icon);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -168,8 +173,8 @@ p {
 }
 
 .form-project-wrapper .form-container .image-placeholder-wrapper {
-  height: 85px;
-  width: 85px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
@@ -239,6 +244,10 @@ p {
   height: 40px;
 }
 
+.form-project-wrapper .form-container input[type='text']:focus, .form-project-wrapper .form-container input[type='text']:valid {
+  border: 1px solid #1276bb;
+}
+
 .form-project-wrapper .form-container input[type='text']:focus ~ label,
 .form-project-wrapper .form-container input[type='text']:valid ~ label {
   color: #1276bb;
@@ -260,6 +269,7 @@ p {
 
 .form-project-wrapper .team-league-container {
   width: 100%;
+  padding-top: 30px;
 }
 
 .form-project-wrapper .team-league-container .leagues-wrapper {
@@ -385,7 +395,16 @@ p {
   margin-bottom: 20px;
 }
 
+.no-card-placerholder-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .baseball-card-container {
+  position: relative;
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -536,23 +555,29 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
 
 .submit-container .submit-btn-wrapper {
-  padding: 20px 28px;
+  padding: 13px;
   border-radius: 2px;
   background-color: var(--color-icon);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
-  width: 70%;
+  font-size: 14px;
 }
 
 .submit-container .submit-btn-wrapper svg {
@@ -574,7 +599,8 @@ p {
 }
 
 .submit-container .btn-randomize {
-  margin: 0 auto;
+  -webkit-transform: translateX(45px);
+          transform: translateX(45px);
   font-size: 28px;
   color: var(--color-icon);
   border-bottom: 2px solid var(--color-icon);
@@ -608,8 +634,8 @@ input.submit:hover {
             align-items: center !important;
   }
   .form-project-wrapper .form-container .input-container .image-placeholder-wrapper {
-    height: 85px;
-    width: 85px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;

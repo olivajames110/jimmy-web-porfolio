@@ -190,7 +190,7 @@ class AddCardForm extends Component {
 				<div className="inputs-wrapper">
 					<form>
 						<div id="names-and-picture">
-							<div className="names-wrapper grid-1fr-1fr">
+							<div className="names-wrapper ">
 								<div className="input-container">
 									<input
 										name="firstName"
@@ -432,16 +432,15 @@ class AddCardForm extends Component {
 										RF
 									</span>
 								</div>
-							</div>
-						</div>
-
-						<div className="submit-container" >
-							<div onClick={this.randomizeCard} className="btn-randomize form-button">
-								<FontAwesomeIcon icon={faRandom} />
-							</div>
-							<div  className="submit-btn-wrapper" onClick={this.handleSubmit}>
-								<span className="submit">Add Baseball Card</span>
-								<FontAwesomeIcon icon={faPlus} />
+								<div className="submit-container">
+									<div onClick={this.randomizeCard} className="btn-randomize form-button">
+										<FontAwesomeIcon icon={faRandom} />
+									</div>
+									<div className="submit-btn-wrapper" onClick={this.handleSubmit}>
+										<span className="submit">Add Card</span>
+										<FontAwesomeIcon icon={faPlus} />
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>

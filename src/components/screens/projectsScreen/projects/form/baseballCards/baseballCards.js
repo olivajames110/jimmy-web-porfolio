@@ -3,6 +3,11 @@ import React from 'react';
 // import './css/baseballCardMain';
 
 const BaseballCards = props => {
+	let noCards = (
+		<div className="no-card-placerholder-container">
+			<span>There are no cards.</span>
+		</div>
+	);
 	const playerList = props.cards.map(card => {
 		return (
 			<div className="baseball-card-wrapper">
@@ -26,7 +31,7 @@ const BaseballCards = props => {
 		);
 	});
 
-	return <div className="baseball-card-container">{props.cards.length ? playerList : 'No Cards'}</div>;
+	return <div className="baseball-card-container">{props.cards.length ? playerList : noCards}</div>;
 };
 
 export default BaseballCards;

@@ -80,7 +80,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	padding-top: 80px;
+	padding-top: 60px;
 	/* min-height: 100%;
 	margin-top: 40px; */
 }
@@ -112,7 +112,7 @@
 	border-radius: 0;
 	border-color: black;
 	border-style: solid;
-	/* padding-top: 20px; */
+	padding-top: 20px;
 }
 
 .ipad-container {
