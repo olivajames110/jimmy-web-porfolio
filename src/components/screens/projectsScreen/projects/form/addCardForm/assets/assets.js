@@ -75,6 +75,29 @@ import mike from './images/people/ben.jpg';
 import mike_david from './images/people/mike_david.jpg';
 import mike_sami from './images/people/mike_sami.jpg';
 import mikev from './images/people/ben.jpg';
+import alex from './images/people/alex.jpg';
+import alex2 from './images/people/alex2.jpg';
+import alex3 from './images/people/alex3.jpg';
+import allie from './images/people/allie.jpg';
+import dante2 from './images/people/dante2.jpg';
+import david2 from './images/people/david2.jpg';
+import david3 from './images/people/david3.jpg';
+import david4 from './images/people/david4.jpg';
+import david5 from './images/people/david5.jpg';
+import dylan2 from './images/people/dylan2.jpg';
+import dylan3 from './images/people/dylan3.jpg';
+import dylan4 from './images/people/dylan4.jpg';
+import john from './images/people/john.jpg';
+import john2 from './images/people/john2.jpg';
+import mike2 from './images/people/mike2.jpg';
+import mike3 from './images/people/mike3.jpg';
+import mike4 from './images/people/mike4.jpg';
+import mike5 from './images/people/mike5.jpg';
+import mike6 from './images/people/mike6.jpg';
+import mike7 from './images/people/mike7.jpg';
+import mike8 from './images/people/mike8.jpg';
+import sean from './images/people/sean.jpg';
+import sean2 from './images/people/sean.jpg';
 
 const firstNames = [
 	'Jimmy',
@@ -93,7 +116,21 @@ const firstNames = [
 	'Julie Gray',
 	'Joey',
 	'Michael',
-	'Dante'
+	'Dante',
+	'Diana',
+	'Allie',
+	'Dylan',
+	'Tony',
+	'Tony Lupo',
+	'Guy Steward',
+	'Olivia',
+	'Jack Castelli',
+	'Harrison',
+	'Shira',
+	'Stahno GEWWW',
+	'Alex',
+	'Alex Gennaro',
+	'Anton'
 ];
 const lastNames = [
 	'Oliva',
@@ -108,7 +145,18 @@ const lastNames = [
 	'Castillo',
 	'Correcher',
 	'West',
-	'Valente'
+	'Valente',
+	'Frank',
+	'Weiland',
+	'Vitolo',
+	'Lupo',
+	'Weller',
+	'Young',
+	'Moskowitz',
+	'Stahno GEWWW',
+	'Stahno',
+	'Catterino',
+	'Alex Gennaro'
 ];
 
 const Players = [
@@ -127,14 +175,29 @@ const Players = [
 	mike_david,
 	mike_sami,
 	mikev,
-
-	'https://securea.mlb.com/mlb/images/players/head_shot/624413.jpg',
-	'https://cdn.mlbtraderumors.com/files/2019/03/deGrom.Jacob-vertical-259x300.jpg',
-	'https://securea.mlb.com/mlb/images/players/head_shot/643446.jpg',
-	'https://securea.mlb.com/mlb/images/players/head_shot/429664.jpg',
-	'https://athlonsports.com/sites/athlonsports.com/files/styles/article_top_img/public/Mets-Jacob-deGrom86596_0.jpg?itok=-IxZbnVV',
-	'https://securea.mlb.com/mlb/images/players/head_shot/642708.jpg',
-	'https://hips.hearstapps.com/hbz.h-cdn.co/assets/cm/15/04/54bd3d512cfd2_-_hbz-mlb-david-wright-487011951.jpg'
+	alex,
+	alex2,
+	alex3,
+	allie,
+	dante2,
+	david2,
+	david3,
+	david4,
+	david5,
+	dylan2,
+	dylan3,
+	dylan4,
+	john,
+	john2,
+	mike2,
+	mike3,
+	mike4,
+	mike5,
+	mike6,
+	mike7,
+	mike8,
+	sean,
+	sean2
 ];
 
 const TeamAssets = {

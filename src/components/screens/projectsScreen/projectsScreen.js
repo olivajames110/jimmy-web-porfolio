@@ -15,12 +15,13 @@ import {
 	faTimes,
 	faHammer,
 	faImage,
-	faComments
+	faComments,
+	faMusic
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
 import PriceCalc from './projects/priceCalc/priceCalc';
-import DrawingBoard from './projects/drawingBoard/drawingBoard';
+import Weather from './projects/weather/weather';
 import Project from './project/project';
 import Menu from './projects/menu/menu';
 import Website from './projects/website/website';
@@ -84,10 +85,10 @@ class Projects extends Component {
 		});
 	};
 
-	handleWeatherChange = () => {
+	handleWeatherAppChange = () => {
 		this.setState({
-			currentProject: <DrawingBoard />,
-			currentProjectName: 'Drawing Board'
+			currentProject: <Weather />,
+			currentProjectName: 'Weather'
 		});
 	};
 
@@ -232,14 +233,6 @@ class Projects extends Component {
 			<div className="nav-project-holder">
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleDrawingBoardChange}
-					projectName={'Photo Gallery'}
-					icon={faImage}
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleFormChange}
 					projectName={'Baseball Cards'}
 					icon={faScroll}
@@ -252,6 +245,30 @@ class Projects extends Component {
 					icon={faDesktop}
 					state={this.state.currentProject}
 				/>
+
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleWeatherAppChange}
+					projectName={'Weather'}
+					icon={faCloudSunRain}
+					state={this.state.currentProject}
+					comingSoon={false}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handlePriceCalcChange}
+					projectName={'Price Calculator'}
+					icon={faMoneyBill}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleDrawingBoardChange}
+					projectName={'Photo Gallery'}
+					icon={faImage}
+					state={this.state.currentProject}
+					comingSoon={true}
+				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleDashboardChange}
@@ -262,18 +279,11 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleWeatherAppChange}
-					projectName={'Weather'}
-					icon={faCloudSunRain}
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
 					handlePriceCalcChange={this.handleMenuChange}
 					projectName={'Menu'}
 					icon={faHamburger}
 					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
@@ -285,10 +295,11 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handlePriceCalcChange}
-					projectName={'Price Calculator'}
-					icon={faMoneyBill}
+					handlePriceCalcChange={this.handleGameChange}
+					projectName={'Music Player'}
+					icon={faMusic}
 					state={this.state.currentProject}
+					comingSoon={true}
 				/>
 			</div>
 		);

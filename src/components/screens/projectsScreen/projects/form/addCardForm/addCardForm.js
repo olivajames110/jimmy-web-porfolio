@@ -136,9 +136,23 @@ class AddCardForm extends Component {
 	//Submit
 	handleSubmit = e => {
 		e.preventDefault();
-		this.handleFindTeamImg();
-		this.handleFindPlayerImg();
-		this.props.handleAddCard(this.state);
+		let isValid = false;
+		(function(state) {
+			if (state.firstName || state.lastName || state.playerImg || state.teamImg) {
+				console.log(state.firstName, state.lastName, state.playerImg);
+				isValid = true;
+			}
+		})(this.state);
+
+		if (isValid) {
+			this.handleFindTeamImg();
+			this.handleFindPlayerImg();
+			this.props.handleAddCard(this.state);
+			document.getElementById('first-name').value = '';
+			document.getElementById('last-name').value = '';
+		} else {
+			console.log('is false');
+		}
 	};
 
 	// 	<div className="image-controls-container">

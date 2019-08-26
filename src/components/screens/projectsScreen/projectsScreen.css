@@ -112,7 +112,7 @@
 	border-radius: 0;
 	border-color: black;
 	border-style: solid;
-	/* padding-top: 20px; */
+	padding-top: 21px;
 }
 
 .ipad-container {
@@ -342,6 +342,7 @@
 
 	.desktop-container {
 		font-size: 16px;
+		padding-top: 0 !important;
 	}
 
 	.project-holder {

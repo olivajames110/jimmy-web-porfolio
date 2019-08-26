@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+#welcome {
+	background: linear-gradient(
+		to right,
+		rgba(250, 250, 250, 1) 0%,
+		rgba(255, 255, 255, 1) 41%,
+		rgba(242, 242, 242, 1) 77%,
+		rgba(254, 254, 254, 1) 100%
+	);
+	padding-top: 100px;
+	height: 100%;
+	min-height: 600px;
+	position: relative;
+	overflow: hidden;
+}
+
+.home-img {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	flex-direction: column;
+	background: linear-gradient(270deg, #2ab893, #572ab8);
+	background-size: 400% 400%;
+	-webkit-animation: bgFlow 20s ease infinite;
+	-moz-animation: bgFlow 20s ease infinite;
+	animation: bgFlow 80s ease infinite;
+	text-align: center;
+	background: url('https://www.tiny.cloud/static/bg-gradient-mesh-bbb002e33e5bff434618c6d20550f303.svg');
+}
+.home-img h1 {
+	font-size: 2.5em;
+	font-weight: 800;
+	font-family: var(--h1);
+	letter-spacing: 1px;
+}
+
+.home-img .sub-heading {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	padding: 0 18px;
+}
+
+.sub-heading {
+	margin-top: 10px;
+	opacity: 0;
+	animation: fadeIn 1s ease forwards 3.6s;
+	z-index: 1;
+}
+
+.projects-btn {
+	font-size: 18px;
+	padding: 1.2em 2.3em;
+	/* background: var(--color-icon); */
+	background-size: 200% 100%;
+	background-position: right bottom;
+	transition: all 0.5s ease-out;
+	border: 1px solid white;
+	border-radius: 2px;
+	color: white;
+	margin-top: 30px;
+	cursor: pointer;
+	opacity: 0;
+	transition: 1s;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	animation: fadeIn 1s ease forwards 4s;
+}
+
+.home-img a svg {
+	margin-left: 8px;
+}
+
+.home-img a span {
+	position: relative;
+	z-index: 1;
+}
+
+.home-img a {
+	text-decoration: none;
+}
+
+.home-img a:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 490%;
+	width: 140%;
+	background: var(--color-icon--opp);
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	-webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+	transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.home-img::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	/* z-index: 10000000; */
+	background: linear-gradient(to right, #2c53644d, #203a4370, #0f202747);
+
+	/* background: rgba(0, 0, 0, 0.3); */
+}
+
+.content,
+.home-img a {
+	z-index: 5;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#home-img-svg {
+	animation: fill 0.5s ease forwards 3.2s;
+	//MY
+	path:nth-child(1) {
+		stroke-dasharray: 273.9136962890625px;
+		stroke-dashoffset: 273.9136962890625px;
+		animation: line-animation 1.2s ease forwards;
+	}
+	path:nth-child(2) {
+		stroke-dasharray: 151.55479431152344px;
+		stroke-dashoffset: 151.55479431152344px;
+		animation: line-animation 1.5s ease forwards;
+	}
+	//Name
+	path:nth-child(3) {
+		stroke-dasharray: 211.50953674316406px;
+		stroke-dashoffset: 211.50953674316406px;
+		animation: line-animation 1.2s ease forwards;
+	}
+	path:nth-child(4) {
+		stroke-dasharray: 145px;
+		stroke-dashoffset: 145.2342529296875px;
+		animation: line-animation 1.2s ease forwards;
+	}
+	path:nth-child(5) {
+		stroke-dasharray: 211.26840209960938px;
+		stroke-dashoffset: 211.26840209960938px;
+		animation: line-animation 1.2s ease forwards;
+	}
+	path:nth-child(6) {
+		stroke-dasharray: 143.42391967773438px;
+		stroke-dashoffset: 143.42391967773438px;
+		animation: line-animation 1.2s ease forwards;
+	}
+	//IS
+	path:nth-child(7) {
+		stroke-dasharray: 83px;
+		stroke-dashoffset: 83px;
+		animation: line-animation 1.2s ease forwards 0.5s;
+	}
+	path:nth-child(8) {
+		stroke-dasharray: 123.7349853515625px;
+		stroke-dashoffset: 123.7349853515625px;
+		animation: line-animation 1.2s ease forwards 0.5s;
+	}
+	//JIMMY
+	path:nth-child(9) {
+		stroke-dasharray: 112.73152160644531px;
+		stroke-dashoffset: 112.73152160644531px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(10) {
+		stroke-dasharray: 90px;
+		stroke-dashoffset: 90px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(11) {
+		stroke-dasharray: 211px;
+		stroke-dashoffset: 211px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(12) {
+		stroke-dasharray: 211px;
+		stroke-dashoffset: 211px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(13) {
+		stroke-dasharray: 151.55532836914062px;
+		stroke-dashoffset: 151.55532836914062px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	//OLIVA
+	path:nth-child(14) {
+		stroke-dasharray: 175px;
+		stroke-dashoffset: 175px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(15) {
+		stroke-dasharray: 87.2335205078125px;
+		stroke-dashoffset: 87.2335205078125px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(16) {
+		stroke-dasharray: 90.6915054321289px;
+		stroke-dashoffset: 90.6915054321289px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(17) {
+		stroke-dasharray: 120.99569702148438px;
+		stroke-dashoffset: 120.99569702148438px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+	path:nth-child(18) {
+		stroke-dasharray: 145.2341766357422px;
+		stroke-dashoffset: 145.2341766357422px;
+		animation: line-animation 1.5s ease forwards 1.4s;
+	}
+}
+
+@keyframes line-animation {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes fill {
+	from {
+		fill: rgba(255, 255, 255, 0.244);
+	}
+	to {
+		fill: white;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.home-img a:hover:after {
+	-webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+	transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+@-webkit-keyframes bgFlow {
+	0% {
+		background-position: 11% 0%;
+	}
+	50% {
+		background-position: 90% 100%;
+	}
+	100% {
+		background-position: 11% 0%;
+	}
+}
+@-moz-keyframes bgFlow {
+	0% {
+		background-position: 11% 0%;
+	}
+	50% {
+		background-position: 90% 100%;
+	}
+	100% {
+		background-position: 11% 0%;
+	}
+}
+@keyframes bgFlow {
+	0% {
+		background-position: 11% 0%;
+	}
+	50% {
+		background-position: 90% 100%;
+	}
+	100% {
+		background-position: 11% 0%;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.home-img h1 {
+		margin-top: -55px;
+	}
+	.content {
+		transform: scale(0.6);
+	}
+}
