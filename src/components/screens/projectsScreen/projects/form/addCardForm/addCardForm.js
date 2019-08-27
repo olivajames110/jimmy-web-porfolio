@@ -20,17 +20,17 @@ class AddCardForm extends Component {
 		firstName: null,
 		lastName: null,
 		position: null,
-		team: TeamAssets.mets.name,
-		teamImg: TeamAssets.mets.url,
+		team: null,
+		teamImg: null,
 		playerImg: null,
-		color: TeamAssets.mets.color,
+		color: null,
 		league: 'nl',
 		division: 'east'
 	};
 
 	componentWillMount() {
-		// this.randomizeCard();
-		// this.handleFindPlayerImg();
+		this.handleFindTeamImg();
+		this.handleFindPlayerImg();
 	}
 
 	handleInputChange = e => {
@@ -81,6 +81,8 @@ class AddCardForm extends Component {
 			color: teamName.color,
 			team: teamName.name
 		});
+		let root = document.documentElement;
+		root.style.setProperty('--baseballCardBarColor', this.state.color);
 	};
 
 	handleFindPlayerImg = () => {
@@ -127,7 +129,6 @@ class AddCardForm extends Component {
 		function randomize(array) {
 			return array[Math.floor(Math.random() * array.length)];
 		}
-		// this.props.handleAddCard(this.state);
 	};
 
 	randomizeTeam = (league, division) => {};
