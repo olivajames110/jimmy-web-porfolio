@@ -134,7 +134,7 @@ class AddCardForm extends Component {
 
 	//Submit
 	handleSubmit = e => {
-		// e.preventDefault();
+		e.preventDefault();
 		let isValid = false;
 		(function(state) {
 			if (state.firstName || state.lastName || state.playerImg || state.teamImg) {
