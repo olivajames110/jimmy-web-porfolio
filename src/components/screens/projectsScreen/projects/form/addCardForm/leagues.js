@@ -6,7 +6,7 @@ class Leagues extends Component {
 		//I want entire componenet to re-render each time this is updated through props
 		league: this.props.league,
 		division: this.props.division,
-		teamValue: null
+		teamValue: 'mets'
 	};
 
 	componentWillMount() {
