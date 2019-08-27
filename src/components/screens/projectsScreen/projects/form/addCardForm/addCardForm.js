@@ -20,17 +20,17 @@ class AddCardForm extends Component {
 		firstName: null,
 		lastName: null,
 		position: null,
-		team: null,
-		teamImg: null,
+		team: TeamAssets.mets.name,
+		teamImg: TeamAssets.mets.url,
 		playerImg: null,
-		color: null,
+		color: TeamAssets.mets.color,
 		league: 'nl',
 		division: 'east'
 	};
 
 	componentWillMount() {
-		this.handleFindTeamImg();
-		this.handleFindPlayerImg();
+		// this.randomizeCard();
+		// this.handleFindPlayerImg();
 	}
 
 	handleInputChange = e => {
@@ -81,8 +81,6 @@ class AddCardForm extends Component {
 			color: teamName.color,
 			team: teamName.name
 		});
-		let root = document.documentElement;
-		root.style.setProperty('--baseballCardBarColor', this.state.color);
 	};
 
 	handleFindPlayerImg = () => {
@@ -106,10 +104,7 @@ class AddCardForm extends Component {
 		const division = randomize(document.querySelectorAll('.division-btn'));
 		const team = randomize(document.querySelectorAll('.team-btn'));
 		const position = randomize(document.querySelectorAll('.position-btn'));
-		console.log(league);
 
-		// const player = Players[Math.floor(Math.random() * Players.length)];
-		// this.handleMakeActive(team, '', 'position-btn--active', true);
 		this.handleMakeActive(league, '.leagues-btn', 'league-is-active', true);
 		this.handleMakeActive(division, '.division-btn', 'league-is-active', true);
 		this.handleMakeActive(team, '.team-btn', 'league-is-active', true);
@@ -129,6 +124,7 @@ class AddCardForm extends Component {
 		function randomize(array) {
 			return array[Math.floor(Math.random() * array.length)];
 		}
+		// this.props.handleAddCard(this.state);
 	};
 
 	randomizeTeam = (league, division) => {};

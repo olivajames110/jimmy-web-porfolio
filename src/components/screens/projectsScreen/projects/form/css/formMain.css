@@ -632,7 +632,7 @@ input.submit:hover {
     padding: 20px;
   }
   .form-project-wrapper .baseball-card-container {
-    overflow: unset;
+    overflow: hidden;
   }
   .player-image-container {
     -webkit-box-align: center !important;
