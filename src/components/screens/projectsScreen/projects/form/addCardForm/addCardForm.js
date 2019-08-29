@@ -102,12 +102,12 @@ class AddCardForm extends Component {
 		const lastName = randomize(lastNames);
 		const league = randomize(document.querySelectorAll('.leagues-btn'));
 		const division = randomize(document.querySelectorAll('.division-btn'));
-		const team = randomize(document.querySelectorAll('.team-btn'));
+		// const team = randomize(document.querySelectorAll('.team-btn'));
 		const position = randomize(document.querySelectorAll('.position-btn'));
 
-		this.handleMakeActive(league, '.leagues-btn', 'league-is-active', true);
-		this.handleMakeActive(division, '.division-btn', 'league-is-active', true);
-		this.handleMakeActive(team, '.team-btn', 'league-is-active', true);
+		// this.handleMakeActive(league, '.leagues-btn', 'league-is-active', true);
+		// this.handleMakeActive(division, '.division-btn', 'league-is-active', true);
+		// this.handleMakeActive(team, '.team-btn', 'league-is-active', true);
 		this.handleMakeActive(position, '.position-btn', 'position-btn--active', true);
 		document.getElementById('first-name').value = firstName;
 		document.getElementById('last-name').value = lastName;

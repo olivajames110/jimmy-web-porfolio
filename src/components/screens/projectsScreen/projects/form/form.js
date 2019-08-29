@@ -23,9 +23,10 @@ class Form extends Component {
 
 	handleAddCard = card => {
 		card.id = Math.random();
-		let cardList = [...this.state.cards, card];
+		let cardList = this.state.cards;
+		cardList.unshift(card);
 		this.setState({
-			cards: cardList.reverse()
+			cards: cardList
 		});
 	};
 

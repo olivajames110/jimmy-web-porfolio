@@ -70,7 +70,7 @@ class Leagues extends Component {
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="mets"
-					className="team-btn "
+					className="team-btn league-is-active "
 					src={TeamAssets.mets.logo}
 					alt="mets"
 				/>
