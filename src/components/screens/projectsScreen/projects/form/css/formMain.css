@@ -639,7 +639,6 @@ input.submit:hover {
     width: 80px;
     border-radius: 50%;
     position: relative;
-    overflow: hidden;
   }
   .label-title {
     top: 55% !important;
