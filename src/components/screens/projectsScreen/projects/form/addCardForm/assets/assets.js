@@ -84,6 +84,7 @@ import david2 from './images/people/david2.jpg';
 import david3 from './images/people/david3.jpg';
 import david4 from './images/people/david4.jpg';
 import david5 from './images/people/david5.jpg';
+import david6 from './images/people/david6.jpg';
 import dylan2 from './images/people/dylan2.jpg';
 import dylan3 from './images/people/dylan3.jpg';
 import dylan4 from './images/people/dylan4.jpg';
@@ -184,6 +185,7 @@ const Players = [
 	david3,
 	david4,
 	david5,
+	david6,
 	dylan2,
 	dylan3,
 	dylan4,

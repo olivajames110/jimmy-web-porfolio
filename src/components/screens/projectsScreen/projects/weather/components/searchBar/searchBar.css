@@ -1,0 +1,63 @@
+.search-bar {
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	/* transition: 800ms ease; */
+	position: relative;
+}
+
+#town-search-bar {
+	background: none;
+	border: none;
+	/* // height: 50px; // width: 100%; */
+	color: white;
+	font-size: 18px;
+	/* font-weight: bold; */
+	/* text-align: center; */
+	width: 380px;
+	padding: 7px 0;
+}
+
+input#town-search-bar {
+	outline: none;
+	text-transform: capitalize;
+	/* transition: 800ms ease; */
+	/* border-bottom: 1px solid #ffc371 !important; */
+}
+
+input#town-search-bar::placeholder {
+	color: #ffffff;
+	/* font-size: 36px; */
+	/* font-weight: bold */
+}
+
+input#town-search-bar:focus {
+	/* border-bottom: 1px solid #ffc371 !important; */
+	background: none;
+	outline: none;
+}
+
+input#town-search-bar:focus + span {
+	color: #f1f3f5;
+	transform: translateY(18px) scale(0.9);
+}
+.border {
+	position: absolute;
+	/* bottom: -25px; */
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background: #e5e5e5;
+	transform: scaleX(0);
+	/* transform-origin: 0 0; */
+	transition: all 0.15s ease;
+}
+
+input#town-search-bar:focus + span + .border {
+	transform: scaleX(1);
+}
+
+.search-bar__icon {
+	margin-right: 10px;
+}

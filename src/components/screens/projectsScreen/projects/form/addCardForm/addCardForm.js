@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import { TeamAssets, Players, lastNames, firstNames } from './assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faDownload,
-	faUpload,
-	faRandom,
-	faPlus,
-	faImage,
-	faCameraRetro,
-	faCamera,
-	faPencilAlt
-} from '@fortawesome/free-solid-svg-icons';
+import { faRandom, faPlus, faImage, faCamera, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Leagues from './leagues';
-import Axios from 'axios';
 
 class AddCardForm extends Component {
 	state = {
@@ -177,6 +167,8 @@ class AddCardForm extends Component {
 				<span>Upload</span>
 			</label>
 		);
+
+		const baseballCardForm = <div>Form</div>;
 
 		return (
 			<div className="form-container">

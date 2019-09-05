@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import BaseballCards from './baseballCards/baseballCards';
+
 import AddCardForm from './addCardForm/addCardForm';
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // import {faCloudSunRain, faScroll} from '@fortawesome/free-solid-svg-icons';
 import './css/formMain.css';
+import FriendCards from './baseballCards/friendCards';
 
 ////--------CHECKLIST
 //Randomize functionality
@@ -31,10 +33,12 @@ class Form extends Component {
 	};
 
 	render() {
+		const baseballCards = <BaseballCards cardType="baseball" cards={this.state.cards} />;
+		const friendCards = <FriendCards cardType="friends" cards={this.state.cards} />;
 		return (
 			<div className="form-project-wrapper">
 				<AddCardForm handleAddCard={this.handleAddCard} />
-				<BaseballCards cards={this.state.cards} />
+				{friendCards}
 			</div>
 		);
 	}

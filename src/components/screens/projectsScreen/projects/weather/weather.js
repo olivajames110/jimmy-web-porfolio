@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import WeatherSearchBar from './components/searchBar/searchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCloudMoonRain } from '@fortawesome/free-solid-svg-icons';
 import './css/weatherMain.css';
+import CanvasJSReact from './canvasjs.react';
+
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class Weather extends Component {
 	state = {
@@ -9,61 +13,79 @@ class Weather extends Component {
 	};
 
 	render() {
+		const googleMapsApiKey = 'AIzaSyB-NdQtol6W5tmk6AzHsKKTgRThZd9njbk';
+		const key = (
+			<script
+				type="text/javascript"
+				src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"
+			/>
+		);
+
+		const options = {
+			axisX: {
+				tickColor: 'transparent',
+				labelFontSize: 14,
+				labelFontColor: ' #7a78788e',
+				lineColor: 'rgba(0,0,0,0)',
+				gridColor: 'rgba(122, 120, 120, 0.21176470588235294)',
+				gridThickness: 1
+			},
+			axisY: {
+				gridColor: 'transparent',
+				tickColor: 'transparent',
+				suffix: '°',
+				labelFontSize: 14,
+				labelFontColor: ' #7a78788e',
+				lineColor: 'rgba(0,0,0,0)',
+				minimum: 65,
+				maximum: 87
+			},
+			data: [
+				{
+					markerColor: '#046ab4ad',
+					lineColor: '#046ab4ad',
+					lineThickness: 1,
+					type: 'spline',
+					dataPoints: [
+						{ label: 'Morning', y: 68 },
+						{ label: 'Evening', y: 74 },
+						{ label: 'Afternoon', y: 82 },
+						{ label: 'Night', y: 70 }
+					]
+				}
+			]
+		};
+
+		console.log(options);
 		return (
 			<div className="weather-project-wrapper">
 				<section className="section-header">
-					<div className="search-bar-wrapper">
-						<div className="search-bar">
-							<span className="search-bar__icon">
-								<FontAwesomeIcon icon={faSearch} />
-							</span>
-
-							<input type="text" />
-						</div>
-					</div>
-
 					<div className="current-weather-container">
 						<div className="current-weather-wrapper">
 							<div className="temperatures">
-								<div className="current-temperature">86</div>
+								<div className="current-temperature main-item">86</div>
 								<div className="high-low-container">
 									<span className="high-temp">90</span>
 									<span className="low-temp">70</span>
 								</div>
 							</div>
-							<div className="current-conditions">Current Conditions</div>
+							<div className="current-conditions">Conditions</div>
 						</div>
-						<div className="current-town-wrapper">
-							<div className="current-town">Current Town</div>
-						</div>
+						<WeatherSearchBar />
 						<div className="current-weather-graphic-wrapper">
-							<div className="current-town">Weather Graphic</div>
+							<div className="current-town main-item">
+								<FontAwesomeIcon icon={faCloudMoonRain} />
+							</div>
 						</div>
 					</div>
 				</section>
 				<section className="section-body">
 					<div className="section-body-container">
-						<div className="weather-chart-wrapper">
-							<div id="morning" className="weather-chart-column">
-								<div className="title">morning</div>
-								<div id="temperature">Temp</div>
-								<div id="condition">Condition</div>
-							</div>
-							<div id="afternoon" className="weather-chart-column">
-								<div className="title">afternoon</div>
-								<div id="temperature">Temp</div>
-								<div id="condition">Condition</div>
-							</div>
-							<div id="evening" className="weather-chart-column">
-								<div className="title">evening</div>
-								<div id="temperature">Temp</div>
-								<div id="condition">Condition</div>
-							</div>
-							<div id="overnight" className="weather-chart-column">
-								<div className="title">overnight</div>
-								<div id="temperature">Temp</div>
-								<div id="condition">Condition</div>
-							</div>
+						<div className="weather-chart-container">
+							<CanvasJSChart
+								options={options}
+								/* onRef = {ref => this.chart = ref} */
+							/>
 						</div>
 					</div>
 				</section>
@@ -78,3 +100,34 @@ class Weather extends Component {
 }
 
 export default Weather;
+
+// const oldWeatherChart = (	<div className="weather-chart-container">
+// <div className="weather-chart-column">
+// 	<div className="time-of-day">Morning</div>
+// 	<div className="temperature-container">
+// 		<span id="morning">40°</span>
+// 	</div>
+// 	<div id="condition">Condition</div>
+// </div>
+// <div className="weather-chart-column">
+// 	<div className="time-of-day">Afternoon</div>
+// 	<div className="temperature-container">
+// 		<span id="afternoon">60°</span>
+// 	</div>
+// 	<div id="condition">Condition</div>
+// </div>
+// <div className="weather-chart-column">
+// 	<div className="time-of-day">Evening</div>
+// 	<div className="temperature-container">
+// 		<span id="evening">80°</span>
+// 	</div>
+// 	<div id="condition">Condition</div>
+// </div>
+// <div className="weather-chart-column">
+// 	<div className="time-of-day">Overnight</div>
+// 	<div className="temperature-container">
+// 		<span id="overnight">50°</span>
+// 	</div>
+// 	<div id="condition">Condition</div>
+// </div>
+// </div>)

@@ -1,0 +1,39 @@
+.card-text-container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	.card-text {
+		padding: 10px 0;
+		text-shadow: 1px 1px 0px black;
+	}
+}
+
+.friend-card-wrapper {
+	box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+	border: 10px solid white;
+	position: relative;
+	display: inline-block;
+	margin: 12px;
+	height: 330px;
+	width: 250px;
+	background: black;
+	overflow: hidden;
+	background-position: center;
+	transition: 500ms;
+	animation: cardSlide 500ms;
+	cursor: pointer;
+	img {
+		width: 100%;
+		object-fit: cover;
+		height: 100%;
+	}
+}

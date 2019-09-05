@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faCloudSunRain,
 	faScroll,
-	faPencilAlt,
 	faChartBar,
 	faMoneyBill,
 	faMobileAlt,
@@ -11,7 +10,6 @@ import {
 	faDesktop,
 	faFrown,
 	faHamburger,
-	faGamepad,
 	faTimes,
 	faHammer,
 	faImage,
@@ -30,7 +28,7 @@ import './projectsScreen.css';
 class Projects extends Component {
 	state = {
 		isMobile: null,
-		currentProject: '',
+		currentProject: <Weather />,
 		currentProjectName: 'Choose a project above!',
 		deviceType: 'desktop-container',
 		projectNavIsOpen: false,

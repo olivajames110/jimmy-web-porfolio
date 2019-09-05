@@ -1,0 +1,55 @@
+.card-text-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-text-container .card-text {
+  padding: 10px 0;
+  text-shadow: 1px 1px 0px black;
+}
+
+.friend-card-wrapper {
+  -webkit-box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.11);
+  border: 10px solid white;
+  position: relative;
+  display: inline-block;
+  margin: 12px;
+  height: 330px;
+  width: 250px;
+  background: black;
+  overflow: hidden;
+  background-position: center;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -webkit-animation: cardSlide 500ms;
+          animation: cardSlide 500ms;
+  cursor: pointer;
+}
+
+.friend-card-wrapper img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+/*# sourceMappingURL=friendCards.css.map */
