@@ -15,15 +15,18 @@
 	font-size: 18px;
 	/* font-weight: bold; */
 	/* text-align: center; */
-	width: 380px;
+	width: 330px;
 	padding: 7px 0;
 }
 
 input#town-search-bar {
 	outline: none;
 	text-transform: capitalize;
-	/* transition: 800ms ease; */
-	/* border-bottom: 1px solid #ffc371 !important; */
+
+	background-color: #00000014;
+	padding: 10px;
+	padding-left: 35px;
+	border-radius: 2px;
 }
 
 input#town-search-bar::placeholder {
@@ -33,7 +36,7 @@ input#town-search-bar::placeholder {
 }
 
 input#town-search-bar:focus {
-	/* border-bottom: 1px solid #ffc371 !important; */
+	border-bottom: 1px solid #ffffff !important;
 	background: none;
 	outline: none;
 }
@@ -44,13 +47,11 @@ input#town-search-bar:focus + span {
 }
 .border {
 	position: absolute;
-	/* bottom: -25px; */
 	left: 0;
 	height: 2px;
 	width: 100%;
 	background: #e5e5e5;
 	transform: scaleX(0);
-	/* transform-origin: 0 0; */
 	transition: all 0.15s ease;
 }
 
@@ -59,5 +60,5 @@ input#town-search-bar:focus + span + .border {
 }
 
 .search-bar__icon {
-	margin-right: 10px;
+	margin-right: -25px;
 }

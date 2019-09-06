@@ -9,6 +9,9 @@
 		#ff5f6d
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+section {
+	padding: 15px 5%;
+}
 .section-header {
 	position: relative;
 	height: auto;
@@ -37,11 +40,14 @@ input {
 		color: #ffffffa7;
 	}
 }
+// Autocomplete
+.hijnLS {
+	color: black;
+}
 // input::placeholder {
 // color: #ffffff;
-// }
 .main-item {
-	font-size: 48px;
+	font-size: 64px;
 	font-weight: bold;
 }
 .current-weather-container {
@@ -50,7 +56,7 @@ input {
 	justify-content: space-between;
 	.current-weather-wrapper,
 	.current-weather-graphic-wrapper {
-		width: 100px;
+		width: 180px;
 		display: flex;
 		justify-content: center;
 	}
@@ -66,12 +72,28 @@ input {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		font-size: 18px;
+		.high-temp,
+		.low-temp {
+			padding: 3px;
+		}
 	}
 	.current-temperature {
 		padding-right: 5px;
 	}
 	.current-conditions {
 		text-align: center;
+	}
+}
+.town-search-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.current-town {
+		font-size: 28px;
+		font-weight: 1000;
+		padding-top: 15px;
+		letter-spacing: 1px;
 	}
 }
 .weather-chart-column {
@@ -123,20 +145,22 @@ input {
 	}
 }
 .section-body-container {
-	background: white;
-	padding: 35px 0;
+	// background: white;
+	// padding: 15px 5%;
 }
 .weather-chart-container {
 	width: 96%;
 	position: relative;
-	height: 400px;
-	background: #f4e4e4;
+	height: 400px; // background: #f4e4e4;
 	margin: 0 auto;
+}
+.todays-details {
+	padding-bottom: 20px;
 }
 // /Section 2
 .card-container {
 	margin: 45px auto 0;
-	height: 300px;
+	height: auto;
 	width: 600px;
 	background: #fff;
 	border-radius: 8px;
@@ -145,4 +169,34 @@ input {
 		font-weight: bolder;
 		font-weight: 1000;
 	}
+	.card-details-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin-top: 30px;
+	}
+	.detail-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.weather-detail__icon {
+			font-size: 24px;
+		}
+		.weather-detail__title {
+			margin: 10px 0 15px 0;
+			font-weight: 600;
+		}
+		.weather-detail__value {
+			color: #898989;
+			text-transform: capitalize;
+		}
+	}
+}
+#wind-speed {
+	color: var(--color-icon);
+}
+#humidity {
+	color: rgb(83, 39, 180);
+}
+#weather-desc {
+	color: rgb(39, 142, 180);
 }
