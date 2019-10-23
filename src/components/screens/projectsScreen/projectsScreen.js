@@ -14,7 +14,8 @@ import {
 	faHammer,
 	faImage,
 	faComments,
-	faMusic
+	faMusic,
+	faPalette
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
@@ -23,12 +24,13 @@ import Weather from './projects/weather/weather';
 import Project from './project/project';
 import Menu from './projects/menu/menu';
 import Website from './projects/website/website';
+import ColorContrast from './projects/colorContrast/colorContrast';
 import './projectsScreen.css';
 
 class Projects extends Component {
 	state = {
 		isMobile: null,
-		currentProject: <Weather />,
+		currentProject: '',
 		currentProjectName: 'Choose a project above!',
 		deviceType: 'desktop-container',
 		projectNavIsOpen: false,
@@ -95,6 +97,13 @@ class Projects extends Component {
 		this.setState({
 			currentProject: <PriceCalc />,
 			currentProjectName: 'Price Calculator'
+		});
+	};
+	handleColorContrastChange = () => {
+		this.handleProjectNav();
+		this.setState({
+			currentProject: <ColorContrast />,
+			currentProjectName: 'Color Contrast'
 		});
 	};
 
@@ -257,6 +266,13 @@ class Projects extends Component {
 					handlePriceCalcChange={this.handlePriceCalcChange}
 					projectName={'Price Calculator'}
 					icon={faMoneyBill}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handlePriceCalcChange={this.handleColorContrastChange}
+					projectName={'Color Contrast'}
+					icon={faPalette}
 					state={this.state.currentProject}
 				/>
 				<Project

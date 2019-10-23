@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Muli:400,600,700,800|Open+Sans:400,700&display=swap');
+/* Section aka a row */
 
+@import url('https://fonts.googleapis.com/css?family=Lato|Muli:400,600,700,800|Open+Sans:400,700&display=swap');
 * {
 	margin: 0;
 	padding: 0;

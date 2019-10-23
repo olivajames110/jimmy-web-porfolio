@@ -58,11 +58,11 @@ class TimePeriodDailyGraph extends Component {
 				minimum: 0,
 				maximum: 4
 				// interlacedColor: '#f2f2f2',
-			},
-			axisY: {
 				// labelFormatter: function() {
 				// 	return ' ';
-				// },
+				// }
+			},
+			axisY: {
 				gridColor: 'transparent',
 				tickColor: 'transparent',
 				suffix: '°',

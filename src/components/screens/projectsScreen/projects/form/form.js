@@ -38,7 +38,7 @@ class Form extends Component {
 		return (
 			<div className="form-project-wrapper">
 				<AddCardForm handleAddCard={this.handleAddCard} />
-				{friendCards}
+				{baseballCards}
 			</div>
 		);
 	}

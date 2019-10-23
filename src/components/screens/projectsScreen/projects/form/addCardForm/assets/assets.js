@@ -99,6 +99,7 @@ import mike7 from './images/people/mike7.jpg';
 import mike8 from './images/people/mike8.jpg';
 import sean from './images/people/sean.jpg';
 import sean2 from './images/people/sean.jpg';
+import steve from './images/people/steve.jpg';
 
 const firstNames = [
 	'Jimmy',
@@ -199,7 +200,8 @@ const Players = [
 	mike7,
 	mike8,
 	sean,
-	sean2
+	sean2,
+	steve
 ];
 
 const TeamAssets = {
