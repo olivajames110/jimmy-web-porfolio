@@ -13,10 +13,8 @@ class ColorContrast extends Component {
 		passFail: 'The Color white passes at a AA rating at a ratio of 21',
 		contrastRatio: null
 	};
-	componentDidMount() {
-		this.handleCheckIfValid();
-	}
 
+	//<----- For testing purposes___handles changing foreground color
 	handleChange = color => {
 		console.log('Hex color = ' + color.hex);
 		this.setState(
@@ -27,7 +25,8 @@ class ColorContrast extends Component {
 					backgroundColor: 'black'
 				}
 			},
-			this.handleCheckIfValid()
+			this.handleAdaColorRatio()
+			// this.handleCheckIfValid()
 		);
 	};
 
@@ -40,84 +39,51 @@ class ColorContrast extends Component {
 					backgroundColor: 'black'
 				}
 			},
-			this.handleCheckIfValid()
+			this.handleAdaColorRatio()
 		);
 	};
 
-	handleChangeBG = color => {
-		console.log('Hex color = ' + color.hex);
-		this.setState(
-			{
-				color: color.hex,
-				colors: {
-					foregroundColor: color.hex,
-					backgroundColor: 'black'
-				}
-			},
-			this.handleCheckIfValid()
-		);
+	// ----->
+
+	handleCheckForegroundColor = () => {
+		//In page builder, the color of the text box
+		return this.state.colors.foregroundColor;
 	};
 
-	handleChangeCompleteBG = color => {
-		this.setState(
-			{
-				color: color.hex,
-				colors: {
-					backgroundColor: color.hex
-					// backgroundColor: 'black'
-				}
-			},
-			this.handleCheckIfValid()
-		);
-	};
-
-	handleCheckBackground = () => {
+	//Targets foreground color ID
+	//Checks parent background color. If no color, keep checking parent color until color found
+	//If color found, return that color,
+	handleCheckBackgroundColor = () => {
 		let foregroundEl = document.getElementById('foreground-color');
 		let currentEl = foregroundEl;
-
+		let bgColor;
 		let checkColor = function() {
 			let parentEl = currentEl.parentElement;
 			currentEl = parentEl;
 			let parentElStyles = window.getComputedStyle(parentEl);
 			let parentbgColor = parentElStyles.backgroundColor;
-			console.log('Parent BG:' + parentbgColor);
 			if (parentbgColor === 'rgba(0, 0, 0, 0)') {
-				console.log('Color is TRANSPARENT, Go ^^^^^: ' + parentElStyles.backgroundColor);
+				console.log('No color found, go to parent: ' + parentElStyles.backgroundColor);
 				checkColor();
 			} else {
-				console.log('Color is ' + parentElStyles.backgroundColor + ' IS NOT transparent, STOP');
+				console.log('BG Color found: ' + parentElStyles.backgroundColor + ' , STOP');
+				bgColor = parentElStyles.backgroundColor.toString();
 			}
 		};
-		checkColor();
+		if (!bgColor) {
+			checkColor();
+		}
+		return bgColor;
 	};
 
-	handleCheckBackgroundBG = () => {
-		let foregroundEl = document.getElementById('background');
-		let currentEl = foregroundEl;
-
-		let checkColor = function() {
-			let parentEl = currentEl.parentElement;
-			currentEl = parentEl;
-			let parentElStyles = window.getComputedStyle(parentEl);
-			let parentbgColor = parentElStyles.backgroundColor;
-			console.log('Parent BG:' + parentbgColor);
-			if (parentbgColor === 'rgba(0, 0, 0, 0)') {
-				console.log('Color is TRANSPARENT, Go ^^^^^: ' + parentElStyles.backgroundColor);
-				checkColor();
-			} else {
-				console.log('Color is ' + parentElStyles.backgroundColor + ' IS NOT transparent, STOP');
-			}
-		};
-		checkColor();
-	};
-
-	handleCheckIfValid = () => {
-		var result = colorable(this.state.colors, {
+	handleCheckIfValid = colors => {
+		let options = {
 			compact: true,
 			threshold: 0
-		});
+		};
+		var result = colorable(colors, options);
 		// console.log(result);
-		let contrastRatio = result[0].combinations[0].contrast;
+		let contrastRatio = Math.round(result[0].combinations[0].contrast * 100) / 100;
 		if (contrastRatio < 4.5) {
 			this.setState({
 				passFail: false,
@@ -129,18 +95,35 @@ class ColorContrast extends Component {
 				contrastRatio: contrastRatio
 			});
 		}
-		this.handleCheckBackground();
 	};
 
-	// handleAdaColorRation = () => {
-	// 	this.handleCheckForegroundColor();
-	// 	this.handleCheckBackgroundColor();
-	// 	this.handleCheckIfValid();
-	// }
+	handleAdaColorRatio = () => {
+		let colors = {
+			foregroundColor: null,
+			backgroundColor: null
+		};
+
+		colors.foregroundColor = this.handleCheckForegroundColor();
+		colors.backgroundColor = this.handleCheckBackgroundColor();
+		this.handleCheckIfValid(colors);
+	};
 
 	render() {
+		const result = (
+			<div className="result">
+				The Color
+				<span style={{ color: this.state.colors.foregroundColor }}>{this.state.colors.foregroundColor}</span>
+				<span
+					class="pass-fail"
+					style={this.state.passFail ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
+				>
+					{this.state.passFail ? ' Passes ' : ' Fails '}
+				</span>
+				at a AA rating at a ratio of{this.state.contrastRatio}
+			</div>
+		);
 		return (
-			<button className="root-menu-container">
+			<div className="root-menu-container">
 				<h1>Color Contast Checker</h1>
 				<SketchPicker
 					color={this.state.color}
@@ -148,56 +131,33 @@ class ColorContrast extends Component {
 					onChangeComplete={this.handleChangeComplete}
 				/>
 
-				<div className="input-container">
-					<div className="empty-container">
-						<div className="foreground-color">
-							<span className="color-title">Foreground Color</span>
-							<input
-								onChange={this.handleColorUpdate}
-								id="foreground-value"
-								placeholder="Enter foreground color"
-								type="text"
-							/>
-							<div
-								id="foreground"
-								style={{ backgroundColor: this.state.color }}
-								className="color-sample"
-							/>
-							<span className="current-color">{this.state.color}</span>
-						</div>
-
-						<div className="background-color">
-							<span className="color-title">Background Color</span>
-							<input id="background-value" placeholder="Enter background color" type="text" />
-							<div
-								id="background"
-								style={{ backgroundColor: this.state.colors.backgroundColor }}
-								className="color-sample"
-							/>
-							<span className="current-color">{this.state.colors.backgroundColor}</span>
-						</div>
-						<div className="result">
-							The Color
-							<span
-								id="foreground-color"
-								className="current-color"
-								style={{ color: this.state.colors.foregroundColor }}
-							>
-								{this.state.colors.foregroundColor}
-							</span>
-							<span
-								class="pass-fail"
-								style={this.state.passFail ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
-							>
-								{this.state.passFail ? ' Passes ' : ' Fails '}
-							</span>
-							at a AA rating at a ratio of{this.state.contrastRatio}
+				<div className="test-area">
+					{result}
+					<div className="first-child">
+						<div className="second-child">
+							<div className="third-child">
+								<div className="fourth-child">
+									<div className="fifth-child">
+										<span
+											id="foreground-color"
+											// className="current-color"
+											style={{ color: this.state.colors.foregroundColor }}
+											className="text-area"
+										>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget
+											gravida mi. Aenean efficitur dignissim nulla, sed venenatis erat gravida
+											nec. Aliquam accumsan quis dui et posuere. Sed viverra ultrices odio
+											facilisis congue. Nam at cursus elit. Fusce ultricies gravida neque. Aenean
+											justo elit, lacinia eget augue vitae, tempor maximus ante. Etiam vehicula
+											justo eu risus posuere, sit amet lacinia quam fringilla.
+										</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div onClick={this.handleCheckIfValid} className="result-container" />
-				<button onClick={this.handleCheckIfValid}>Check</button>
-			</button>
+			</div>
 		);
 	}
 }

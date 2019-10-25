@@ -89,7 +89,7 @@ class Header extends Component {
 					currentPage={this.state.currentPage}
 					handleActiveLink={this.handleCurrentPage}
 					linkTitle="About"
-					url="#"
+					url="/about"
 				/>
 				<NavLink
 					currentPage={this.state.currentPage}

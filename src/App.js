@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header/header';
 import Home from './components/screens/homeScreen/homeScreen';
 import Projects from './components/screens/projectsScreen/projectsScreen';
+import About from './components/screens/aboutScreen/aboutScreen';
 
 class App extends Component {
 	getHeaderHeight = () => {
@@ -25,7 +26,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/home" component={Home} />
-						<Route path="/about" component={Projects} />
+						<Route path="/about" component={About} />
 						<Route path="/portfolio" component={Projects} />
 						<Route path="/projects" component={Projects} />
 						<Route path="/contact" component={Projects} />

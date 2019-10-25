@@ -68,11 +68,17 @@ body {
 	font-family: var(--body);
 	height: 100vh;
 }
+p {
+	font-size: 14px;
+	line-height: 1.6em;
+}
 
 h1 {
 	font-family: var(--h1);
 	font-weight: 400;
 	margin-bottom: 20px;
+	font-size: 2.2em;
+	line-height: 1.5em;
 }
 
 h2 {

@@ -45,4 +45,22 @@
 .result {
   margin: 25px 0;
 }
+
+.test-area {
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.text-area {
+  width: 300px;
+}
+
+.sketch-picker {
+  position: absolute;
+  right: 0;
+}
+
+.first-child {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /*# sourceMappingURL=colorContrast.css.map */

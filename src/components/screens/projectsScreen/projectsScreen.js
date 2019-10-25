@@ -32,6 +32,7 @@ class Projects extends Component {
 		isMobile: null,
 		currentProject: '',
 		currentProjectName: 'Choose a project above!',
+		currentProjectActive: false,
 		deviceType: 'desktop-container',
 		projectNavIsOpen: false,
 		headerHeight: null
@@ -73,7 +74,8 @@ class Projects extends Component {
 
 	handleProjectNav = () => {
 		this.setState({
-			projectNavIsOpen: !this.state.projectNavIsOpen
+			projectNavIsOpen: !this.state.projectNavIsOpen,
+			currentProjectActive: true
 		});
 	};
 
@@ -320,6 +322,7 @@ class Projects extends Component {
 
 		return (
 			<Fragment>
+				{this.state.currentProjectActive ? <Backdrop /> : ''}
 				{this.state.projectNavIsOpen && this.state.isMobile ? <Backdrop /> : ''}
 				<div className="interior-body">
 					<div id="devices" className="wrapper">
@@ -335,7 +338,14 @@ class Projects extends Component {
 								{projectList}
 							</div>
 						</div>
-						<div data-device={this.state.deviceType} className="project-holder">
+						<div
+							data-device={this.state.deviceType}
+							className={
+								!this.state.currentProjectActive
+									? 'project-holder'
+									: 'project-holder project-holder-modal'
+							}
+						>
 							<div id="device-project-container" className={this.state.deviceType}>
 								{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
 							</div>
