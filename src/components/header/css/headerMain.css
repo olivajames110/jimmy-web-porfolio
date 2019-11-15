@@ -1,3 +1,11 @@
+.header-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
 .header-container .darkmode-container-toggle {
   /* controls the slider */
 }
@@ -48,8 +56,6 @@
 }
 
 .app-header {
-  position: fixed;
-  top: 0;
   width: 100%;
   height: initial;
   display: -webkit-box;
@@ -72,7 +78,6 @@
   background-color: var(--whiteToBlack);
   -webkit-box-shadow: 0px 0px 6px 1px #00000047;
   box-shadow: 0px 0px 6px 1px #00000047;
-  border-bottom: 1px solid #dad7d72b;
   -webkit-transition: 500ms;
   transition: 500ms;
   padding: 0 40px;
@@ -152,18 +157,14 @@ button:focus {
   background-color: var(--whiteToBlack-mobile-nav);
 }
 
-@media only screen and (max-width: 600px) {
-  #github-icon {
-    font-size: 48px;
-    margin-top: 15px;
-  }
-}
-
 @media only screen and (max-width: 1100px) {
   .app-header {
     display: block;
     height: 0%;
     padding: 0;
+  }
+  .header-container {
+    z-index: 21;
   }
   .navigation-logo-container {
     display: -webkit-box;
@@ -185,7 +186,7 @@ button:focus {
   .navigation-links-cont {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;

@@ -6,7 +6,9 @@
 	padding: 0;
 }
 
-* {
+*,
+*::after,
+*::before {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
@@ -23,6 +25,7 @@
 html {
 	scroll-behavior: smooth;
 	height: 100%;
+
 	--whiteToBlack: #fcfcfc;
 	--whiteToBlack1: #fcfcfc;
 	--white1ToBlack1: #ebebeb;
@@ -33,6 +36,7 @@ html {
 	--color-text: #333333;
 	--color-text-light: #aeaeae;
 	--color-icon: #046ab4;
+	--color-icon-gradient: #046bb415;
 	--color-icon--opp: #f48328;
 	--color-gray-lite: #aeaeaeb4;
 	--color-darker-gray: #e1e0e0;
@@ -48,9 +52,10 @@ html[data-theme='dark'] {
 	--color-text: #f3f3f3;
 	--whiteToBlack-mobile-nav: #121212;
 	--color-icon: #f48328;
+	--color-icon-gradient: #f484284b;
 	--color-icon--opp: #046ab4;
 	--sideNavButton: linear-gradient(to right, #f5af19, #f11911);
-	--nav-bottom-border: 1px solid rgba(255, 255, 255, 0.2);
+	--nav-bottom-border: 1px solid rgba(255, 255, 255, 0.109);
 	--color-darker-gray: #3b3b3b;
 }
 
@@ -60,8 +65,14 @@ html[data-theme='dark'] {
 	}
 }
 
+html {
+	background-color: #f8f8f8;
+}
+
 div#root {
-	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	height: 100%;
 }
 
 body {
@@ -76,7 +87,7 @@ p {
 h1 {
 	font-family: var(--h1);
 	font-weight: 400;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 	font-size: 2.2em;
 	line-height: 1.5em;
 }
@@ -172,17 +183,17 @@ h3 {
 	position: relative;
 	/* padding-top: 80px; */
 }
-#github-icon {
+/* #github-icon {
 	font-size: 24px;
 	color: #3a3535;
 	cursor: pointer;
 	-webkit-transition: 300ms;
 	transition: 300ms;
-}
-#github-icon:hover {
-	font-size: 24px;
-	color: #f12711;
-}
+} */
+/* #github-icon:hover {
+	font-size: 24px; */
+/* color: #f12711; */
+/* } */
 
 @media only screen and (max-width: 600px) {
 	#github-icon {

@@ -1,0 +1,9 @@
+.footer-container {
+	// height: 100%;
+	background: #046ab4;
+	background: linear-gradient(0deg, var(--color-icon-gradient) 0%, rgba(255, 255, 255, 0) 100%);
+	position: relative;
+	min-height: 200px;
+	transition: 200ms;
+	height: 100%;
+}

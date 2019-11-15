@@ -15,7 +15,8 @@ import {
 	faImage,
 	faComments,
 	faMusic,
-	faPalette
+	faPalette,
+	faCross
 } from '@fortawesome/free-solid-svg-icons';
 import Backdrop from '../../../assets/backdrop/backdrop';
 import Form from './projects/form/form';
@@ -154,6 +155,13 @@ class Projects extends Component {
 		}
 	};
 
+	closeProjectModal = () => {
+		this.setState({
+			currentProject: '',
+			currentProjectActive: false
+		});
+	};
+
 	toggleDarkmode = () => {
 		console.log(this.state.isDarkMode);
 		const html = document.documentElement;
@@ -187,36 +195,38 @@ class Projects extends Component {
 		);
 
 		const deviceSwitcher = (
-			<div className="device-orientation-btns-container">
-				<div
-					onClick={e => this.handleDeviceChange(e)}
-					id="iphone-device-button"
-					value="iphone-container"
-					className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
-				>
-					<FontAwesomeIcon icon={faMobileAlt} />
-				</div>
-				<div
-					onClick={e => this.handleDeviceChange(e)}
-					id="ipad-device-button"
-					value="ipad-container"
-					className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
-						'device',
-						'ipad-container'
-					)}`}
-				>
-					<FontAwesomeIcon icon={faTabletAlt} />
-				</div>
-				<div
-					onClick={e => this.handleDeviceChange(e)}
-					id="desktop-device-button"
-					value="desktop-container"
-					className={`navigation-option desktop-only-icon ${this.handleCheckActive(
-						'device',
-						'desktop-container'
-					)}`}
-				>
-					<FontAwesomeIcon icon={faDesktop} />
+			<div className="modal-close-button__device_switcher">
+				<div className="device-orientation-btns-container">
+					<div
+						onClick={e => this.handleDeviceChange(e)}
+						id="iphone-device-button"
+						value="iphone-container"
+						className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
+					>
+						<FontAwesomeIcon icon={faMobileAlt} />
+					</div>
+					<div
+						onClick={e => this.handleDeviceChange(e)}
+						id="ipad-device-button"
+						value="ipad-container"
+						className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
+							'device',
+							'ipad-container'
+						)}`}
+					>
+						<FontAwesomeIcon icon={faTabletAlt} />
+					</div>
+					<div
+						onClick={e => this.handleDeviceChange(e)}
+						id="desktop-device-button"
+						value="desktop-container"
+						className={`navigation-option desktop-only-icon ${this.handleCheckActive(
+							'device',
+							'desktop-container'
+						)}`}
+					>
+						<FontAwesomeIcon icon={faDesktop} />
+					</div>
 				</div>
 			</div>
 		);
@@ -320,34 +330,49 @@ class Projects extends Component {
 			</div>
 		);
 
+		const currentModalCloseButton = (
+			<div onClick={this.closeProjectModal} className="modal-close-button-container">
+				{deviceSwitcher}
+				<Backdrop />
+				<span className="modal-close-button__button">
+					<FontAwesomeIcon icon={faTimes} />
+				</span>
+			</div>
+		);
 		return (
 			<Fragment>
-				{this.state.currentProjectActive ? <Backdrop /> : ''}
 				{this.state.projectNavIsOpen && this.state.isMobile ? <Backdrop /> : ''}
+				{this.state.currentProjectActive ? currentModalCloseButton : ''}
+				<div
+					data-device={this.state.deviceType}
+					className={
+						!this.state.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'
+					}
+				>
+					<div className="device-project-browser">
+						<div className="three-btn-container">
+							<div className="btn-circle" />
+							<div className="btn-circle" />
+							<div className="btn-circle" />
+						</div>
+						<div className="url-box">url here</div>
+					</div>
+					<div id="device-project-container" className={this.state.deviceType}>
+						{this.handleProjectChange()}
+					</div>
+				</div>
 				<div className="interior-body">
 					<div id="devices" className="wrapper">
 						{this.state.isMobile ? projectNavOpenBtn : ''}
-						<div className="navigation">
+						<div className="project-card-container">
 							<div
 								className={`device-orientation-container ${!this.state.projectNavIsOpen &&
 								this.state.isMobile
 									? 'project-nav--closed'
 									: ''}`}
 							>
-								{this.state.isMobile ? projectNavCloseBtn : deviceSwitcher}
+								{this.state.isMobile ? projectNavCloseBtn : ''}
 								{projectList}
-							</div>
-						</div>
-						<div
-							data-device={this.state.deviceType}
-							className={
-								!this.state.currentProjectActive
-									? 'project-holder'
-									: 'project-holder project-holder-modal'
-							}
-						>
-							<div id="device-project-container" className={this.state.deviceType}>
-								{this.state.currentProject === '' ? emptyPlaceholder : this.handleProjectChange()}
 							</div>
 						</div>
 					</div>

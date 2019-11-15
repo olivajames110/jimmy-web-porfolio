@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './drawingBoard.css';
 import Drawing from './drawing/drawing';
-import { Marker } from '../../../../assets/svgs/svgs';
+import { Marker } from '../../../../../assets/svgs';
 
 class DrawingBoard extends Component {
 	state = {

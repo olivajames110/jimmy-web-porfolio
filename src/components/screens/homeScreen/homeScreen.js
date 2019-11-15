@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './css/homeScreen.css';
+import SocialMedia from '../../../assets/socialMedia/socialMedia';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,6 +26,7 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div className="home-img">
+					<SocialMedia position="relative" width="24" />
 					<div className="content">
 						<svg
 							width="576"

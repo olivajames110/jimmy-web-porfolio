@@ -1,0 +1,48 @@
+*::hover,
+*::after {
+	box-sizing: border-box;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 480px;
+}
+
+.contact-container {
+	padding-top: var(--headerHeight);
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+	position: relative;
+	margin: 0 auto;
+}
+
+.form-input-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-top: 15px;
+	label {
+		margin-bottom: 5px;
+	}
+	input {
+		padding: 10px;
+		width: 100%;
+	}
+}
+
+#contact-form-submit-button {
+	padding: 15px 18px;
+	border-radius: 2px;
+	background-color: var(--color-icon);
+	border: none;
+	margin-top: 15px;
+	color: white;
+	cursor: pointer;
+	&:hover {
+		background-color: var(--color-headings);
+	}
+}

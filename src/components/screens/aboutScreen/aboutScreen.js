@@ -2,15 +2,13 @@ import React, { Component, Fragment } from 'react';
 import './css/aboutScreen.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import languageHistory from './images/languageHistory.png';
 
 const ProgressBar = props => {
 	return (
 		<div className="skill-progress-bar">
-			<img className="skill-image" src={props.skill} height="50" width="50" />
+			<img className="skill-image" src={languageHistory} height="50" width="50" />
 			<span className="skill" />
-			<div className="progress-bar-graph">
-				<div style={{ backgroundColor: props.color, width: props.progress }} className="fill" />
-			</div>
 		</div>
 	);
 };
@@ -21,41 +19,38 @@ class About extends Component {
 	};
 
 	render() {
+		const languageHistoryContainer = (
+			<div className="languageHistory-container">
+				<img className="skill-image" src={languageHistory} />
+			</div>
+		);
 		const skillContainer = (
 			<div className="skill-container">
-				<ProgressBar
-					skill={'https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png'}
-					progress={'80%'}
-					color={'#e34f26'}
-				/>
-				<ProgressBar
-					skill={
-						'https://www.pnglot.com/pngfile/detail/504-5048887_cascading-style-sheets-logo-html-blue-text-png.png'
-					}
-					progress={'40%'}
-					color={'#264de4'}
-				/>
-				<ProgressBar
-					skill={'https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_960_720.png'}
-					progress={'59%'}
-					color={'#f7df1e'}
-				/>
-				<ProgressBar
-					skill={'https://cdn.worldvectorlogo.com/logos/photoshop-cc.svg'}
-					progress={'72%'}
-					color={'#60dafb'}
-				/>
+				<ul>
+					<li>Canvas</li>
+					<li>ADA</li>
+					<li>Mobile First</li>
+					<li>Material Design</li>
+					<li>Hard working</li>
+					<li>Self motivated</li>
+					<li>Extremely detail oriented</li>
+					<li>Good team worker</li>
+				</ul>
 			</div>
 		);
 		const textContainer = (
 			<div className="about-text-content">
-				<h1>Hi, My Name Is Jimmy And I'm A Front-End Developer</h1>
-				<p>
-					I love creating beautiful code, and cater for all kinds of projects. Whether it be an e-commerce
-					solution, events management system; dashboard, or even a small business portfolio I'm your man. If
-					you would like to see some of my work just take a look at my portfolio, or alternatively get in
-					contact for more information.
-				</p>
+				<h2 className="name">JIMMY OLIVA</h2>
+				<div className="position-title">Front-end Developer & UX/UI Designer</div>
+				<p className="text-area">
+					My name is Jimmy Oliva, and I am an aspiring self-tought Front-end Developer and UI/UX Designer. I
+					began my programming and design journey and a restaurant marketing company called Ordereze. While
+					starting at an entry level position, I fell in love with the inner-workings of how our websites
+					worked and functioned. Driven by curiosity and the desire, I then began to slowly teach myself the
+					foundations of web development and design through online resources. Currenltly, I now am a UI/UX
+					designer for Ordereze while simutanously building my Portfolio in my free time.
+				</p>		
+				{skillContainer}
 			</div>
 		);
 
@@ -63,7 +58,8 @@ class About extends Component {
 			<Fragment>
 				<div className="about-container">
 					{textContainer}
-					{skillContainer}
+					{languageHistoryContainer}
+			
 				</div>
 			</Fragment>
 		);

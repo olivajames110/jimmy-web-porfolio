@@ -17,8 +17,8 @@
 
 .home-img {
 	position: relative;
-	width: 100%;
-	height: 100vh;
+	min-width: 100%;
+	min-height: calc(100vh - var(--headerHeight));
 	display: flex;
 	justify-content: center;
 	align-items: center;

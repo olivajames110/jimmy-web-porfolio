@@ -1,0 +1,11 @@
+.footer-container {
+  background: #046ab4;
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--color-icon-gradient)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, var(--color-icon-gradient) 0%, rgba(255, 255, 255, 0) 100%);
+  position: relative;
+  min-height: 200px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  height: 100%;
+}
+/*# sourceMappingURL=footer.css.map */

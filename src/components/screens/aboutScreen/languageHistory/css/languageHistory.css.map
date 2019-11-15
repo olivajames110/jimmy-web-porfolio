@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACN,MAAM,EAAE,SAAS;EACjB,KAAK,EAAE,IAAI;CACX",
+    "sources": [
+        "languageHistory.scss"
+    ],
+    "names": [],
+    "file": "languageHistory.css"
+}
