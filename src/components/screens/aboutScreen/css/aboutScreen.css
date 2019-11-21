@@ -1,4 +1,5 @@
 .about-container {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,14 +12,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
   margin: 0 auto;
   background: white;
   height: 100%;
-  flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .skill-progress-bar {
@@ -37,7 +33,7 @@
   width: '40';
 }
 
-.skill-container {
+.languageHistory-container {
   max-width: 20%;
   height: 100%;
   min-width: 300px;
@@ -52,8 +48,29 @@
           align-items: center;
 }
 
-.skill-container img {
+.languageHistory-container img {
   height: 100%;
+}
+
+.skill-container-row {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.skill-container-row ul {
+  list-style: none;
+  line-height: 1.8em;
+}
+
+.skill-container-column {
+  width: 50%;
 }
 
 .progress-bar-graph {
@@ -73,7 +90,6 @@
 .about-text-content {
   position: relative;
   padding: 1.5em;
-  margin-top: 10%;
 }
 
 .about-text-content .name {
@@ -92,5 +108,11 @@
 .about-text-content .text-area {
   padding-top: 30px;
   max-width: 500px;
+}
+
+@media only screen and (max-width: 900px) {
+  .languageHistory-container {
+    height: 70%;
+  }
 }
 /*# sourceMappingURL=aboutScreen.css.map */

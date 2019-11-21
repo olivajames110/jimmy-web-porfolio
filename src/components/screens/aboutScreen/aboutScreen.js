@@ -25,17 +25,25 @@ class About extends Component {
 			</div>
 		);
 		const skillContainer = (
-			<div className="skill-container">
-				<ul>
-					<li>Canvas</li>
-					<li>ADA</li>
-					<li>Mobile First</li>
-					<li>Material Design</li>
-					<li>Hard working</li>
-					<li>Self motivated</li>
-					<li>Extremely detail oriented</li>
-					<li>Good team worker</li>
-				</ul>
+			<div className="skill-container-row">
+				<div className="skill-container-column">
+					<h3 className="title">Skills</h3>
+					<ul>
+						<li>Canvas</li>
+						<li>ADA Compliancy</li>
+						<li>Mobile First</li>
+						<li>Material Design</li>
+					</ul>
+				</div>
+				<div className="skill-container-column">
+					<h3 className="title">About Me</h3>
+					<ul>
+						<li>Hard working</li>
+						<li>Self motivated</li>
+						<li>Extremely detail oriented</li>
+						<li>Good team worker</li>
+					</ul>
+				</div>
 			</div>
 		);
 		const textContainer = (
@@ -49,7 +57,7 @@ class About extends Component {
 					worked and functioned. Driven by curiosity and the desire, I then began to slowly teach myself the
 					foundations of web development and design through online resources. Currenltly, I now am a UI/UX
 					designer for Ordereze while simutanously building my Portfolio in my free time.
-				</p>		
+				</p>
 				{skillContainer}
 			</div>
 		);
@@ -59,7 +67,6 @@ class About extends Component {
 				<div className="about-container">
 					{textContainer}
 					{languageHistoryContainer}
-			
 				</div>
 			</Fragment>
 		);

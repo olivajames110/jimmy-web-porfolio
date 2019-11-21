@@ -26,6 +26,9 @@ import Project from './project/project';
 import Menu from './projects/menu/menu';
 import Website from './projects/website/website';
 import ColorContrast from './projects/colorContrast/colorContrast';
+// import priceCalcPreview from '../../images/priceCalcPreview.png';
+// import baseballCardPreview from '../../images/images/websitePreview.jpg';
+// import websitePreview from '../../images/websitePreview.jpg';
 import './projectsScreen.css';
 
 class Projects extends Component {
@@ -157,7 +160,7 @@ class Projects extends Component {
 
 	closeProjectModal = () => {
 		this.setState({
-			currentProject: '',
+			// currentProject: '',
 			currentProjectActive: false
 		});
 	};
@@ -181,52 +184,27 @@ class Projects extends Component {
 	};
 
 	render() {
-		const emptyPlaceholder = (
-			<div className="placeholder">
-				<span className="placeholder-icon flex-center-vert-hor">
-					<FontAwesomeIcon icon={faFrown} />
-				</span>
-				<span className="placeholder-text">No project selected </span>
-				<span className="placeholder-text-desc">
-					Here's a few small projects I've been working on recently. None of them are fully complete, consider
-					this more of a playground where I can work on various projects.
-				</span>
-			</div>
-		);
-
 		const deviceSwitcher = (
-			<div className="modal-close-button__device_switcher">
-				<div className="device-orientation-btns-container">
-					<div
-						onClick={e => this.handleDeviceChange(e)}
-						id="iphone-device-button"
-						value="iphone-container"
-						className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
-					>
-						<FontAwesomeIcon icon={faMobileAlt} />
-					</div>
-					<div
-						onClick={e => this.handleDeviceChange(e)}
-						id="ipad-device-button"
-						value="ipad-container"
-						className={`navigation-option tooltip desktop-only-icon ${this.handleCheckActive(
-							'device',
-							'ipad-container'
-						)}`}
-					>
-						<FontAwesomeIcon icon={faTabletAlt} />
-					</div>
-					<div
-						onClick={e => this.handleDeviceChange(e)}
-						id="desktop-device-button"
-						value="desktop-container"
-						className={`navigation-option desktop-only-icon ${this.handleCheckActive(
-							'device',
-							'desktop-container'
-						)}`}
-					>
-						<FontAwesomeIcon icon={faDesktop} />
-					</div>
+			<div className="device_switcher-container">
+				<div
+					onClick={e => this.handleDeviceChange(e)}
+					id="iphone-device-button"
+					value="iphone-container"
+					className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
+				>
+					<FontAwesomeIcon icon={faMobileAlt} />
+				</div>
+
+				<div
+					onClick={e => this.handleDeviceChange(e)}
+					id="desktop-device-button"
+					value="desktop-container"
+					className={`navigation-option desktop-only-icon ${this.handleCheckActive(
+						'device',
+						'desktop-container'
+					)}`}
+				>
+					<FontAwesomeIcon icon={faDesktop} />
 				</div>
 			</div>
 		);
@@ -242,32 +220,40 @@ class Projects extends Component {
 			</div>
 		);
 
-		const projectNavCloseBtn = (
-			<div onClick={this.handleProjectNav} id="close" className="nav-project-toggle-container">
-				<FontAwesomeIcon icon={faTimes} />
-			</div>
-		);
-
 		const projectList = (
 			<div className="nav-project-holder">
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleFormChange}
+					handleProjectChange={this.handleFormChange}
 					projectName={'Baseball Cards'}
 					icon={faScroll}
 					state={this.state.currentProject}
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleWebsiteChange}
+					handleProjectChange={this.handleWebsiteChange}
 					projectName={'Website'}
 					icon={faDesktop}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handleProjectChange={this.handlePriceCalcChange}
+					projectName={'Price Calculator'}
+					icon={faMoneyBill}
+					state={this.state.currentProject}
+				/>
+				<Project
+					handleCheckActive={this.handleCheckActive}
+					handleProjectChange={this.handleColorContrastChange}
+					projectName={'Color Contrast'}
+					icon={faPalette}
 					state={this.state.currentProject}
 				/>
 
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleWeatherAppChange}
+					handleProjectChange={this.handleWeatherAppChange}
 					projectName={'Weather'}
 					icon={faCloudSunRain}
 					state={this.state.currentProject}
@@ -275,21 +261,7 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handlePriceCalcChange}
-					projectName={'Price Calculator'}
-					icon={faMoneyBill}
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleColorContrastChange}
-					projectName={'Color Contrast'}
-					icon={faPalette}
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleDrawingBoardChange}
+					handleProjectChange={this.handleDrawingBoardChange}
 					projectName={'Photo Gallery'}
 					icon={faImage}
 					state={this.state.currentProject}
@@ -297,7 +269,7 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleDashboardChange}
+					handleProjectChange={this.handleDashboardChange}
 					projectName={'Dashboard'}
 					icon={faChartBar}
 					state={this.state.currentProject}
@@ -305,7 +277,7 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleMenuChange}
+					handleProjectChange={this.handleMenuChange}
 					projectName={'Menu'}
 					icon={faHamburger}
 					state={this.state.currentProject}
@@ -313,7 +285,7 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleGameChange}
+					handleProjectChange={this.handleGameChange}
 					projectName={'Chat WebSocket'}
 					icon={faComments}
 					state={this.state.currentProject}
@@ -321,7 +293,7 @@ class Projects extends Component {
 				/>
 				<Project
 					handleCheckActive={this.handleCheckActive}
-					handlePriceCalcChange={this.handleGameChange}
+					handleProjectChange={this.handleGameChange}
 					projectName={'Music Player'}
 					icon={faMusic}
 					state={this.state.currentProject}
@@ -331,49 +303,50 @@ class Projects extends Component {
 		);
 
 		const currentModalCloseButton = (
-			<div onClick={this.closeProjectModal} className="modal-close-button-container">
+			<div className="modal-close-button-container">
 				{deviceSwitcher}
-				<Backdrop />
-				<span className="modal-close-button__button">
+				<span onClick={this.closeProjectModal} className="modal-close-button__button">
 					<FontAwesomeIcon icon={faTimes} />
 				</span>
 			</div>
 		);
 		return (
 			<Fragment>
-				{this.state.projectNavIsOpen && this.state.isMobile ? <Backdrop /> : ''}
-				{this.state.currentProjectActive ? currentModalCloseButton : ''}
+				{this.state.currentProjectActive ? <Backdrop /> : ''}
+
 				<div
 					data-device={this.state.deviceType}
 					className={
 						!this.state.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'
 					}
 				>
-					<div className="device-project-browser">
+					<div
+						className="device-project-browser-header"
+						style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
+					>
 						<div className="three-btn-container">
-							<div className="btn-circle" />
-							<div className="btn-circle" />
-							<div className="btn-circle" />
+							<div onClick={this.closeProjectModal} className="btn-circle close" />
+							<div className="btn-circle middle" />
+							<div className="btn-circle expand" />
 						</div>
-						<div className="url-box">url here</div>
+						<div className="url-box">{this.state.currentProjectName}</div>
+						{this.state.currentProjectActive ? currentModalCloseButton : ''}
 					</div>
 					<div id="device-project-container" className={this.state.deviceType}>
 						{this.handleProjectChange()}
+					</div>
+					<div
+						className="device-project-browser-footer"
+						style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
+					>
+						<span>Made by Jimmy Oliva</span>
 					</div>
 				</div>
 				<div className="interior-body">
 					<div id="devices" className="wrapper">
 						{this.state.isMobile ? projectNavOpenBtn : ''}
 						<div className="project-card-container">
-							<div
-								className={`device-orientation-container ${!this.state.projectNavIsOpen &&
-								this.state.isMobile
-									? 'project-nav--closed'
-									: ''}`}
-							>
-								{this.state.isMobile ? projectNavCloseBtn : ''}
-								{projectList}
-							</div>
+							<div className="device-orientation-container">{projectList}</div>
 						</div>
 					</div>
 				</div>

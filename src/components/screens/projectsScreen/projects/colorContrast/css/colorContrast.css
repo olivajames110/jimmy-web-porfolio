@@ -31,12 +31,6 @@
   border: 1px solid #c0c0c0;
 }
 
-.input-container {
-  background-color: #0c2238;
-  padding: 40px;
-  color: white;
-}
-
 .pass-fail,
 .current-color {
   margin: 0 10px;

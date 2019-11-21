@@ -3,14 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './project.css';
 import { faEye, faLessThan, faCode } from '@fortawesome/free-solid-svg-icons';
 import priceCalcPreview from '../../../../images/priceCalcPreview.png';
+import baseballCardPreview from '../../../../images/baseballCardPreview.jpg';
+import websitePreview from '../../../../images/websitePreview.jpg';
 
 const Project = props => {
-	let image = <img src={priceCalcPreview} alt="" />;
+	let image = <img src={websitePreview} alt="" />;
 
 	return (
 		<span
 			style={{ opacity: props.comingSoon ? '.5' : '' }}
-			onClick={props.handlePriceCalcChange}
 			className={`project-btn ${props.handleCheckActive('project', props.projectName)}`}
 		>
 			<div className="project-btn__header-container">
@@ -22,7 +23,7 @@ const Project = props => {
 					</div>
 					<div className="project-btn__desc">A simple weather app using Google Maps and Weather API</div>
 					<div className="project-btn__btns">
-						<div className="project-btn-option">
+						<div onClick={props.handleProjectChange} className="project-btn-option">
 							<span className="project-btn-option__title">View</span>
 							<FontAwesomeIcon icon={props.icon} />
 						</div>
