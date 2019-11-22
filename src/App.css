@@ -15,8 +15,8 @@
 
 :root {
 	--body: 'Muli', sans-serif;
-	--h1: 'Open Sans', sans-serif;
-	--h2: 'Lato', sans-serif;
+	--h1: 'Lato', sans-serif;
+	--h2: 'Open Sans', sans-serif;
 	--primaryColor: #192833;
 	--secondaryColor: #476172;
 	--headerHeight: 0px;
@@ -180,20 +180,10 @@ h3 {
 }
 
 .interior-body {
-	position: relative;
-	/* padding-top: 80px; */
+	/* max-width: 1050px; */
+	margin: 0 auto;
+	padding: 0 8%;
 }
-/* #github-icon {
-	font-size: 24px;
-	color: #3a3535;
-	cursor: pointer;
-	-webkit-transition: 300ms;
-	transition: 300ms;
-} */
-/* #github-icon:hover {
-	font-size: 24px; */
-/* color: #f12711; */
-/* } */
 
 @media only screen and (max-width: 600px) {
 	#github-icon {
