@@ -1,5 +1,5 @@
-Hi, Welcome to my portfolio.
+Hi, Welcome to my Portfolio.
 
 Visit my website here https://jimmyoliva.com/
 
-Thanks for visiting
+Thanks for visiting my site
