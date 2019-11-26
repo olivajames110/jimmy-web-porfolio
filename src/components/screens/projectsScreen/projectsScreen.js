@@ -445,11 +445,22 @@ class Projects extends Component {
 				<div className="interior-body">
 					{this.state.isMobile ? projectNavOpenBtn : ''}
 					<div className="website-card-container">
-						<h1 className="project-title">Websites</h1>
+						<div className="project-title-container">
+							<h1 className="title">Websites</h1>
+							<p className="description">
+								A few examples of websites I have built and designed in the past. These websites are
+								property of Ordereze, and were originally built with proprietary website-building
+								software built by Ordereze. Please note that the current live version of any website is
+								not a direct representation of how the site was initially designed.
+							</p>
+						</div>
 						{websiteList}
 					</div>
 					<div className="project-card-container">
-						<h1 className="project-title">Projects</h1>
+						<div className="project-title-container">
+							<h1 className="title">Projects</h1>
+							<p className="description">A few miscellaneous projects I have been working on for fun.</p>
+						</div>
 						{projectList}
 					</div>
 				</div>

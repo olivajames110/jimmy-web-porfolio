@@ -48,6 +48,10 @@
 
 .skill-container-column {
 	width: 50%;
+	.title {
+		text-transform: uppercase;
+		padding-bottom: 10px;
+	}
 }
 
 .progress-bar-graph {

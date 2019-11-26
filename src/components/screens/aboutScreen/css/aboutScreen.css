@@ -73,6 +73,11 @@
   width: 50%;
 }
 
+.skill-container-column .title {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
 .progress-bar-graph {
   position: relative;
   width: 160px;

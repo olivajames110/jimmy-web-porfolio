@@ -38,7 +38,9 @@ const Project = props => {
 						<a href={props.sourceUrl} target="_blank" className="project-btn-option__title">
 							Source
 						</a>
-						<FontAwesomeIcon icon={faCode} />
+						<a href={props.sourceUrl} target="_blank" className="project-btn-option__title">
+							<FontAwesomeIcon icon={faCode} />
+						</a>
 					</div>
 				</div>
 			</div>
@@ -46,21 +48,9 @@ const Project = props => {
 	);
 
 	return (
-		<span className={`project-btn ${props.handleCheckActive('project', props.projectName)}`}>
+		<span style={flexStyles} className={`project-btn ${props.handleCheckActive('project', props.projectName)}`}>
 			{!props.comingSoon ? projectCard : comingSoonCard}
 		</span>
-	);
-};
-
-const ProjectCard = props => {
-	return (
-		<div>
-			<div className="project-btn-icon">
-				<FontAwesomeIcon icon={props.icon} />
-			</div>
-			<div className="project-btn__title">{props.projectName}</div>
-			<div className="project-btn__desc">HTML | CSS | Javascript</div>
-		</div>
 	);
 };
 
