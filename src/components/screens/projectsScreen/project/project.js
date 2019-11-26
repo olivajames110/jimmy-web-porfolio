@@ -24,7 +24,7 @@ const Project = props => {
 	let projectCard = (
 		<div className="project-btn__header-container">
 			<div className="project-btn-image">
-				<img src={props.image} alt="" />
+				<img src={props.image} alt="" className="project-img" />
 			</div>
 			<div className="project-btn-text-container">
 				<div className="project-btn-text">{props.projectName}</div>
