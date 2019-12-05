@@ -4,7 +4,7 @@ import './css/project.css';
 import { faEye, faLessThan, faCode } from '@fortawesome/free-solid-svg-icons';
 // import priceCalcPreview from '../../../../images/priceCalcPreview.png';
 // import baseballCardPreview from '../../../../images/baseballCardPreview.jpg';
-import websitePreview from '../images/websitePreview.jpg';
+import websitePreview from '../../images/websitePreview.jpg';
 
 const Project = props => {
 	let image = <img src={websitePreview} alt="" />;
@@ -30,7 +30,7 @@ const Project = props => {
 				<div className="project-btn-text">{props.projectName}</div>
 				<div className="project-btn__desc">{props.description}</div>
 				<div className="project-btn__btns">
-					<div onClick={props.handleProjectChange} className="project-btn-option">
+					<div onClick={() => props.handleProjectChange(props.component)} className="project-btn-option">
 						<span className="project-btn-option__title">View</span>
 						<FontAwesomeIcon icon={props.icon} />
 					</div>

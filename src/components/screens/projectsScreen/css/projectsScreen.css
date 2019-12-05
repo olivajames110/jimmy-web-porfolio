@@ -9,7 +9,7 @@
           transform: translate(-50%, -50%);
   top: 50% !important;
   left: 50% !important;
-  width: 0%;
+  width: 100%;
   max-width: 1100px;
   height: 92%;
   max-height: 840px;
@@ -208,7 +208,7 @@
 
 .project-title-container {
   padding: 50px 0 40px;
-  color: #444444;
+  color: var(--color-text);
 }
 
 .project-title-container .title {
@@ -219,7 +219,8 @@
 .project-title-container .description {
   padding-top: 5px;
   font-size: 16px;
-  color: rgba(68, 68, 68, 0.85);
+  color: var(--color-text);
+  opacity: .8;
 }
 
 .nav-project-holder {

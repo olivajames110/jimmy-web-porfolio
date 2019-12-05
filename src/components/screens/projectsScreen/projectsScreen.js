@@ -18,14 +18,19 @@ import {
 	faPalette,
 	faCross
 } from '@fortawesome/free-solid-svg-icons';
+import Project from './components/project/project';
 import Backdrop from '../../../assets/backdrop/backdrop';
-import Form from './projects/form/form';
-import PriceCalc from './projects/priceCalc/priceCalc';
-import Weather from './projects/weather/weather';
-import Project from './project/project';
-import Menu from './projects/menu/menu';
-import Website from './projects/website/website';
-import ColorContrast from './projects/colorContrast/colorContrast';
+import Form from './components/projectList/form/form';
+import PriceCalc from './components/projectList/priceCalc/priceCalc';
+import Weather from './components/projectList/weather/weather';
+import Menu from './components/projectList/menu/menu';
+import Website from './components/projectList/website/website';
+import ColorContrast from './components/projectList/colorContrast/colorContrast';
+import ProjectList from './components/projectList/projectList';
+import ProjectNavOpenBtn from './components/projectNavOpenBtn';
+import ProjectModal from './components/projectModal';
+import GrillMarx from './components/websiteList/websiteGrillMarx/websiteGrillMarx';
+import Benvenuto from './components/websiteList/websiteBenvenuto/websiteBenvenuto';
 // import PriceCalcPreview from '../../images/priceCalcPreview.png';
 // import BaseballCardPreview from '../../images/images/websitePreview.jpg';
 // import WebsitePreview from '../../images/websitePreview.jpg';
@@ -34,12 +39,13 @@ import './css/projectsScreen.css';
 class Projects extends Component {
 	state = {
 		isMobile: null,
-		currentProject: '',
+		currentProjectComponent: <PriceCalc />,
 		currentProjectName: 'Choose a project above!',
 		currentProjectActive: false,
 		deviceType: 'desktop-container',
 		projectNavIsOpen: false,
-		headerHeight: null
+		headerHeight: null,
+		projectList: null
 	};
 
 	checkIfMobile = a => {
@@ -83,55 +89,32 @@ class Projects extends Component {
 		});
 	};
 
-	handleFormChange = () => {
-		this.handleProjectNav();
+	handleProjectChange = component => {
+		let projectComponent;
+		switch (component) {
+			case '<Website />':
+				projectComponent = <Website />;
+				break;
+			case '<PriceCalc />':
+				projectComponent = <PriceCalc />;
+				break;
+			case '<Form />':
+				projectComponent = <Form />;
+				break;
+			case '<GrillMarx />':
+				projectComponent = <GrillMarx />;
+				break;
+			case '<Benvenuto />':
+				projectComponent = <Benvenuto />;
+				break;
+			default:
+			// code block
+		}
 		this.setState({
-			currentProject: <Form />,
-			currentProjectName: 'Baseball Cards'
+			currentProjectComponent: projectComponent,
+			currentProjectActive: !this.state.currentProjectActive
 		});
 	};
-
-	handleWeatherAppChange = () => {
-		this.setState({
-			currentProject: <Weather />,
-			currentProjectName: 'Weather'
-		});
-	};
-
-	handlePriceCalcChange = () => {
-		this.handleProjectNav();
-		this.setState({
-			currentProject: <PriceCalc />,
-			currentProjectName: 'Price Calculator'
-		});
-	};
-	handleColorContrastChange = () => {
-		this.handleProjectNav();
-		this.setState({
-			currentProject: <ColorContrast />,
-			currentProjectName: 'Color Contrast'
-		});
-	};
-
-	handleWebsiteChange = () => {
-		this.handleProjectNav();
-		this.setState({
-			currentProject: <Website />,
-			currentProjectName: 'Website'
-		});
-	};
-
-	handleMenuChange = () => {
-		this.handleProjectNav();
-		this.setState({
-			currentProject: <Menu />,
-			currentProjectName: 'Menu'
-		});
-	};
-
-	handleProjectChange() {
-		return <div className="project-screen-cont">{this.state.currentProject}</div>;
-	}
 
 	handleCheckActive = (area, stateName) => {
 		if (area === 'project') {
@@ -160,7 +143,7 @@ class Projects extends Component {
 
 	closeProjectModal = () => {
 		this.setState({
-			// currentProject: '',
+			// currentProjectComponent: '',
 			currentProjectActive: false
 		});
 	};
@@ -184,266 +167,97 @@ class Projects extends Component {
 	};
 
 	render() {
-		const deviceSwitcher = (
-			<div className="device_switcher-container">
-				<div
-					onClick={e => this.handleDeviceChange(e)}
-					id="iphone-device-button"
-					value="iphone-container"
-					className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
-				>
-					<FontAwesomeIcon icon={faMobileAlt} />
-				</div>
+		// const deviceSwitcher = (
+		// 	<div className="device_switcher-container">
+		// 		<div
+		// 			onClick={e => this.handleDeviceChange(e)}
+		// 			id="iphone-device-button"
+		// 			value="iphone-container"
+		// 			className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
+		// 		>
+		// 			<FontAwesomeIcon icon={faMobileAlt} />
+		// 		</div>
 
-				<div
-					onClick={e => this.handleDeviceChange(e)}
-					id="desktop-device-button"
-					value="desktop-container"
-					className={`navigation-option desktop-only-icon ${this.handleCheckActive(
-						'device',
-						'desktop-container'
-					)}`}
-				>
-					<FontAwesomeIcon icon={faDesktop} />
-				</div>
-			</div>
-		);
+		// 		<div
+		// 			onClick={e => this.handleDeviceChange(e)}
+		// 			id="desktop-device-button"
+		// 			value="desktop-container"
+		// 			className={`navigation-option desktop-only-icon ${this.handleCheckActive(
+		// 				'device',
+		// 				'desktop-container'
+		// 			)}`}
+		// 		>
+		// 			<FontAwesomeIcon icon={faDesktop} />
+		// 		</div>
+		// 	</div>
+		// );
 
-		const projectNavOpenBtn = (
-			<div
-				onClick={this.handleProjectNav}
-				id="open"
-				className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
-			>
-				<FontAwesomeIcon icon={faHammer} />
-				<span>Projects</span>
-			</div>
-		);
+		// const currentModalCloseButton = (
+		// 	<div className="modal-close-button-container">
+		// 		{deviceSwitcher}
+		// 		<span onClick={this.closeProjectModal} className="modal-close-button__button">
+		// 			<FontAwesomeIcon icon={faTimes} />
+		// 		</span>
+		// 	</div>
+		// );
 
-		const currentModalCloseButton = (
-			<div className="modal-close-button-container">
-				{deviceSwitcher}
-				<span onClick={this.closeProjectModal} className="modal-close-button__button">
-					<FontAwesomeIcon icon={faTimes} />
-				</span>
-			</div>
-		);
+		// const projectHolder = (
+		// 	<div
+		// 		data-device={this.state.deviceType}
+		// 		className={this.state.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'}
+		// 	>
+		// 		<div
+		// 			className="device-project-browser-header"
+		// 			style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
+		// 		>
+		// 			<div
+		// 				style={{
+		// 					display: this.state.deviceType === 'iphone-container' ? 'none' : 'flex'
+		// 				}}
+		// 				className="three-btn-container"
+		// 			>
+		// 				<div onClick={this.closeProjectModal} className="btn-circle close" />
+		// 				<div className="btn-circle middle" />
+		// 				<div className="btn-circle expand" />
+		// 			</div>
+		// 			<div className="url-box">{this.state.currentProjectName}</div>
+		// 			{this.state.currentProjectActive ? currentModalCloseButton : ''}
+		// 		</div>
+		// 		<div id="device-project-container" className={this.state.deviceType}>
+		// 			{this.handleProjectChange()}
+		// 		</div>
+		// 		<div
+		// 			className="device-project-browser-footer"
+		// 			style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
+		// 		>
+		// 			<span>Made by Jimmy Oliva</span>
+		// 		</div>
+		// 	</div>
+		// );
 
-		const projectHolder = (
-			<div
-				data-device={this.state.deviceType}
-				className={!this.state.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'}
-			>
-				<div
-					className="device-project-browser-header"
-					style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
-				>
-					<div
-						style={{
-							display: this.state.deviceType === 'iphone-container' ? 'none' : 'flex'
-						}}
-						className="three-btn-container"
-					>
-						<div onClick={this.closeProjectModal} className="btn-circle close" />
-						<div className="btn-circle middle" />
-						<div className="btn-circle expand" />
-					</div>
-					<div className="url-box">{this.state.currentProjectName}</div>
-					{this.state.currentProjectActive ? currentModalCloseButton : ''}
-				</div>
-				<div id="device-project-container" className={this.state.deviceType}>
-					{this.handleProjectChange()}
-				</div>
-				<div
-					className="device-project-browser-footer"
-					style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
-				>
-					<span>Made by Jimmy Oliva</span>
-				</div>
-			</div>
-		);
-
-		const projectList = (
-			<div className="nav-project-holder">
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleFormChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606690.jpg'}
-					projectName={'Baseball Cards'}
-					icon={faScroll}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleWebsiteChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606691.jpg'}
-					projectName={'Ordereze Website'}
-					icon={faDesktop}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/website'
-					}
-					description="Homepage website for the restaurant marketing company Ordereze"
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handlePriceCalcChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Price Comparison'}
-					icon={faMoneyBill}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/priceCalc'
-					}
-					description="Chart comparing the cost and savings of different online ordering platforms"
-					state={this.state.currentProject}
-				/>
-
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleColorContrastChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Color Contrast'}
-					icon={faPalette}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="Checks and evaluates the color contrast ratio of foreground and background colors"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleWeatherAppChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Weather'}
-					icon={faCloudSunRain}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A simple weather app using Google Maps and Weather API"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleDrawingBoardChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Photo Gallery'}
-					icon={faImage}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleDashboardChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Dashboard'}
-					icon={faChartBar}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleMenuChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Menu'}
-					icon={faHamburger}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleGameChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Chat WebSocket'}
-					icon={faComments}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleGameChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Music Player'}
-					icon={faMusic}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-					comingSoon={true}
-				/>
-			</div>
-		);
-		const websiteList = (
-			<div className="nav-project-holder">
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleFormChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606690.jpg'}
-					projectName={'Baseball Cards'}
-					icon={faScroll}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/form'
-					}
-					description="A baseball generator that allows you to buid custom baseball cards"
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handleWebsiteChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606691.jpg'}
-					projectName={'Ordereze Website'}
-					icon={faDesktop}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/website'
-					}
-					description="Homepage website for the restaurant marketing company Ordereze"
-					state={this.state.currentProject}
-				/>
-				<Project
-					handleCheckActive={this.handleCheckActive}
-					handleProjectChange={this.handlePriceCalcChange}
-					image={'https://digitalmarketing.blob.core.windows.net/5215/images/items/image606692.png'}
-					projectName={'Price Comparison'}
-					icon={faMoneyBill}
-					sourceUrl={
-						'https://github.com/olivajames110/jimmy-web-porfolio/tree/master/src/components/screens/projectsScreen/projects/priceCalc'
-					}
-					description="Chart comparing the cost and savings of different online ordering platforms"
-					state={this.state.currentProject}
-				/>
-			</div>
-		);
+		// const projectNavOpenBtn = (
+		// 	<div
+		// 		onClick={this.handleProjectNav}
+		// 		id="open"
+		// 		className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
+		// 	>
+		// 		<FontAwesomeIcon icon={faHammer} />
+		// 		<span>Projects</span>
+		// 	</div>
+		// );
 
 		return (
 			<Fragment>
-				{this.state.currentProjectActive ? <Backdrop /> : ''}
-
-				{projectHolder}
 				<div className="interior-body">
-					{this.state.isMobile ? projectNavOpenBtn : ''}
+					{this.state.isMobile ? (
+						<ProjectNavOpenBtn
+							state={this.state.projectNavOpenBtn}
+							handleProjectNav={this.handleProjectNav}
+						/>
+					) : (
+						''
+					)}
+
 					<div className="website-card-container">
 						<div className="project-title-container">
 							<h1 className="title">Websites</h1>
@@ -454,16 +268,39 @@ class Projects extends Component {
 								not a direct representation of how the site was initially designed.
 							</p>
 						</div>
-						{websiteList}
+						<ProjectList
+							handleCheckActive={this.handleCheckActive}
+							handleProjectChange={this.handleProjectChange}
+							state={this.state.currentProjectComponent}
+							type={'website'}
+						/>
 					</div>
 					<div className="project-card-container">
 						<div className="project-title-container">
 							<h1 className="title">Projects</h1>
 							<p className="description">A few miscellaneous projects I have been working on for fun.</p>
 						</div>
-						{projectList}
+						<ProjectList
+							handleCheckActive={this.handleCheckActive}
+							handleProjectChange={this.handleProjectChange}
+							state={this.state.currentProjectComponent}
+						/>
 					</div>
 				</div>
+				{this.state.currentProjectActive ? (
+					<ProjectModal
+						deviceType={this.state.deviceType}
+						currentProjectActive={this.state.currentProjectActive}
+						currentModalCloseButton={this.state.currentModalCloseButton}
+						currentProjectName={this.state.currentProjectName}
+						currentProjectComponent={this.state.currentProjectComponent}
+						handleDeviceChange={this.handleDeviceChange}
+						handleCheckActive={this.handleCheckActive}
+						handleProjectChange={this.handleProjectChange}
+					/>
+				) : (
+					''
+				)}
 			</Fragment>
 		);
 	}

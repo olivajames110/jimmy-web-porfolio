@@ -13,6 +13,11 @@
 	box-sizing: border-box;
 }
 
+*::selection {
+	background-color: var(--color-icon);
+	color: white;
+}
+
 :root {
 	--body: 'Muli', sans-serif;
 	--h1: 'Lato', sans-serif;
@@ -25,7 +30,7 @@
 html {
 	scroll-behavior: smooth;
 	height: 100%;
-
+	--pureWhite: #fff;
 	--whiteToBlack: #fcfcfc;
 	--whiteToBlack1: #fcfcfc;
 	--white1ToBlack1: #ebebeb;
@@ -45,6 +50,7 @@ html {
 }
 
 html[data-theme='dark'] {
+	--pureWhite: rgb(0, 0, 0);
 	--whiteToBlack: #0f0e0e;
 	--whiteToBlack1: #2c2b2b;
 	--white1ToBlack1: #2c2b2b;
@@ -66,7 +72,7 @@ html[data-theme='dark'] {
 }
 
 html {
-	background-color: #f8f8f8;
+	background-color: var(--pureWhite);
 }
 
 div#root {
@@ -183,6 +189,7 @@ h3 {
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 0 6.5%;
+	padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 600px) {

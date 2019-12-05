@@ -1,0 +1,53 @@
+.grillMarx-container .header {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 10;
+}
+
+.grillMarx-container .header img {
+  width: 250px;
+}
+
+.grillMarx-container .header .nav-links-container {
+  color: white;
+  font-size: 15px;
+}
+
+.grillMarx-container .header .nav-links-container .nav-link {
+  padding: 0 10px;
+}
+
+.grillMarx-container .header .nav-sub-link-container {
+  display: none;
+}
+
+.grillMarx-container .section1 .image-bg {
+  position: relative;
+}
+
+.grillMarx-container .section1 .image-bg img {
+  width: 100%;
+}
+
+.grillMarx-container .section1 .content-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  color: white;
+  text-shadow: 0px 0px 12px black;
+}
+/*# sourceMappingURL=websiteGrillMarx.css.map */
