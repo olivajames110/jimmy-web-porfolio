@@ -167,85 +167,6 @@ class Projects extends Component {
 	};
 
 	render() {
-		// const deviceSwitcher = (
-		// 	<div className="device_switcher-container">
-		// 		<div
-		// 			onClick={e => this.handleDeviceChange(e)}
-		// 			id="iphone-device-button"
-		// 			value="iphone-container"
-		// 			className={`navigation-option  ${this.handleCheckActive('device', 'iphone-container')}`}
-		// 		>
-		// 			<FontAwesomeIcon icon={faMobileAlt} />
-		// 		</div>
-
-		// 		<div
-		// 			onClick={e => this.handleDeviceChange(e)}
-		// 			id="desktop-device-button"
-		// 			value="desktop-container"
-		// 			className={`navigation-option desktop-only-icon ${this.handleCheckActive(
-		// 				'device',
-		// 				'desktop-container'
-		// 			)}`}
-		// 		>
-		// 			<FontAwesomeIcon icon={faDesktop} />
-		// 		</div>
-		// 	</div>
-		// );
-
-		// const currentModalCloseButton = (
-		// 	<div className="modal-close-button-container">
-		// 		{deviceSwitcher}
-		// 		<span onClick={this.closeProjectModal} className="modal-close-button__button">
-		// 			<FontAwesomeIcon icon={faTimes} />
-		// 		</span>
-		// 	</div>
-		// );
-
-		// const projectHolder = (
-		// 	<div
-		// 		data-device={this.state.deviceType}
-		// 		className={this.state.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'}
-		// 	>
-		// 		<div
-		// 			className="device-project-browser-header"
-		// 			style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
-		// 		>
-		// 			<div
-		// 				style={{
-		// 					display: this.state.deviceType === 'iphone-container' ? 'none' : 'flex'
-		// 				}}
-		// 				className="three-btn-container"
-		// 			>
-		// 				<div onClick={this.closeProjectModal} className="btn-circle close" />
-		// 				<div className="btn-circle middle" />
-		// 				<div className="btn-circle expand" />
-		// 			</div>
-		// 			<div className="url-box">{this.state.currentProjectName}</div>
-		// 			{this.state.currentProjectActive ? currentModalCloseButton : ''}
-		// 		</div>
-		// 		<div id="device-project-container" className={this.state.deviceType}>
-		// 			{this.handleProjectChange()}
-		// 		</div>
-		// 		<div
-		// 			className="device-project-browser-footer"
-		// 			style={{ width: this.state.deviceType === 'iphone-container' ? '365px' : '100%' }}
-		// 		>
-		// 			<span>Made by Jimmy Oliva</span>
-		// 		</div>
-		// 	</div>
-		// );
-
-		// const projectNavOpenBtn = (
-		// 	<div
-		// 		onClick={this.handleProjectNav}
-		// 		id="open"
-		// 		className={`nav-project-toggle-container ${this.state.projectNavIsOpen ? 'open-nav--closed' : ''}`}
-		// 	>
-		// 		<FontAwesomeIcon icon={faHammer} />
-		// 		<span>Projects</span>
-		// 	</div>
-		// );
-
 		return (
 			<Fragment>
 				<div className="interior-body">
@@ -297,6 +218,7 @@ class Projects extends Component {
 						handleDeviceChange={this.handleDeviceChange}
 						handleCheckActive={this.handleCheckActive}
 						handleProjectChange={this.handleProjectChange}
+						handleCloseModal={this.closeProjectModal}
 					/>
 				) : (
 					''

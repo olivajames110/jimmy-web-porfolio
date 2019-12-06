@@ -3,6 +3,6 @@ import './backdrop.css';
 
 // const Comet = () => <img className="comet" src={comet} alt="svg" />;
 
-const BackDrop = () => < div className = "backdrop" / > ;
+const BackDrop = props => <div onClick={props.clickEvent} className="backdrop" />;
 
 export default BackDrop;

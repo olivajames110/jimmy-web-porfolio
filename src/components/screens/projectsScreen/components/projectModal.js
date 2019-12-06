@@ -12,29 +12,27 @@ import ProjectList from './projectList/projectList';
 import ProjectNavOpenBtn from './projectNavOpenBtn';
 
 const ProjectModal = props => {
-	const currentModalCloseButton = (
-		<div className="modal-close-button-container">
-			<div className="device_switcher-container">
-				<div
-					onClick={e => props.handleDeviceChange(e)}
-					id="iphone-device-button"
-					value="iphone-container"
-					className={`navigation-option  ${props.handleCheckActive('device', 'iphone-container')}`}
-				>
-					<FontAwesomeIcon icon={faMobileAlt} />
-				</div>
+	const DeviceSwitcher = (
+		<div className="device_switcher-container">
+			<div
+				onClick={e => props.handleDeviceChange(e)}
+				id="iphone-device-button"
+				value="iphone-container"
+				className={`navigation-option  ${props.handleCheckActive('device', 'iphone-container')}`}
+			>
+				<FontAwesomeIcon icon={faMobileAlt} />
+			</div>
 
-				<div
-					onClick={e => props.handleDeviceChange(e)}
-					id="desktop-device-button"
-					value="desktop-container"
-					className={`navigation-option desktop-only-icon ${props.handleCheckActive(
-						'device',
-						'desktop-container'
-					)}`}
-				>
-					<FontAwesomeIcon icon={faDesktop} />
-				</div>
+			<div
+				onClick={e => props.handleDeviceChange(e)}
+				id="desktop-device-button"
+				value="desktop-container"
+				className={`navigation-option desktop-only-icon ${props.handleCheckActive(
+					'device',
+					'desktop-container'
+				)}`}
+			>
+				<FontAwesomeIcon icon={faDesktop} />
 			</div>
 			<span onClick={props.handleProjectChange} className="modal-close-button__button">
 				<FontAwesomeIcon icon={faTimes} />
@@ -44,7 +42,7 @@ const ProjectModal = props => {
 
 	return (
 		<div>
-			<Backdrop />
+			<Backdrop clickEvent={props.handleCloseModal} />
 			<div
 				data-device={props.deviceType}
 				className={props.currentProjectActive ? 'project-holder' : 'project-holder project-holder-modal'}
@@ -64,7 +62,7 @@ const ProjectModal = props => {
 						<div className="btn-circle expand" />
 					</div>
 					<div className="url-box">{props.currentProjectName}</div>
-					{props.currentProjectActive ? currentModalCloseButton : ''}
+					{props.currentProjectActive ? DeviceSwitcher : ''}
 				</div>
 				<div id="device-project-container" className={props.deviceType}>
 					<div className="project-screen-cont">{props.currentProjectComponent}</div>

@@ -1,0 +1,15 @@
+.button-wrapper {
+	padding: 14px 18px;
+	display: inline-block;
+	margin: 0 auto;
+	cursor: pointer;
+	border: 1px solid;
+	margin-top: 15px;
+	.button_text {
+		display: inline-block;
+	}
+	.icon {
+		margin-left: 10px;
+		display: inline-block;
+	}
+}
