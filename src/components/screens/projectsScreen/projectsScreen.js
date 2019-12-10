@@ -31,9 +31,6 @@ import ProjectNavOpenBtn from './components/projectNavOpenBtn';
 import ProjectModal from './components/projectModal';
 import GrillMarx from './components/websiteList/websiteGrillMarx/websiteGrillMarx';
 import Benvenuto from './components/websiteList/websiteBenvenuto/websiteBenvenuto';
-// import PriceCalcPreview from '../../images/priceCalcPreview.png';
-// import BaseballCardPreview from '../../images/images/websitePreview.jpg';
-// import WebsitePreview from '../../images/websitePreview.jpg';
 import './css/projectsScreen.css';
 
 class Projects extends Component {
@@ -62,17 +59,16 @@ class Projects extends Component {
 		}
 	};
 
-	getHeaderHeight = () => {
-		this.setState({
-			headerHeight: document.querySelector('.app-header').offsetHeight
-		});
-	};
-
 	componentDidMount() {
 		this.checkIfMobile();
 		this.getHeaderHeight();
 		window.addEventListener('resize', this.checkIfMobile);
 	}
+	getHeaderHeight = () => {
+		this.setState({
+			headerHeight: document.querySelector('.app-header').offsetHeight
+		});
+	};
 
 	componentWillMount() {
 		this.checkIfMobile();
@@ -123,12 +119,12 @@ class Projects extends Component {
 	};
 
 	handleDeviceChange = e => {
-		let deviceEl = document.getElementById('device-project-container');
 		let device = e.currentTarget.getAttribute('value');
+		let deviceEl = document.getElementById('device-project-container');
 		deviceEl.setAttribute('data-theme', device);
 		console.log(deviceEl);
 		if (this.state.isMobile === true) {
-			if (device === 'desktop-container' || device === 'ipad-container') {
+			if (device === 'desktop-container') {
 				document.getElementById('mobile-tooltip').style.display = 'initial';
 				setTimeout(function() {
 					document.getElementById('mobile-tooltip').style.display = 'none';
@@ -142,8 +138,10 @@ class Projects extends Component {
 	};
 
 	closeProjectModal = () => {
+		let deviceEl = document.getElementById('device-project-container');
+		deviceEl.setAttribute('data-theme', 'desktop-container');
 		this.setState({
-			// currentProjectComponent: '',
+			deviceType: 'desktop-container',
 			currentProjectActive: false
 		});
 	};
@@ -170,15 +168,6 @@ class Projects extends Component {
 		return (
 			<Fragment>
 				<div className="interior-body">
-					{this.state.isMobile ? (
-						<ProjectNavOpenBtn
-							state={this.state.projectNavOpenBtn}
-							handleProjectNav={this.handleProjectNav}
-						/>
-					) : (
-						''
-					)}
-
 					<div className="website-card-container">
 						<div className="project-title-container">
 							<h1 className="title">Websites</h1>
@@ -219,6 +208,7 @@ class Projects extends Component {
 						handleCheckActive={this.handleCheckActive}
 						handleProjectChange={this.handleProjectChange}
 						handleCloseModal={this.closeProjectModal}
+						isMobile={this.state.isMobile}
 					/>
 				) : (
 					''

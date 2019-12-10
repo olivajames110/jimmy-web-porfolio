@@ -38,7 +38,6 @@ class Website extends Component {
 		return (
 			<Fragment>
 				<div className="website-project-container">
-					{websiteMobileNavIsOpen ? <Backdrop /> : null}
 					<nav>
 						<div className="nav-wrapper">
 							<img src={websiteMobileNavIsOpen ? ozLogoColor : ozLogoWhite} alt="ordereze" />
@@ -58,7 +57,7 @@ class Website extends Component {
 							</div>
 						</div>
 					</nav>
-					<section id="section1">
+					<section id="section1-oz">
 						<div className="text-content-area">
 							<h1>Online Ordering</h1>
 							<span className="sub-heading">Built Exclusively for the Independent Restaurateur</span>
@@ -77,7 +76,7 @@ class Website extends Component {
 							</svg>
 						</div>
 					</section>
-					<section id="section2">
+					<section id="section2-oz">
 						<div className="text-content-area">
 							<span>
 								Trusted By <span>Sysco</span> For Over 10 Years
@@ -94,7 +93,7 @@ class Website extends Component {
 							/>
 						</div>
 					</section>
-					<section id="section3">
+					<section id="section3-oz">
 						<h2>Over 10+ Years Of Restaurant Marketing Experience</h2>
 						<div className="icon-container-wrapper">
 							<div className="icon-container">
@@ -111,7 +110,7 @@ class Website extends Component {
 							</div>
 						</div>
 					</section>
-					<section id="section4">
+					<section id="section-oz">
 						<img
 							src="https://digitalmarketing.blob.core.windows.net/9553/images/items/image499697.png"
 							alt="computer"
@@ -178,7 +177,7 @@ class Website extends Component {
 							</div>
 						</div>
 					</section>
-					<section id="section5">
+					<section id="section5-oz">
 						<div className="quote">
 							"Since we have begun working with Ordereze, our website is beautiful and reflects who we are
 							as a business. Everything that we needed was all in one place. There was more to offer than
@@ -187,7 +186,7 @@ class Website extends Component {
 						</div>
 						<button>View Success Stories</button>
 					</section>
-					<section id="section6">
+					<section id="section6-oz">
 						<div className="verbiage">
 							<h2>Customizable Solutions For All Business Types</h2>
 							<span>
@@ -222,7 +221,7 @@ class Website extends Component {
 							alt="computer"
 						/>
 					</section>
-					<section id="section7">
+					<section id="section7-oz">
 						<h2>Ready to Grow?</h2>
 						<span>Learn more about how Ordereze can help grow your business!</span>
 						<button>Request a Demo</button>

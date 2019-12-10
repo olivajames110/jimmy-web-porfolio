@@ -26,7 +26,7 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div className="home-img">
-					<SocialMedia position="relative" width="24" />
+				
 					<div className="content">
 						<svg
 							width="576"

@@ -170,7 +170,7 @@ nav {
 	}
 }
 
-#section1 {
+#section1-oz {
 	position: relative;
 	width: 100%;
 	min-height: 88vh;
@@ -212,7 +212,7 @@ nav {
 	}
 }
 
-#section2 {
+#section2-oz {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -237,7 +237,7 @@ nav {
 	}
 }
 
-#section3 {
+#section3-oz {
 	background: url('../images/chefCuttingFood.jpg');
 
 	background-position: center;
@@ -271,8 +271,8 @@ nav {
 	}
 }
 
-#section4,
-#section6 {
+#section4-oz,
+#section6-oz {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	img {
@@ -305,7 +305,7 @@ nav {
 	}
 }
 
-#section5 {
+#section5-oz {
 	background: url('../images/texturedGeometricBackgroundjpg.jpg');
 
 	background-position: center;
@@ -330,7 +330,7 @@ nav {
 	}
 }
 
-#section7 {
+#section7-oz {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -387,7 +387,7 @@ nav {
 			}
 		}
 
-		#section1 {
+		#section1-oz {
 			min-height: 570px;
 			.text-content-area {
 				display: flex;
@@ -405,20 +405,20 @@ nav {
 			}
 		}
 
-		#section3 {
+		#section3-oz {
 			.text {
 				font-size: 13px !important;
 			}
 		}
 
-		#section4 {
+		#section4-oz {
 			grid-template-columns: 1fr;
 			.verbiage {
 				margin-top: 30px;
 			}
 		}
 
-		#section5 {
+		#section5-oz {
 			min-height: 650px;
 			padding-top: 30px;
 			padding-bottom: 30px;
@@ -427,7 +427,7 @@ nav {
 				line-height: 2em;
 			}
 		}
-		#section6 {
+		#section6-oz {
 			grid-template-columns: 1fr;
 			.verbiage {
 				margin-bottom: 30px;
@@ -491,7 +491,7 @@ nav {
 			}
 		}
 
-		#section1 {
+		#section1-oz {
 			min-height: 570px;
 			.text-content-area {
 				display: flex;
@@ -509,20 +509,20 @@ nav {
 			}
 		}
 
-		#section3 {
+		#section3-oz {
 			.text {
 				font-size: 13px !important;
 			}
 		}
 
-		#section4 {
+		#section4-oz {
 			grid-template-columns: 1fr;
 			.verbiage {
 				margin-top: 30px;
 			}
 		}
 
-		#section5 {
+		#section5-oz {
 			min-height: 550px;
 			padding-top: 30px;
 			padding-bottom: 30px;
@@ -531,7 +531,7 @@ nav {
 				line-height: 2em;
 			}
 		}
-		#section6 {
+		#section6-oz {
 			grid-template-columns: 1fr;
 			.verbiage {
 				margin-bottom: 30px;

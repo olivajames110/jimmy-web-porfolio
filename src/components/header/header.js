@@ -90,7 +90,7 @@ class Header extends Component {
 			'mobile-menu--open': mobileNavIsOpen,
 			'mobile-menu--closed': !mobileNavIsOpen
 		});
-
+		// const smLinks = 	<SocialMedia position="relative" width="24" />
 		const Links = () => (
 			<Fragment>
 				<NavLink

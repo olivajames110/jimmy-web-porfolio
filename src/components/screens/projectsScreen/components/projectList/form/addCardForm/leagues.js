@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import assets, { TeamAssets } from './assets/assets';
+import assets, { Teamassets } from './assets/assets';
 
 class Leagues extends Component {
 	state = {
@@ -71,35 +71,35 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="mets"
 					className="team-btn league-is-active "
-					src={TeamAssets.mets.logo}
+					src={Teamassets.mets.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="marlins"
 					className="team-btn"
-					src={TeamAssets.marlins.logo}
+					src={Teamassets.marlins.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="phillies"
 					className="team-btn "
-					src={TeamAssets.phillies.logo}
+					src={Teamassets.phillies.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="nationals"
 					className="team-btn"
-					src={TeamAssets.nationals.logo}
+					src={Teamassets.nationals.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="braves"
 					className="team-btn"
-					src={TeamAssets.braves.logo}
+					src={Teamassets.braves.logo}
 					alt="mets"
 				/>
 			</div>
@@ -110,14 +110,14 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="cubs"
 					className="team-btn"
-					src={TeamAssets.cubs.logo}
+					src={Teamassets.cubs.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="cardinals"
 					className="team-btn"
-					src={TeamAssets.cardinals.logo}
+					src={Teamassets.cardinals.logo}
 					alt="mets"
 				/>
 
@@ -125,21 +125,21 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="brewers"
 					className="team-btn"
-					src={TeamAssets.brewers.logo}
+					src={Teamassets.brewers.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="reds"
 					className="team-btn"
-					src={TeamAssets.reds.logo}
+					src={Teamassets.reds.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="pirates"
 					className="team-btn"
-					src={TeamAssets.pirates.logo}
+					src={Teamassets.pirates.logo}
 					alt="mets"
 				/>
 			</div>
@@ -150,28 +150,28 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="dodgers"
 					className="team-btn"
-					src={TeamAssets.dodgers.logo}
+					src={Teamassets.dodgers.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="diamondbacks"
 					className="team-btn"
-					src={TeamAssets.diamondbacks.logo}
+					src={Teamassets.diamondbacks.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="giants"
 					className="team-btn"
-					src={TeamAssets.giants.logo}
+					src={Teamassets.giants.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="rockies"
 					className="team-btn"
-					src={TeamAssets.rockies.logo}
+					src={Teamassets.rockies.logo}
 					alt="mets"
 				/>
 
@@ -179,7 +179,7 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="padres"
 					className="team-btn"
-					src={TeamAssets.padres.logo}
+					src={Teamassets.padres.logo}
 					alt="mets"
 				/>
 			</div>
@@ -190,35 +190,35 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="indians"
 					className="team-btn"
-					src={TeamAssets.indians.logo}
+					src={Teamassets.indians.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="twins"
 					className="team-btn"
-					src={TeamAssets.twins.logo}
+					src={Teamassets.twins.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="white-sox"
 					className="team-btn"
-					src={TeamAssets['white-sox'].logo}
+					src={Teamassets['white-sox'].logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="royals"
 					className="team-btn"
-					src={TeamAssets.royals.logo}
+					src={Teamassets.royals.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="tigers"
 					className="team-btn"
-					src={TeamAssets.tigers.logo}
+					src={Teamassets.tigers.logo}
 					alt="mets"
 				/>
 			</div>
@@ -229,35 +229,35 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="yankees"
 					className="team-btn"
-					src={TeamAssets.yankees.logo}
+					src={Teamassets.yankees.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="rays"
 					className="team-btn"
-					src={TeamAssets.rays.logo}
+					src={Teamassets.rays.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="red-sox"
 					className="team-btn"
-					src={TeamAssets['red-sox'].logo}
+					src={Teamassets['red-sox'].logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="blue-jays"
 					className="team-btn"
-					src={TeamAssets['blue-jays'].logo}
+					src={Teamassets['blue-jays'].logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="orioles"
 					className="team-btn"
-					src={TeamAssets.orioles.logo}
+					src={Teamassets.orioles.logo}
 					alt="mets"
 				/>
 			</div>
@@ -268,14 +268,14 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="astros"
 					className="team-btn"
-					src={TeamAssets.astros.logo}
+					src={Teamassets.astros.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="athletics"
 					className="team-btn"
-					src={TeamAssets.athletics.logo}
+					src={Teamassets.athletics.logo}
 					alt="mets"
 				/>
 
@@ -283,21 +283,21 @@ class Leagues extends Component {
 					onClick={this.handleMakeTeamBtnActive}
 					id="rangers"
 					className="team-btn"
-					src={TeamAssets.rangers.logo}
+					src={Teamassets.rangers.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="angels"
 					className="team-btn"
-					src={TeamAssets.angels.logo}
+					src={Teamassets.angels.logo}
 					alt="mets"
 				/>
 				<img
 					onClick={this.handleMakeTeamBtnActive}
 					id="mariners"
 					className="team-btn"
-					src={TeamAssets.mariners.logo}
+					src={Teamassets.mariners.logo}
 					alt="mets"
 				/>
 			</div>

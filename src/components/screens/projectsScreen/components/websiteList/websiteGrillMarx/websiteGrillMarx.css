@@ -21,6 +21,8 @@
 .grillMarx-container h3 {
   font-family: 'EB Garamond', serif;
   font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .grillMarx-container .website-body {
@@ -61,7 +63,7 @@
   display: none;
 }
 
-.grillMarx-container .section1 {
+.grillMarx-container #section1 {
   background: url("./images/s1_background.jpg");
   background-position: center;
   background-size: cover;
@@ -69,7 +71,7 @@
   position: relative;
 }
 
-.grillMarx-container .section1:before {
+.grillMarx-container #section1:before {
   content: '';
   width: 100%;
   height: 100%;
@@ -78,7 +80,7 @@
   z-index: 0;
 }
 
-.grillMarx-container .section1 .content-area {
+.grillMarx-container #section1 .content-area {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -90,7 +92,12 @@
   text-shadow: 0px 0px 12px black;
 }
 
-.grillMarx-container .section2 {
+.grillMarx-container #section1 .content-area .text-box-container h1 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grillMarx-container #section2 {
   padding: 80px 8%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,22 +115,22 @@
   text-align: center;
 }
 
-.grillMarx-container .section2 h2 {
+.grillMarx-container #section2 h2 {
   font-size: 36px;
 }
 
-.grillMarx-container .section2 p {
+.grillMarx-container #section2 p {
   margin-top: 15px;
 }
 
-.grillMarx-container .section2 .social-media-container {
+.grillMarx-container #section2 .social-media-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 15px 0;
 }
 
-.grillMarx-container .section2 .social-media-container .social-media-icon {
+.grillMarx-container #section2 .social-media-container .social-media-icon {
   color: white;
   background-color: #bf1e2e;
   display: -webkit-box;
@@ -146,22 +153,24 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 .grillMarx-container .three-image-container img {
   width: 100%;
-  height: inherit;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.grillMarx-container .section4 {
+.grillMarx-container #section4 {
   background-color: #333;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -ms-grid-columns: 3fr 4fr;
+      grid-template-columns: 3fr 4fr;
 }
 
-.grillMarx-container .section4 .content-area {
+.grillMarx-container #section4 .content-area {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -179,21 +188,134 @@
           align-items: center;
 }
 
-.grillMarx-container .section4 .content-area .title {
+.grillMarx-container #section4 .content-area .title {
   margin-bottom: 15px;
   font-size: 36px;
 }
 
-.grillMarx-container .section4 .content-area .day-wrapper {
+.grillMarx-container #section4 .content-area .day-wrapper {
   margin-top: 15px;
 }
 
-.grillMarx-container .section4 .content-area .day-wrapper .day-title {
+.grillMarx-container #section4 .content-area .day-wrapper .day-title {
   font-weight: 400;
   text-transform: uppercase;
 }
 
-.grillMarx-container .section4 .happy-hour-container {
+.grillMarx-container #section4 .happy-hour-container {
   margin-top: 30px;
+}
+
+.grillMarx-container #section5 {
+  background-color: #f0f0f0;
+  color: #111111;
+  -ms-grid-columns: 4fr 3fr;
+      grid-template-columns: 4fr 3fr;
+}
+
+.grillMarx-container #section5 .content-area {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.grillMarx-container #section5 .content-area .title {
+  margin-bottom: 15px;
+  font-size: 36px;
+}
+
+.grillMarx-container #section5 .content-area .day-wrapper {
+  margin-top: 15px;
+}
+
+.grillMarx-container #section5 .content-area .day-wrapper .day-title {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.grillMarx-container #section6 {
+  padding: 8% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  background: #333;
+}
+
+.grillMarx-container #section6 h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.grillMarx-container #section6 .restaurant-location-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grillMarx-container #section6 .restaurant-location-container .location-container {
+  background-color: #fff;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.grillMarx-container #section6 .restaurant-location-container .location-container img {
+  width: 100%;
+}
+
+.grillMarx-container .title--red {
+  color: #bf1e2e;
+}
+
+.grillMarx-container .offset-container {
+  display: -ms-grid;
+  display: grid;
+}
+
+.grillMarx-container .offset-container img {
+  width: 100%;
+}
+
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .header {
+  display: none;
+}
+
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .three-image-container,
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .offset-container,
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .restaurant-location-container {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .content-area {
+  padding: 12% 5%;
+}
+
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .location-container {
+  margin-bottom: 30px;
 }
 /*# sourceMappingURL=websiteGrillMarx.css.map */

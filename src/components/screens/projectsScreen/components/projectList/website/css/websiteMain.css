@@ -206,7 +206,7 @@ nav button:hover {
   color: white !important;
 }
 
-#section1 {
+#section1-oz {
   position: relative;
   width: 100%;
   min-height: 88vh;
@@ -230,7 +230,7 @@ nav button:hover {
   text-align: center;
 }
 
-#section1 .text-content-area {
+#section1-oz .text-content-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,21 +243,21 @@ nav button:hover {
           align-items: center;
 }
 
-#section1 .text-content-area h1 {
+#section1-oz .text-content-area h1 {
   font-size: 68px;
 }
 
-#section1 .text-content-area .sub-heading {
+#section1-oz .text-content-area .sub-heading {
   color: white;
   font-family: var(--h2);
   font-size: 28px;
 }
 
-#section1 .text-content-area button {
+#section1-oz .text-content-area button {
   margin-top: 30px;
 }
 
-#section1 svg {
+#section1-oz svg {
   position: absolute;
   bottom: -1px;
   fill: var(--websiteLightGrayToBlack);
@@ -268,7 +268,7 @@ nav button:hover {
   transition: 1190ms !important;
 }
 
-#section2 {
+#section2-oz {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,26 +286,26 @@ nav button:hover {
   position: relative;
 }
 
-#section2 h2 {
+#section2-oz h2 {
   margin-top: 10px;
 }
 
-#section2 img {
+#section2-oz img {
   width: 100%;
   margin-top: 30px;
 }
 
-#section2 .text-content-area {
+#section2-oz .text-content-area {
   max-width: 900px;
 }
 
-#section2 .text-content-area span {
+#section2-oz .text-content-area span {
   line-height: 1.4;
   color: gray;
   font-size: 18px;
 }
 
-#section3 {
+#section3-oz {
   background: url("../images/chefCuttingFood.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -317,11 +317,11 @@ nav button:hover {
           clip-path: polygon(0 7%, 100% 0%, 100% 93%, 0% 100%);
 }
 
-#section3 h2 {
+#section3-oz h2 {
   color: white !important;
 }
 
-#section3 .icon-container-wrapper {
+#section3-oz .icon-container-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,7 +330,7 @@ nav button:hover {
   margin-top: 45px;
 }
 
-#section3 .icon-container-wrapper .icon-container {
+#section3-oz .icon-container-wrapper .icon-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,32 +346,32 @@ nav button:hover {
           align-items: center;
 }
 
-#section3 .icon-container-wrapper .icon-container svg {
+#section3-oz .icon-container-wrapper .icon-container svg {
   font-size: 36px;
 }
 
-#section3 .icon-container-wrapper .icon-container .text {
+#section3-oz .icon-container-wrapper .icon-container .text {
   margin-top: 15px;
   font-size: 16px;
 }
 
-#section4,
-#section6 {
+#section4-oz,
+#section6-oz {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
 
-#section4 img,
-#section6 img {
+#section4-oz img,
+#section6-oz img {
   width: 100%;
   height: initial;
   background-size: cover;
 }
 
-#section4 .verbiage,
-#section6 .verbiage {
+#section4-oz .verbiage,
+#section6-oz .verbiage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,8 +386,8 @@ nav button:hover {
   margin: 0 auto;
 }
 
-#section4 .verbiage .list-container,
-#section6 .verbiage .list-container {
+#section4-oz .verbiage .list-container,
+#section6-oz .verbiage .list-container {
   margin-top: 30px;
   display: -ms-grid;
   display: grid;
@@ -395,22 +395,22 @@ nav button:hover {
       grid-template-columns: 1fr 1fr;
 }
 
-#section4 .verbiage .list-container .list-item,
-#section6 .verbiage .list-container .list-item {
+#section4-oz .verbiage .list-container .list-item,
+#section6-oz .verbiage .list-container .list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
 
-#section4 .verbiage .list-container .list-item .icon,
-#section6 .verbiage .list-container .list-item .icon {
+#section4-oz .verbiage .list-container .list-item .icon,
+#section6-oz .verbiage .list-container .list-item .icon {
   width: 15px;
   margin-right: 13px;
   text-align: center;
 }
 
-#section5 {
+#section5-oz {
   background: url("../images/texturedGeometricBackgroundjpg.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -436,16 +436,16 @@ nav button:hover {
           clip-path: polygon(0 7%, 100% 0%, 100% 93%, 0% 100%);
 }
 
-#section5 .quote {
+#section5-oz .quote {
   font-size: 24px;
   line-height: 1.5em;
 }
 
-#section5 button {
+#section5-oz button {
   margin-top: 30px;
 }
 
-#section7 {
+#section7-oz {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,7 +460,7 @@ nav button:hover {
   text-align: center;
 }
 
-#section7 button {
+#section7-oz button {
   margin-top: 30px;
 }
 
@@ -518,13 +518,13 @@ nav button:hover {
   display: block !important;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section1,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section1 {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section1-oz,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section1-oz {
   min-height: 570px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section1 .text-content-area,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section1 .text-content-area {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section1-oz .text-content-area,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section1-oz .text-content-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -537,60 +537,60 @@ nav button:hover {
           align-items: center;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section1 .text-content-area h1,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section1 .text-content-area h1 {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section1-oz .text-content-area h1,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section1-oz .text-content-area h1 {
   font-size: 36px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section1 .text-content-area .sub-heading,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section1 .text-content-area .sub-heading {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section1-oz .text-content-area .sub-heading,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section1-oz .text-content-area .sub-heading {
   color: white;
   font-family: var(--h2);
   font-size: 20px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section3 .text,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section3 .text {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section3-oz .text,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section3-oz .text {
   font-size: 13px !important;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section4,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section4 {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section4-oz,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section4-oz {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section4 .verbiage,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section4 .verbiage {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section4-oz .verbiage,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section4-oz .verbiage {
   margin-top: 30px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section5,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section5 {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section5-oz,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section5-oz {
   min-height: 650px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section5 .quote,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section5 .quote {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section5-oz .quote,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section5-oz .quote {
   font-size: 16px;
   line-height: 2em;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section6,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section6 {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section6-oz,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section6-oz {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section6 .verbiage,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section6 .verbiage {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section6-oz .verbiage,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section6-oz .verbiage {
   margin-bottom: 30px;
 }
 
-#device-project-container[data-theme='ipad-container'] .website-project-container #section6 .verbiage .list-container,
-#device-project-container[data-theme='iphone-container'] .website-project-container #section6 .verbiage .list-container {
+#device-project-container[data-theme='ipad-container'] .website-project-container #section6-oz .verbiage .list-container,
+#device-project-container[data-theme='iphone-container'] .website-project-container #section6-oz .verbiage .list-container {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
@@ -653,10 +653,10 @@ nav button:hover {
     font-size: 28px;
     display: block !important;
   }
-  .website-project-container #section1 {
+  .website-project-container #section1-oz {
     min-height: 570px;
   }
-  .website-project-container #section1 .text-content-area {
+  .website-project-container #section1-oz .text-content-area {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -668,41 +668,41 @@ nav button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  .website-project-container #section1 .text-content-area h1 {
+  .website-project-container #section1-oz .text-content-area h1 {
     font-size: 36px;
   }
-  .website-project-container #section1 .text-content-area .sub-heading {
+  .website-project-container #section1-oz .text-content-area .sub-heading {
     color: white;
     font-family: var(--h2);
     font-size: 20px;
   }
-  .website-project-container #section3 .text {
+  .website-project-container #section3-oz .text {
     font-size: 13px !important;
   }
-  .website-project-container #section4 {
+  .website-project-container #section4-oz {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .website-project-container #section4 .verbiage {
+  .website-project-container #section4-oz .verbiage {
     margin-top: 30px;
   }
-  .website-project-container #section5 {
+  .website-project-container #section5-oz {
     min-height: 550px;
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  .website-project-container #section5 .quote {
+  .website-project-container #section5-oz .quote {
     font-size: 16px;
     line-height: 2em;
   }
-  .website-project-container #section6 {
+  .website-project-container #section6-oz {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .website-project-container #section6 .verbiage {
+  .website-project-container #section6-oz .verbiage {
     margin-bottom: 30px;
   }
-  .website-project-container #section6 .verbiage .list-container {
+  .website-project-container #section6-oz .verbiage .list-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }

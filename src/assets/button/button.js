@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSunRain, faMapPin } from '@fortawesome/free-solid-svg-icons';
 
 // backgroundColor , height , width, text , icon
 const Button = props => {
@@ -14,16 +14,16 @@ const Button = props => {
 		borderColor: props.borderColor,
 		borderRadius: props.borderRadius,
 		padding: props.padding,
-		padding: props.padding,
+
 		margin: props.margin
 	};
 	return (
-		<div style={styles} className="button-wrapper">
+		<a style={styles} className="button-wrapper">
 			<div className="button_text">{props.text}</div>
 			<div className="icon">
-				<FontAwesomeIcon icon={faCloudSunRain} />
+				<FontAwesomeIcon icon={faMapPin} />
 			</div>
-		</div>
+		</a>
 	);
 };
 

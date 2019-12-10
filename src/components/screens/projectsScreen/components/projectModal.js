@@ -9,7 +9,6 @@ import Menu from './projectList/menu/menu';
 import Website from './projectList/website/website';
 import ColorContrast from './projectList/colorContrast/colorContrast';
 import ProjectList from './projectList/projectList';
-import ProjectNavOpenBtn from './projectNavOpenBtn';
 
 const ProjectModal = props => {
 	const DeviceSwitcher = (
@@ -34,9 +33,6 @@ const ProjectModal = props => {
 			>
 				<FontAwesomeIcon icon={faDesktop} />
 			</div>
-			<span onClick={props.handleProjectChange} className="modal-close-button__button">
-				<FontAwesomeIcon icon={faTimes} />
-			</span>
 		</div>
 	);
 
@@ -53,7 +49,7 @@ const ProjectModal = props => {
 				>
 					<div
 						style={{
-							display: props.deviceType === 'iphone-container' ? 'none' : 'flex'
+							display: props.deviceType === 'iphone-container' || props.isMobile ? 'none' : 'flex'
 						}}
 						className="three-btn-container"
 					>
@@ -63,8 +59,15 @@ const ProjectModal = props => {
 					</div>
 					<div className="url-box">{props.currentProjectName}</div>
 					{props.currentProjectActive ? DeviceSwitcher : ''}
+					<span onClick={props.handleCloseModal} className="modal-close-button__button">
+						<FontAwesomeIcon icon={faTimes} />
+					</span>
 				</div>
-				<div id="device-project-container" className={props.deviceType}>
+				<div
+					id="device-project-container"
+					className={props.deviceType}
+					data-theme={props.isMobile ? 'iphone-container' : 'desktop-container'}
+				>
 					<div className="project-screen-cont">{props.currentProjectComponent}</div>
 				</div>
 				<div

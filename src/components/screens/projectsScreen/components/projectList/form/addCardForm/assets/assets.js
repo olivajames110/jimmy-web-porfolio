@@ -204,7 +204,7 @@ const Players = [
 	steve
 ];
 
-const TeamAssets = {
+const Teamassets = {
 	mets: {
 		name: 'New York Mets',
 		url: metsCardLogo,
@@ -388,4 +388,4 @@ const TeamAssets = {
 	}
 };
 
-export { TeamAssets, Players, firstNames, lastNames };
+export { Teamassets, Players, firstNames, lastNames };

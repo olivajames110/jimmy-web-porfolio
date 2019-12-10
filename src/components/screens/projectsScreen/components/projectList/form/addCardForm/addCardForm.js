@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TeamAssets, Players, lastNames, firstNames } from './assets/assets';
+import { Teamassets, Players, lastNames, firstNames } from './assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom, faPlus, faImage, faCamera, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Leagues from './leagues';
@@ -10,10 +10,10 @@ class AddCardForm extends Component {
 		firstName: null,
 		lastName: null,
 		position: null,
-		team: TeamAssets.mets.name,
-		teamImg: TeamAssets.mets.url,
+		team: Teamassets.mets.name,
+		teamImg: Teamassets.mets.url,
 		playerImg: null,
-		color: TeamAssets.mets.color,
+		color: Teamassets.mets.color,
 		league: 'nl',
 		division: 'east'
 	};
@@ -65,7 +65,7 @@ class AddCardForm extends Component {
 		if (!team) {
 			return;
 		}
-		const teamName = TeamAssets[team];
+		const teamName = Teamassets[team];
 		this.setState({
 			teamImg: teamName.url,
 			color: teamName.color,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './websiteGrillMarx.css';
 import Button from '../../../../../../assets/button/button';
+import Map from '../../../../../../assets/map/map';
 import websiteGrillMarxImages from './images/images';
 
 export default class GrillMarx extends Component {
@@ -31,7 +32,7 @@ export default class GrillMarx extends Component {
 					</div>
 				</div>
 				<div className="website-body">
-					<div className="section1">
+					<div id="section1">
 						<div className="content-area">
 							<div className="text-box-container">
 								<h1>
@@ -48,7 +49,7 @@ export default class GrillMarx extends Component {
 							/>
 						</div>
 					</div>
-					<div className="section2">
+					<div id="section2">
 						<div className="social-media-container">
 							<span id="facebook" className="social-media-icon">
 								F
@@ -78,7 +79,7 @@ export default class GrillMarx extends Component {
 							border={'none'}
 						/>
 					</div>
-					<div className="section3">
+					<div id="section3">
 						<div className="three-image-container">
 							<div className="image-item">
 								<img src={websiteGrillMarxImages.tunaSteak} alt="" />
@@ -91,10 +92,10 @@ export default class GrillMarx extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="section4">
+					<div id="section4" className="offset-container">
 						<img src={websiteGrillMarxImages.steak} alt="" />
 						<div className="content-area">
-							<div className="featured-weekly-container">
+							<div id="featured-weekly__content-container">
 								<h2 className="title">Featured Weekly</h2>
 								<div className="day-wrapper">
 									<h3 className="day-title">Monday</h3>
@@ -118,6 +119,78 @@ export default class GrillMarx extends Component {
 							</div>
 						</div>
 					</div>
+					<div id="section5" className="offset-container">
+						<div className="content-area">
+							<div id="catering__content-container">
+								<h2 className="title title--red">Grillmarx Catering</h2>
+								<h3 className="day-title">Full Service Catering Available!</h3>
+								<p>
+									Entrée Selections, Sandwiches, Salads, Pasta, Dips, Fruit Platters, Dessert, Drinks
+									and all paper goods are available for delivery within 25 miles of our locations.
+									Further destinations will be accommodated for an increased travel charge. Menus are
+									designed with your needs in mind.
+								</p>
+							</div>
+						</div>
+						<img src={websiteGrillMarxImages.table} alt="" />
+					</div>
+					<div id="section6">
+						<h2>Check Our All Three Of Our Locations!</h2>
+						<div className="restaurant-location-container">
+							<div className="location-container">
+								<img src={websiteGrillMarxImages.location_1} alt="" srcset="" />
+								<Button
+									text={'View Locations'}
+									icon={'faMapPin'}
+									backgroundColor={'#bf1e2e'}
+									borderRadius={'2px'}
+									border={'none'}
+									margin={'15px 0'}
+									color={'white'}
+								/>
+								<div className="address-container">
+									<p>12011 Snowden Farm Pkwy</p>
+									<p>Clarksburg, Maryland 20871</p>
+									<p>301-916-1691</p>
+								</div>
+							</div>
+							<div className="location-container">
+								<img src={websiteGrillMarxImages.location_2} alt="" srcset="" />
+								<Button
+									text={'View Locations'}
+									icon={'faMapPin'}
+									backgroundColor={'#bf1e2e'}
+									borderRadius={'2px'}
+									border={'none'}
+									margin={'15px 0'}
+									color={'white'}
+								/>
+								<div className="address-container">
+									<p>18149 Town Center Drive</p>
+									<p>Olney, Maryland 20832</p>
+									<p>301-570-1111</p>
+								</div>
+							</div>
+							<div className="location-container">
+								<img src={websiteGrillMarxImages.location_1} alt="" srcset="" />
+								<Button
+									text={'View Locations'}
+									icon={'faMapPin'}
+									backgroundColor={'#bf1e2e'}
+									borderRadius={'2px'}
+									border={'none'}
+									margin={'15px 0'}
+									color={'white'}
+								/>
+								<div className="address-container">
+									<p>10175 Little Patuxent Pkwy,</p>
+									<p>Columbia, Maryland 21044</p>
+									<p>301-570-3373</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<Map />
 				</div>
 				<div className="footer" />
 			</div>

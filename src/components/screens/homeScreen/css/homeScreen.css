@@ -51,9 +51,6 @@
 
 .sub-heading {
   margin-top: 10px;
-  opacity: 0;
-  -webkit-animation: fadeIn 1s ease forwards 3.6s;
-          animation: fadeIn 1s ease forwards 3.6s;
   z-index: 1;
 }
 
