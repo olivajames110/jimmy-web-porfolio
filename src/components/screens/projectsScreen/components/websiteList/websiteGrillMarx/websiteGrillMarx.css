@@ -25,10 +25,6 @@
   margin-bottom: 15px;
 }
 
-.grillMarx-container .website-body {
-  height: 100%;
-}
-
 .grillMarx-container .header {
   position: absolute;
   display: -webkit-box;
@@ -67,7 +63,7 @@
   background: url("./images/s1_background.jpg");
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 84vh;
   position: relative;
 }
 
@@ -285,6 +281,100 @@
 
 .grillMarx-container #section6 .restaurant-location-container .location-container img {
   width: 100%;
+}
+
+.grillMarx-container #footer {
+  background-color: #333;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 30px;
+}
+
+.grillMarx-container #footer #social-media-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grillMarx-container #footer .social-media-icon {
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  margin: 0 12px;
+}
+
+.grillMarx-container #footer .nav-links-container {
+  padding-top: 25px;
+}
+
+.grillMarx-container #footer #mailing-list-container .mailing-list__title-container {
+  margin: 15px 0 10px 0;
+  text-align: center;
+}
+
+.grillMarx-container #footer #mailing-list-container input {
+  padding: 11px;
+  width: 220px;
+  border: none;
+  border-radius: 2px;
+}
+
+.grillMarx-container #footer #mailing-list-container input::-webkit-input-placeholder {
+  color: #3e3d3da7;
+}
+
+.grillMarx-container #footer #mailing-list-container input:-ms-input-placeholder {
+  color: #3e3d3da7;
+}
+
+.grillMarx-container #footer #mailing-list-container input::-ms-input-placeholder {
+  color: #3e3d3da7;
+}
+
+.grillMarx-container #footer #mailing-list-container input::placeholder {
+  color: #3e3d3da7;
+}
+
+.grillMarx-container #footer #mailing-list-container button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 2px;
+  background-color: #bf1e2e;
+  color: white;
+  margin-left: 8px;
+}
+
+.grillMarx-container #footer li {
+  display: inline;
+  text-decoration: none;
+  list-style: none;
+  margin: 0 30px;
+  cursor: pointer;
 }
 
 .grillMarx-container .title--red {
