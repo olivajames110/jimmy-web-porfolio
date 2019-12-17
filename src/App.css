@@ -188,7 +188,7 @@ h3 {
 .interior-body {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 6.5%;
+	padding: 4%;
 }
 
 @media only screen and (max-width: 600px) {
