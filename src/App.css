@@ -188,14 +188,15 @@ h3 {
 .interior-body {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 4%;
+	padding: 4.5%;
 }
 
 @media only screen and (max-width: 600px) {
-	#github-icon {
-		font-size: 48px;
-		color: #3a3535;
-		margin-top: 15px;
+	.interior-body {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding-top: 12%;
+		padding-bottom: 12%;
 	}
 }
 
