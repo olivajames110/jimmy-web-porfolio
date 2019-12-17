@@ -31,20 +31,6 @@
           transform: scale(1);
 }
 
-.nav-link--active {
-  position: absolute;
-  height: 4px;
-  border-radius: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 0;
-  background: var(--color-icon);
-  -webkit-transition: 100ms;
-  transition: 100ms;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
 @-webkit-keyframes slideDown {
   from {
     -webkit-transform: translateY(-40px);
@@ -73,37 +59,8 @@
 
 @media only screen and (max-width: 1100px) {
   .app-link {
-    opacity: 0;
-  }
-  .app-link:nth-child(1) {
-    -webkit-animation: slideDown 1000ms ease-in-out forwards;
-    animation: slideDown 1000ms ease-in-out forwards;
-    -webkit-animation-delay: 550ms;
-    animation-delay: 550ms;
-  }
-  .app-link:nth-child(2) {
-    -webkit-animation: slideDown 1000ms ease-in-out forwards;
-    animation: slideDown 1000ms ease-in-out forwards;
-    -webkit-animation-delay: 400ms;
-    animation-delay: 400ms;
-  }
-  .app-link:nth-child(3) {
-    -webkit-animation: slideDown 1000ms ease-in-out forwards;
-    animation: slideDown 1000ms ease-in-out forwards;
-    -webkit-animation-delay: 250ms;
-    animation-delay: 250ms;
-  }
-  .app-link:nth-child(4) {
-    -webkit-animation: slideDown 1000ms ease-in-out forwards;
-    animation: slideDown 1000ms ease-in-out forwards;
-    -webkit-animation-delay: 100ms;
-    animation-delay: 100ms;
-  }
-  .app-link:nth-child(5) {
-    -webkit-animation: slideDown 1000ms ease-in-out forwards;
-    animation: slideDown 1000ms ease-in-out forwards;
-    -webkit-animation-delay: 60ms;
-    animation-delay: 60ms;
+    font-size: 22px;
+    padding: 48px;
   }
 }
 /*# sourceMappingURL=navLink.css.map */

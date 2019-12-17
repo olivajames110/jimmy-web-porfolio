@@ -115,7 +115,6 @@
 	}
 
 	.three-image-container {
-		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 5px;
 
@@ -201,7 +200,6 @@
 		}
 
 		.restaurant-location-container {
-			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			.location-container {
 				background-color: #fff;
@@ -225,8 +223,10 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		padding: 30px;
+
 		#social-media-container {
 			display: flex;
+			margin: 0 auto;
 		}
 		.social-media-icon {
 			border: 1px solid white;
@@ -239,20 +239,24 @@
 			margin: 0 12px;
 		}
 		.nav-links-container {
-			padding-top: 25px;
+			// padding-top: 25px;
 		}
 
 		#mailing-list-container {
+			margin: 10px 0;
 			.mailing-list__title-container {
-				margin: 15px 0 10px 0;
+				margin-bottom: 10px;
+				.icon {
+					margin-right: 0px;
+				}
 				text-align: center;
 				span {
-					margin: 0 4px;
+					margin: 0 10px;
 				}
 			}
 			input {
 				padding: 11px;
-				width: 220px;
+				width: 200px;
 				border: none;
 				border-radius: 2px;
 				&::placeholder {
@@ -269,12 +273,28 @@
 			}
 		}
 
-		li {
-			display: inline;
-			text-decoration: none;
-			list-style: none;
-			margin: 0 30px;
+		.nav-links-container {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			flex-wrap: wrap;
+			// max-width: 900px;
+		}
+
+		span {
+			margin: 10px;
 			cursor: pointer;
+			&:after {
+				content: '';
+				background-color: white;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				border-radius: 50%;
+				right: 0;
+			}
 		}
 	}
 
@@ -284,10 +304,24 @@
 	}
 
 	.offset-container {
-		display: grid;
+		// display: grid;
 		img {
 			width: 100%;
 		}
+	}
+
+	.grid {
+		display: grid;
+	}
+
+	.footer-row {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		margin-bottom: 10px;
+		flex-wrap: wrap;
+		// max-width: 900px;
 	}
 }
 
@@ -300,7 +334,8 @@
 		}
 		.three-image-container,
 		.offset-container,
-		.restaurant-location-container {
+		.restaurant-location-container,
+		#map-container__locations {
 			grid-template-columns: 1fr;
 		}
 		.content-area {
@@ -308,6 +343,9 @@
 		}
 		.location-container {
 			margin-bottom: 30px;
+		}
+		.grid {
+			grid-template-columns: 1fr !important;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './css/headerMain.css';
 import NavLink from './navLink/navLink';
+import SideCart from './sideCart/sideCart';
 import BackDrop from '../../assets/backdrop/backdrop';
 import { HamburgerIcon, Logo, HamburgerIconAnimation } from '../../assets/svgs/svgs';
 import classNames from 'classnames';
@@ -126,7 +127,7 @@ class Header extends Component {
 					<input onClick={this.toggleDarkmode} className="darkmode-btn" type="checkbox" id="switch" />
 					<label htmlFor="switch">Toggle</label>
 				</div>
-				<div style={{ height: mobileNavIsOpen ? '90% ' : '' }} className={appHeaderClasses}>
+				<div style={{ height: mobileNavIsOpen ? ' ' : '' }} className={appHeaderClasses}>
 					<div
 						className={`navigation-logo-container ${mobileNavIsOpen &&
 							'menunav-header-blue'}  mobilenav-btn-color--${mobileNavIsOpen ? 'open' : 'close'}`}
@@ -136,7 +137,14 @@ class Header extends Component {
 						</a>
 						{this.renderNavButton()}
 					</div>
-					<div className={`${mobileNavIsOpen ? ' navigation-links-cont--open' : 'navigation-links-cont '}`}>
+					<div id="side-cart-container" className={`${mobileNavIsOpen ? 'side-cart-container-active' : ''}`}>
+						<SideCart
+							mobileNavIsOpen={this.state.mobileNavIsOpen}
+							currentPage={this.state.currentPage}
+							handleActiveLink={this.handleCurrentPage}
+						/>
+					</div>
+					<div className="navigation-links-cont">
 						<Links />
 					</div>
 				</div>

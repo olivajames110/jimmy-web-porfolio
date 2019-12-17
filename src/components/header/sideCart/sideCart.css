@@ -1,0 +1,22 @@
+.side-cart {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+div#side-cart-container {
+	position: fixed;
+	transform: translateX(-100%);
+	background: white;
+	width: 100%;
+	height: 100%;
+	transition: 800ms;
+	left: 0;
+}
+
+.side-cart-container-active {
+	transform: translateX(0) !important;
+}

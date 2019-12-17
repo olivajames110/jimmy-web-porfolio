@@ -145,8 +145,6 @@
 }
 
 .grillMarx-container .three-image-container {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
@@ -266,8 +264,6 @@
 }
 
 .grillMarx-container #section6 .restaurant-location-container {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
 }
@@ -309,6 +305,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 auto;
 }
 
 .grillMarx-container #footer .social-media-icon {
@@ -328,18 +325,26 @@
   margin: 0 12px;
 }
 
-.grillMarx-container #footer .nav-links-container {
-  padding-top: 25px;
+.grillMarx-container #footer #mailing-list-container {
+  margin: 10px 0;
 }
 
 .grillMarx-container #footer #mailing-list-container .mailing-list__title-container {
-  margin: 15px 0 10px 0;
+  margin-bottom: 10px;
   text-align: center;
+}
+
+.grillMarx-container #footer #mailing-list-container .mailing-list__title-container .icon {
+  margin-right: 0px;
+}
+
+.grillMarx-container #footer #mailing-list-container .mailing-list__title-container span {
+  margin: 0 10px;
 }
 
 .grillMarx-container #footer #mailing-list-container input {
   padding: 11px;
-  width: 220px;
+  width: 200px;
   border: none;
   border-radius: 2px;
 }
@@ -369,25 +374,63 @@
   margin-left: 8px;
 }
 
-.grillMarx-container #footer li {
-  display: inline;
-  text-decoration: none;
-  list-style: none;
-  margin: 0 30px;
+.grillMarx-container #footer .nav-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.grillMarx-container #footer span {
+  margin: 10px;
   cursor: pointer;
+}
+
+.grillMarx-container #footer span:after {
+  content: '';
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  right: 0;
 }
 
 .grillMarx-container .title--red {
   color: #bf1e2e;
 }
 
-.grillMarx-container .offset-container {
+.grillMarx-container .offset-container img {
+  width: 100%;
+}
+
+.grillMarx-container .grid {
   display: -ms-grid;
   display: grid;
 }
 
-.grillMarx-container .offset-container img {
+.grillMarx-container .footer-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #device-project-container[data-theme='iphone-container'] .grillMarx-container .header {
@@ -396,7 +439,8 @@
 
 #device-project-container[data-theme='iphone-container'] .grillMarx-container .three-image-container,
 #device-project-container[data-theme='iphone-container'] .grillMarx-container .offset-container,
-#device-project-container[data-theme='iphone-container'] .grillMarx-container .restaurant-location-container {
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .restaurant-location-container,
+#device-project-container[data-theme='iphone-container'] .grillMarx-container #map-container__locations {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
@@ -407,5 +451,10 @@
 
 #device-project-container[data-theme='iphone-container'] .grillMarx-container .location-container {
   margin-bottom: 30px;
+}
+
+#device-project-container[data-theme='iphone-container'] .grillMarx-container .grid {
+  -ms-grid-columns: 1fr !important;
+      grid-template-columns: 1fr !important;
 }
 /*# sourceMappingURL=websiteGrillMarx.css.map */
