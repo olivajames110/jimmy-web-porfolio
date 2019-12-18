@@ -5,6 +5,16 @@ import Map from '../../../../../../assets/map/map';
 import websiteGrillMarxImages from './images/images';
 
 export default class GrillMarx extends Component {
+	state = {
+		navIsOpen: false
+	};
+
+	handleMobileNav = () => {
+		this.setState({
+			navIsOpen: true
+		});
+	};
+
 	render() {
 		return (
 			<div className="grillMarx-container">
@@ -16,19 +26,28 @@ export default class GrillMarx extends Component {
 							srcset=""
 						/>
 					</div>
-					<div className="nav-links-container">
-						<span className="nav-link">Home</span>
-						<span className="nav-link">About Us</span>
-						<span className="nav-link-wrapper">
-							<span className="nav-link">Locations</span>
-							<div className="nav-sub-link-container">
-								<span className="nav-sub-link">About Us</span>
-								<span className="nav-sub-link">About Us</span>
-							</div>
-						</span>
-						<span className="nav-link">Catering</span>
-						<span className="nav-link">Contact Us</span>
-						<span className="nav-link"> Gift Cards</span>
+					<div className="nav-link-container-wrapper">
+						<div onClick={this.handleMobileNav} className="mobile-nav-btn">
+							<span className="bar" />
+							<span className="bar" />
+							<span className="bar" />
+						</div>
+						<div
+							className={`nav-links-container ${this.state.navIsOpen ? 'mobile-nav-link-position' : ''}`}
+						>
+							<span className="nav-link">Home</span>
+							<span className="nav-link">About Us</span>
+							<span className="nav-link-wrapper">
+								<span className="nav-link">Locations</span>
+								<div className="nav-sub-link-container">
+									<span className="nav-sub-link">About Us</span>
+									<span className="nav-sub-link">About Us</span>
+								</div>
+							</span>
+							<span className="nav-link">Catering</span>
+							<span className="nav-link">Contact Us</span>
+							<span className="nav-link"> Gift Cards</span>
+						</div>
 					</div>
 				</div>
 				<div className="website-body">
@@ -286,6 +305,7 @@ export default class GrillMarx extends Component {
 							<button>Submit</button>
 						</div>
 					</div>
+
 					<div className="nav-links-container">
 						<span>Home </span>
 						<span>About Us </span>

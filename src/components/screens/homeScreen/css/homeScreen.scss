@@ -18,7 +18,7 @@
 .home-img {
 	position: relative;
 	min-width: 100%;
-	min-height: calc(100vh - var(--headerHeight));
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -47,7 +47,8 @@
 
 .sub-heading {
 	margin-top: 10px;
-	// opacity: 0;
+	animation: fadeIn 1.7s ease forwards 1.55s;
+	opacity: 0;
 	// animation: fadeIn 1s ease forwards 3.6s;
 	z-index: 1;
 }
@@ -69,7 +70,7 @@
 	position: relative;
 	overflow: hidden;
 	display: block;
-	animation: fadeIn 1s ease forwards 4s;
+	animation: fadeIn 1s ease forwards 1.8s;
 }
 
 .home-img a svg {
@@ -124,7 +125,7 @@
 }
 
 #home-img-svg {
-	animation: fill 0.5s ease forwards 3.2s;
+	animation: fill 1.5s ease forwards 1.2s;
 	//MY
 	path:nth-child(1) {
 		stroke-dasharray: 273.9136962890625px;
@@ -172,53 +173,53 @@
 	path:nth-child(9) {
 		stroke-dasharray: 112.73152160644531px;
 		stroke-dashoffset: 112.73152160644531px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(10) {
 		stroke-dasharray: 90px;
 		stroke-dashoffset: 90px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(11) {
 		stroke-dasharray: 211px;
 		stroke-dashoffset: 211px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(12) {
 		stroke-dasharray: 211px;
 		stroke-dashoffset: 211px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(13) {
 		stroke-dasharray: 151.55532836914062px;
 		stroke-dashoffset: 151.55532836914062px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	//OLIVA
 	path:nth-child(14) {
 		stroke-dasharray: 175px;
 		stroke-dashoffset: 175px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(15) {
 		stroke-dasharray: 87.2335205078125px;
 		stroke-dashoffset: 87.2335205078125px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(16) {
 		stroke-dasharray: 90.6915054321289px;
 		stroke-dashoffset: 90.6915054321289px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(17) {
 		stroke-dasharray: 120.99569702148438px;
 		stroke-dashoffset: 120.99569702148438px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 	path:nth-child(18) {
 		stroke-dasharray: 145.2341766357422px;
 		stroke-dashoffset: 145.2341766357422px;
-		animation: line-animation 1.5s ease forwards 1.4s;
+		animation: fadeIn 1.2s ease forwards 1.2s;
 	}
 }
 

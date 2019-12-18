@@ -3,8 +3,7 @@ import NavLink from '../navLink/navLink';
 
 const navLinkList = [
 	{ linkTitle: 'About', url: '/about' },
-	{ linkTitle: 'Portfolio', url: '' },
-	{ linkTitle: 'Projects', url: '/projects' },
+	{ linkTitle: 'My Work', url: '/projects' },
 	{ linkTitle: 'Contact', url: '/contact' }
 ];
 export const NavLinkList = props => {

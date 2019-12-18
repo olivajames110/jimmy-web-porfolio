@@ -3,6 +3,13 @@
 	top: 0;
 	z-index: 1;
 	width: 100%;
+	color: #1a1919;
+	background-color: var(--whiteToBlack);
+	-webkit-box-shadow: 0px 0px 6px 1px #00000047;
+	box-shadow: 0px 0px 6px 1px #00000047;
+
+	.header-container-wrapper {
+	}
 	.darkmode-container-toggle {
 		input[type='checkbox'] {
 			height: 0;
@@ -54,6 +61,8 @@
 
 .app-header {
 	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
 	height: initial;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -68,17 +77,14 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	color: #1a1919;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	z-index: 10000;
-	background-color: var(--whiteToBlack);
-	-webkit-box-shadow: 0px 0px 6px 1px #00000047;
-	box-shadow: 0px 0px 6px 1px #00000047;
+
 	// border-bottom: 1px solid #dad7d72b;
 	-webkit-transition: 500ms;
 	transition: 500ms;
-	padding: 0 40px;
+	padding: 0 4.5%;
 }
 
 .navigation-links-cont {

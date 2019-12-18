@@ -14,7 +14,7 @@
           align-items: center;
   margin: 0 auto;
   background: white;
-  height: 100%;
+  height: 100vh;
 }
 
 .skill-progress-bar {
@@ -25,12 +25,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.skill-image {
-  margin: 0 10px;
-  height: '40';
-  width: '40';
 }
 
 .languageHistory-container {
@@ -49,7 +43,9 @@
 }
 
 .languageHistory-container img {
-  height: 100%;
+  margin: 0 10px;
+  height: 90%;
+  width: auto;
 }
 
 .skill-container-row {

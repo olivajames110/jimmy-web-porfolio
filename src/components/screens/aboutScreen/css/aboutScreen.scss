@@ -7,7 +7,7 @@
 	align-items: center;
 	margin: 0 auto;
 	background: white;
-	height: 100%;
+	height: 100vh;
 }
 
 .skill-progress-bar {
@@ -18,9 +18,6 @@
 }
 
 .skill-image {
-	margin: 0 10px;
-	height: '40';
-	width: '40';
 }
 
 .languageHistory-container {
@@ -31,7 +28,9 @@
 	justify-content: center;
 	align-items: center;
 	img {
-		height: 100%;
+		margin: 0 10px;
+		height: 90%;
+		width: auto;
 	}
 }
 

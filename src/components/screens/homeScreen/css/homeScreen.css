@@ -12,7 +12,7 @@
 .home-img {
   position: relative;
   min-width: 100%;
-  min-height: calc(100vh - var(--headerHeight));
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +51,9 @@
 
 .sub-heading {
   margin-top: 10px;
+  -webkit-animation: fadeIn 1.7s ease forwards 1.55s;
+          animation: fadeIn 1.7s ease forwards 1.55s;
+  opacity: 0;
   z-index: 1;
 }
 
@@ -73,8 +76,8 @@
   position: relative;
   overflow: hidden;
   display: block;
-  -webkit-animation: fadeIn 1s ease forwards 4s;
-          animation: fadeIn 1s ease forwards 4s;
+  -webkit-animation: fadeIn 1s ease forwards 1.8s;
+          animation: fadeIn 1s ease forwards 1.8s;
 }
 
 .home-img a svg {
@@ -136,8 +139,8 @@
 }
 
 #home-img-svg {
-  -webkit-animation: fill 0.5s ease forwards 3.2s;
-          animation: fill 0.5s ease forwards 3.2s;
+  -webkit-animation: fill 1.5s ease forwards 1.2s;
+          animation: fill 1.5s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(1) {
@@ -199,71 +202,71 @@
 #home-img-svg path:nth-child(9) {
   stroke-dasharray: 112.73152160644531px;
   stroke-dashoffset: 112.73152160644531px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(10) {
   stroke-dasharray: 90px;
   stroke-dashoffset: 90px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(11) {
   stroke-dasharray: 211px;
   stroke-dashoffset: 211px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(12) {
   stroke-dasharray: 211px;
   stroke-dashoffset: 211px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(13) {
   stroke-dasharray: 151.55532836914062px;
   stroke-dashoffset: 151.55532836914062px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(14) {
   stroke-dasharray: 175px;
   stroke-dashoffset: 175px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(15) {
   stroke-dasharray: 87.2335205078125px;
   stroke-dashoffset: 87.2335205078125px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(16) {
   stroke-dasharray: 90.6915054321289px;
   stroke-dashoffset: 90.6915054321289px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(17) {
   stroke-dasharray: 120.99569702148438px;
   stroke-dashoffset: 120.99569702148438px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 #home-img-svg path:nth-child(18) {
   stroke-dasharray: 145.2341766357422px;
   stroke-dashoffset: 145.2341766357422px;
-  -webkit-animation: line-animation 1.5s ease forwards 1.4s;
-          animation: line-animation 1.5s ease forwards 1.4s;
+  -webkit-animation: fadeIn 1.2s ease forwards 1.2s;
+          animation: fadeIn 1.2s ease forwards 1.2s;
 }
 
 @-webkit-keyframes line-animation {

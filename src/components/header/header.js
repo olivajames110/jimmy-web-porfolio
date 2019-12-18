@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './css/headerMain.css';
 import NavLink from './navLink/navLink';
 import SideCart from './sideCart/sideCart';
+import NavLinkList from './navLinkList/navLinkList';
 import BackDrop from '../../assets/backdrop/backdrop';
 import { HamburgerIcon, Logo, HamburgerIconAnimation } from '../../assets/svgs/svgs';
 import classNames from 'classnames';
@@ -53,20 +54,6 @@ class Header extends Component {
 		this.setState({ mobileNavIsOpen: !this.state.mobileNavIsOpen });
 	};
 
-	renderNavButton = () => {
-		const { mobileNavIsOpen } = this.state;
-		return (
-			<button
-				className={`hamburger-icon mobilenav-btn-color--${mobileNavIsOpen
-					? 'open'
-					: 'close'} mobilenav-btn--${mobileNavIsOpen ? 'open' : 'close'} `}
-				onClick={this.handleMobileNavToggle}
-			>
-				{!mobileNavIsOpen ? <HamburgerIcon /> : <HamburgerIconAnimation />}
-			</button>
-		);
-	};
-
 	toggleDarkmode = () => {
 		console.log(this.state.isDarkMode);
 		const html = document.documentElement;
@@ -87,47 +74,36 @@ class Header extends Component {
 
 	render() {
 		const { mobileNavIsOpen } = this.state;
-		const appHeaderClasses = classNames('app-header', {
-			'mobile-menu--open': mobileNavIsOpen,
-			'mobile-menu--closed': !mobileNavIsOpen
-		});
+		// const appHeaderClasses = classNames('app-header', {
+		// 	'mobile-menu--open': mobileNavIsOpen,
+		// 	'mobile-menu--closed': !mobileNavIsOpen
+		// });
 		// const smLinks = 	<SocialMedia position="relative" width="24" />
-		const Links = () => (
-			<Fragment>
-				<NavLink
-					currentPage={this.state.currentPage}
-					handleActiveLink={this.handleCurrentPage}
-					linkTitle="about"
-					url="/about"
-				/>
-				<NavLink
-					currentPage={this.state.currentPage}
-					handleActiveLink={this.handleCurrentPage}
-					linkTitle="Portfolio"
-					url=""
-				/>
-				<NavLink
-					currentPage={this.state.currentPage}
-					handleActiveLink={this.handleCurrentPage}
-					linkTitle="projects"
-					url="/projects"
-				/>
-				<NavLink
-					currentPage={this.state.currentPage}
-					handleActiveLink={this.handleCurrentPage}
-					linkTitle="contact"
-					url="/contact"
-				/>
-			</Fragment>
+		const DarkModeToggle = () => (
+			<div className="darkmode-container-toggle">
+				<input onClick={this.toggleDarkmode} className="darkmode-btn" type="checkbox" id="switch" />
+				<label htmlFor="switch">Toggle</label>
+			</div>
 		);
 
+		const NavButton = () => {
+			const { mobileNavIsOpen } = this.state;
+			return (
+				<button
+					className={`hamburger-icon mobilenav-btn-color--${mobileNavIsOpen
+						? 'open'
+						: 'close'} mobilenav-btn--${mobileNavIsOpen ? 'open' : 'close'} `}
+					onClick={this.handleMobileNavToggle}
+				>
+					{!mobileNavIsOpen ? <HamburgerIcon /> : <HamburgerIconAnimation />}
+				</button>
+			);
+		};
 		return (
 			<div className="header-container">
-				<div className="darkmode-container-toggle">
-					<input onClick={this.toggleDarkmode} className="darkmode-btn" type="checkbox" id="switch" />
-					<label htmlFor="switch">Toggle</label>
-				</div>
-				<div style={{ height: mobileNavIsOpen ? ' ' : '' }} className={appHeaderClasses}>
+				{DarkModeToggle}
+
+				<div className="app-header">
 					<div
 						className={`navigation-logo-container ${mobileNavIsOpen &&
 							'menunav-header-blue'}  mobilenav-btn-color--${mobileNavIsOpen ? 'open' : 'close'}`}
@@ -135,7 +111,7 @@ class Header extends Component {
 						<a className={`mobilenav-logo--${mobileNavIsOpen ? 'open' : 'close'} `} href="/home">
 							<Logo state={this.state.mobileNavIsOpen} />
 						</a>
-						{this.renderNavButton()}
+						{NavButton()}
 					</div>
 					<div id="side-cart-container" className={`${mobileNavIsOpen ? 'side-cart-container-active' : ''}`}>
 						<SideCart
@@ -145,7 +121,7 @@ class Header extends Component {
 						/>
 					</div>
 					<div className="navigation-links-cont">
-						<Links />
+						<NavLinkList />
 					</div>
 				</div>
 			</div>

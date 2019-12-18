@@ -47,6 +47,20 @@
 		.nav-sub-link-container {
 			display: none;
 		}
+
+		.mobile-nav-btn {
+			display: none;
+			flex-direction: column;
+			height: 15px;
+			width: 20px;
+			justify-content: space-between;
+			span {
+				background: white;
+				height: 2px;
+				border-radius: 30px;
+				width: 100%;
+			}
+		}
 	}
 
 	#section1 {
@@ -323,6 +337,12 @@
 		flex-wrap: wrap;
 		// max-width: 900px;
 	}
+
+	.mobile-nav-link-position {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 // ----------------- device media query -------------------
@@ -330,7 +350,11 @@
 #device-project-container[data-theme='iphone-container'] {
 	.grillMarx-container {
 		.header {
-			display: none;
+			background: black;
+			display: flex;
+			align-items: center;
+			padding: 15px;
+			// flex-direction: column;
 		}
 		.three-image-container,
 		.offset-container,
@@ -346,6 +370,21 @@
 		}
 		.grid {
 			grid-template-columns: 1fr !important;
+		}
+		h1 {
+			font-size: 24px;
+		}
+		.logo-container img {
+			width: 90px;
+		}
+
+		.nav-links-container {
+			display: none;
+			flex-direction: column;
+			align-items: center;
+		}
+		.mobile-nav-btn {
+			display: flex;
 		}
 	}
 }

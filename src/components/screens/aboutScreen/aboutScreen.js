@@ -54,7 +54,7 @@ class About extends Component {
 					My name is Jimmy Oliva, and I am an aspiring self-tought Front-end Developer and UI/UX Designer. I
 					began my programming and design journey and a restaurant marketing company called Ordereze. While
 					starting at an entry level position, I fell in love with the inner-workings of how our websites
-					worked and functioned. Driven by curiosity and the desire, I then began to slowly teach myself the
+					worked and functioned. Driven by curiosity and the desire to learn more, I began to teach myself the
 					foundations of web development and design through online resources. Currenltly, I now am a UI/UX
 					designer for Ordereze while simutanously building my Portfolio in my free time.
 				</p>
@@ -63,12 +63,10 @@ class About extends Component {
 		);
 
 		return (
-			<Fragment>
-				<div className="about-container">
-					{textContainer}
-					{languageHistoryContainer}
-				</div>
-			</Fragment>
+			<div className="about-container">
+				{textContainer}
+				{languageHistoryContainer}
+			</div>
 		);
 	}
 }
