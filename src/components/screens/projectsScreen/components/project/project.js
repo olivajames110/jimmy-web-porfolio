@@ -27,8 +27,8 @@ const Project = props => {
 				<img src={props.image} alt="" className="project-img" />
 			</div>
 			<div className="project-btn-text-container">
-				<div className="project-btn-text">{props.projectName}</div>
-				<div className="project-btn__desc">{props.description}</div>
+				<h3 className="project-btn-text">{props.projectName}</h3>
+				<p className="project-btn__desc">{props.description}</p>
 				<div className="project-btn__btns">
 					<div onClick={() => props.handleProjectChange(props.component)} className="project-btn-option">
 						<span id="view" className="project-btn-option__title">

@@ -38,9 +38,10 @@
 
 .languageHistory-container img {
   margin: 0 10px;
-  height: 100%;
+  height: 90%;
   margin-top: -30px;
   width: auto;
+  margin-left: -45px;
 }
 
 .skill-container-row {
@@ -69,7 +70,6 @@
 }
 
 .skill-container-column .title {
-  text-transform: uppercase;
   padding-bottom: 10px;
 }
 

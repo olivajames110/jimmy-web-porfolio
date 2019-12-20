@@ -70,12 +70,7 @@ const ProjectModal = props => {
 				>
 					<div className="project-screen-cont">{props.currentProjectComponent}</div>
 				</div>
-				<div
-					className="device-project-browser-footer"
-					style={{ width: props.deviceType === 'iphone-container' ? '365px' : '100%' }}
-				>
-					<span>Made by Jimmy Oliva</span>
-				</div>
+
 			</div>
 		</div>
 	);

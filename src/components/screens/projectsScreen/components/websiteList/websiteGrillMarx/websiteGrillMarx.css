@@ -418,19 +418,6 @@
   cursor: pointer;
 }
 
-.grillMarx-container #footer span:after {
-  content: '';
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border-radius: 50%;
-  right: 0;
-}
-
 .grillMarx-container .title--red {
   color: #bf1e2e;
 }

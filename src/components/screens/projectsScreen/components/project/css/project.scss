@@ -46,7 +46,7 @@
 }
 
 .project-btn-text-container {
-	padding: 20px;
+	padding: 10px 20px;
 	display: flex;
 	// align-items: center;
 	flex-direction: column;
@@ -82,6 +82,10 @@
 			//test
 			text-decoration: none;
 			color: inherit;
+		}
+
+		svg {
+			font-size: 12px;
 		}
 		&:hover {
 			color: var(--color-icon);

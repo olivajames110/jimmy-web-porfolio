@@ -123,28 +123,6 @@
   display: none;
 }
 
-.device-project-browser-footer {
-  -webkit-transition: 1190ms;
-  transition: 1190ms;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(#d1d1d1), to(#f1f1f1));
-  background: linear-gradient(0, #d1d1d1, #f1f1f1);
-  border-top: 1px solid #c2c2c2;
-  font-size: 14px;
-  /* position: absolute; */
-  bottom: -1px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 3px 0;
-}
-
 #open.nav-project-toggle-container {
   position: fixed;
   bottom: 75px;

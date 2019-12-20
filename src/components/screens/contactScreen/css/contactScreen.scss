@@ -8,14 +8,15 @@
 	flex-direction: column;
 	width: 100%;
 	max-width: 480px;
+	margin: 0 auto;
 }
 
 .contact-container {
 	// padding-top: var(--headerHeight);
 	// width: 70%;
-	// display: flex;
+	display: flex;
 	// flex-wrap: wrap;
-	// justify-content: space-between;
+	justify-content: space-between;
 	// position: relative;
 	// margin: 0 auto;
 }
@@ -34,7 +35,7 @@
 }
 
 .about-text-content {
-	max-width: 800px;
+	max-width: 600px;
 }
 
 #contact-form-submit-button {

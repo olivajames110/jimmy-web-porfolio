@@ -50,7 +50,7 @@
 }
 
 .project-btn-text-container {
-  padding: 20px;
+  padding: 10px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,6 +101,10 @@
 .project-btn-text-container .project-btn-option a {
   text-decoration: none;
   color: inherit;
+}
+
+.project-btn-text-container .project-btn-option svg {
+  font-size: 12px;
 }
 
 .project-btn-text-container .project-btn-option:hover {

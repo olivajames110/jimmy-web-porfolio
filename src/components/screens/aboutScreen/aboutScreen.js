@@ -51,12 +51,12 @@ class About extends Component {
 				<h2 className="name">JIMMY OLIVA</h2>
 				<div className="position-title">Front-end Developer & UX/UI Designer</div>
 				<p className="text-area">
-					My name is Jimmy Oliva, and I am an aspiring self-tought Front-end Developer and UI/UX Designer. I
-					began my programming and design journey and a restaurant marketing company called Ordereze. While
-					starting at an entry level position, I fell in love with the inner-workings of how our websites
-					worked and functioned. Driven by curiosity and the desire to learn more, I began to teach myself the
-					foundations of web development and design through online resources. Currenltly, I now am a UI/UX
-					designer for Ordereze while simutanously building my Portfolio in my free time.
+					My name is Jimmy Oliva, and I am a self-tought Front-end Developer and UI/UX Designer. I began my
+					journey of programming and design at a restaurant marketing company called Ordereze. While starting
+					at an entry level position, I fell in love with the inner-workings of how our websites worked and
+					functioned. Driven by curiosity and the desire to learn more, I began to teach myself the
+					foundations of web development and design through online resources. Currently, I now am a UI/UX and
+					Website Designer for Ordereze while simutanously building my Portfolio in my free time.
 				</p>
 				{skillContainer}
 			</div>

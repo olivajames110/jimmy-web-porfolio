@@ -96,10 +96,10 @@ class Contact extends Component {
 			<div className="about-text-content">
 				<h1>Contact Me</h1>
 				<p>
-					I love creating beautiful code, and cater for all kinds of projects. Whether it be an e-commerce
-					solution, events management system; dashboard, or even a small business portfolio I'm your man. If
-					you would like to see some of my work just take a look at my portfolio, or alternatively get in
-					contact for more information.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat elit id lorem laoreet
+					finibus. Morbi nec neque rutrum, imperdiet enim nec, feugiat ex. Sed tempus aliquam finibus. Nam at
+					fermentum nibh, sagittis efficitur leo. Nulla quis dolor justo. Fusce gravida augue vitae cursus
+					aliquet. Nullam ultrices lobortis purus a scelerisque
 				</p>
 			</div>
 		);
