@@ -6,12 +6,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0 auto;
   background: white;
   height: 100vh;
@@ -37,14 +34,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .languageHistory-container img {
   margin: 0 10px;
-  height: 90%;
+  height: 100%;
+  margin-top: -30px;
   width: auto;
 }
 
@@ -66,7 +61,11 @@
 }
 
 .skill-container-column {
-  width: 50%;
+  width: 45%;
+  background-color: #ececec;
+  padding: 20px;
+  -webkit-box-shadow: 0px 1px 1px 2px #00000014;
+          box-shadow: 0px 1px 1px 2px #00000014;
 }
 
 .skill-container-column .title {
@@ -90,13 +89,12 @@
 
 .about-text-content {
   position: relative;
-  padding: 1.5em;
 }
 
 .about-text-content .name {
   letter-spacing: 6px;
   word-spacing: 3px;
-  font-size: 2.9em;
+  font-size: 2.5em;
 }
 
 .about-text-content .position-title {
@@ -108,12 +106,15 @@
 
 .about-text-content .text-area {
   padding-top: 30px;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 @media only screen and (max-width: 900px) {
   .languageHistory-container {
     height: 70%;
+  }
+  .languageHistory-container img {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=aboutScreen.css.map */

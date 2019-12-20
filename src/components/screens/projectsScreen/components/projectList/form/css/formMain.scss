@@ -53,10 +53,6 @@ html[data-theme='dark'] {
 	--websiteblacktowhite: white;
 }
 
-p {
-	font-size: 14px;
-}
-
 .grid-1fr-1fr {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -87,7 +83,7 @@ p {
 			grid-gap: 15px;
 
 			p {
-				color: #818181;
+				color: #333;
 			}
 
 			h1 {

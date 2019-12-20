@@ -1,5 +1,6 @@
 .website-card-container {
   padding-bottom: 60px;
+  margin-bottom: 40px;
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -207,20 +208,18 @@
 }
 
 .project-title-container {
-  padding: 50px 0 40px;
+  padding-bottom: 40px;
   color: var(--color-text);
 }
 
 .project-title-container .title {
-  font-size: 24px;
-  text-transform: uppercase;
+  font-size: 28px;
 }
 
 .project-title-container .description {
   padding-top: 5px;
   font-size: 16px;
   color: var(--color-text);
-  opacity: .8;
 }
 
 .nav-project-holder {

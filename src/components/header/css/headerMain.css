@@ -1,5 +1,6 @@
 .header-container {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   z-index: 1;
   width: 100%;
@@ -156,6 +157,12 @@ button:focus {
 
 .navigation-logo-container.menunav-header-blue {
   background-color: var(--whiteToBlack-mobile-nav);
+}
+
+@media only screen and (max-width: 600px) {
+  .header-container {
+    position: fixed;
+  }
 }
 
 @media only screen and (max-width: 1100px) {

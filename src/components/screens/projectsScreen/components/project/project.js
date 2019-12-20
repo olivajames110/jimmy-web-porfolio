@@ -31,11 +31,13 @@ const Project = props => {
 				<div className="project-btn__desc">{props.description}</div>
 				<div className="project-btn__btns">
 					<div onClick={() => props.handleProjectChange(props.component)} className="project-btn-option">
-						<span className="project-btn-option__title">View</span>
-						<FontAwesomeIcon icon={props.icon} />
+						<span id="view" className="project-btn-option__title">
+							View
+						</span>
+						<FontAwesomeIcon icon={faEye} />
 					</div>
 					<div className="project-btn-option">
-						<a href={props.sourceUrl} target="_blank" className="project-btn-option__title">
+						<a href={props.sourceUrl} target="_blank" id="source" className="project-btn-option__title">
 							Source
 						</a>
 						<a href={props.sourceUrl} target="_blank" className="project-btn-option__title">

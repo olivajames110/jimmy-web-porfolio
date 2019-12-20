@@ -1,5 +1,5 @@
 .header-container {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	z-index: 1;
 	width: 100%;
@@ -161,10 +161,9 @@ button:focus {
 }
 
 @media only screen and (max-width: 600px) {
-	// #github-icon {
-	// 	font-size: 48px;
-	// 	margin-top: 15px;
-	// }
+	.header-container {
+		position: fixed;
+	}
 }
 
 @media only screen and (max-width: 1100px) {
@@ -176,7 +175,7 @@ button:focus {
 
 	.header-container {
 		z-index: 21;
-
+		// position: fixed;
 		// height: 100%;
 	}
 

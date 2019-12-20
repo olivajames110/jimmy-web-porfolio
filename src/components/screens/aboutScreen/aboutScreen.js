@@ -63,7 +63,7 @@ class About extends Component {
 		);
 
 		return (
-			<div className="about-container">
+			<div className="interior-body about-container">
 				{textContainer}
 				{languageHistoryContainer}
 			</div>

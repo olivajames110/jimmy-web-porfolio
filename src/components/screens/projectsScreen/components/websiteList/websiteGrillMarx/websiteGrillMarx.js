@@ -11,7 +11,7 @@ export default class GrillMarx extends Component {
 
 	handleMobileNav = () => {
 		this.setState({
-			navIsOpen: true
+			navIsOpen: !this.state.navIsOpen
 		});
 	};
 
@@ -306,14 +306,7 @@ export default class GrillMarx extends Component {
 						</div>
 					</div>
 
-					<div className="nav-links-container">
-						<span>Home </span>
-						<span>About Us </span>
-						<span>Catering</span>
-						<span>Contact Us</span>
-						<span>Gift Cards </span>
-						<span>Login</span>
-					</div>
+
 				</div>
 			</div>
 		);

@@ -106,7 +106,7 @@ class Contact extends Component {
 
 		return (
 			<Fragment>
-				<div className="contact-container">
+				<div className="interior-body contact-container">
 					{textContainer}
 					{skillContainer}
 				</div>

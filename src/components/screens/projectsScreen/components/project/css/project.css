@@ -62,17 +62,18 @@
 
 .project-btn-text-container .project-btn-text {
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: left;
-  text-transform: uppercase;
+  font-weight: bold;
   position: relative;
 }
 
 .project-btn-text-container .project-btn__desc {
   text-align: left;
-  margin: 10px 0;
+  margin: 5px 0 15px 0;
   line-height: 1.4em;
-  color: #808080;
+  color: #232323;
+  font-weight: normal;
 }
 
 .project-btn-text-container .project-btn__btns {
@@ -86,7 +87,7 @@
 }
 
 .project-btn-text-container .project-btn-option {
-  margin-top: 10px;
+  margin-top: 15px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,8 +107,12 @@
   color: var(--color-icon);
 }
 
-.project-btn-text-container .project-btn-option .project-btn-option__title {
-  margin-right: 10px;
+.project-btn-text-container .project-btn-option #source {
+  margin-right: 6px;
+}
+
+.project-btn-text-container .project-btn-option #view {
+  margin-right: 6px;
 }
 
 .coming-soon {

@@ -42,10 +42,6 @@ html[data-theme='dark'] {
   --websiteblacktowhite: white;
 }
 
-p {
-  font-size: 14px;
-}
-
 .grid-1fr-1fr {
   display: -ms-grid;
   display: grid;
@@ -84,7 +80,7 @@ p {
 }
 
 .form-project-wrapper .form-container .title-wrapper p {
-  color: #818181;
+  color: #333;
 }
 
 .form-project-wrapper .form-container .title-wrapper h1 {
